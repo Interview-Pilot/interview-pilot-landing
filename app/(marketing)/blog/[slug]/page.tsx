@@ -10,9 +10,12 @@ import {
   Badge,
   Button,
   Divider,
+  SimpleGrid,
+  LinkBox,
+  LinkOverlay,
 } from '@chakra-ui/react';
 import Link from 'next/link';
-import { getPostBySlug, getAllPostSlugs } from '../../../../lib/blog';
+import { getPostBySlug, getAllPostSlugs, getAllPosts } from '../../../../lib/blog';
 
 interface BlogPostPageProps {
   params: {
@@ -34,7 +37,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     const post = await getPostBySlug(params.slug);
     
     return {
-      title: `${post.title} | Your SaaS Blog`,
+      title: `${post.title} | Interview Pilot`,
       description: post.excerpt,
       keywords: post.tags?.join(', '),
       authors: post.author ? [{ name: post.author }] : undefined,
@@ -74,6 +77,8 @@ function formatDate(dateString: string) {
   });
 }
 
+const baseUrl = 'https://interviewpilot.app'
+
 // JSON-LD structured data for better SEO
 function generateStructuredData(post: any) {
   return {
@@ -81,29 +86,67 @@ function generateStructuredData(post: any) {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt,
-    image: post.image,
+    image: post.image ? `${baseUrl}${post.image}` : undefined,
     author: {
       '@type': 'Person',
-      name: post.author || 'Anonymous',
+      name: post.author || 'Interview Pilot Team',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Your SaaS Platform',
+      name: 'Interview Pilot',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/static/images/interviewpilot_newlogo.png`,
+      },
     },
     datePublished: post.date,
     dateModified: post.date,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `/blog/${post.slug}`,
+      '@id': `${baseUrl}/blog/${post.slug}`,
     },
+  };
+}
+
+// Breadcrumb structured data for navigation
+function generateBreadcrumbData(post: any) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: baseUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: `${baseUrl}/blog`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: `${baseUrl}/blog/${post.slug}`,
+      },
+    ],
   };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   let post;
-  
+  let relatedPosts;
+
   try {
     post = await getPostBySlug(params.slug);
+    const allPosts = await getAllPosts();
+    // Get up to 3 related posts, excluding the current one
+    relatedPosts = allPosts
+      .filter((p) => p.slug !== params.slug)
+      .slice(0, 3);
   } catch {
     notFound();
   }
@@ -115,6 +158,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(generateStructuredData(post)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbData(post)),
         }}
       />
 
@@ -295,15 +344,83 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           />
         </Container>
 
+        {/* Related Posts */}
+        {relatedPosts && relatedPosts.length > 0 && (
+          <Box borderTop="1px" borderColor="gray.200" _dark={{ borderColor: 'gray.600' }}>
+            <Container maxW="container.lg" py={12}>
+              <VStack spacing={8} align="stretch">
+                <Heading size="lg" textAlign="center">
+                  More Articles
+                </Heading>
+                <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6}>
+                  {relatedPosts.map((relatedPost) => (
+                    <LinkBox
+                      key={relatedPost.slug}
+                      as="article"
+                      p={5}
+                      borderWidth="1px"
+                      borderRadius="lg"
+                      bg="white"
+                      _dark={{ bg: 'gray.700', borderColor: 'gray.600' }}
+                      _hover={{
+                        shadow: 'md',
+                        borderColor: 'blue.500',
+                      }}
+                      transition="all 0.2s"
+                    >
+                      {relatedPost.image && (
+                        <Image
+                          src={relatedPost.image}
+                          alt={relatedPost.title}
+                          borderRadius="md"
+                          mb={4}
+                          h="140px"
+                          w="100%"
+                          objectFit="cover"
+                        />
+                      )}
+                      <VStack align="start" spacing={2}>
+                        <LinkOverlay as={Link} href={`/blog/${relatedPost.slug}`}>
+                          <Heading size="md" noOfLines={2}>
+                            {relatedPost.title}
+                          </Heading>
+                        </LinkOverlay>
+                        <Text color="gray.600" _dark={{ color: 'gray.400' }} fontSize="sm" noOfLines={2}>
+                          {relatedPost.excerpt}
+                        </Text>
+                        <HStack spacing={2} fontSize="xs" color="gray.500">
+                          <Text>{formatDate(relatedPost.date)}</Text>
+                          <Text>•</Text>
+                          <Text>{relatedPost.readTime} min read</Text>
+                        </HStack>
+                      </VStack>
+                    </LinkBox>
+                  ))}
+                </SimpleGrid>
+                <Box textAlign="center">
+                  <Button
+                    as={Link}
+                    href="/blog"
+                    variant="outline"
+                    colorScheme="blue"
+                  >
+                    View All Articles
+                  </Button>
+                </Box>
+              </VStack>
+            </Container>
+          </Box>
+        )}
+
         {/* Newsletter CTA */}
         <Box bg="gray.50" _dark={{ bg: 'gray.900', borderColor: 'gray.600' }} borderTop="1px" borderColor="gray.200">
           <Container maxW="container.md" py={12} textAlign="center">
             <VStack spacing={6}>
               <Heading size="lg">
-                Enjoyed this article?
+                Stay Updated
               </Heading>
               <Text color="gray.600" maxW="md">
-                Subscribe to our newsletter for more insights and updates about SaaS development and industry trends.
+                Get the latest interview tips and AI insights delivered to your inbox.
               </Text>
               <HStack spacing={4} maxW="md" w="100%">
                 <Box flex="1">

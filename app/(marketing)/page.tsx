@@ -495,6 +495,7 @@ const HeroSection: React.FC = () => {
                     width={580}
                     height={578}
                     alt="Interview Pilot App Screenshot"
+                    priority
                     style={{
                       width: '100%',
                       maxWidth: '610px',
@@ -634,7 +635,7 @@ const HighlightsSection = () => {
         </HighlightsItem>
         <HighlightsItem title="Full Privacy">
           <Text color="muted" fontSize="lg" position="relative" zIndex={1}>
-            Your data is secure and owned by you. All data processing uses indsutry-standard encryption.<br></br><br></br>We never store your app usage data.
+            Your data is secure and owned by you. All data processing uses industry-standard encryption.<br></br><br></br>We never store your app usage data.
           </Text>
         </HighlightsItem>
         <HighlightsItem

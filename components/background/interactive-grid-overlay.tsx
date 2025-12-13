@@ -48,7 +48,6 @@ export function InteractiveGridOverlay() {
               }}
               onMouseEnter={() => {
                 setHoveredSquare(index);
-                console.log('Hovered square:', index); // Debug
               }}
               onMouseLeave={() => setHoveredSquare(null)}
             />
