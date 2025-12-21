@@ -4,7 +4,10 @@
       "Bash(grep:*)",
       "Bash(wc:*)",
       "Bash(cat:*)",
-      "Bash(pnpm build:*)"
+      "Bash(pnpm build:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(head:*)"
     ]
   }
 }
