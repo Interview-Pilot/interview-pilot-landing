@@ -23,11 +23,11 @@ export const Footer: React.FC<FooterProps> = (props) => {
   return (
     <Box bg="white" _dark={{ bg: 'gray.900' }} width="100%" position="relative" 
       zIndex={1} {...rest}>
-      <Container maxW="container.2xl" px="8" py="8" width="100%">
+      <Container maxW="container.2xl" px="8" pt="6" pb="8" width="100%">
         {/* Change columns to be responsive - 1 on mobile, 2 on larger screens */}
         <SimpleGrid columns={{ base: 1, md: columns }} spacing={{ base: 8, md: 0 }}>
           <Stack spacing="8">
-            <Stack alignItems="flex-start">
+            <Stack alignItems="flex-start" spacing="4">
               <Flex>
                 <Box as={siteConfig.logo} flex="1" height="32px" />
               </Flex>
@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
               <Stack direction={{ base: "column", md: "row" }} gap="4" alignItems={{ base: "flex-start", md: "center" }}>
                 <Box
                   border="1px solid"
-                  borderColor="gray.700"
+                  borderColor="gray.600"
                   borderRadius="md"
                   px="3"
                   display="inline-flex"

@@ -58,18 +58,20 @@ const Navigation: React.FC<NavigationProps> = ({
         <GridItem />
 
         {/* Center column - navigation links */}
-        <GridItem>
-          <Flex justify="center">
+        <GridItem display="flex" alignItems="center">
+          <Flex justify="center" align="center" h="40px">
             {navLinks.map(({ href, id, ...props }, i) => {
               return (
                 <NavLink
-                  display={['none', null, 'block']}
+                  display={['none', null, 'flex']}
                   href={href || `/#${id}`}
                   key={i}
                   mx={2}
                   px={3}
+                  h="36px"
                   borderRadius="md"
                   transition="all 0.2s ease"
+                  alignItems="center"
                   _hover={{
                     bg: 'rgba(255, 255, 255, 0.1)',
                     backdropFilter: 'blur(10px)',
@@ -90,21 +92,23 @@ const Navigation: React.FC<NavigationProps> = ({
         </GridItem>
 
         {/* Right column - Download button, theme toggle, mobile nav */}
-        <GridItem>
-          {/* Apply right padding conditionally based on screen size and mobileMode */}
+        <GridItem display="flex" alignItems="center" justifyContent="flex-end">
           <HStack
-            spacing={2}
+            spacing={3}
             justify="flex-end"
+            align="center"
             pr={insetButtons ? { base: mobileMode ? 0 : 6, lg: 8 } : 0}
           >
             <NavLink
-              display={['none', null, 'block']}
+              display={['none', null, 'flex']}
               href={downloadHref}
               borderRadius="full"
-              px={4}           // Increase horizontal padding
-              py={0}           // Add vertical padding
+              px={5}
               fontSize="md"
-              fontWeight="bold"
+              fontWeight="extrabold"
+              h="36px"
+              alignItems="center"
+              justifyContent="center"
               isActive={
                 !!(
                   (downloadButton.id && activeId === downloadButton.id) ||
@@ -116,11 +120,9 @@ const Navigation: React.FC<NavigationProps> = ({
               {downloadButton.label}
             </NavLink>
 
-            <Box>
-              <ThemeToggle />
-            </Box>
+            <ThemeToggle />
 
-            <Box>
+            <Box display={{ base: 'block', md: 'none' }}>
               <MobileNavButton
                 ref={mobileNavBtnRef}
                 aria-label="Open Menu"

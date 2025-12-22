@@ -5,19 +5,21 @@ export const Logo: React.FC<HTMLChakraProps<'div'>> = (props) => {
 
   return (
     <chakra.div {...props}>
-      <Flex align="center">
+      <Flex align="center" h="40px">
         <Image
           src="/static/images/interviewpilot_newlogo.png"
           alt="Interview Pilot Logo"
-          maxHeight="35px"
+          h="32px"
+          w="auto"
         />
         <Text
-          ml={3}
+          ml={2}
           fontSize="xl"
-          fontWeight="bold"
+          fontWeight="black"
           color={textColor}
           fontFamily="var(--font-dm-sans)"
-          letterSpacing="-0.02em"
+          letterSpacing="-0.01em"
+          lineHeight="1"
         >
           Interview Pilot
         </Text>

@@ -24,9 +24,12 @@ export const NavLink = forwardRef<NavLinkProps, "a">((props, ref) => {
       href={href}
       ref={ref}
       variant={buttonVariant}
-      lineHeight="2rem"
+      lineHeight="1"
       isActive={isActive}
       fontWeight={fontWeight}
+      display="inline-flex"
+      alignItems="center"
+      justifyContent="center"
       {...rest}
     />
   );
