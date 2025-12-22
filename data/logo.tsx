@@ -13,8 +13,8 @@ export const Logo: React.FC<HTMLChakraProps<'div'>> = (props) => {
           w="auto"
         />
         <Text
-          ml={2}
-          fontSize="xl"
+          ml={3}
+          fontSize="2xl"
           fontWeight="black"
           color={textColor}
           fontFamily="var(--font-dm-sans)"
