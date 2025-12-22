@@ -67,6 +67,10 @@ const siteConfig = {
         label: 'Privacy Policy',
       },
       {
+        href: '/community-guidelines',
+        label: 'Community Guidelines',
+      },
+      {
         href: 'https://linkedin.com/company/interview-pilot',
         label: <FaLinkedinIn size="18" />,
       },
