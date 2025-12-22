@@ -1,18 +1,25 @@
-import { Button } from '@chakra-ui/react'
 import { Link } from '@saas-ui/react'
 import { NextSeoProps } from 'next-seo'
-import { FaGithub, FaInstagram, FaLinkedin, FaLinkedinIn, FaTiktok, FaTwitter } from 'react-icons/fa'
+import { FaInstagram, FaLinkedinIn, FaTiktok, FaTwitter } from 'react-icons/fa'
 import { FiCheck } from 'react-icons/fi'
+
 import { Logo } from './logo'
+import {
+  COMPANY_LINKS,
+  INTERNAL_ROUTES,
+  SOCIAL_LINKS,
+  SUPPORT_EMAIL,
+} from '#constants'
 
 const siteConfig = {
   logo: Logo,
   seo: {
     title: 'Interview Pilot',
-    description: 'Interview Pilot is an application designed to help job seekers ace technical and behavioral interviews by providing real-time, tailored answers to any interview questions.',
+    description:
+      'Interview Pilot is an application designed to help job seekers ace technical and behavioral interviews by providing real-time, tailored answers to any interview questions.',
   } as NextSeoProps,
-  termsUrl: '/terms',
-  privacyUrl: '/privacy',
+  termsUrl: INTERNAL_ROUTES.terms,
+  privacyUrl: INTERNAL_ROUTES.privacy,
   header: {
     links: [
       {
@@ -37,11 +44,11 @@ const siteConfig = {
       },
       {
         label: 'Blog',
-        href: '/blog',
+        href: INTERNAL_ROUTES.blog,
       },
       {
         label: 'Download',
-        href: '/download/hero',  // Changed from direct App Store URL
+        href: INTERNAL_ROUTES.downloadHero,
         variant: 'primary',
       },
     ],
@@ -49,41 +56,41 @@ const siteConfig = {
   footer: {
     copyright: (
       <>
-        Developed by{' '}
-        <Link href="https://www.liberaceai.com">Liberace Pte. Ltd.</Link> © 2023-2025 • Built in San Francisco, California
+        Developed by <Link href={COMPANY_LINKS.website}>Liberace Pte. Ltd.</Link>{' '}
+        © 2023-2025 • Built in San Francisco, California
       </>
     ),
     links: [
       {
-        href: 'mailto:Support@LiberaceAI.com',
+        href: `mailto:${SUPPORT_EMAIL}`,
         label: 'Contact',
       },
       {
-        href: '/terms',
+        href: INTERNAL_ROUTES.terms,
         label: 'Terms of Service',
       },
       {
-        href: '/privacy',
+        href: INTERNAL_ROUTES.privacy,
         label: 'Privacy Policy',
       },
       {
-        href: '/community-guidelines',
+        href: INTERNAL_ROUTES.communityGuidelines,
         label: 'Community Guidelines',
       },
       {
-        href: 'https://linkedin.com/company/interview-pilot',
+        href: SOCIAL_LINKS.linkedin,
         label: <FaLinkedinIn size="18" />,
       },
       {
-        href: 'https://x.com/interview_pilot',
+        href: SOCIAL_LINKS.twitter,
         label: <FaTwitter size="18" />,
       },
       {
-        href: 'https://www.tiktok.com/@interview_pilot',
+        href: SOCIAL_LINKS.tiktok,
         label: <FaTiktok size="18" />,
       },
       {
-        href: 'https://www.instagram.com/interview_pilot?igsh=MWlxdXBraDA3MTBhcQ%3D%3D&utm_source=qr',
+        href: SOCIAL_LINKS.instagram,
         label: <FaInstagram size="18" />,
       },
     ],

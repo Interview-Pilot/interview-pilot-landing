@@ -1,6 +1,36 @@
 import { HStack, Text, VStack } from '@chakra-ui/react'
+import { ReactNode } from 'react'
 
-export default {
+import { APP_STORE_LINKS } from '#constants'
+
+/**
+ * Pricing data for the landing page
+ */
+
+interface PricingFeature {
+  title: string
+  iconColor?: string
+}
+
+interface PricingPlan {
+  id: string
+  title: string
+  description: string
+  price: ReactNode
+  features: (PricingFeature | null)[]
+  action: {
+    href: string
+  }
+  isRecommended?: boolean
+}
+
+interface PricingData {
+  title: string
+  description: string
+  plans: PricingPlan[]
+}
+
+const pricing: PricingData = {
   title: 'Pricing',
   description: 'Simple, transparent pricing for all',
   plans: [
@@ -10,18 +40,12 @@ export default {
       description: 'Try full features for FREE',
       price: 'Free',
       features: [
-        {
-          title: '3 Sessions Weekly',
-        },
-        {
-          title: '10 Copilot Use Weekly',
-        },
-        {
-          title: 'Normal Copilot Models',
-        },
+        { title: '3 Sessions Weekly' },
+        { title: '10 Copilot Use Weekly' },
+        { title: 'Normal Copilot Models' },
       ],
       action: {
-        href: 'https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009',
+        href: APP_STORE_LINKS.ios,
       },
     },
     {
@@ -30,9 +54,9 @@ export default {
       description: 'Popular',
       price: (
         <VStack spacing="1" align="flex-start">
-          <Text 
-            fontSize="lg" 
-            color="gray.500" 
+          <Text
+            fontSize="lg"
+            color="gray.500"
             textDecoration="line-through"
             fontWeight="normal"
           >
@@ -50,27 +74,13 @@ export default {
       ),
       isRecommended: true,
       features: [
-        {
-          title: '1,000 Copilot Use Weekly',
-        },
-        {
-          title: 'Unlimited Sessions Weekly',
-        },
-        {
-          title: 'Most Powerful Copilot Models',
-        },
-        {
-          title: 'Full Profile & Documents',
-        },
-        {
-          title: 'Full Copilot Customization',
-        },
-        {
-          title: 'Unlimited Interview History',
-        },
-        {
-          title: 'Priority Customer Support',
-        },
+        { title: '1,000 Copilot Use Weekly' },
+        { title: 'Unlimited Sessions Weekly' },
+        { title: 'Most Powerful Copilot Models' },
+        { title: 'Full Profile & Documents' },
+        { title: 'Full Copilot Customization' },
+        { title: 'Unlimited Interview History' },
+        { title: 'Priority Customer Support' },
         null,
         {
           title: 'Promotion: Get 1,000 Copilot use weekly for a limited time!',
@@ -78,7 +88,7 @@ export default {
         },
       ],
       action: {
-        href: 'https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009',
+        href: APP_STORE_LINKS.ios,
       },
     },
     {
@@ -87,9 +97,9 @@ export default {
       description: 'Best Value',
       price: (
         <VStack spacing="1" align="flex-start">
-          <Text 
-            fontSize="lg" 
-            color="gray.500" 
+          <Text
+            fontSize="lg"
+            color="gray.500"
             textDecoration="line-through"
             fontWeight="normal"
           >
@@ -106,27 +116,13 @@ export default {
         </VStack>
       ),
       features: [
-        {
-          title: '1,000 Copilot Use Weekly',
-        },
-        {
-          title: 'Unlimited Sessions Weekly',
-        },
-        {
-          title: 'Most Powerful Copilot Models',
-        },
-        {
-          title: 'Full Profile & Documents',
-        },
-        {
-          title: 'Full Copilot Customization',
-        },
-        {
-          title: 'Unlimited Interview History',
-        },
-        {
-          title: 'Priority Customer Support',
-        },
+        { title: '1,000 Copilot Use Weekly' },
+        { title: 'Unlimited Sessions Weekly' },
+        { title: 'Most Powerful Copilot Models' },
+        { title: 'Full Profile & Documents' },
+        { title: 'Full Copilot Customization' },
+        { title: 'Unlimited Interview History' },
+        { title: 'Priority Customer Support' },
         null,
         {
           title: 'Promotion: Get 1,000 Copilot use weekly for a limited time!',
@@ -134,8 +130,10 @@ export default {
         },
       ],
       action: {
-        href: 'https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009',
+        href: APP_STORE_LINKS.ios,
       },
     },
   ],
 }
+
+export default pricing

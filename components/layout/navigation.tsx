@@ -1,6 +1,7 @@
 import { HStack, Flex, Box, Grid, GridItem } from '@chakra-ui/react'
 import { useDisclosure, useUpdateEffect } from '@chakra-ui/react'
-import { useScrollSpy } from 'hooks/use-scrollspy'
+import { useScrollSpy } from '#hooks/use-scrollspy'
+import { usePlatform } from '#hooks/use-platform'
 import { usePathname, useRouter } from 'next/navigation'
 import * as React from 'react'
 import { MobileNavButton } from '#components/mobile-nav'
@@ -8,6 +9,7 @@ import { MobileNavContent } from '#components/mobile-nav'
 import { NavLink } from '#components/nav-link'
 import siteConfig from '#data/config'
 import ThemeToggle from './theme-toggle'
+import { INTERNAL_ROUTES } from '#constants'
 
 interface NavigationProps {
   centerLinks?: boolean;
@@ -33,27 +35,11 @@ const Navigation: React.FC<NavigationProps> = ({
   )
 
   const mobileNavBtnRef = React.useRef<HTMLButtonElement>()
+  const platform = usePlatform()
 
   useUpdateEffect(() => {
     mobileNavBtnRef.current?.focus()
   }, [mobileNav.isOpen])
-
-  // Platform detection for download button
-  const [platform, setPlatform] = React.useState<'ios' | 'android' | 'desktop'>('desktop')
-
-  React.useEffect(() => {
-    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera
-    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream
-    const isAndroid = /android/i.test(userAgent)
-
-    if (isIOS) {
-      setPlatform('ios')
-    } else if (isAndroid) {
-      setPlatform('android')
-    } else {
-      setPlatform('desktop')
-    }
-  }, [])
 
   // Split the navigation - everything except the last item (Download)
   const navLinks = siteConfig.header.links.slice(0, -1)
@@ -61,7 +47,9 @@ const Navigation: React.FC<NavigationProps> = ({
   const downloadButton = siteConfig.header.links[siteConfig.header.links.length - 1]
 
   // Modify download button href based on platform
-  const downloadHref = platform === 'desktop' ? '/#download-options' : (downloadButton.href || `/#${downloadButton.id}`)
+  const downloadHref = platform === 'desktop'
+    ? INTERNAL_ROUTES.downloadOptions
+    : (downloadButton.href || `/#${downloadButton.id}`)
 
   if (centerLinks) {
     return (

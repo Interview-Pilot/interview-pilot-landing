@@ -1,8 +1,21 @@
-import * as React from 'react'
+/**
+ * FAQ data for the landing page
+ * Note: Uses 'q' and 'a' to match the Faq component's expected interface
+ */
 
-const faq = {
+interface FaqItem {
+  q: string
+  a: string
+}
+
+interface FaqData {
+  title: string
+  description?: string
+  items: FaqItem[]
+}
+
+const faq: FaqData = {
   title: 'Frequently Asked Questions',
-  // description: '',
   items: [
     {
       q: 'Can I use Interview Pilot for free?',
@@ -14,7 +27,7 @@ const faq = {
     },
     {
       q: 'What devices can I use Interview Pilot on?',
-      a: 'Interview Pilot is designed for ALL iOS and Android devices, including iPhones, iPads and Android devices! For a list of compatible devices see below. \n\nInterview Pilot requires iOS 17.0 and above. The best way to check compatibility is to simply run the app and try all functions out for free!',
+      a: 'Interview Pilot is designed for ALL iOS and Android devices, including iPhones, iPads and Android devices! For a list of compatible devices see below.\n\nInterview Pilot requires iOS 17.0 and above. The best way to check compatibility is to simply run the app and try all functions out for free!',
     },
     {
       q: 'Is this considered cheating?',
