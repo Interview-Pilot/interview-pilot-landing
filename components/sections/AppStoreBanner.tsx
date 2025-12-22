@@ -69,7 +69,12 @@ export function AppStoreBanner() {
         />
         <VStack align="flex-start" spacing="0">
           <HStack spacing="2" align="center">
-            <Text color="white" fontWeight="bold" fontSize="sm">
+            <Text
+              color="white"
+              fontWeight="bold"
+              fontSize="sm"
+              fontFamily="var(--font-dm-sans)"
+            >
               Interview Pilot
             </Text>
             <Text color="yellow.400" fontSize="xs" fontWeight="medium">

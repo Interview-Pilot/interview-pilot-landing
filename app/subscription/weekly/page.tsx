@@ -41,6 +41,7 @@ export default function SubscriptionPage() {
               fontSize={['3xl', '4xl', '5xl']}
               fontWeight="extrabold"
               color="white"
+              fontFamily="var(--font-dm-sans)"
             >
               Interview Pilot Pro
             </Heading>
