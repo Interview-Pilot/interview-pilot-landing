@@ -1,11 +1,11 @@
+import { build } from 'velite'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Add page extensions to ensure all your file types are recognized
-  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
-  // If you're using both app and pages directories
-  experimental: {
-  },
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js', 'mdx'],
+  experimental: {},
+
   // Add headers for apple-app-site-association
   async headers() {
     return [
@@ -20,7 +20,9 @@ const nextConfig = {
       },
     ]
   },
+
   webpack(config) {
+    // SVG handling
     config.module.rules.push({
       test: /\.svg$/,
       use: [
@@ -39,8 +41,31 @@ const nextConfig = {
         },
       ],
     })
+
+    // Velite integration
+    config.plugins.push(new VeliteWebpackPlugin())
+
     return config
   },
+}
+
+class VeliteWebpackPlugin {
+  static started = false
+
+  constructor(/** @type {import('velite').Options} */ options = {}) {
+    this.options = options
+  }
+
+  apply(/** @type {import('webpack').Compiler} */ compiler) {
+    compiler.hooks.beforeCompile.tapPromise('VeliteWebpackPlugin', async () => {
+      if (VeliteWebpackPlugin.started) return
+      VeliteWebpackPlugin.started = true
+      const dev = compiler.options.mode === 'development'
+      this.options.watch = this.options.watch ?? dev
+      this.options.clean = this.options.clean ?? !dev
+      await build(this.options)
+    })
+  }
 }
 
 export default nextConfig

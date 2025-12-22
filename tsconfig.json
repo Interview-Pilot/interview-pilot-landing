@@ -23,7 +23,9 @@
       "#theme": ["./theme"],
       "#theme/*": ["./theme/*"],
       "#constants": ["./constants"],
-      "#constants/*": ["./constants/*"]
+      "#constants/*": ["./constants/*"],
+      "#content": ["./.velite"],
+      "#lib/*": ["./lib/*"]
     },
     "plugins": [
       {

@@ -7,6 +7,14 @@
           {
             "/": "/subscription*",
             "comment": "Matches all subscription URLs"
+          },
+          {
+            "/": "/verify-email*",
+            "comment": "Email verification deep link"
+          },
+          {
+            "/": "/reset-password*",
+            "comment": "Password reset deep link"
           }
         ]
       }

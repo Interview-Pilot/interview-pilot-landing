@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+import { notFound } from 'next/navigation'
 import {
   Box,
   Container,
@@ -13,79 +13,88 @@ import {
   SimpleGrid,
   LinkBox,
   LinkOverlay,
-} from '@chakra-ui/react';
-import Link from 'next/link';
-import { getPostBySlug, getAllPostSlugs, getAllPosts } from '../../../../lib/blog';
+} from '@chakra-ui/react'
+import Link from 'next/link'
+import { posts } from '#content'
+import { MDXContent } from '#components/blog'
+import { formatDate, getBaseUrl } from '#lib/utils'
 
 interface BlogPostPageProps {
   params: {
-    slug: string;
-  };
-}
-
-// Generate static params for all blog posts
-export async function generateStaticParams() {
-  const slugs = getAllPostSlugs();
-  return slugs.map((slug) => ({
-    slug,
-  }));
-}
-
-// Generate metadata for SEO
-export async function generateMetadata({ params }: BlogPostPageProps) {
-  try {
-    const post = await getPostBySlug(params.slug);
-    
-    return {
-      title: `${post.title} | Interview Pilot`,
-      description: post.excerpt,
-      keywords: post.tags?.join(', '),
-      authors: post.author ? [{ name: post.author }] : undefined,
-      openGraph: {
-        title: post.title,
-        description: post.excerpt,
-        type: 'article',
-        publishedTime: post.date,
-        authors: post.author ? [post.author] : undefined,
-        tags: post.tags,
-        images: post.image ? [{ url: post.image, alt: post.title }] : undefined,
-      },
-      twitter: {
-        card: 'summary_large_image',
-        title: post.title,
-        description: post.excerpt,
-        images: post.image ? [post.image] : undefined,
-      },
-      alternates: {
-        canonical: `/blog/${params.slug}`,
-      },
-    };
-  } catch {
-    return {
-      title: 'Post Not Found',
-      description: 'The requested blog post could not be found.',
-    };
+    slug: string
   }
 }
 
-function formatDate(dateString: string) {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+/**
+ * Get a post by its slug
+ */
+function getPostBySlug(slug: string) {
+  return posts.find((post) => post.slugAsParams === slug)
 }
 
-const baseUrl = 'https://interviewpilot.app'
+/**
+ * Get published posts sorted by date
+ */
+function getPublishedPosts() {
+  return posts
+    .filter((post) => post.published)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+}
+
+// Generate static params for all blog posts
+export function generateStaticParams() {
+  return posts
+    .filter((post) => post.published)
+    .map((post) => ({
+      slug: post.slugAsParams,
+    }))
+}
+
+// Generate metadata for SEO
+export function generateMetadata({ params }: BlogPostPageProps) {
+  const post = getPostBySlug(params.slug)
+
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+      description: 'The requested blog post could not be found.',
+    }
+  }
+
+  return {
+    title: `${post.title} | Interview Pilot`,
+    description: post.description,
+    keywords: post.tags?.join(', '),
+    authors: post.author ? [{ name: post.author }] : undefined,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: 'article',
+      publishedTime: post.date,
+      authors: post.author ? [post.author] : undefined,
+      tags: post.tags,
+      images: post.image ? [{ url: post.image, alt: post.title }] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      images: post.image ? [post.image] : undefined,
+    },
+    alternates: {
+      canonical: `/blog/${params.slug}`,
+    },
+  }
+}
 
 // JSON-LD structured data for better SEO
-function generateStructuredData(post: any) {
+function generateStructuredData(post: (typeof posts)[0]) {
+  const baseUrl = getBaseUrl()
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
-    description: post.excerpt,
+    description: post.description,
     image: post.image ? `${baseUrl}${post.image}` : undefined,
     author: {
       '@type': 'Person',
@@ -103,13 +112,14 @@ function generateStructuredData(post: any) {
     dateModified: post.date,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${baseUrl}/blog/${post.slug}`,
+      '@id': `${baseUrl}/blog/${post.slugAsParams}`,
     },
-  };
+  }
 }
 
 // Breadcrumb structured data for navigation
-function generateBreadcrumbData(post: any) {
+function generateBreadcrumbData(post: (typeof posts)[0]) {
+  const baseUrl = getBaseUrl()
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -130,26 +140,23 @@ function generateBreadcrumbData(post: any) {
         '@type': 'ListItem',
         position: 3,
         name: post.title,
-        item: `${baseUrl}/blog/${post.slug}`,
+        item: `${baseUrl}/blog/${post.slugAsParams}`,
       },
     ],
-  };
+  }
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  let post;
-  let relatedPosts;
+export default function BlogPostPage({ params }: BlogPostPageProps) {
+  const post = getPostBySlug(params.slug)
 
-  try {
-    post = await getPostBySlug(params.slug);
-    const allPosts = await getAllPosts();
-    // Get up to 3 related posts, excluding the current one
-    relatedPosts = allPosts
-      .filter((p) => p.slug !== params.slug)
-      .slice(0, 3);
-  } catch {
-    notFound();
+  if (!post) {
+    notFound()
   }
+
+  // Get related posts (excluding current one)
+  const relatedPosts = getPublishedPosts()
+    .filter((p) => p.slugAsParams !== params.slug)
+    .slice(0, 3)
 
   return (
     <>
@@ -169,14 +176,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       <Box bg="white" _dark={{ bg: 'gray.800' }}>
         {/* Navigation */}
-        <Box borderBottom="1px" borderColor="gray.200" bg="gray.50" _dark={{ bg: 'gray.900', borderColor: 'gray.600' }}>
+        <Box
+          borderBottom="1px"
+          borderColor="gray.200"
+          bg="gray.50"
+          _dark={{ bg: 'gray.900', borderColor: 'gray.600' }}
+        >
           <Container maxW="container.lg" py={4}>
-            <Button
-              as={Link}
-              href="/blog"
-              variant="ghost"
-              colorScheme="blue"
-            >
+            <Button as={Link} href="/blog" variant="ghost" colorScheme="blue">
               ← Back to Blog
             </Button>
           </Container>
@@ -198,21 +205,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               />
             )}
 
-            <Heading 
-              as="h1" 
-              size="2xl" 
-              fontWeight="bold" 
+            <Heading
+              as="h1"
+              size="2xl"
+              fontWeight="bold"
               lineHeight="1.2"
               textAlign="center"
               maxW="4xl"
             >
               {post.title}
             </Heading>
-            
-            <HStack 
-              spacing={6} 
-              flexWrap="wrap" 
-              justify="center" 
+
+            <HStack
+              spacing={6}
+              flexWrap="wrap"
+              justify="center"
               color="gray.600"
               fontSize="sm"
             >
@@ -222,12 +229,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   {formatDate(post.date)}
                 </Text>
               </HStack>
-              
+
               <HStack>
                 <Text>🕐</Text>
-                <Text>{post.readTime} min read</Text>
+                <Text>{post.readingTime} min read</Text>
               </HStack>
-              
+
               {post.author && (
                 <HStack>
                   <Text>👤</Text>
@@ -239,7 +246,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {post.tags && post.tags.length > 0 && (
               <HStack spacing={2} flexWrap="wrap" justify="center">
                 {post.tags.map((tag) => (
-                  <Badge key={tag} colorScheme="blue" variant="subtle" px={3} py={1}>
+                  <Badge
+                    key={tag}
+                    as={Link}
+                    href={`/blog/tag/${tag.toLowerCase()}`}
+                    colorScheme="blue"
+                    variant="subtle"
+                    px={3}
+                    py={1}
+                    cursor="pointer"
+                    _hover={{ bg: 'blue.100' }}
+                  >
                     {tag}
                   </Badge>
                 ))}
@@ -250,103 +267,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         <Divider />
 
-        {/* Article Content */}
+        {/* Article Content - MDX */}
         <Container maxW="container.md" py={12}>
-          <Box
-            className="blog-content"
-            sx={{
-              '& h1, & h2, & h3, & h4, & h5, & h6': {
-                fontWeight: 'bold',
-                color: 'inherit',
-                lineHeight: '1.3',
-                mb: 4,
-                mt: 8,
-              },
-              '& h1': { fontSize: '2xl' },
-              '& h2': { fontSize: 'xl' },
-              '& h3': { fontSize: 'lg' },
-              '& p': {
-                mb: 4,
-                lineHeight: '1.7',
-                color: 'gray.700',
-                _dark: { color: 'gray.300' },
-              },
-              '& a': {
-                color: 'blue.500',
-                textDecoration: 'underline',
-                _hover: { color: 'blue.600' },
-              },
-              '& ul, & ol': {
-                mb: 4,
-                pl: 6,
-                '& li': {
-                  mb: 2,
-                  lineHeight: '1.6',
-                },
-              },
-              '& blockquote': {
-                borderLeft: '4px solid',
-                borderColor: 'blue.500',
-                bg: 'blue.50',
-                _dark: { bg: 'blue.900' },
-                p: 4,
-                mb: 6,
-                fontStyle: 'italic',
-                borderRadius: 'md',
-              },
-              '& pre': {
-                bg: 'gray.900',
-                color: 'gray.100',
-                p: 4,
-                borderRadius: 'md',
-                overflow: 'auto',
-                mb: 6,
-                fontSize: 'sm',
-              },
-              '& code': {
-                bg: 'gray.100',
-                _dark: { bg: 'gray.700' },
-                px: 1,
-                py: 0.5,
-                borderRadius: 'sm',
-                fontSize: 'sm',
-              },
-              '& pre code': {
-                bg: 'transparent',
-                p: 0,
-              },
-              '& img': {
-                borderRadius: 'lg',
-                shadow: 'md',
-                maxW: '100%',
-                height: 'auto',
-                mb: 6,
-              },
-              '& table': {
-                width: '100%',
-                borderCollapse: 'collapse',
-                mb: 6,
-                '& th, & td': {
-                  border: '1px solid',
-                  borderColor: 'gray.200',
-                  _dark: { borderColor: 'gray.600' },
-                  p: 3,
-                  textAlign: 'left',
-                },
-                '& th': {
-                  bg: 'gray.50',
-                  _dark: { bg: 'gray.700' },
-                  fontWeight: 'bold',
-                },
-              },
-            }}
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          <MDXContent code={post.body} />
         </Container>
 
         {/* Related Posts */}
         {relatedPosts && relatedPosts.length > 0 && (
-          <Box borderTop="1px" borderColor="gray.200" _dark={{ borderColor: 'gray.600' }}>
+          <Box
+            borderTop="1px"
+            borderColor="gray.200"
+            _dark={{ borderColor: 'gray.600' }}
+          >
             <Container maxW="container.lg" py={12}>
               <VStack spacing={8} align="stretch">
                 <Heading size="lg" textAlign="center">
@@ -355,7 +287,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6}>
                   {relatedPosts.map((relatedPost) => (
                     <LinkBox
-                      key={relatedPost.slug}
+                      key={relatedPost.slugAsParams}
                       as="article"
                       p={5}
                       borderWidth="1px"
@@ -380,18 +312,26 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         />
                       )}
                       <VStack align="start" spacing={2}>
-                        <LinkOverlay as={Link} href={`/blog/${relatedPost.slug}`}>
+                        <LinkOverlay
+                          as={Link}
+                          href={`/blog/${relatedPost.slugAsParams}`}
+                        >
                           <Heading size="md" noOfLines={2}>
                             {relatedPost.title}
                           </Heading>
                         </LinkOverlay>
-                        <Text color="gray.600" _dark={{ color: 'gray.400' }} fontSize="sm" noOfLines={2}>
-                          {relatedPost.excerpt}
+                        <Text
+                          color="gray.600"
+                          _dark={{ color: 'gray.400' }}
+                          fontSize="sm"
+                          noOfLines={2}
+                        >
+                          {relatedPost.description}
                         </Text>
                         <HStack spacing={2} fontSize="xs" color="gray.500">
                           <Text>{formatDate(relatedPost.date)}</Text>
                           <Text>•</Text>
-                          <Text>{relatedPost.readTime} min read</Text>
+                          <Text>{relatedPost.readingTime} min read</Text>
                         </HStack>
                       </VStack>
                     </LinkBox>
@@ -413,14 +353,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         )}
 
         {/* Newsletter CTA */}
-        <Box bg="gray.50" _dark={{ bg: 'gray.900', borderColor: 'gray.600' }} borderTop="1px" borderColor="gray.200">
+        <Box
+          bg="gray.50"
+          _dark={{ bg: 'gray.900', borderColor: 'gray.600' }}
+          borderTop="1px"
+          borderColor="gray.200"
+        >
           <Container maxW="container.md" py={12} textAlign="center">
             <VStack spacing={6}>
-              <Heading size="lg">
-                Stay Updated
-              </Heading>
+              <Heading size="lg">Stay Updated</Heading>
               <Text color="gray.600" maxW="md">
-                Get the latest interview tips and AI insights delivered to your inbox.
+                Get the latest interview tips and AI insights delivered to your
+                inbox.
               </Text>
               <HStack spacing={4} maxW="md" w="100%">
                 <Box flex="1">
@@ -445,5 +389,5 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </Box>
       </Box>
     </>
-  );
+  )
 }
