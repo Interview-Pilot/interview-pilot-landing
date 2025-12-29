@@ -69,6 +69,29 @@ return (
 </Box>
 <Box>
 <Heading as="h2" size="md" mb={2}>
+ Google User Data
+</Heading>
+<Text>
+ When you choose to connect your Gmail account to Interview Pilot, we request read-only access to your email messages to automatically detect interview invitations and add them to your calendar.
+</Text>
+<Text mt={2}>
+ <strong>Data Accessed:</strong> We access your Gmail messages (read-only) using the Gmail API with the &quot;gmail.readonly&quot; scope. We also access your basic profile information (email address) to display which account is connected.
+</Text>
+<Text mt={2}>
+ <strong>Data Usage:</strong> We scan your emails for keywords related to interview invitations (e.g., &quot;interview,&quot; &quot;schedule,&quot; &quot;calendar invite&quot;). When a potential interview email is detected, we extract the date, time, company name, and meeting details to create a calendar event in your Interview Pilot account.
+</Text>
+<Text mt={2}>
+ <strong>Data Storage:</strong> We store encrypted OAuth tokens (using AES-256-GCM encryption) to maintain your Gmail connection. We also store the message IDs of emails we have already processed to prevent duplicate calendar entries. We do not permanently store the content of your emails.
+</Text>
+<Text mt={2}>
+ <strong>Data Sharing:</strong> Your Gmail data is not shared with any third parties. Email content may be temporarily processed by our AI service (OpenAI) to extract interview details, but this content is not stored by the AI provider beyond the immediate processing request.
+</Text>
+<Text mt={2}>
+ <strong>Revoking Access:</strong> You can disconnect your Gmail account at any time from the Interview Pilot app settings. You can also revoke access by visiting your Google Account permissions at https://myaccount.google.com/permissions. Upon disconnection, your stored OAuth tokens and processed email records are permanently deleted from our servers.
+</Text>
+</Box>
+<Box>
+<Heading as="h2" size="md" mb={2}>
  Your Rights
 </Heading>
 <Text>
@@ -100,7 +123,7 @@ return (
 </Text>
 </Box>
 <Text fontStyle="italic" mt={4} color="gray.600">
- Last updated: May 21, 2025
+ Last updated: December 28, 2025
 </Text>
 </VStack>
 </Container>
