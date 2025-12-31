@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import {
   Box,
@@ -20,12 +20,28 @@ import {
   List,
   ListItem,
   ListIcon,
+  Spinner,
 } from '@chakra-ui/react'
 import { FiCheckCircle, FiXCircle, FiSmartphone, FiEye, FiEyeOff, FiCheck, FiX } from 'react-icons/fi'
 
 type ResetState = 'form' | 'loading' | 'success' | 'error'
 
 export default function ResetPasswordPage() {
+  return (
+    <Suspense fallback={
+      <Container maxW="container.sm" py={16}>
+        <VStack spacing={8} textAlign="center" minH="60vh" justify="center">
+          <Spinner size="xl" color="green.500" thickness="4px" />
+          <Heading as="h1" size="lg">Loading...</Heading>
+        </VStack>
+      </Container>
+    }>
+      <ResetPasswordContent />
+    </Suspense>
+  )
+}
+
+function ResetPasswordContent() {
   const searchParams = useSearchParams()
   const token = searchParams.get('token')
 

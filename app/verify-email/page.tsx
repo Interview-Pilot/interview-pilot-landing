@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import {
   Box,
@@ -17,6 +17,21 @@ import { FiCheckCircle, FiXCircle, FiSmartphone } from 'react-icons/fi'
 type VerificationState = 'loading' | 'success' | 'error'
 
 export default function VerifyEmailPage() {
+  return (
+    <Suspense fallback={
+      <Container maxW="container.sm" py={16}>
+        <VStack spacing={8} textAlign="center" minH="60vh" justify="center">
+          <Spinner size="xl" color="green.500" thickness="4px" />
+          <Heading as="h1" size="lg">Loading...</Heading>
+        </VStack>
+      </Container>
+    }>
+      <VerifyEmailContent />
+    </Suspense>
+  )
+}
+
+function VerifyEmailContent() {
   const searchParams = useSearchParams()
   const token = searchParams.get('token')
 
