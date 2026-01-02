@@ -57,7 +57,7 @@ const siteConfig = {
     copyright: (
       <>
         Developed by <Link href={COMPANY_LINKS.website}>Liberace Pte. Ltd.</Link>{' '}
-        © 2023-2025 • Built in San Francisco, California
+        © 2023-2026 • Built in San Francisco, California
       </>
     ),
     links: [

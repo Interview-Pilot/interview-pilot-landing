@@ -9,13 +9,13 @@ export const Logo: React.FC<HTMLChakraProps<'div'>> = (props) => {
         <Image
           src="/static/images/interviewpilot_newlogo.png"
           alt="Interview Pilot Logo"
-          h="32px"
+          h="36px"
           w="auto"
         />
         <Text
           ml={3}
           fontSize="2xl"
-          fontWeight="black"
+          fontWeight="bold"
           color={textColor}
           fontFamily="var(--font-dm-sans)"
           letterSpacing="-0.01em"
