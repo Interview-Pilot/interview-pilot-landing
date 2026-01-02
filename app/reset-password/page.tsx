@@ -53,9 +53,6 @@ function ResetPasswordContent() {
 
   const passwordRequirements = [
     { label: 'At least 8 characters', met: password.length >= 8 },
-    { label: 'Contains uppercase letter', met: /[A-Z]/.test(password) },
-    { label: 'Contains lowercase letter', met: /[a-z]/.test(password) },
-    { label: 'Contains number', met: /\d/.test(password) },
   ]
 
   const allRequirementsMet = passwordRequirements.every((req) => req.met)
