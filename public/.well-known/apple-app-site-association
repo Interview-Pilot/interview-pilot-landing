@@ -15,6 +15,10 @@
           {
             "/": "/reset-password*",
             "comment": "Password reset deep link"
+          },
+          {
+            "/": "/community/post/*",
+            "comment": "Forum post deep links"
           }
         ]
       }
