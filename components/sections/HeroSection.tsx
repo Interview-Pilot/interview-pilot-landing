@@ -2,7 +2,6 @@
 
 import {
   Box,
-  ButtonGroup,
   Container,
   HStack,
   Icon,
@@ -14,6 +13,7 @@ import { Br, Link } from '@saas-ui/react'
 import Image from 'next/image'
 import {
   FiArrowRight,
+  FiCheckCircle,
   FiGlobe,
   FiShield,
   FiZap,
@@ -38,28 +38,42 @@ export function HeroSection() {
     window.location.href = INTERNAL_ROUTES.downloadHero
   }
 
-  const getDownloadIcon = () => {
-    const iconSrc = platform === 'android'
-      ? ASSETS.images.googlePlayStore
-      : ASSETS.images.appleAppStore
-
-    return (
-      <Image
-        src={iconSrc}
-        width={14}
-        height={14}
-        alt={platform === 'android' ? 'Google Play' : 'Apple'}
-      />
-    )
-  }
-
   const downloadHref = platform === 'desktop'
     ? INTERNAL_ROUTES.downloadOptions
     : INTERNAL_ROUTES.downloadHero
 
   return (
     <Box overflow="hidden">
-      <Container maxW="container.xl" pt={{ base: 36, lg: 48 }} pb="0">
+      <Container maxW="container.xl" pt={{ base: 32, lg: 40 }} pb="0">
+        <FallInPlace>
+          <Box display="flex" justifyContent="center" mb={{ base: 5, md: 6 }}>
+            <Box
+              display="inline-flex"
+              alignItems="center"
+              gap="3"
+              px="4"
+              py="2"
+              borderRadius="full"
+              bg="rgba(255, 255, 255, 0.1)"
+              border="1px solid"
+              borderColor="whiteAlpha.200"
+              fontSize={{ base: 'xs', md: 'sm' }}
+              fontWeight="medium"
+              lineHeight="1"
+              fontFamily="mono"
+              textTransform="uppercase"
+              letterSpacing="-0.7px"
+              color="whiteAlpha.700"
+              position="relative"
+              zIndex={1}
+              textAlign="center"
+            >
+              <Icon as={FiCheckCircle} boxSize="13px" color="green.300" />
+              <Text as="span">Join over 120,000+ users to secure your career</Text>
+              <Icon as={FiArrowRight} boxSize="13px" color="whiteAlpha.700" />
+            </Box>
+          </Box>
+        </FallInPlace>
         <Stack
           direction={{ base: 'column', lg: 'row' }}
           alignItems="center"
@@ -75,29 +89,35 @@ export function HeroSection() {
             title={
               <FallInPlace>
                 <Box
-                  fontSize={{ base: '36px', sm: '42px', md: '48px', lg: '60px' }}
-                  fontWeight="extrabold"
+                  fontSize={{ base: '39px', sm: '45px', md: '51px', lg: '66px' }}
+                  fontWeight="bold"
                   lineHeight="1.1"
                   position="relative"
                   zIndex={1}
                 >
-                  <Box as="span" position="relative" display="inline">
+                  <Box
+                    as="span"
+                    display="inline-flex"
+                    alignItems="center"
+                    gap="6"
+                    position="relative"
+                  >
+                    <Box as="span" position="relative" zIndex={1} display="inline">
+                      Live AI
+                    </Box>
                     <Box
-                      position="absolute"
+                      position="relative"
                       display="inline-block"
-                      right="-40px"
-                      top="50%"
-                      transform="translateY(-50%)"
                       w={4}
                       h={4}
                       borderRadius="full"
                       bg="green.400"
+                      zIndex={0}
                       animation="pulse 2s infinite"
                       sx={heroPulseAnimation}
                     />
-                    Live AI
                   </Box>
-                  <Br /> Interview Copilot
+                  <Br /> <Box as="span" whiteSpace={{ base: 'normal', md: 'nowrap' }}>Interview Copilot</Box>
                 </Box>
               </FallInPlace>
             }
@@ -108,8 +128,8 @@ export function HeroSection() {
                   position="relative"
                   zIndex={1}
                 >
-                  Get <Em>real-time</Em> interview answers
-                  <Br /> during your interview with <Em>Copilot</Em>
+                  Get <Em color="primary.400">real-time</Em> interview answers
+                  <Br /> during your interview with <Em color="primary.400">Copilot</Em>
                   <Br />{' '}
                 </Text>
               </FallInPlace>
@@ -119,31 +139,61 @@ export function HeroSection() {
               <HStack pt="8" pb="12" spacing="8" position="relative" zIndex={1}>
                 <Image
                   src={ASSETS.images.openAiLogo}
-                  width={125}
-                  height={20}
+                  width={140}
+                  height={22}
                   alt="OpenAI Logo"
                 />
                 <Image
                   src={ASSETS.images.whisperLogo}
-                  width={140}
-                  height={20}
+                  width={156}
+                  height={22}
                   alt="Whisper Logo"
                 />
               </HStack>
 
               <VStack spacing={4} alignItems="flex-start" position="relative" zIndex={1}>
-                <ButtonGroup spacing={4} alignItems="center">
+                <HStack spacing={4} alignItems="center">
                   <ButtonLink
                     colorScheme="primary"
                     color="black"
-                    size="lg"
                     href={downloadHref}
-                    fontWeight="bold"
                     onClick={platform === 'desktop' ? undefined : handleDownloadClick}
                     borderRadius="full"
-                    leftIcon={getDownloadIcon()}
+                    px="1"
+                    minW="150px"
+                    h="42px"
+                    position="relative"
+                    textAlign="left"
                   >
-                    Download
+                    <Box
+                      position="absolute"
+                      left="4px"
+                      top="50%"
+                      transform="translateY(-50%)"
+                      w="34px"
+                      h="34px"
+                      borderRadius="full"
+                      bg="black"
+                      color="white"
+                      display="inline-flex"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Icon as={FiArrowRight} boxSize="16px" />
+                    </Box>
+                    <Box
+                      position="absolute"
+                      left="42px"
+                      right="8px"
+                      top="50%"
+                      transform="translateY(-50%)"
+                      textAlign="center"
+                      lineHeight="1"
+                    >
+                      <Text as="span" fontWeight="bold" fontSize="lg">
+                        Download
+                      </Text>
+                    </Box>
                   </ButtonLink>
                   <ButtonLink
                     size="lg"
@@ -165,7 +215,7 @@ export function HeroSection() {
                   >
                     Learn More
                   </ButtonLink>
-                </ButtonGroup>
+                </HStack>
                 <Link
                   href={INTERNAL_ROUTES.downloadOptions}
                   fontSize="sm"
@@ -197,8 +247,13 @@ export function HeroSection() {
                 alignItems="center"
                 position="relative"
                 zIndex={1}
+                sx={{
+                  maskImage: 'linear-gradient(to bottom, black 0%, black 95%, transparent 100%)',
+                  WebkitMaskImage:
+                    'linear-gradient(to bottom, black 0%, black 95%, transparent 100%)',
+                }}
               >
-                <Box borderRadius="48px" overflow="hidden">
+                <Box overflow="hidden">
                   <Image
                     src={ASSETS.screenshots.heroHand}
                     width={580}

@@ -4,7 +4,12 @@ export const Logo: React.FC<HTMLChakraProps<'div'>> = (props) => {
   const textColor = useColorModeValue('#231f20', '#fff')
 
   return (
-    <chakra.div {...props}>
+    <chakra.div
+      textDecoration="none"
+      transition="opacity 0.2s ease"
+      _hover={{ textDecoration: 'none', opacity: 0.82 }}
+      {...props}
+    >
       <Flex align="center" h="40px">
         <Image
           src="/static/images/interviewpilot_newlogo.png"
@@ -18,7 +23,7 @@ export const Logo: React.FC<HTMLChakraProps<'div'>> = (props) => {
           fontWeight="bold"
           color={textColor}
           fontFamily="var(--font-dm-sans)"
-          letterSpacing="-0.01em"
+          letterSpacing="-0.8px"
           lineHeight="1"
         >
           Interview Pilot

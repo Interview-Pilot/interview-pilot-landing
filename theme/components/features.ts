@@ -61,9 +61,9 @@ export const Feature = {
       mb: 2,
     },
     description: {
-      fontSize: 'lg',
+      fontSize: 'xl',
       fontWeight: 'normal',
-      color: mode('gray.500', 'gray.400')(props),
+      color: mode('gray.600', 'gray.300')(props),
     },
     icon: {
       mb: 4,
@@ -98,6 +98,7 @@ export const Feature = {
     inline: {
       container: {
         flexDirection: 'row',
+        alignItems: 'flex-start',
       },
       title: {
         display: 'inline-block',
@@ -108,7 +109,7 @@ export const Feature = {
         display: 'inline',
       },
       icon: {
-        mt: 4,
+        mt: 1,
       },
     },
     light: ({ colorMode }: any) => ({

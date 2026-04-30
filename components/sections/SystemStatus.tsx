@@ -2,13 +2,15 @@
 
 import { Box, Text } from '@chakra-ui/react'
 import { useState, useEffect } from 'react'
-import { pulseAnimation } from '#theme/styles/section-styles'
+import { pulseAnimation, statusDotPulseStyles } from '#theme/styles/section-styles'
 
 /**
  * SystemStatus component displays a floating status indicator
  * that shows/hides based on scroll direction
  */
 export function SystemStatus() {
+  return null
+
   const [visible, setVisible] = useState(true)
   const [scrollPos, setScrollPos] = useState(0)
 
@@ -28,7 +30,7 @@ export function SystemStatus() {
   return (
     <Box
       position="fixed"
-      top="80px"
+      top="calc(80px + var(--announcement-offset, 42px))"
       left="50%"
       transform={`translateX(-50%) ${visible ? 'translateY(0)' : 'translateY(-150%)'}`}
       opacity={visible ? 1 : 0}
@@ -47,14 +49,13 @@ export function SystemStatus() {
       gap="2"
     >
       <Box
-        w="8px"
-        h="8px"
-        borderRadius="full"
+        w="10px"
+        h="10px"
         bg="green.400"
-        animation="statusPulse 2s infinite"
         alignSelf="center"
         sx={{
-          '@keyframes statusPulse': pulseAnimation['@keyframes pulse'],
+          ...statusDotPulseStyles,
+          '@keyframes pulseRing': pulseAnimation['@keyframes pulseRing'],
         }}
       />
       <Text

@@ -17,7 +17,7 @@ export const sectionContentStyles: SystemStyleObject = {
 export const glassmorphicCardStyles: SystemStyleObject = {
   bg: 'rgba(255, 255, 255, 0.05)',
   backdropFilter: 'blur(10px)',
-  borderRadius: 'xl',
+  borderRadius: '24px',
   borderWidth: '1px',
   borderColor: 'rgba(255, 255, 255, 0.1)',
   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
@@ -33,19 +33,34 @@ export const glassmorphicCardStyles: SystemStyleObject = {
  * Pulse animation keyframes for status indicators
  */
 export const pulseAnimation = {
-  '@keyframes pulse': {
+  '@keyframes pulseRing': {
     '0%': {
-      transform: 'scale(0.95)',
-      boxShadow: '0 0 0 0 rgba(72, 187, 120, 0.7)',
-    },
-    '70%': {
+      opacity: 0.22,
       transform: 'scale(1)',
-      boxShadow: '0 0 0 10px rgba(72, 187, 120, 0)',
+    },
+    '50%': {
+      opacity: 0.28,
+      transform: 'scale(2.15)',
     },
     '100%': {
-      transform: 'scale(0.95)',
-      boxShadow: '0 0 0 0 rgba(72, 187, 120, 0)',
+      opacity: 0.22,
+      transform: 'scale(1)',
     },
+  },
+}
+
+export const statusDotPulseStyles: SystemStyleObject = {
+  position: 'relative',
+  borderRadius: 'full',
+  _before: {
+    content: '""',
+    position: 'absolute',
+    inset: 0,
+    borderRadius: 'full',
+    bg: 'green.400',
+    opacity: 0.22,
+    transformOrigin: 'center',
+    animation: 'pulseRing 1.9s ease-in-out infinite',
   },
 }
 
@@ -53,18 +68,30 @@ export const pulseAnimation = {
  * Hero pulse animation with vertical centering
  */
 export const heroPulseAnimation = {
-  '@keyframes pulse': {
+  position: 'relative',
+  borderRadius: 'full',
+  _before: {
+    content: '""',
+    position: 'absolute',
+    inset: 0,
+    borderRadius: 'full',
+    bg: 'green.400',
+    opacity: 0.22,
+    transformOrigin: 'center',
+    animation: 'heroPulseRing 1.9s ease-in-out infinite',
+  },
+  '@keyframes heroPulseRing': {
     '0%': {
-      transform: 'translateY(-50%) scale(0.95)',
-      boxShadow: '0 0 0 0 rgba(72, 187, 120, 0.7)',
+      opacity: 0.22,
+      transform: 'scale(1)',
     },
-    '70%': {
-      transform: 'translateY(-50%) scale(1.2)',
-      boxShadow: '0 0 0 18px rgba(72, 187, 120, 0)',
+    '50%': {
+      opacity: 0.24,
+      transform: 'scale(1.7)',
     },
     '100%': {
-      transform: 'translateY(-50%) scale(0.95)',
-      boxShadow: '0 0 0 0 rgba(72, 187, 120, 0)',
+      opacity: 0.22,
+      transform: 'scale(1)',
     },
   },
 }

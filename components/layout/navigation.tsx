@@ -1,9 +1,10 @@
-import { HStack, Flex, Box, Grid, GridItem } from '@chakra-ui/react'
+import { HStack, Flex, Box, Grid, GridItem, Icon, Text } from '@chakra-ui/react'
 import { useDisclosure, useUpdateEffect } from '@chakra-ui/react'
 import { useScrollSpy } from '#hooks/use-scrollspy'
 import { usePlatform } from '#hooks/use-platform'
 import { usePathname, useRouter } from 'next/navigation'
 import * as React from 'react'
+import { FiArrowRight } from 'react-icons/fi'
 import { MobileNavButton } from '#components/mobile-nav'
 import { MobileNavContent } from '#components/mobile-nav'
 import { NavLink } from '#components/nav-link'
@@ -103,12 +104,13 @@ const Navigation: React.FC<NavigationProps> = ({
               display={['none', null, 'flex']}
               href={downloadHref}
               borderRadius="full"
-              px={5}
-              fontSize="md"
+              px="1"
+              minW="148px"
               fontWeight="extrabold"
-              h="36px"
+              h="38px"
+              position="relative"
               alignItems="center"
-              justifyContent="center"
+              justifyContent="flex-start"
               isActive={
                 !!(
                   (downloadButton.id && activeId === downloadButton.id) ||
@@ -117,7 +119,35 @@ const Navigation: React.FC<NavigationProps> = ({
               }
               {...downloadButton}
             >
-              {downloadButton.label}
+              <Box
+                position="absolute"
+                left="4px"
+                top="50%"
+                transform="translateY(-50%)"
+                w="30px"
+                h="30px"
+                borderRadius="full"
+                bg="black"
+                color="white"
+                display="inline-flex"
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Icon as={FiArrowRight} boxSize="13px" />
+              </Box>
+              <Box
+                position="absolute"
+                left="36px"
+                right="8px"
+                top="50%"
+                transform="translateY(-50%)"
+                textAlign="center"
+                lineHeight="1"
+              >
+                <Text as="span" fontWeight="bold" fontSize="md">
+                  {downloadButton.label}
+                </Text>
+              </Box>
             </NavLink>
 
             <ThemeToggle />

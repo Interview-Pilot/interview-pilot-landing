@@ -1,122 +1,132 @@
 import NextLink from "next/link";
 import {
-  Box,
-  Container,
   Flex,
   HStack,
   Icon,
-  LinkBox,
-  LinkOverlay,
-  useColorModeValue,
   Button,
+  IconButton,
 } from "@chakra-ui/react";
 import {
   Banner,
   BannerActions,
-  BannerContent,
   BannerDescription,
   BannerTitle,
 } from "@saas-ui/react";
-import { FiArrowRight } from "react-icons/fi";
-import { FallInPlace } from "../motion/fall-in-place";
+import { FiArrowRight, FiX } from "react-icons/fi";
 
 export interface AnnouncementBannerProps {
   title: string;
   description: string;
   href: string;
   action?: string;
+  onDismiss?: () => void;
 }
 
 export const AnnouncementBanner: React.FC<AnnouncementBannerProps> = (
   props
 ) => {
-  const { title, description, href, action } = props;
+  const { title, description, href, action, onDismiss } = props;
   if (!title) {
     return null;
   }
 
-  return (
-    <Flex position="absolute" zIndex="10" top="100px" width="100%">
-      <Container maxW="container.2xl" px="8">
-        <FallInPlace delay={1.4} translateY="-100px">
-          <NextLink href={href} legacyBehavior>
-            <Banner
-              display="flex"
-              bg="white"
-              fontSize="sm"
-              justifyContent="center"
-              colorScheme="purple"
-              backgroundClip="padding-box"
-              borderRadius="full"
-              maxW="400px"
-              margin="0 auto"
-              borderColor="transparent"
-              position="relative"
-              py="4px"
-              px="3"
-              overflow="visible"
-              cursor="pointer"
-              transition="all .2s ease-out"
-              _dark={{ bg: "gray.900", borderColor: "transparent" }}
-              _before={{
-                content: `""`,
-                position: "absolute",
-                zIndex: -1,
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                borderRadius: "inherit",
-                margin: "-2px",
-                bgGradient: "linear(to-r, purple.500, cyan.500)",
-                transition: "background .2s ease-out",
-                _dark: {
-                  bgGradient: "linear(to-r, purple.500, cyan.500)",
-                },
-              }}
-              _hover={{
-                "& .chakra-icon": {
-                  transform: "translate(0)",
-                },
-                boxShadow: "md",
-              }}
-            >
-              <HStack zIndex="2">
-                <BannerTitle fontWeight="semibold" noOfLines={1}>
-                  {title}
-                </BannerTitle>
-                <BannerDescription
-                  display={{ base: "none", md: "block" }}
-                  dangerouslySetInnerHTML={{ __html: description }}
-                />
+  const handleDismiss = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    onDismiss?.();
+  };
 
-                {action && (
-                  <BannerActions>
-                    <Button
-                      size="xs"
-                      variant="link"
-                      color="muted"
-                      _hover={{
-                        textDecoration: "none",
-                      }}
-                      rightIcon={
-                        <Icon
-                          as={FiArrowRight}
-                          transform="translate(-5px)"
-                          transitionProperty="common"
-                          transitionDuration="normal"
-                        />
-                      }
-                    >
-                      Read more
-                    </Button>
-                  </BannerActions>
-                )}
-              </HStack>
-            </Banner>
-          </NextLink>
-        </FallInPlace>
-      </Container>
+  return (
+    <Flex position="fixed" top="0" left="0" zIndex="20" width="100%">
+      <Banner
+        display="flex"
+        width="100vw"
+        justifyContent="center"
+        alignItems="center"
+        bg="primary.400"
+        color="black"
+        borderRadius="0"
+        borderBottom="1px solid"
+        borderColor="blackAlpha.200"
+        position="relative"
+        h="42px"
+        minH="42px"
+        py="0"
+        px="4"
+        overflow="hidden"
+        transition="all .2s ease-out"
+        _dark={{ bg: "primary.400", color: "black" }}
+      >
+        <NextLink href={href} legacyBehavior>
+          <Flex
+            as="a"
+            flex="1"
+            minW="0"
+            justifyContent="center"
+            alignItems="center"
+            cursor="pointer"
+            _hover={{
+              filter: "brightness(1.03)",
+            }}
+          >
+            <HStack zIndex="2" spacing="2" justify="center" width="100%" pr="10">
+              <BannerTitle fontWeight="bold" noOfLines={1}>
+                {title}
+              </BannerTitle>
+              <BannerDescription
+                display={{ base: "none", md: "block" }}
+                fontWeight="medium"
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
+
+              {action && (
+                <BannerActions>
+                  <Button
+                    size="xs"
+                    variant="link"
+                    color="black"
+                    _hover={{
+                      textDecoration: "none",
+                    }}
+                    rightIcon={
+                      <Icon
+                        as={FiArrowRight}
+                        transform="translate(-5px)"
+                        transitionProperty="common"
+                        transitionDuration="normal"
+                      />
+                    }
+                  >
+                    Read more
+                  </Button>
+                </BannerActions>
+              )}
+            </HStack>
+          </Flex>
+        </NextLink>
+        {onDismiss ? (
+          <IconButton
+            aria-label="Dismiss announcement banner"
+            icon={<FiX color="black" />}
+            onClick={handleDismiss}
+            type="button"
+            position="absolute"
+            right="2"
+            top="50%"
+            transform="translateY(-50%)"
+            zIndex="3"
+            pointerEvents="auto"
+            size="sm"
+            minW="32px"
+            h="32px"
+            variant="ghost"
+            color="black"
+            borderRadius="full"
+            _hover={{ bg: "blackAlpha.100", color: "black" }}
+            _active={{ bg: "blackAlpha.200", color: "black" }}
+          />
+        ) : null}
+      </Banner>
     </Flex>
   );
 };

@@ -5,8 +5,6 @@ import { Br } from '@saas-ui/react'
 import {
   FiBox,
   FiBriefcase,
-  FiFlag,
-  FiMic,
   FiSmile,
 } from 'react-icons/fi'
 
@@ -15,30 +13,19 @@ import { sectionContentStyles } from '#theme/styles/section-styles'
 
 const STEP_FEATURES = [
   {
-    title: <Text fontSize={['xl', '2xl', '3xl']} fontWeight="bold" mb={3}>Step 1</Text>,
+    title: <Text fontSize={['4xl', '5xl', '6xl']} fontWeight="medium" mb={3}>Step 1</Text>,
     icon: FiSmile,
     description: (
       <>
         <Br />
-        Upload your resume and personal details.
+        Upload your personal details and job info.
       </>
     ),
     variant: 'inline' as const,
   },
   {
-    title: <Text fontSize={['xl', '2xl', '3xl']} fontWeight="bold" mb={3}>Step 2</Text>,
+    title: <Text fontSize={['4xl', '5xl', '6xl']} fontWeight="medium" mb={3}>Step 2</Text>,
     icon: FiBriefcase,
-    description: (
-      <>
-        <Br />
-        Enter your job description and anything else important.
-      </>
-    ),
-    variant: 'inline' as const,
-  },
-  {
-    title: <Text fontSize={['xl', '2xl', '3xl']} fontWeight="bold" mb={3}>Step 3</Text>,
-    icon: FiBox,
     description: (
       <>
         <Br />
@@ -48,25 +35,12 @@ const STEP_FEATURES = [
     variant: 'inline' as const,
   },
   {
-    title: <Text fontSize={['xl', '2xl', '3xl']} fontWeight="bold" mb={3}>Interview</Text>,
-    icon: FiMic,
+    title: <Text fontSize={['4xl', '5xl', '6xl']} fontWeight="medium" mb={3}>Interview</Text>,
+    icon: FiBox,
     description: (
       <>
         <Br />
         Record a question. Generate an answer.
-      </>
-    ),
-    variant: 'inline' as const,
-    iconColor: 'cyan.400',
-    iconBg: 'rgba(207, 250, 254, 0.2)',
-  },
-  {
-    title: <Text fontSize={['xl', '2xl', '3xl']} fontWeight="bold" mb={3}>Review</Text>,
-    icon: FiFlag,
-    description: (
-      <>
-        <Br />
-        Save and review all your past interviews to learn.
       </>
     ),
     variant: 'inline' as const,
@@ -100,7 +74,7 @@ export function FeaturesSection() {
         description="Fully Undetectable. Completely fuss-free and easy to use."
         align="center"
         columns={[1, 2, 3]}
-        iconSize={4}
+        iconSize={5}
         spacing={14}
         sx={{
           '.chakra-simple-grid': {

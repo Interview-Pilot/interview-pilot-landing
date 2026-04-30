@@ -34,7 +34,7 @@ export const Faq: React.FC<FaqProps> = (props) => {
         <Box
           bg="rgba(255, 255, 255, 0.05)"
           backdropFilter="blur(10px)"
-          borderRadius="xl"
+          borderRadius="24px"
           overflow="hidden"
           borderWidth="1px"
           borderColor="rgba(255, 255, 255, 0.1)"

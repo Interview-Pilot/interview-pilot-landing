@@ -38,7 +38,21 @@ const pricing: PricingData = {
       id: 'free',
       title: 'Free',
       description: 'Try full features for FREE',
-      price: 'Free',
+      price: (
+        <VStack spacing="1" align="flex-start">
+          <Text
+            fontSize="xl"
+            fontWeight="normal"
+            visibility="hidden"
+            userSelect="none"
+          >
+            $12.99 / week
+          </Text>
+          <Text fontSize="5xl" fontWeight="bold">
+            Free
+          </Text>
+        </VStack>
+      ),
       features: [
         { title: '3 Sessions Weekly' },
         { title: '10 Copilot Use Weekly' },
@@ -46,28 +60,29 @@ const pricing: PricingData = {
       ],
       action: {
         href: APP_STORE_LINKS.ios,
+        label: 'Get Started',
       },
     },
     {
-      id: 'monthly',
-      title: 'Monthly',
+      id: 'weekly',
+      title: 'Weekly',
       description: 'Popular',
       price: (
         <VStack spacing="1" align="flex-start">
           <Text
-            fontSize="lg"
+            fontSize="xl"
             color="gray.500"
             textDecoration="line-through"
             fontWeight="normal"
           >
-            $29 / month
+            $12.99 / week
           </Text>
           <HStack spacing="2" align="baseline">
-            <Text fontSize="2xl" fontWeight="bold" color="green.500">
-              $14.99
+            <Text fontSize="5xl" fontWeight="bold" color="green.500">
+              $3.99
             </Text>
-            <Text fontSize="sm" color="muted">
-              / month
+            <Text fontSize="md" color="muted" fontWeight="normal">
+              / week for first week
             </Text>
           </HStack>
         </VStack>
@@ -79,7 +94,8 @@ const pricing: PricingData = {
         { title: 'Most Powerful Copilot Models' },
         { title: 'Full Profile & Documents' },
         { title: 'Full Copilot Customization' },
-        { title: 'Unlimited Interview History' },
+        { title: 'Full Question Bank (10,000 Qns)' },
+        { title: 'Practice Mock Interviews with AI' },
         { title: 'Priority Customer Support' },
         null,
         {
@@ -89,28 +105,29 @@ const pricing: PricingData = {
       ],
       action: {
         href: APP_STORE_LINKS.ios,
+        label: 'Continue',
       },
     },
     {
-      id: 'quarterly',
-      title: 'Quarterly',
+      id: 'monthly',
+      title: 'Monthly',
       description: 'Best Value',
       price: (
         <VStack spacing="1" align="flex-start">
           <Text
-            fontSize="lg"
+            fontSize="xl"
             color="gray.500"
             textDecoration="line-through"
             fontWeight="normal"
           >
-            $80 / 3 months
+            $49.99 / month
           </Text>
           <HStack spacing="2" align="baseline">
-            <Text fontSize="2xl" fontWeight="bold" color="green.500">
-              $39
+            <Text fontSize="5xl" fontWeight="bold" color="green.500">
+              $29.99
             </Text>
-            <Text fontSize="sm" color="muted">
-              / 3 months
+            <Text fontSize="md" color="muted" fontWeight="normal">
+              / month
             </Text>
           </HStack>
         </VStack>
@@ -121,7 +138,8 @@ const pricing: PricingData = {
         { title: 'Most Powerful Copilot Models' },
         { title: 'Full Profile & Documents' },
         { title: 'Full Copilot Customization' },
-        { title: 'Unlimited Interview History' },
+        { title: 'Full Question Bank (10,000 Qns)' },
+        { title: 'Practice Mock Interviews with AI' },
         { title: 'Priority Customer Support' },
         null,
         {
@@ -131,6 +149,7 @@ const pricing: PricingData = {
       ],
       action: {
         href: APP_STORE_LINKS.ios,
+        label: 'Continue',
       },
     },
   ],

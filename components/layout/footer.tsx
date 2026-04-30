@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react'
 import { Link, LinkProps } from '@saas-ui/react'
 import siteConfig from '#data/config'
+import { pulseAnimation, statusDotPulseStyles } from '#theme/styles/section-styles'
 
 export interface FooterProps extends BoxProps {
   columns?: number
@@ -39,30 +40,22 @@ export const Footer: React.FC<FooterProps> = (props) => {
               <Stack direction={{ base: "column", md: "row" }} gap="4" alignItems={{ base: "flex-start", md: "center" }}>
                 <Box
                   border="1px solid"
-                  borderColor="gray.600"
-                  borderRadius="md"
-                  px="3"
+                  borderColor="whiteAlpha.500"
+                  borderRadius="full"
+                  px="4"
                   display="inline-flex"
                   alignItems="center"
-                  gap="2"
+                  gap="3"
                   width="fit-content"
                   height="40px"
                 >
                   <Box
-                    w="8px"
-                    h="8px"
-                    borderRadius="full"
+                    w="10px"
+                    h="10px"
                     bg="green.400"
-                    animation="pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
                     sx={{
-                      '@keyframes pulse': {
-                        '0%, 100%': {
-                          opacity: 1,
-                        },
-                        '50%': {
-                          opacity: 0.5,
-                        },
-                      },
+                      ...statusDotPulseStyles,
+                      '@keyframes pulseRing': pulseAnimation['@keyframes pulseRing'],
                     }}
                   />
                   <Text fontSize="sm" color="white" fontWeight="medium">

@@ -7,12 +7,15 @@ const SectionTitle = {
       spacing: [2, null, 3],
       mb: '10',
       textAlign: ['left', null, 'center'],
+      position: 'relative',
+      zIndex: 1,
     },
     title: {
       width: '100%',
     },
     description: {
       fontWeight: 'normal',
+      width: '100%',
     },
   },
   variants: {

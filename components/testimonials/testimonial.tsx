@@ -3,12 +3,13 @@ import {
   CardBody,
   CardHeader,
   CardProps,
+  HStack,
   Heading,
   Stack,
   Text,
 } from "@chakra-ui/react";
 import { Link } from "@saas-ui/react";
-import { FaTwitter } from "react-icons/fa";
+import { FaStar, FaTwitter } from "react-icons/fa";
 
 export interface TestimonialProps extends CardProps {
   name: string;
@@ -33,6 +34,11 @@ export const Testimonial = ({
           <Text color="muted" size="xs">
             {description}
           </Text>
+          <HStack spacing="1" color="yellow.400">
+            {Array.from({ length: 5 }).map((_, index) => (
+              <FaStar key={index} />
+            ))}
+          </HStack>
         </Stack>
       </CardHeader>
       <CardBody>

@@ -92,8 +92,8 @@ export function HighlightsSection() {
 
         <HighlightsItem title="Voice Recognition">
           <Text color="muted" fontSize="lg" position="relative" zIndex={1}>
-            Ranked 1st worldwide, Whisper is the world&apos;s most accurate AI
-            speech recognition (ASR).
+            Ranked 1st worldwide, Interview Pilot uses the world&apos;s most
+            accurate AI speech recognition system (ASR).
             <br />
             <br />
             Interview Pilot is capable of detecting almost all languages and
