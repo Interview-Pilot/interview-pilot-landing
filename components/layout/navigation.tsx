@@ -70,6 +70,7 @@ const Navigation: React.FC<NavigationProps> = ({
                   mx={2}
                   px={3}
                   h="36px"
+                  fontSize="md"
                   borderRadius="md"
                   transition="all 0.2s ease"
                   alignItems="center"

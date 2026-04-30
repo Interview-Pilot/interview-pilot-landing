@@ -6,11 +6,13 @@ import {
   IconButton,
   IconButtonProps,
   LinkProps,
+  Portal,
   Stack,
   useBreakpointValue,
   useColorModeValue,
   useUpdateEffect,
 } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import { Link } from '@saas-ui/react'
 import useRouteChanged from 'hooks/use-route-changed'
 import { usePathname } from 'next/navigation'
@@ -22,6 +24,8 @@ import * as React from 'react'
 import { Logo } from '#components/layout/logo'
 import siteConfig from '#data/config'
 
+const MotionFlex = motion(Flex)
+
 interface NavLinkProps extends LinkProps {
   label: string
   href?: string
@@ -30,7 +34,10 @@ interface NavLinkProps extends LinkProps {
 
 function NavLink({ href, children, isActive, ...rest }: NavLinkProps) {
   const pathname = usePathname()
-  const bgActiveHoverColor = useColorModeValue('gray.100', 'whiteAlpha.100')
+  const bgActiveHoverColor = useColorModeValue('blackAlpha.50', 'whiteAlpha.100')
+  const activeBg = useColorModeValue('gray.100', 'whiteAlpha.100')
+  const activeColor = useColorModeValue('gray.900', 'white')
+  const defaultColor = useColorModeValue('gray.700', 'whiteAlpha.800')
 
   const [, group] = href?.split('/') || []
   isActive = isActive ?? pathname?.includes(group)
@@ -40,16 +47,17 @@ function NavLink({ href, children, isActive, ...rest }: NavLinkProps) {
       href={href}
       display="inline-flex"
       flex="1"
+      w="100%"
       minH="40px"
-      px="8"
+      px="6"
       py="3"
       transition="0.2s all"
       fontWeight={isActive ? 'semibold' : 'medium'}
-      borderColor={isActive ? 'yellow.400' : undefined}
-      borderBottomWidth="1px"
-      color={isActive ? 'white' : undefined}
+      color={isActive ? activeColor : defaultColor}
+      bg={isActive ? activeBg : undefined}
       _hover={{
-        bg: isActive ? 'yellow.500' : bgActiveHoverColor,
+        bg: bgActiveHoverColor,
+        textDecoration: 'none',
       }}
       {...rest}
     >
@@ -67,7 +75,8 @@ export function MobileNavContent(props: MobileNavContentProps) {
   const { isOpen, onClose = () => {} } = props
   const closeBtnRef = React.useRef<HTMLButtonElement>(null)
   const pathname = usePathname()
-  const bgColor = useColorModeValue('whiteAlpha.900', 'blackAlpha.900')
+  const backdropColor = useColorModeValue('rgba(15, 23, 42, 0.28)', 'rgba(0, 0, 0, 0.45)')
+  const panelColor = useColorModeValue('white', '#111215')
 
   useRouteChanged(onClose)
   /**
@@ -93,44 +102,66 @@ export function MobileNavContent(props: MobileNavContentProps) {
   return (
     <>
       {isOpen && (
-        <RemoveScroll forwardProps>
-          <Flex
-            direction="column"
-            w="100%"
-            bg={bgColor}
-            h="100vh"
-            overflow="auto"
-            pos="absolute"
-            inset="0"
-            zIndex="modal"
-            pb="8"
-            backdropFilter="blur(5px)"
-          >
-            <Box>
-              <Flex justify="space-between" px="8" pt="4" pb="4">
-                <Logo />
-                <HStack spacing="5">
-                  <CloseButton ref={closeBtnRef} onClick={onClose} />
-                </HStack>
-              </Flex>
-              <Stack alignItems="stretch" spacing="0">
-                {siteConfig.header.links.map(
-                  ({ href, id, label, ...props }, i) => {
-                    return (
-                      <NavLink
-                        href={href || `/#${id}`}
-                        key={i}
-                        {...(props as any)}
-                      >
-                        {label}
-                      </NavLink>
-                    )
-                  },
-                )}
-              </Stack>
+        <Portal>
+          <RemoveScroll forwardProps>
+            <Box
+              pos="fixed"
+              inset="0"
+              zIndex="modal"
+              bg={backdropColor}
+              backdropFilter="blur(8px)"
+              onClick={onClose}
+            >
+              <MotionFlex
+                direction="column"
+                w="min(288px, 78vw)"
+                maxW="100%"
+                bg={panelColor}
+                color={useColorModeValue('gray.900', 'white')}
+                h="100vh"
+                overflow="auto"
+                pos="absolute"
+                top="0"
+                right="0"
+                bottom="0"
+                boxShadow="-24px 0 60px rgba(0, 0, 0, 0.25)"
+                borderLeftWidth="1px"
+                borderColor={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+                pb="8"
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Box>
+                  <Flex justify="space-between" align="center" px="5" pt="5" pb="4">
+                    <Logo />
+                    <HStack spacing="3">
+                      <CloseButton ref={closeBtnRef} onClick={onClose} />
+                    </HStack>
+                  </Flex>
+                  <Stack alignItems="stretch" spacing="1" px="3">
+                    {siteConfig.header.links.map(
+                      ({ href, id, label, ...props }, i) => {
+                        return (
+                          <NavLink
+                            href={href || `/#${id}`}
+                            key={i}
+                            borderRadius="xl"
+                            borderBottomWidth="0"
+                            {...(props as any)}
+                          >
+                            {label}
+                          </NavLink>
+                        )
+                      },
+                    )}
+                  </Stack>
+                </Box>
+              </MotionFlex>
             </Box>
-          </Flex>
-        </RemoveScroll>
+          </RemoveScroll>
+        </Portal>
       )}
     </>
   )
