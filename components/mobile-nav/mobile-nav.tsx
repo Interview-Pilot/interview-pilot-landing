@@ -77,6 +77,8 @@ export function MobileNavContent(props: MobileNavContentProps) {
   const pathname = usePathname()
   const backdropColor = useColorModeValue('rgba(15, 23, 42, 0.28)', 'rgba(0, 0, 0, 0.45)')
   const panelColor = useColorModeValue('white', '#111215')
+  const panelTextColor = useColorModeValue('gray.900', 'white')
+  const panelBorderColor = useColorModeValue('blackAlpha.100', 'whiteAlpha.100')
 
   useRouteChanged(onClose)
   /**
@@ -117,7 +119,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
                 w="min(288px, 78vw)"
                 maxW="100%"
                 bg={panelColor}
-                color={useColorModeValue('gray.900', 'white')}
+                color={panelTextColor}
                 h="100vh"
                 overflow="auto"
                 pos="absolute"
@@ -126,7 +128,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
                 bottom="0"
                 boxShadow="-24px 0 60px rgba(0, 0, 0, 0.25)"
                 borderLeftWidth="1px"
-                borderColor={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+                borderColor={panelBorderColor}
                 pb="8"
                 initial={{ x: '100%' }}
                 animate={{ x: 0 }}
