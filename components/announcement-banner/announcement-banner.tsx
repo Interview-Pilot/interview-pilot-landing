@@ -5,6 +5,7 @@ import {
   Icon,
   Button,
   IconButton,
+  Box,
 } from "@chakra-ui/react";
 import {
   Banner,
@@ -70,11 +71,13 @@ export const AnnouncementBanner: React.FC<AnnouncementBannerProps> = (
             }}
           >
             <HStack zIndex="2" spacing="2" justify="center" width="100%" pr="10">
-              <BannerTitle fontWeight="bold" noOfLines={1}>
-                {title}
-              </BannerTitle>
+              <Box display={{ base: "none", md: "block" }}>
+                <BannerTitle fontWeight="bold" noOfLines={1}>
+                  {title}
+                </BannerTitle>
+              </Box>
               <BannerDescription
-                display={{ base: "none", md: "block" }}
+                display="block"
                 fontWeight="medium"
                 dangerouslySetInnerHTML={{ __html: description }}
               />

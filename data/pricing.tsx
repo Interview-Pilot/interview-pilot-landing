@@ -20,6 +20,7 @@ interface PricingPlan {
   features: (PricingFeature | null)[]
   action: {
     href: string
+    label?: string
   }
   isRecommended?: boolean
 }

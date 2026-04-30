@@ -43,7 +43,7 @@ export default function ResetPasswordPage() {
 
 function ResetPasswordContent() {
   const searchParams = useSearchParams()
-  const token = searchParams.get('token')
+  const token = searchParams?.get('token') ?? null
 
   const [state, setState] = useState<ResetState>(token ? 'form' : 'error')
   const [password, setPassword] = useState('')

@@ -69,7 +69,12 @@ export function HeroSection() {
               textAlign="center"
             >
               <Icon as={FiCheckCircle} boxSize="13px" color="green.300" />
-              <Text as="span">Join over 120,000+ users to secure your career</Text>
+              <Text as="span" display={{ base: 'none', md: 'inline' }}>
+                Join over 120,000+ users to secure your career
+              </Text>
+              <Text as="span" display={{ base: 'inline', md: 'none' }}>
+                Join over 120,000+ users
+              </Text>
               <Icon as={FiArrowRight} boxSize="13px" color="whiteAlpha.700" />
             </Box>
           </Box>

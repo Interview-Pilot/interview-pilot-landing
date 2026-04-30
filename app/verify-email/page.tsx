@@ -33,7 +33,7 @@ export default function VerifyEmailPage() {
 
 function VerifyEmailContent() {
   const searchParams = useSearchParams()
-  const token = searchParams.get('token')
+  const token = searchParams?.get('token') ?? null
 
   const [state, setState] = useState<VerificationState>('loading')
   const [errorMessage, setErrorMessage] = useState('')

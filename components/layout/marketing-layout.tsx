@@ -22,8 +22,9 @@ export const MarketingLayout: React.FC<LayoutProps> = (props) => {
   const { children, announcementProps, headerProps, footerProps } = props
   const [bannerDismissed, setBannerDismissed] = useState(false)
 
-  const showAnnouncement = Boolean(announcementProps && !bannerDismissed)
-  const announcementOffset = showAnnouncement ? '42px' : '0px'
+  const visibleAnnouncementProps =
+    announcementProps && !bannerDismissed ? announcementProps : null
+  const announcementOffset = visibleAnnouncementProps ? '42px' : '0px'
 
   const handleDismissAnnouncement = () => {
     setBannerDismissed(true)
@@ -38,13 +39,13 @@ export const MarketingLayout: React.FC<LayoutProps> = (props) => {
       }
     >
       <SkipNavLink>Skip to content</SkipNavLink>
-      {showAnnouncement ? (
+      {visibleAnnouncementProps ? (
         <AnnouncementBanner
-          {...announcementProps}
+          {...visibleAnnouncementProps}
           onDismiss={handleDismissAnnouncement}
         />
       ) : null}
-      <Header top={showAnnouncement ? '42px' : undefined} {...headerProps} />
+      <Header top={visibleAnnouncementProps ? '42px' : undefined} {...headerProps} />
       <Box as="main">
         <SkipNavContent />
         {children}
