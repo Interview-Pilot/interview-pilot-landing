@@ -3,14 +3,15 @@ import { Box } from '@chakra-ui/react'
 
 const Background: React.FC = () => {
   return (
-    <Box position="fixed" inset={0} zIndex={0} bg="#060608" pointerEvents="none">
+    <Box position="fixed" inset={0} zIndex={0} bg="#0E0E10" pointerEvents="none">
       <Box
         position="absolute"
         inset={0}
         backgroundImage={`
-          radial-gradient(circle at top, rgba(246, 212, 76, 0.05), transparent 34%),
-          radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.025), transparent 26%),
-          linear-gradient(180deg, #0c0d10 0%, #060608 100%)
+          radial-gradient(circle at 52% 0%, rgba(196, 176, 136, 0.24), transparent 34%),
+          radial-gradient(circle at 20% 78%, rgba(245, 238, 221, 0.10), transparent 30%),
+          radial-gradient(circle at 82% 72%, rgba(138, 117, 87, 0.12), transparent 28%),
+          linear-gradient(180deg, #131315 0%, #0E0E10 100%)
         `}
       />
     </Box>
