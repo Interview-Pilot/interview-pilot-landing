@@ -21,6 +21,8 @@ import { RemoveScroll } from 'react-remove-scroll'
 
 import * as React from 'react'
 
+import { usePlatform } from '#hooks/use-platform'
+import { getPrimaryDownloadHref } from '#lib/download-routing'
 import { Logo } from '#components/layout/logo'
 import siteConfig from '#data/config'
 
@@ -74,11 +76,12 @@ interface MobileNavContentProps {
 export function MobileNavContent(props: MobileNavContentProps) {
   const { isOpen, onClose = () => {} } = props
   const closeBtnRef = React.useRef<HTMLButtonElement>(null)
-  const pathname = usePathname()
   const backdropColor = useColorModeValue('rgba(15, 23, 42, 0.28)', 'rgba(0, 0, 0, 0.45)')
   const panelColor = useColorModeValue('white', '#111215')
   const panelTextColor = useColorModeValue('gray.900', 'white')
   const panelBorderColor = useColorModeValue('blackAlpha.100', 'whiteAlpha.100')
+  const platform = usePlatform()
+  const primaryDownloadHref = getPrimaryDownloadHref(platform)
 
   useRouteChanged(onClose)
   /**
@@ -143,11 +146,15 @@ export function MobileNavContent(props: MobileNavContentProps) {
                     </HStack>
                   </Flex>
                   <Stack alignItems="stretch" spacing="1" px="3">
-                  {siteConfig.header.links.map(
-                    ({ href, id, label, ...props }, i) => {
-                      return (
-                        <NavLink
-                          href={href || `/#${id}`}
+                    {siteConfig.header.links.map(
+                      ({ href, id, label, isDownload, ...props }: any, i) => {
+                        return (
+                          <NavLink
+                            href={
+                              isDownload
+                              ? primaryDownloadHref
+                              : href || `/#${id}`
+                            }
                           key={i}
                           borderRadius="xl"
                           borderBottomWidth="0"

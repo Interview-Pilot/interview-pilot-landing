@@ -20,6 +20,7 @@ import {
 } from 'react-icons/fi'
 
 import { ButtonLink } from '#components/button-link/button-link'
+import { getPrimaryDownloadHref } from '#lib/download-routing'
 import { Features } from '#components/features'
 import { Hero } from '#components/hero'
 import { FallInPlace } from '#components/motion/fall-in-place'
@@ -33,14 +34,7 @@ import { heroPulseAnimation, sectionContentStyles } from '#theme/styles/section-
  */
 export function HeroSection() {
   const platform = usePlatform()
-
-  const handleDownloadClick = () => {
-    window.location.href = INTERNAL_ROUTES.downloadHero
-  }
-
-  const downloadHref = platform === 'desktop'
-    ? INTERNAL_ROUTES.downloadOptions
-    : INTERNAL_ROUTES.downloadHero
+  const downloadHref = getPrimaryDownloadHref(platform)
 
   return (
     <Box overflow="hidden">
@@ -183,7 +177,6 @@ export function HeroSection() {
                     colorScheme="primary"
                     color="black"
                     href={downloadHref}
-                    onClick={platform === 'desktop' ? undefined : handleDownloadClick}
                     borderRadius="full"
                     px="1"
                     minW="176px"
@@ -248,7 +241,7 @@ export function HeroSection() {
                   </ButtonLink>
                 </Stack>
                 <Link
-                  href={INTERNAL_ROUTES.downloadOptions}
+                  href={INTERNAL_ROUTES.downloads}
                   fontSize="sm"
                   color="muted"
                   textDecoration="underline"

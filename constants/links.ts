@@ -8,6 +8,22 @@ export const APP_STORE_LINKS = {
   android: 'https://play.google.com/store/apps/details?id=com.liberace.interviewpilot',
 } as const
 
+export const DESKTOP_DOWNLOAD_LINKS = {
+  macos: 'https://downloads.interviewpilot.app/macos/latest.dmg',
+  macosMetadata: 'https://downloads.interviewpilot.app/macos/latest.json',
+} as const
+
+export const PLATFORM_LINKS = {
+  site:
+    process.env.NEXT_PUBLIC_PLATFORM_SITE_URL ||
+    'https://platform.interviewpilot.app',
+  desktopDownload:
+    `${
+      process.env.NEXT_PUBLIC_PLATFORM_SITE_URL ||
+      'https://platform.interviewpilot.app'
+    }/desktop-download?download=1&source=landing`,
+} as const
+
 export const SOCIAL_LINKS = {
   linkedin: 'https://linkedin.com/company/interview-pilot',
   twitter: 'https://x.com/interview_pilot',
@@ -24,12 +40,13 @@ export const COMPANY_LINKS = {
 export const INTERNAL_ROUTES = {
   home: '/',
   blog: '/blog',
+  downloads: '/downloads',
   terms: '/terms',
   privacy: '/privacy',
   communityGuidelines: '/community-guidelines',
   downloadHero: '/download/hero',
   downloadMobile: '/download/mobile',
-  downloadOptions: '/#download-options',
+  downloadOptions: '/downloads',
 } as const
 
 export const ASSETS = {

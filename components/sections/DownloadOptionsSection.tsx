@@ -1,11 +1,11 @@
 'use client'
 
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
 import { Link } from '@saas-ui/react'
 import Image from 'next/image'
 
 import { Section, SectionTitle } from '#components/section'
-import { APP_STORE_LINKS, ASSETS } from '#constants'
+import { APP_STORE_LINKS, ASSETS, PLATFORM_LINKS } from '#constants'
 import { sectionContentStyles } from '#theme/styles/section-styles'
 
 /**
@@ -61,6 +61,27 @@ export function DownloadOptionsSection() {
             />
           </Link>
         </Flex>
+
+        <Text
+          mt="8"
+          textAlign="center"
+          fontSize="sm"
+          color="whiteAlpha.700"
+          position="relative"
+          zIndex={1}
+        >
+          For desktop (macOS), download{' '}
+          <Link
+            href={PLATFORM_LINKS.desktopDownload}
+            isExternal
+            color="white"
+            textDecoration="underline"
+            _hover={{ color: 'whiteAlpha.900' }}
+          >
+            here
+          </Link>
+          .
+        </Text>
       </Section>
     </Box>
   )

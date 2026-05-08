@@ -48,7 +48,8 @@ const siteConfig = {
       },
       {
         label: 'Download',
-        href: INTERNAL_ROUTES.downloadHero,
+        href: INTERNAL_ROUTES.downloads,
+        isDownload: true,
         variant: 'primary',
       },
     ],

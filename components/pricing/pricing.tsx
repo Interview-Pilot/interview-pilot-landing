@@ -24,6 +24,8 @@ import {
   ButtonLink,
   ButtonLinkProps,
 } from '#components/button-link/button-link'
+import { usePlatform } from '#hooks/use-platform'
+import { getPrimaryDownloadHref } from '#lib/download-routing'
 import { Section, SectionProps, SectionTitle } from '#components/section'
 
 export interface PricingPlan {
@@ -44,35 +46,8 @@ export interface PricingProps extends SectionProps {
 
 export const Pricing: React.FC<PricingProps> = (props) => {
   const { children, plans, title, description, align, ...rest } = props
-
-  // Platform detection
-  const [platform, setPlatform] = React.useState<'ios' | 'android' | 'desktop'>('desktop')
-
-  React.useEffect(() => {
-    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera
-    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream
-    const isAndroid = /android/i.test(userAgent)
-
-    if (isIOS) {
-      setPlatform('ios')
-    } else if (isAndroid) {
-      setPlatform('android')
-    } else {
-      setPlatform('desktop')
-    }
-  }, [])
-
-  // Get platform-specific href
-  const getPlatformHref = (originalHref?: string | object) => {
-    if (platform === 'android') {
-      return 'https://play.google.com/store/apps/details?id=com.liberace.interviewpilot'
-    }
-    // If originalHref is a string, use it; otherwise use default
-    if (typeof originalHref === 'string') {
-      return originalHref
-    }
-    return 'https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009'
-  }
+  const platform = usePlatform()
+  const primaryDownloadHref = getPrimaryDownloadHref(platform)
 
   return (
     <Section id="pricing" {...rest}>
@@ -124,7 +99,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
               textAlign="left"
               fontWeight="bold"
               {...plan.action}
-              href={getPlatformHref(plan.action.href)}
+              href={primaryDownloadHref}
             >
               <HStack w="full" spacing="2.5" justify="flex-start">
                 <Box

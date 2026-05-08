@@ -8,136 +8,344 @@ export default function TermsPage() {
       <Heading as="h1" size="xl" mb={6} pt={8}>
         Terms of Service
       </Heading>
-      <VStack spacing={6} align="stretch">
 
+      <VStack spacing={6} align="stretch">
         <Text fontWeight="bold">
-          Welcome to Interview Pilot! Before you access our services, please read these Terms of Service.
+          Welcome to Interview Pilot. Please read these Terms of Service carefully
+          before using our Services.
         </Text>
 
         <Text>
-          Interview Pilot is a brand owned by Liberace Pte. Ltd. (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;). Liberace operates the Interview Pilot mobile application (iOS and Android) and provides related products and services (collectively, the &quot;Services&quot;). These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement between you (&quot;you,&quot; &quot;your&quot;) and Liberace Pte. Ltd., governing your access to and use of the Services. You agree that by downloading, installing, or accessing the Services, you have read, understood, and agreed to be bound by these Terms. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS, THEN YOU ARE PROHIBITED FROM USING THE SERVICES AND MUST IMMEDIATELY DISCONTINUE USE.
+          Interview Pilot is a brand owned and operated by Liberace Pte. Ltd.
+          (&quot;Liberace,&quot; &quot;we,&quot; &quot;us,&quot; or
+          &quot;our&quot;). These Terms of Service (&quot;Terms&quot;)
+          govern your access to and use of Interview Pilot, including our
+          websites, mobile applications, desktop applications, platform website,
+          and related products, features, and services (collectively, the
+          &quot;Services&quot;).
         </Text>
-        
+
+        <Text>
+          By downloading, installing, creating an account for, accessing, or
+          using the Services, you agree to be bound by these Terms. If you do
+          not agree to these Terms, you must not use the Services.
+        </Text>
+
         <Text fontWeight="bold">
-          ARBITRATION NOTICE AND CLASS ACTION WAIVER: EXCEPT FOR CERTAIN TYPES OF DISPUTES DESCRIBED IN THE ARBITRATION SECTION BELOW, YOU AGREE THAT DISPUTES BETWEEN YOU AND US WILL BE RESOLVED BY BINDING, INDIVIDUAL ARBITRATION AND YOU WAIVE YOUR RIGHT TO PARTICIPATE IN A CLASS ACTION LAWSUIT OR CLASS-WIDE ARBITRATION.
+          ARBITRATION NOTICE AND CLASS ACTION WAIVER: EXCEPT FOR CERTAIN TYPES OF
+          DISPUTES DESCRIBED BELOW, YOU AGREE THAT DISPUTES BETWEEN YOU AND US
+          WILL BE RESOLVED BY BINDING INDIVIDUAL ARBITRATION, AND YOU WAIVE YOUR
+          RIGHT TO PARTICIPATE IN A CLASS ACTION LAWSUIT OR CLASS-WIDE
+          ARBITRATION.
         </Text>
 
         <Box>
           <Heading as="h2" size="md" mb={2}>
-            1. SERVICE OVERVIEW AND LICENSE TERMS
+            1. Service Overview
           </Heading>
-          
-          <Text fontWeight="bold" mt={3}>1.1 Description of Services</Text>
+
+          <Text fontWeight="bold" mt={3}>
+            1.1 Description of the Services
+          </Text>
           <Text>
-            Liberace provides Interview Pilot, an AI-powered mobile application (iOS and Android) that assists with job interview preparation and real-time interview support. The app records live interview questions and generates AI responses to help users during interviews. The Services include both free and premium subscription offerings, with the free version providing limited functionality. Interview Pilot does not control your device or make decisions on your behalf.
+            Interview Pilot provides AI-powered tools for interview preparation,
+            practice, coaching, question review, account management, and related
+            workflow support across supported devices and platforms. Features may
+            include real-time assistance, interview question databases,
+            AI-generated responses, analytics, feedback, subscription management,
+            and desktop or platform onboarding experiences.
           </Text>
           <Text mt={2}>
-            Interview Pilot also provides access to Basecamp features, including a database of interview questions, AI feedback, and analytics. Questions featured in the Services may be sourced from publicly available online materials, user submissions, or commonly asked interview questions at certain companies or in specific roles. We do not guarantee that any question displayed has been asked—or will be asked—by a specific company. All content is provided solely for educational and preparation purposes.
+            Certain Services may be offered through mobile applications, desktop
+            software, or the Interview Pilot platform website, and some features
+            or subscriptions may differ depending on which product surface you
+            use.
           </Text>
-          
-          <Text fontWeight="bold" mt={3}>1.2 License Grant</Text>
+
+          <Text fontWeight="bold" mt={3}>
+            1.2 License Grant
+          </Text>
           <Text>
-            Subject to your compliance with these Terms, Liberace grants you a non-exclusive, non-transferable, revocable, limited license to download, install, and use the Services for your personal interview preparation. Your right to use the Services is conditional upon your compliance with these Terms. You shall not modify, distribute, sell, lease, loan, or create derivative works based on the Services or any part thereof. The Services are licensed, not sold, to you.
+            Subject to your compliance with these Terms, Liberace grants you a
+            limited, non-exclusive, non-transferable, non-sublicensable,
+            revocable license to access and use the Services for your personal,
+            non-commercial use. The Services are licensed, not sold, to you.
+          </Text>
+
+          <Text fontWeight="bold" mt={3}>
+            1.3 Availability and Changes
+          </Text>
+          <Text>
+            We may modify, suspend, discontinue, or update any part of the
+            Services at any time, including features, subscription offerings,
+            availability, supported devices, or technical requirements.
           </Text>
         </Box>
-        
+
         <Box>
           <Heading as="h2" size="md" mb={2}>
-            2. USER ACCOUNTS AND PAYMENT
+            2. Eligibility and Accounts
           </Heading>
-          
-          <Text fontWeight="bold" mt={3}>2.1 Account Registration</Text>
-          <Text>
-            You may need to create an Apple ID (for iOS) or Google account (for Android) to download and use the Services. You are entirely responsible for the security and confidentiality of your account, including your password. Furthermore, you are entirely responsible for any and all activities that occur under your account when using our Services.
+
+          <Text fontWeight="bold" mt={3}>
+            2.1 Eligibility
           </Text>
-          
-          <Text fontWeight="bold" mt={3}>2.2 Payment Terms</Text>
           <Text>
-            All payments and subscriptions are processed through Apple&apos;s App Store (for iOS) or Google Play Store (for Android). The subscription includes full access to Interview Pilot features, automatic updates, and customer support. By subscribing to our paid services, you agree to the respective app store&apos;s payment terms and authorize them to charge your chosen payment method. Subscription management, including cancellation, is handled through your Apple ID account settings (iOS) or Google Play account settings (Android).
+            You may use the Services only if you are legally capable of entering
+            into a binding agreement with us and your use does not violate any
+            applicable law or regulation.
+          </Text>
+
+          <Text fontWeight="bold" mt={3}>
+            2.2 Account Registration
+          </Text>
+          <Text>
+            Some parts of the Services may require an account. Depending on the
+            product surface, you may access the Services through an app store
+            account, a direct platform account created with email and password,
+            or third-party sign-in providers such as Google or Apple.
+          </Text>
+
+          <Text fontWeight="bold" mt={3}>
+            2.3 Account Responsibility
+          </Text>
+          <Text>
+            You are responsible for maintaining the confidentiality and security
+            of your credentials and for all activity that occurs under your
+            account. You must provide accurate information and promptly update it
+            if it changes.
           </Text>
         </Box>
-        
+
         <Box>
           <Heading as="h2" size="md" mb={2}>
-            3. ACCEPTABLE USE AND RESTRICTIONS
+            3. Subscriptions, Billing, and Purchases
           </Heading>
-          
-          <Text fontWeight="bold" mt={3}>3.1 Prohibited Uses</Text>
+
+          <Text fontWeight="bold" mt={3}>
+            3.1 Separate Product Surfaces
+          </Text>
+          <Text>
+            Interview Pilot may offer separate mobile and platform or desktop
+            experiences. Access rights, subscription entitlements, billing
+            providers, and available features may differ across product surfaces.
+          </Text>
+
+          <Text fontWeight="bold" mt={3}>
+            3.2 Mobile Billing
+          </Text>
+          <Text>
+            Mobile purchases and subscriptions may be processed through Apple&apos;s
+            App Store or Google Play. Those purchases are subject to the
+            applicable app store&apos;s payment terms, billing rules, cancellation
+            processes, and refund policies.
+          </Text>
+
+          <Text fontWeight="bold" mt={3}>
+            3.3 Platform and Desktop Billing
+          </Text>
+          <Text>
+            Platform or desktop-related subscriptions may be sold separately from
+            mobile subscriptions and may be processed through our web billing
+            providers. By purchasing a platform subscription, you authorize the
+            applicable payment provider to charge your selected payment method
+            according to the subscription terms presented at checkout.
+          </Text>
+
+          <Text fontWeight="bold" mt={3}>
+            3.4 Renewals and Cancellation
+          </Text>
+          <Text>
+            Unless otherwise stated, subscriptions may renew automatically until
+            cancelled. Cancellation and billing management may occur through the
+            applicable app store, billing portal, or account interface depending
+            on where you purchased your subscription.
+          </Text>
+
+          <Text fontWeight="bold" mt={3}>
+            3.5 Pricing and Taxes
+          </Text>
+          <Text>
+            Prices, billing intervals, available plans, and promotions may change
+            from time to time. You are responsible for applicable taxes, duties,
+            or governmental charges unless stated otherwise.
+          </Text>
+        </Box>
+
+        <Box>
+          <Heading as="h2" size="md" mb={2}>
+            4. Acceptable Use and Restrictions
+          </Heading>
+
           <Text>You agree not to:</Text>
-          <Text ml={5}>• Share your account credentials with others</Text>
-          <Text ml={5}>• Attempt to reverse engineer the software</Text>
-          <Text ml={5}>• Use the service for any illegal purposes</Text>
-          <Text ml={5}>• Interfere with or disrupt the service</Text>
-          <Text ml={5}>• Use the Services in a manner that violates any applicable local, state, national, or international law or regulation</Text>
-          <Text ml={5}>• Use the Services to misrepresent your qualifications or abilities in employment scenarios</Text>
-          <Text ml={5}>• Use the Services in violation of any employer policies or interview protocols that explicitly forbid external assistance</Text>
-          <Text ml={5}>• Attempt to extract, copy, or scrape our database, algorithms, or proprietary content</Text>
+          <Text ml={5}>• violate any applicable law, regulation, or third-party right</Text>
+          <Text ml={5}>• share your credentials or allow unauthorized access to your account</Text>
+          <Text ml={5}>• copy, modify, reverse engineer, decompile, or attempt to extract source code or proprietary logic from the Services</Text>
+          <Text ml={5}>• scrape, extract, copy, or build a competing database from our content, question bank, or Service outputs</Text>
+          <Text ml={5}>• interfere with, disrupt, or degrade the performance, security, or integrity of the Services</Text>
+          <Text ml={5}>• use the Services to violate employer, school, interviewer, recruiting, or platform rules that apply to you</Text>
+          <Text ml={5}>• use the Services for unlawful, fraudulent, or deceptive purposes</Text>
         </Box>
-        
+
         <Box>
           <Heading as="h2" size="md" mb={2}>
-            4. INTELLECTUAL PROPERTY
+            5. AI Outputs, Interview Content, and User Responsibility
           </Heading>
-          
+
+          <Text fontWeight="bold" mt={3}>
+            5.1 AI Assistance
+          </Text>
           <Text>
-            All content generated using our service during your use is owned by you, but the software, branding, algorithms, and infrastructure remain the intellectual property of Liberace Pte. Ltd. We reserve all rights not expressly granted to you in and to the Services. However, by using the Services, you grant Liberace a non-exclusive, royalty-free, worldwide license to use aggregated and anonymized data to improve our products and services. Any breach of our intellectual property rights will constitute a material breach of our Terms and your right to use our Services will terminate immediately.
+            The Services may generate suggestions, summaries, feedback, answers,
+            or other AI-assisted outputs. These outputs are provided for
+            informational, educational, and workflow-support purposes only. You
+            remain solely responsible for how you use any output and for your own
+            decisions, actions, statements, and outcomes.
+          </Text>
+
+          <Text fontWeight="bold" mt={3}>
+            5.2 No Guarantee of Results
+          </Text>
+          <Text>
+            We do not guarantee interview success, employment outcomes, improved
+            performance, question accuracy, recruiter response, or any other
+            result from use of the Services.
+          </Text>
+
+          <Text fontWeight="bold" mt={3}>
+            5.3 No Guarantee of Stealth, Compatibility, or Non-Detection
+          </Text>
+          <Text>
+            We do not guarantee that any part of the Services will be
+            undetectable, invisible, uninterrupted, or compatible with every
+            operating system, browser, conferencing tool, proctoring tool,
+            employer system, or third-party software environment. You are solely
+            responsible for evaluating whether your use of the Services complies
+            with any policies, rules, or expectations that apply to you.
+          </Text>
+
+          <Text fontWeight="bold" mt={3}>
+            5.4 Interview Question Content
+          </Text>
+          <Text>
+            Questions or examples presented in the Services may be derived from
+            public materials, user submissions, internal examples, generalized
+            interview patterns, or other sources. We do not guarantee that any
+            question displayed has been asked, or will be asked, by any specific
+            company or interviewer.
           </Text>
         </Box>
-        
+
         <Box>
           <Heading as="h2" size="md" mb={2}>
-            5. LEGAL TERMS AND CONDITIONS
+            6. Intellectual Property
           </Heading>
-          
-          <Text fontWeight="bold" mt={3}>5.1 Disclaimer of Warranties</Text>
+
           <Text>
-            THE SERVICES ARE PROVIDED ON AN &quot;AS IS,&quot; &quot;WITH ALL FAULTS,&quot; AND &quot;AS AVAILABLE&quot; BASIS. TO THE FULLEST EXTENT PERMISSIBLE PURSUANT TO APPLICABLE LAW, LIBERACE PTE. LTD. DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+            The Services, including software, branding, visual design, platform
+            structure, databases, prompts, features, and related technology, are
+            owned by Liberace or its licensors and are protected by intellectual
+            property laws. Except for the limited rights expressly granted in
+            these Terms, we reserve all rights in and to the Services.
           </Text>
-          
-          <Text fontWeight="bold" mt={3}>5.2 Limitation of Liability</Text>
-          <Text>
-            IN NO EVENT SHALL LIBERACE PTE. LTD., ITS OWNER, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SERVICES.
+
+          <Text mt={2}>
+            To the extent you submit content or feedback to us, you grant us a
+            non-exclusive, worldwide, royalty-free license to use it as necessary
+            to operate, improve, secure, and support the Services. We may also
+            use aggregated or de-identified information for analytics, quality
+            improvement, and product development.
           </Text>
-          
-          <Text fontWeight="bold" mt={3}>5.3 No Guarantee of Results</Text>
+        </Box>
+
+        <Box>
+          <Heading as="h2" size="md" mb={2}>
+            7. Suspension and Termination
+          </Heading>
+
           <Text>
-            WE DO NOT GUARANTEE THE ACCURACY, COMPLETENESS, OR EFFECTIVENESS OF INTERVIEW COACHING OR ANY AI-GENERATED CONTENT. YOU ARE RESPONSIBLE FOR YOUR OWN DECISIONS AND OUTCOMES BASED ON THE SERVICE&apos;S RECOMMENDATIONS. WE DO NOT GUARANTEE ANY INTERVIEW RESULTS, AND YOU WAIVE YOUR RIGHT TO SUE FOR ANY CONSEQUENCES OF USING THIS SERVICE.
+            We may suspend, restrict, or terminate your access to some or all of
+            the Services at any time if we believe you have violated these Terms,
+            created risk for us or other users, or used the Services in a manner
+            that may expose us to liability or harm.
+          </Text>
+        </Box>
+
+        <Box>
+          <Heading as="h2" size="md" mb={2}>
+            8. Disclaimers and Limitation of Liability
+          </Heading>
+
+          <Text fontWeight="bold" mt={3}>
+            8.1 Disclaimer of Warranties
+          </Text>
+          <Text>
+            THE SERVICES ARE PROVIDED ON AN &quot;AS IS,&quot; &quot;AS
+            AVAILABLE,&quot; AND &quot;WITH ALL FAULTS&quot; BASIS TO THE FULLEST
+            EXTENT PERMITTED BY LAW. LIBERACE DISCLAIMS ALL WARRANTIES, EXPRESS
+            OR IMPLIED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS
+            FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND ANY WARRANTIES ARISING
+            OUT OF COURSE OF DEALING OR USAGE OF TRADE.
+          </Text>
+
+          <Text fontWeight="bold" mt={3}>
+            8.2 Limitation of Liability
+          </Text>
+          <Text>
+            TO THE MAXIMUM EXTENT PERMITTED BY LAW, LIBERACE AND ITS AFFILIATES,
+            OFFICERS, DIRECTORS, EMPLOYEES, CONTRACTORS, AND AGENTS SHALL NOT BE
+            LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL,
+            EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE,
+            DATA, GOODWILL, BUSINESS OPPORTUNITY, OR OTHER INTANGIBLE LOSSES
+            ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICES.
+          </Text>
+        </Box>
+
+        <Box>
+          <Heading as="h2" size="md" mb={2}>
+            9. Arbitration and Class Action Waiver
+          </Heading>
+
+          <Text>
+            All disputes arising out of or relating to these Terms or the
+            Services shall be resolved by binding individual arbitration, except
+            for claims seeking injunctive or equitable relief relating to misuse
+            of intellectual property or unauthorized access to the Services.
           </Text>
           <Text mt={2}>
-            Interview Pilot is a tool to assist users with interview preparation but does not guarantee job offers, interview success, or career advancement. Any decisions based on the service&apos;s insights are solely your responsibility. We do not guarantee that any interview question displayed in the app has been asked or will be asked by any specific company.
-          </Text>
-          
-          <Text fontWeight="bold" mt={3}>5.3(a) Data Accuracy Disclaimer</Text>
-          <Text>
-            While we strive to present accurate analytics and activity information, certain counts, statistics, or AI-generated outputs within Interview Pilot and Basecamp features may include estimates, simulated examples, or aggregated anonymized data. These are provided solely for informational and educational purposes and should not be interpreted as verified or real-time user statistics.
-          </Text>
-          
-          <Text fontWeight="bold" mt={3}>5.4 Arbitration Agreement</Text>
-          <Text>
-            All claims and disputes arising out of or relating to these Terms or your use of the Services shall be settled by binding arbitration, except for disputes in which either party seeks equitable relief for the alleged unlawful use of copyrights, trademarks, trade names, logos, trade secrets, or patents.
-          </Text>
-          <Text mt={2}>
-            ALL CLAIMS AND DISPUTES MUST BE ARBITRATED OR LITIGATED ON AN INDIVIDUAL BASIS AND NOT ON A CLASS BASIS. ANY CLAIM OR DISPUTE ARISING OUT OF OR RELATED TO THE TERMS OR THE SERVICES IS PERSONAL TO YOU AND LIBERACE PTE. LTD. AND WILL BE RESOLVED SOLELY THROUGH INDIVIDUAL ARBITRATION AND WILL NOT BE BROUGHT AS A CLASS ARBITRATION, CLASS ACTION, OR ANY OTHER TYPE OF REPRESENTATIVE PROCEEDING.
+            TO THE MAXIMUM EXTENT PERMITTED BY LAW, ALL CLAIMS MUST BE BROUGHT IN
+            AN INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY
+            PURPORTED CLASS, COLLECTIVE, OR REPRESENTATIVE PROCEEDING.
           </Text>
         </Box>
-        
+
         <Box>
           <Heading as="h2" size="md" mb={2}>
-            6. MISCELLANEOUS
+            10. Changes to These Terms
           </Heading>
-          
-          <Text fontWeight="bold" mt={3}>6.1 Demonstration and Sample Data</Text>
+
           <Text>
-            Some metrics, activity indicators, or example statistics displayed in Interview Pilot or Basecamp features (such as question views, practice counts, or leaderboard activity) may include sample or internally generated data created by our team for demonstration, testing, or product-improvement purposes. These examples are for illustrative and onboarding purposes only and do not necessarily represent actual user behavior. Such internal data will never be used in marketing, investor reporting, or public communications to represent real user engagement.
-          </Text>
-          
-          <Text mt={3}>
-            These Terms may be updated periodically. Continued use of the service constitutes acceptance of any changes. If you have any questions about these Terms, please contact us at Support@LiberaceAI.com.
+            We may update these Terms from time to time. If we make material
+            changes, we may notify you through the Services, by email, or by
+            updating the effective date below. Your continued use of the Services
+            after updated Terms become effective constitutes your acceptance of
+            the revised Terms.
           </Text>
         </Box>
-        
+
+        <Box>
+          <Heading as="h2" size="md" mb={2}>
+            11. Contact Information
+          </Heading>
+
+          <Text>
+            If you have questions about these Terms, please contact us at
+            Support@LiberaceAI.com.
+          </Text>
+        </Box>
+
         <Text fontStyle="italic" mt={4} color="gray.600">
-          Last updated: May 12, 2025
+          Last updated: May 7, 2026
         </Text>
       </VStack>
     </Container>

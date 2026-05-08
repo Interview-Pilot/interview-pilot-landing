@@ -2,7 +2,8 @@ import { HStack, Flex, Box, Grid, GridItem, Icon, Text } from '@chakra-ui/react'
 import { useDisclosure, useUpdateEffect } from '@chakra-ui/react'
 import { useScrollSpy } from '#hooks/use-scrollspy'
 import { usePlatform } from '#hooks/use-platform'
-import { usePathname, useRouter } from 'next/navigation'
+import { getPrimaryDownloadHref } from '#lib/download-routing'
+import { usePathname } from 'next/navigation'
 import * as React from 'react'
 import { FiArrowRight } from 'react-icons/fi'
 import { MobileNavButton } from '#components/mobile-nav'
@@ -10,7 +11,6 @@ import { MobileNavContent } from '#components/mobile-nav'
 import { NavLink } from '#components/nav-link'
 import siteConfig from '#data/config'
 import ThemeToggle from './theme-toggle'
-import { INTERNAL_ROUTES } from '#constants'
 
 interface NavigationProps {
   centerLinks?: boolean;
@@ -24,7 +24,6 @@ const Navigation: React.FC<NavigationProps> = ({
   mobileMode = false
 }) => {
   const mobileNav = useDisclosure()
-  const router = useRouter()
   const path = usePathname()
   const activeId = useScrollSpy(
     siteConfig.header.links
@@ -45,12 +44,12 @@ const Navigation: React.FC<NavigationProps> = ({
   // Split the navigation - everything except the last item (Download)
   const navLinks = siteConfig.header.links.slice(0, -1)
   // Get the Download button (last item)
-  const downloadButton = siteConfig.header.links[siteConfig.header.links.length - 1]
+  const downloadButton =
+    siteConfig.header.links.find((link: any) => link.isDownload) ||
+    siteConfig.header.links[siteConfig.header.links.length - 1]
 
   // Modify download button href based on platform
-  const downloadHref = platform === 'desktop'
-    ? INTERNAL_ROUTES.downloadOptions
-    : (downloadButton.href || `/#${downloadButton.id}`)
+  const downloadHref = getPrimaryDownloadHref(platform)
 
   if (centerLinks) {
     return (
@@ -112,12 +111,7 @@ const Navigation: React.FC<NavigationProps> = ({
               position="relative"
               alignItems="center"
               justifyContent="flex-start"
-              isActive={
-                !!(
-                  (downloadButton.id && activeId === downloadButton.id) ||
-                  (downloadButton.href && !!path?.match(new RegExp(downloadButton.href)))
-                )
-              }
+              isActive={false}
               {...downloadButton}
             >
               <Box
@@ -182,10 +176,12 @@ const Navigation: React.FC<NavigationProps> = ({
             href={linkHref}
             key={i}
             isActive={
-              !!(
-                (id && activeId === id) ||
-                (href && !!path?.match(new RegExp(href)))
-              )
+              isDownloadButton
+                ? false
+                : !!(
+                    (id && activeId === id) ||
+                    (href && !!path?.match(new RegExp(href)))
+                  )
             }
             {...props}
           >

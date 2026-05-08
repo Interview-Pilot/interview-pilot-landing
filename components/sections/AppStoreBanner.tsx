@@ -5,7 +5,8 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { ButtonLink } from '#components/button-link/button-link'
 import { usePlatform } from '#hooks/use-platform'
-import { ASSETS, INTERNAL_ROUTES } from '#constants'
+import { ASSETS } from '#constants'
+import { getPrimaryDownloadHref } from '#lib/download-routing'
 
 /**
  * AppStoreBanner component displays a fixed bottom banner on mobile
@@ -15,6 +16,7 @@ export function AppStoreBanner() {
   const [visible, setVisible] = useState(true)
   const [scrollPos, setScrollPos] = useState(0)
   const platform = usePlatform()
+  const primaryDownloadHref = getPrimaryDownloadHref(platform)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,13 +34,23 @@ export function AppStoreBanner() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [scrollPos])
 
-  const storeImage = platform === 'ios'
-    ? ASSETS.images.appleAppStore
-    : ASSETS.images.googlePlayStore
+  const isIOS = platform === 'ios'
+  const isAndroid = platform === 'android'
+  const isMacOS = platform === 'macos'
 
-  const storeText = platform === 'ios'
+  const storeImage = isIOS
+    ? ASSETS.images.appleAppStore
+    : isAndroid
+      ? ASSETS.images.googlePlayStore
+      : ASSETS.images.logo
+
+  const storeText = isIOS
     ? 'Download on the App Store'
-    : 'Get it on Google Play'
+    : isAndroid
+      ? 'Get it on Google Play'
+      : isMacOS
+        ? 'Download for macOS'
+        : 'View download options'
 
   return (
     <Box
@@ -88,7 +100,7 @@ export function AppStoreBanner() {
       </Stack>
 
       <ButtonLink
-        href={INTERNAL_ROUTES.downloadHero}
+        href={primaryDownloadHref}
         colorScheme="primary"
         size="sm"
         color="black"
@@ -98,7 +110,13 @@ export function AppStoreBanner() {
             src={storeImage}
             width={14}
             height={14}
-            alt={platform === 'ios' ? 'Apple' : 'Google Play'}
+            alt={
+              isIOS
+                ? 'Apple'
+                : isAndroid
+                  ? 'Google Play'
+                  : 'Interview Pilot'
+            }
           />
         }
       >

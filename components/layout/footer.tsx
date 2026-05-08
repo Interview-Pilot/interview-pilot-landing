@@ -36,18 +36,15 @@ export const Footer: React.FC<FooterProps> = (props) => {
                 {siteConfig.seo.description}
               </Text>
             </Stack>
-            <Stack spacing="4">
-              <Stack direction={{ base: "column", md: "row" }} gap="4" alignItems={{ base: "flex-start", md: "center" }}>
+              <Stack spacing="4">
+              <Stack direction={{ base: "column", md: "row" }} gap={{ base: "4", md: "8" }} alignItems={{ base: "flex-start", md: "center" }}>
                 <Box
-                  border="1px solid"
-                  borderColor="whiteAlpha.500"
                   borderRadius="full"
-                  px="4"
                   display="inline-flex"
                   alignItems="center"
-                  gap="3"
+                  gap="2.5"
                   width="fit-content"
-                  height="40px"
+                  pl="2"
                 >
                   <Box
                     w="10px"
@@ -58,7 +55,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                       '@keyframes pulseRing': pulseAnimation['@keyframes pulseRing'],
                     }}
                   />
-                  <Text fontSize="sm" color="white" fontWeight="medium">
+                  <Text fontSize="sm" color="white" fontWeight="medium" lineHeight="1">
                     All Systems Online
                   </Text>
                 </Box>
@@ -72,7 +69,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                     <Image
                       src="/static/images/appstore_badge.png"
                       alt="Download on the App Store"
-                      height="40px"
+                      height="36px"
                     />
                   </Link>
                   <Link
@@ -84,7 +81,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                     <Image
                       src="/static/images/android_badge.png"
                       alt="Get it on Google Play"
-                      height="40px"
+                      height="36px"
                     />
                   </Link>
                 </Flex>

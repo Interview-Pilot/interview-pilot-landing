@@ -23,15 +23,15 @@ const faq: FaqData = {
     },
     {
       q: 'Is Interview Pilot fully undetectable?',
-      a: 'Yes! Interview Pilot is designed for your iOS and Android devices (mobile or tablet), and does not interact with your desktop interview application, making it completely undetectable by any programs.',
+      a: 'Interview Pilot for iOS and Android runs on a separate device and does not directly interact with your desktop interview application.\n\nFor Interview Pilot Desktop, we have advanced stealth features built in to be undetectable by most video conferencing software. Download the desktop app to test and learn more.',
     },
     {
       q: 'What devices can I use Interview Pilot on?',
-      a: 'Interview Pilot is designed for ALL iOS and Android devices, including iPhones, iPads and Android devices! For a list of compatible devices see below.\n\nInterview Pilot requires iOS 17.0 and above. The best way to check compatibility is to simply run the app and try all functions out for free!',
+      a: 'Interview Pilot is available on iOS, Android, and macOS. You can use it on iPhones, iPads, Android devices, and Mac computers.\n\nWindows support is coming soon.',
     },
     {
       q: 'Is this considered cheating?',
-      a: 'Interview Pilot is designed to be a full Copilot assistant for all your interview needs. If you prefer to only receive talking points to guide you along instead of full answers, simply choose "Key Points" in Copilot response settings.\n\nSince Interview Pilot is not linked to your computer, it is fully undetectable and safer than all other similar desktop-based software.',
+      a: 'Interview Pilot is designed to be a full Copilot assistant for all your interview needs. If you prefer to only receive talking points to guide you along instead of full answers, simply choose "Key Points" in Copilot response settings.',
     },
     {
       q: 'Can it detect accents?',

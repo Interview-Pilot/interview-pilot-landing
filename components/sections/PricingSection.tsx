@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, HStack, Icon, Text } from '@chakra-ui/react'
+import { Box, HStack, Icon, Link, Text } from '@chakra-ui/react'
 import { HiShieldCheck } from 'react-icons/hi'
 
 import { Pricing } from '#components/pricing/pricing'
@@ -25,6 +25,17 @@ export function PricingSection() {
           <Icon as={HiShieldCheck} boxSize="16px" />
           <Text textAlign="center" fontSize="sm">
             U.S. Dollars. Prices may differ slightly depending on your location.
+            {' '}For Desktop, billed separately, please visit the platform{' '}
+            <Link
+              href="https://platform.interviewpilot.app"
+              isExternal
+              color="white"
+              textDecoration="underline"
+              _hover={{ color: 'whiteAlpha.900' }}
+            >
+              here
+            </Link>
+            .
           </Text>
         </HStack>
       </Pricing>
