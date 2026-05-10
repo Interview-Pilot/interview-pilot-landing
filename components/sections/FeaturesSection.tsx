@@ -13,7 +13,7 @@ import { sectionContentStyles } from '#theme/styles/section-styles'
 
 const STEP_FEATURES = [
   {
-    title: <Text fontSize={['4xl', '5xl', '6xl']} fontWeight="medium" mb={3}>Step 1</Text>,
+    title: <Text fontSize={['4xl', '5xl', '6xl']} fontWeight="bold" mb={3}>Step 1</Text>,
     icon: FiSmile,
     description: (
       <>
@@ -24,7 +24,7 @@ const STEP_FEATURES = [
     variant: 'inline' as const,
   },
   {
-    title: <Text fontSize={['4xl', '5xl', '6xl']} fontWeight="medium" mb={3}>Step 2</Text>,
+    title: <Text fontSize={['4xl', '5xl', '6xl']} fontWeight="bold" mb={3}>Step 2</Text>,
     icon: FiBriefcase,
     description: (
       <>
@@ -35,7 +35,7 @@ const STEP_FEATURES = [
     variant: 'inline' as const,
   },
   {
-    title: <Text fontSize={['4xl', '5xl', '6xl']} fontWeight="medium" mb={3}>Interview</Text>,
+    title: <Text fontSize={['4xl', '5xl', '6xl']} fontWeight="bold" mb={3}>Interview</Text>,
     icon: FiBox,
     description: (
       <>

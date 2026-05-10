@@ -28,40 +28,58 @@ const testimonials: TestimonialsData = {
     },
     {
       name: 'Anonymous',
+      description: 'App Store Review',
+      source: 'app-store',
+      children:
+        'Excellent tool. If you have the necessary knowledge for the job but English is not your native language, this app helps you sound professional.',
+    },
+    {
+      name: 'kaye9776',
+      description: 'App Store Review',
+      source: 'app-store',
+      children: 'Awesome. Great app.',
+    },
+    {
+      name: 'Eva',
+      description: 'Student',
+      children:
+        'Works very good even in Chinese. Practiced in both English and Mandarin. My interviews went so much better. App is very fast and smooth.',
+    },
+    {
+      name: 'Tommavm',
+      description: 'App Store Review',
+      source: 'app-store',
+      children: 'Fantastic. Quick responses tailored to job-specific questions.',
+    },
+    {
+      name: 'Vikram Singh',
+      description: 'Play Store Review',
+      source: 'play-store',
+      children: 'Great app.',
+    },
+    {
+      name: 'Anonymous',
       description: 'Product Manager',
       children:
         'This app helped me nail my product manager interview at FAANG. Interview question transcriptions are super accurate and answers are basically perfect.',
+    },
+    {
+      name: 'K.O.',
+      description: 'Professional',
+      children:
+        'Incredibly fast answers, very smooth and easy to use. Answers are also very accurate, highly recommend.',
+    },
+    {
+      name: 'budzwizer kenth',
+      description: 'Play Store Review',
+      source: 'play-store',
+      children: 'Great apps.',
     },
     {
       name: 'Anonymous',
       description: 'Career Switcher',
       children:
         "Best $ I've spent on my job search. The customized answers are soooo useful. Just landed a role with more pay just by reading off answers.",
-    },
-    {
-      name: 'Eva',
-      description: 'International Student',
-      children:
-        'Works very good even in Chinese. Practiced in both English and Mandarin. My interviews went so much better. App is very fast and smooth.',
-    },
-    {
-      name: 'Anonymous',
-      description: 'Finance Professional',
-      children:
-        'Incredible tool for non-native speakers. Used it to prep for finance interviews. It picks up any accents. Highly recommend.',
-    },
-    {
-      name: 'K.O.',
-      description: 'Job Seeker',
-      children:
-        'Incredibly fast answers, very smooth and easy to use. Answers are also very accurate, highly recommend.',
-    },
-    {
-      name: 'Anonymous',
-      description: 'App Store Review',
-      source: 'app-store',
-      children:
-        'Excellent tool. If you have the necessary knowledge for the job but English is not your native language, this app helps you sound professional.',
     },
     {
       name: 'Dalton3829',
@@ -71,16 +89,16 @@ const testimonials: TestimonialsData = {
         'Easy to use and quick to learn. It helps you modify and improve your interviewing skills.',
     },
     {
-      name: 'kaye9776',
-      description: 'App Store Review',
-      source: 'app-store',
-      children: 'Awesome. Great app.',
+      name: 'Saifali Draxi',
+      description: 'Play Store Review',
+      source: 'play-store',
+      children: 'Good.',
     },
     {
-      name: 'Tommavm',
-      description: 'App Store Review',
-      source: 'app-store',
-      children: 'Fantastic. Quick responses tailored to job-specific questions.',
+      name: 'Anonymous',
+      description: 'Professional',
+      children:
+        'Incredible tool for non-native speakers. Used it to prep for finance interviews. It picks up any accents. Highly recommend.',
     },
     {
       name: 'Jenevie Curammeng',
@@ -93,24 +111,6 @@ const testimonials: TestimonialsData = {
       description: 'Play Store Review',
       source: 'play-store',
       children: 'Very helpful apps.',
-    },
-    {
-      name: 'Vikram Singh',
-      description: 'Play Store Review',
-      source: 'play-store',
-      children: 'Great app.',
-    },
-    {
-      name: 'budzwizer kenth',
-      description: 'Play Store Review',
-      source: 'play-store',
-      children: 'Great apps.',
-    },
-    {
-      name: 'Saifali Draxi',
-      description: 'Play Store Review',
-      source: 'play-store',
-      children: 'Good.',
     },
     {
       name: 'Zah Mohdisa',

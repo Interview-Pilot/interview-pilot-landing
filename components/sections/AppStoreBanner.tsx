@@ -38,11 +38,11 @@ export function AppStoreBanner() {
   const isAndroid = platform === 'android'
   const isMacOS = platform === 'macos'
 
-  const storeImage = isIOS
-    ? ASSETS.images.appleAppStore
+  const storeIcon = isIOS
+    ? '/static/icons/platforms/app-store.svg'
     : isAndroid
-      ? ASSETS.images.googlePlayStore
-      : ASSETS.images.logo
+      ? '/static/icons/platforms/google-play.svg'
+      : null
 
   const storeText = isIOS
     ? 'Download on the App Store'
@@ -106,18 +106,14 @@ export function AppStoreBanner() {
         color="black"
         fontWeight="bold"
         leftIcon={
-          <Image
-            src={storeImage}
-            width={14}
-            height={14}
-            alt={
-              isIOS
-                ? 'Apple'
-                : isAndroid
-                  ? 'Google Play'
-                  : 'Interview Pilot'
-            }
-          />
+          storeIcon ? (
+            <Image
+              src={storeIcon}
+              width={14}
+              height={14}
+              alt={isIOS ? 'App Store' : 'Google Play'}
+            />
+          ) : undefined
         }
       >
         Try It Now

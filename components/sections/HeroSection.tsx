@@ -306,7 +306,8 @@ export function HeroSection() {
         id="benefits"
         columns={[1, 2, 3]}
         iconSize={4}
-        innerWidth="container.lg"
+        innerWidth="1120px"
+        spacing={{ base: 10, md: 12, lg: 14 }}
         pt={{ base: '12', lg: '36' }}
         sx={{
           '.chakra-heading': { fontSize: '2xl' },

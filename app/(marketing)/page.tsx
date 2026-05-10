@@ -6,6 +6,7 @@ import type { NextPage } from 'next'
 import { InteractiveGridOverlay } from '#components/background/interactive-grid-overlay'
 import {
   AppStoreBanner,
+  CompanyLogosCarouselSection,
   DownloadOptionsSection,
   FaqSection,
   FeaturesSection,
@@ -28,6 +29,8 @@ const Home: NextPage = () => {
       <SystemStatus />
 
       <HeroSection />
+
+      <CompanyLogosCarouselSection />
 
       <HighlightsSection />
 

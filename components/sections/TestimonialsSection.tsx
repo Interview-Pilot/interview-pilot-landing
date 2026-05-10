@@ -70,7 +70,7 @@ export function TestimonialsSection() {
               px={{ base: 4, md: 0 }}
               mb={rowIndex === 0 ? { base: 4, md: 5 } : 0}
               width="max-content"
-              animation={`${rowIndex === 0 ? 'reviewsMarqueeLeft' : 'reviewsMarqueeRight'} ${rowIndex === 0 ? '42s' : '46s'} linear infinite`}
+              animation={`${rowIndex === 0 ? 'reviewsMarqueeLeft' : 'reviewsMarqueeRight'} ${rowIndex === 0 ? '56s' : '60s'} linear infinite`}
               _hover={{ animationPlayState: 'paused' }}
             >
               {[...row, ...row].map((t, i) => (
@@ -97,7 +97,7 @@ export function TestimonialsSection() {
                     width: { base: '78vw', sm: '340px', lg: '360px' },
                     minWidth: { base: '78vw', sm: '340px', lg: '360px' },
                     height: { base: '190px', md: '178px' },
-                    borderRadius: 'md',
+                    borderRadius: 'xl',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'flex-start',

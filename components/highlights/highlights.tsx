@@ -22,7 +22,8 @@ export const HighlightsItem: React.FC<HighlightBoxProps> = (props) => {
     <GridItem
       as={Card}
       borderRadius="24px"
-      p="8"
+      px={{ base: 5, md: 6 }}
+      py={{ base: 6, md: 7 }}
       flex="1 0"
       alignItems="flex-start"
       spacing="8"
@@ -45,7 +46,7 @@ export const HighlightsItem: React.FC<HighlightBoxProps> = (props) => {
       {...rest}
     >
       {title && (
-        <Heading fontSize="3xl" mb="8">
+        <Heading fontSize="3xl" mb="6">
           {title}
         </Heading>
       )}
@@ -112,7 +113,7 @@ export const Highlights: React.FC<SectionProps> = (props) => {
     >
       <Grid
         templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
-        gap={8}
+        gap={6}
       >
         {children}
       </Grid>
