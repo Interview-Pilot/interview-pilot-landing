@@ -22,7 +22,11 @@ export const Section: React.FC<SectionProps> = (props) => {
   const ownProps = omitThemingProps(rest)
 
   return (
-    <chakra.div __css={styles} {...ownProps}>
+    <chakra.div
+      __css={styles}
+      scrollMarginTop={{ base: '96px', md: '112px' }}
+      {...ownProps}
+    >
       <Container height="full" maxW={innerWidth}>
         {children}
       </Container>
