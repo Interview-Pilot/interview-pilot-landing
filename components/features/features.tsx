@@ -26,7 +26,7 @@ export interface FeaturesProps
   description?: React.ReactNode
   features: Array<FeatureProps>
   columns?: ResponsiveValue<number>
-  spacing?: string | number
+  spacing?: ResponsiveValue<string | number>
   aside?: React.ReactChild
   reveal?: React.FC<any>
   iconSize?: SystemProps['boxSize']
