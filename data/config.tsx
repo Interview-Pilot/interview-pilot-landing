@@ -23,8 +23,8 @@ const siteConfig = {
   header: {
     links: [
       {
-        id: 'benefits',
-        label: 'Features',
+        label: 'Interview Copilot',
+        href: INTERNAL_ROUTES.interviewCopilot,
       },
       {
         id: 'features',
@@ -39,15 +39,7 @@ const siteConfig = {
         label: 'Pricing',
       },
       {
-        id: 'faq',
-        label: 'Help',
-      },
-      {
-        label: 'Blog',
-        href: INTERNAL_ROUTES.blog,
-      },
-      {
-        label: 'Download',
+        label: 'Download free',
         href: INTERNAL_ROUTES.downloads,
         isDownload: true,
         variant: 'primary',
@@ -65,6 +57,26 @@ const siteConfig = {
       {
         href: `mailto:${SUPPORT_EMAIL}`,
         label: 'Contact',
+      },
+      {
+        href: INTERNAL_ROUTES.pricing,
+        label: 'Pricing',
+      },
+      {
+        href: INTERNAL_ROUTES.downloads,
+        label: 'Downloads',
+      },
+      {
+        href: INTERNAL_ROUTES.interviewCopilot,
+        label: 'Interview Copilot',
+      },
+      {
+        href: INTERNAL_ROUTES.aiMockInterview,
+        label: 'AI Mock Interview',
+      },
+      {
+        href: INTERNAL_ROUTES.questionBank,
+        label: 'Question Bank',
       },
       {
         href: INTERNAL_ROUTES.terms,

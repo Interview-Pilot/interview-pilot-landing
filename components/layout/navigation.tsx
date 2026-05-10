@@ -1,4 +1,4 @@
-import { HStack, Flex, Box, Grid, GridItem, Icon, Text } from '@chakra-ui/react'
+import { HStack, Flex, Box, Icon, Text } from '@chakra-ui/react'
 import { useDisclosure, useUpdateEffect } from '@chakra-ui/react'
 import { useScrollSpy } from '#hooks/use-scrollspy'
 import { usePlatform } from '#hooks/use-platform'
@@ -10,18 +10,15 @@ import { MobileNavButton } from '#components/mobile-nav'
 import { MobileNavContent } from '#components/mobile-nav'
 import { NavLink } from '#components/nav-link'
 import siteConfig from '#data/config'
-import ThemeToggle from './theme-toggle'
+
+const platformLoginHref = 'https://platform.interviewpilot.app/login'
 
 interface NavigationProps {
   centerLinks?: boolean;
-  insetButtons?: boolean;
-  mobileMode?: boolean; // Added new prop
 }
 
 const Navigation: React.FC<NavigationProps> = ({
   centerLinks = false,
-  insetButtons = false,
-  mobileMode = false
 }) => {
   const mobileNav = useDisclosure()
   const path = usePathname()
@@ -53,13 +50,9 @@ const Navigation: React.FC<NavigationProps> = ({
 
   if (centerLinks) {
     return (
-      <Grid templateColumns="1fr auto 1fr" width="100%" gap={4}>
-        {/* Left column - empty to balance with right column */}
-        <GridItem />
-
-        {/* Center column - navigation links */}
-        <GridItem display="flex" alignItems="center">
-          <Flex justify="center" align="center" h="40px">
+      <Flex width="100%" align="center" justify="space-between" gap={4}>
+        <Box flex="1" minW={0}>
+          <Flex justify="center" align="center" h="40px" minW={0}>
             {navLinks.map(({ href, id, ...props }, i) => {
               return (
                 <NavLink
@@ -90,29 +83,35 @@ const Navigation: React.FC<NavigationProps> = ({
               )
             })}
           </Flex>
-        </GridItem>
+        </Box>
 
-        {/* Right column - Download button, theme toggle, mobile nav */}
-        <GridItem display="flex" alignItems="center" justifyContent="flex-end">
-          <HStack
-            spacing={3}
-            justify="flex-end"
-            align="center"
-            pr={insetButtons ? { base: mobileMode ? 0 : 6, lg: 8 } : 0}
-          >
+        <Box flexShrink={0}>
+          <HStack spacing={3} justify="flex-end" align="center">
             <NavLink
+              display={['none', null, 'flex']}
+              href={platformLoginHref}
+              h="38px"
+              px={3}
+              fontSize="md"
+              borderRadius="md"
+              alignItems="center"
+            >
+              Login
+            </NavLink>
+
+            <NavLink
+              {...downloadButton}
               display={['none', null, 'flex']}
               href={downloadHref}
               borderRadius="full"
               px="1"
-              minW="148px"
+              minW="168px"
               fontWeight="extrabold"
               h="38px"
               position="relative"
               alignItems="center"
               justifyContent="flex-start"
               isActive={false}
-              {...downloadButton}
             >
               <Box
                 position="absolute"
@@ -145,8 +144,6 @@ const Navigation: React.FC<NavigationProps> = ({
               </Box>
             </NavLink>
 
-            <ThemeToggle />
-
             <Box display={{ base: 'block', md: 'none' }}>
               <MobileNavButton
                 ref={mobileNavBtnRef}
@@ -157,8 +154,8 @@ const Navigation: React.FC<NavigationProps> = ({
 
             <MobileNavContent isOpen={mobileNav.isOpen} onClose={mobileNav.onClose} />
           </HStack>
-        </GridItem>
-      </Grid>
+        </Box>
+      </Flex>
     )
   }
 
@@ -189,7 +186,6 @@ const Navigation: React.FC<NavigationProps> = ({
           </NavLink>
         )
       })}
-      <ThemeToggle />
       <MobileNavButton
         ref={mobileNavBtnRef}
         aria-label="Open Menu"

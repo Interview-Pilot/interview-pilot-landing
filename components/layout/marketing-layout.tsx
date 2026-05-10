@@ -8,6 +8,7 @@ import {
   AnnouncementBanner,
   AnnouncementBannerProps,
 } from '../announcement-banner'
+import Background from '../background/background'
 import { Footer, FooterProps } from './footer'
 import { Header, HeaderProps } from './header'
 
@@ -32,12 +33,16 @@ export const MarketingLayout: React.FC<LayoutProps> = (props) => {
 
   return (
     <Box
+      minH="100vh"
+      display="flex"
+      flexDirection="column"
       style={
         {
           '--announcement-offset': announcementOffset,
         } as CSSProperties
       }
     >
+      <Background />
       <SkipNavLink>Skip to content</SkipNavLink>
       {visibleAnnouncementProps ? (
         <AnnouncementBanner
@@ -46,7 +51,7 @@ export const MarketingLayout: React.FC<LayoutProps> = (props) => {
         />
       ) : null}
       <Header top={visibleAnnouncementProps ? '42px' : undefined} {...headerProps} />
-      <Box as="main">
+      <Box as="main" flex="1" position="relative" zIndex={1}>
         <SkipNavContent />
         {children}
       </Box>

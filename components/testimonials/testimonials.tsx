@@ -1,4 +1,4 @@
-import { ResponsiveValue, SimpleGrid, Stack } from '@chakra-ui/react'
+import { ResponsiveValue, SimpleGrid } from '@chakra-ui/react'
 import {
   Section,
   SectionProps,

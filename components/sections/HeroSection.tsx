@@ -23,7 +23,6 @@ import { ButtonLink } from '#components/button-link/button-link'
 import { getPrimaryDownloadHref } from '#lib/download-routing'
 import { Features } from '#components/features'
 import { Hero } from '#components/hero'
-import { FallInPlace } from '#components/motion/fall-in-place'
 import { Em } from '#components/typography'
 import { usePlatform } from '#hooks/use-platform'
 import { ASSETS, INTERNAL_ROUTES } from '#constants'
@@ -84,7 +83,7 @@ export function HeroSection() {
             mt={{ base: 8, sm: 10, md: 8, lg: 0 }}
             width={{ base: '100%', lg: '60%' }}
             title={
-              <FallInPlace>
+              <Box>
                 <Box
                   fontSize={{ base: '55px', sm: '49px', md: '56px', lg: '66px' }}
                   fontWeight="bold"
@@ -118,10 +117,10 @@ export function HeroSection() {
                   </Box>
                   <Br /> <Box as="span" whiteSpace={{ base: 'normal', md: 'nowrap' }}>Interview Copilot</Box>
                 </Box>
-              </FallInPlace>
+              </Box>
             }
             description={
-              <FallInPlace delay={0.4} fontWeight="medium">
+              <Box fontWeight="medium">
                 <Text
                   fontSize={{ base: 'xl', md: '2xl', lg: '3xl' }}
                   position="relative"
@@ -132,10 +131,10 @@ export function HeroSection() {
                   <Br /> during your interview with <Em color="primary.400">Copilot</Em>
                   <Br />{' '}
                 </Text>
-              </FallInPlace>
+              </Box>
             }
           >
-            <FallInPlace delay={0.8}>
+            <Box>
               <HStack
                 pt="8"
                 pb="12"
@@ -179,7 +178,7 @@ export function HeroSection() {
                     href={downloadHref}
                     borderRadius="full"
                     px="1"
-                    minW="176px"
+                    minW="216px"
                     h="50px"
                     position="relative"
                     textAlign="left"
@@ -211,7 +210,7 @@ export function HeroSection() {
                       lineHeight="1"
                     >
                       <Text as="span" fontWeight="bold" fontSize="xl">
-                        Download
+                        Download free
                       </Text>
                     </Box>
                   </ButtonLink>
@@ -251,7 +250,7 @@ export function HeroSection() {
                   More download options
                 </Link>
               </VStack>
-            </FallInPlace>
+            </Box>
           </Hero>
 
           {/* Hero Image */}
@@ -263,7 +262,7 @@ export function HeroSection() {
             order={{ base: 1, lg: 2 }}
             mb={{ base: 0, sm: 0, md: 40, lg: 0 }}
           >
-            <FallInPlace delay={1}>
+            <Box>
               <Box
                 overflow="hidden"
                 height="100%"
@@ -273,9 +272,9 @@ export function HeroSection() {
                 position="relative"
                 zIndex={1}
                 sx={{
-                  maskImage: 'linear-gradient(to bottom, black 0%, black 95%, transparent 100%)',
+                  maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)',
                   WebkitMaskImage:
-                    'linear-gradient(to bottom, black 0%, black 95%, transparent 100%)',
+                    'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)',
                 }}
               >
                 <Box
@@ -298,7 +297,7 @@ export function HeroSection() {
                   />
                 </Box>
               </Box>
-            </FallInPlace>
+            </Box>
           </Box>
         </Stack>
       </Container>
@@ -337,7 +336,6 @@ export function HeroSection() {
             delay: 1.1,
           },
         ]}
-        reveal={FallInPlace}
       />
     </Box>
   )

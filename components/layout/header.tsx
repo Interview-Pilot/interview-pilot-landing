@@ -41,16 +41,9 @@ export const Header = (props: HeaderProps) => {
       borderBottomWidth={y > height ? '1px' : ''}
       {...props}
     >
-      {/* Reduced base padding, increased padding only on large screens */}
-      <Container maxW="container.xl" px={{ base: "4", lg: "12" }}> 
-        <Flex width="full" position="relative" py="4">
-          {/* Logo positioned flush left on mobile, with inset on desktop */}
-          <Box
-            position="absolute"
-            left={{ base: "0", lg: "8" }}
-            top="50%"
-            transform="translateY(-50%)"
-          >
+      <Container maxW="container.xl" px={{ base: '4', lg: '12' }}>
+        <Flex width="full" align="center" gap="4" py="4">
+          <Box flexShrink={0}>
             <Logo
               onClick={(e) => {
                 if (window.location.pathname === '/') {
@@ -63,10 +56,9 @@ export const Header = (props: HeaderProps) => {
               }}
             />
           </Box>
-          
-          {/* Navigation */}
-          <Box width="full">
-            <Navigation centerLinks={true} insetButtons={true} mobileMode={true} />
+
+          <Box flex="1" minW={0}>
+            <Navigation centerLinks />
           </Box>
         </Flex>
       </Container>

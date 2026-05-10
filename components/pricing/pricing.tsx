@@ -1,3 +1,5 @@
+'use client'
+
 // components/pricing.tsx
 
 import {
@@ -38,7 +40,8 @@ export interface PricingPlan {
   isRecommended?: boolean
 }
 
-export interface PricingProps extends SectionProps {
+export interface PricingProps extends Omit<SectionProps, 'title'> {
+  title: React.ReactNode
   description: React.ReactNode
   plans: Array<PricingPlan>
   align?: 'left' | 'center' | { base: 'center'; md: 'left' }

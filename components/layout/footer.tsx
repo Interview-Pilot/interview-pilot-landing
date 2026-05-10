@@ -3,14 +3,23 @@ import {
   BoxProps,
   Container,
   Flex,
+  HStack,
   Image,
   SimpleGrid,
   Stack,
   Text,
-  Wrap,
-  WrapItem,
+  VStack,
 } from '@chakra-ui/react'
 import { Link, LinkProps } from '@saas-ui/react'
+import { FaInstagram, FaLinkedinIn, FaTiktok, FaTwitter } from 'react-icons/fa'
+
+import {
+  APP_STORE_LINKS,
+  COMPANY_LINKS,
+  INTERNAL_ROUTES,
+  SOCIAL_LINKS,
+  SUPPORT_EMAIL,
+} from '#constants'
 import siteConfig from '#data/config'
 import { pulseAnimation, statusDotPulseStyles } from '#theme/styles/section-styles'
 
@@ -18,27 +27,80 @@ export interface FooterProps extends BoxProps {
   columns?: number
 }
 
+const footerColumns = [
+  {
+    title: 'Product',
+    links: [
+      { href: INTERNAL_ROUTES.interviewCopilot, label: 'Interview Copilot' },
+      { href: INTERNAL_ROUTES.aiMockInterview, label: 'AI Mock Interview' },
+      { href: INTERNAL_ROUTES.questionBank, label: 'Question Bank' },
+      { href: INTERNAL_ROUTES.downloads, label: 'Downloads' },
+    ],
+  },
+  {
+    title: 'Platform',
+    links: [
+      { href: 'https://platform.interviewpilot.app/signup', label: 'Create account', isExternal: true },
+      { href: 'https://platform.interviewpilot.app/login', label: 'Log in', isExternal: true },
+      { href: INTERNAL_ROUTES.pricing, label: 'Pricing' },
+      { href: APP_STORE_LINKS.ios, label: 'iOS App', isExternal: true },
+      { href: APP_STORE_LINKS.android, label: 'Android App', isExternal: true },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { href: INTERNAL_ROUTES.blog, label: 'Blog' },
+      { href: `mailto:${SUPPORT_EMAIL}`, label: 'Contact' },
+      { href: COMPANY_LINKS.website, label: 'Liberace AI', isExternal: true },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { href: INTERNAL_ROUTES.terms, label: 'Terms of Service' },
+      { href: INTERNAL_ROUTES.privacy, label: 'Privacy Policy' },
+      { href: INTERNAL_ROUTES.communityGuidelines, label: 'Community Guidelines' },
+    ],
+  },
+] as const
+
+const socialLinks = [
+  { href: SOCIAL_LINKS.linkedin, label: 'LinkedIn', icon: <FaLinkedinIn size="18" /> },
+  { href: SOCIAL_LINKS.twitter, label: 'X', icon: <FaTwitter size="18" /> },
+  { href: SOCIAL_LINKS.tiktok, label: 'TikTok', icon: <FaTiktok size="18" /> },
+  { href: SOCIAL_LINKS.instagram, label: 'Instagram', icon: <FaInstagram size="18" /> },
+] as const
+
 export const Footer: React.FC<FooterProps> = (props) => {
-  const { columns = 2, ...rest } = props
-  
+  const { ...rest } = props
+
   return (
-    <Box bg="white" _dark={{ bg: 'gray.900' }} width="100%" position="relative" 
-      zIndex={1} {...rest}>
-      <Container maxW="container.2xl" px="8" pt="6" pb="8" width="100%">
-        {/* Change columns to be responsive - 1 on mobile, 2 on larger screens */}
-        <SimpleGrid columns={{ base: 1, md: columns }} spacing={{ base: 8, md: 0 }}>
-          <Stack spacing="8">
-            <Stack alignItems="flex-start" spacing="4">
-              <Flex>
-                <Box as={siteConfig.logo} flex="1" height="32px" />
-              </Flex>
-              <Text fontSize="md" color="muted">
-                {siteConfig.seo.description}
-              </Text>
-            </Stack>
-              <Stack spacing="4">
-              <Stack direction={{ base: "column", md: "row" }} gap={{ base: "4", md: "8" }} alignItems={{ base: "flex-start", md: "center" }}>
-                <Box
+    <Box
+      as="footer"
+      bg="rgba(8, 8, 8, 0.96)"
+      borderTop="1px solid"
+      borderColor="whiteAlpha.100"
+      width="100%"
+      position="relative"
+      zIndex={1}
+      {...rest}
+    >
+      <Container maxW="container.2xl" px={{ base: 6, md: 8 }} py={{ base: 10, md: 12 }}>
+        <Stack spacing={{ base: 10, md: 12 }}>
+          <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={{ base: 10, lg: 16 }}>
+            <VStack align="flex-start" spacing={6}>
+              <Stack align="flex-start" spacing={4} maxW="420px">
+                <Flex>
+                  <Box as={siteConfig.logo} flex="1" height="32px" />
+                </Flex>
+                <Text fontSize="md" color="whiteAlpha.700" lineHeight="1.7">
+                  {siteConfig.seo.description}
+                </Text>
+              </Stack>
+
+              <Stack spacing={4}>
+                <HStack
                   borderRadius="full"
                   display="inline-flex"
                   alignItems="center"
@@ -55,13 +117,14 @@ export const Footer: React.FC<FooterProps> = (props) => {
                       '@keyframes pulseRing': pulseAnimation['@keyframes pulseRing'],
                     }}
                   />
-                  <Text fontSize="sm" color="white" fontWeight="medium" lineHeight="1">
+                  <Text fontSize="sm" color="whiteAlpha.800" fontWeight="medium" lineHeight="1">
                     All Systems Online
                   </Text>
-                </Box>
-                <Flex gap="4" alignItems="center">
+                </HStack>
+
+                <Flex gap="4" alignItems="center" flexWrap="wrap">
                   <Link
-                    href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009"
+                    href={APP_STORE_LINKS.ios}
                     isExternal
                     _hover={{ opacity: 0.8 }}
                     transition="opacity 0.2s"
@@ -73,7 +136,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                     />
                   </Link>
                   <Link
-                    href="https://play.google.com/store/apps/details?id=com.liberace.interviewpilot"
+                    href={APP_STORE_LINKS.android}
                     isExternal
                     _hover={{ opacity: 0.8 }}
                     transition="opacity 0.2s"
@@ -86,36 +149,55 @@ export const Footer: React.FC<FooterProps> = (props) => {
                   </Link>
                 </Flex>
               </Stack>
-              <Copyright>{siteConfig.footer.copyright}</Copyright>
-            </Stack>
-          </Stack>
-          
-          {/* Use Wrap for better mobile layout of links */}
-          <Stack spacing="4" alignSelf={{ base: "flex-start", md: "flex-end" }} width={{ base: "100%", md: "auto" }}>
-            <Stack direction={{ base: "column", md: "row" }} spacing="4" alignItems={{ base: "flex-start", md: "center" }} justify={{ base: "flex-start", md: "flex-end" }}>
-              {/* Text links */}
-              <Wrap justify={{ base: "flex-start", md: "flex-end" }} spacing="4">
-                {siteConfig.footer?.links?.slice(0, 3).map(({ href, label }) => (
-                  <WrapItem key={href}>
-                    <FooterLink href={href}>
-                      {label}
-                    </FooterLink>
-                  </WrapItem>
-                ))}
-              </Wrap>
-              {/* Social icons */}
-              <Wrap justify={{ base: "flex-start", md: "flex-end" }} spacing="4">
-                {siteConfig.footer?.links?.slice(3).map(({ href, label }) => (
-                  <WrapItem key={href}>
-                    <FooterLink href={href}>
-                      {label}
-                    </FooterLink>
-                  </WrapItem>
-                ))}
-              </Wrap>
-            </Stack>
-          </Stack>
-        </SimpleGrid>
+            </VStack>
+
+            <SimpleGrid columns={{ base: 2, md: 4 }} spacing={{ base: 8, md: 10 }}>
+              {footerColumns.map((column) => (
+                <Stack key={column.title} spacing={4} align="flex-start">
+                  <Text
+                    color="white"
+                    fontSize="sm"
+                    fontWeight="800"
+                    letterSpacing="0.02em"
+                  >
+                    {column.title}
+                  </Text>
+                  <Stack spacing={3} align="flex-start">
+                    {column.links.map((link) => (
+                      <FooterLink
+                        key={`${column.title}-${link.label}`}
+                        href={link.href}
+                        isExternal={link.isExternal}
+                      >
+                        {link.label}
+                      </FooterLink>
+                    ))}
+                  </Stack>
+                </Stack>
+              ))}
+            </SimpleGrid>
+          </SimpleGrid>
+
+          <Flex
+            pt={6}
+            borderTop="1px solid"
+            borderColor="whiteAlpha.100"
+            direction={{ base: 'column', md: 'row' }}
+            justify="space-between"
+            align={{ base: 'flex-start', md: 'center' }}
+            gap={5}
+          >
+            <Copyright>{siteConfig.footer.copyright}</Copyright>
+
+            <HStack spacing={4}>
+              {socialLinks.map((link) => (
+                <FooterLink key={link.label} href={link.href} isExternal aria-label={link.label}>
+                  {link.icon}
+                </FooterLink>
+              ))}
+            </HStack>
+          </Flex>
+        </Stack>
       </Container>
     </Box>
   )
@@ -135,7 +217,7 @@ export const Copyright: React.FC<CopyrightProps> = ({
     content = `&copy; ${new Date().getFullYear()} - ${title}`
   }
   return (
-    <Text color="muted" fontSize="sm">
+    <Text color="whiteAlpha.600" fontSize="sm">
       {content || children}
     </Text>
   )
@@ -145,7 +227,7 @@ export const FooterLink: React.FC<LinkProps> = (props) => {
   const { children, ...rest } = props
   return (
     <Link
-      color="muted"
+      color="whiteAlpha.650"
       fontSize="sm"
       textDecoration="none"
       _hover={{

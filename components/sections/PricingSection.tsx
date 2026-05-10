@@ -10,10 +10,31 @@ import { sectionContentStyles } from '#theme/styles/section-styles'
 /**
  * Pricing section displaying subscription tiers
  */
-export function PricingSection() {
+interface PricingSectionProps {
+  largeTitle?: boolean
+  title?: string
+  description?: string
+}
+
+export function PricingSection(props: PricingSectionProps) {
+  const { largeTitle = false, title: titleText = 'Pricing', description } = props
+  const title = largeTitle ? (
+    <Text as="span" display="block" fontSize={{ base: '6xl', md: '7xl' }}>
+      {titleText}
+    </Text>
+  ) : (
+    titleText
+  )
+
   return (
     <Box sx={sectionContentStyles}>
-      <Pricing {...pricing} align="center" innerWidth="1080px">
+      <Pricing
+        {...pricing}
+        title={title}
+        description={description ?? pricing.description}
+        align="center"
+        innerWidth="1080px"
+      >
         <HStack
           p="8"
           spacing="2"

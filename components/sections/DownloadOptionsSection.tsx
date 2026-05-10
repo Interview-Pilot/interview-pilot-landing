@@ -8,16 +8,35 @@ import { Section, SectionTitle } from '#components/section'
 import { APP_STORE_LINKS, ASSETS, PLATFORM_LINKS } from '#constants'
 import { sectionContentStyles } from '#theme/styles/section-styles'
 
+interface DownloadOptionsSectionProps {
+  title?: React.ReactNode
+  description?: React.ReactNode
+  largeTitle?: boolean
+}
+
 /**
  * Download options section with links to both app stores
  */
-export function DownloadOptionsSection() {
+export function DownloadOptionsSection(props: DownloadOptionsSectionProps) {
+  const {
+    title = 'Download',
+    description = 'Choose your platform to download Interview Pilot',
+    largeTitle = false,
+  } = props
+  const sectionTitle = largeTitle ? (
+    <Text as="span" display="block" fontSize={{ base: '6xl', md: '7xl' }}>
+      {title}
+    </Text>
+  ) : (
+    title
+  )
+
   return (
     <Box sx={sectionContentStyles}>
       <Section id="download-options" innerWidth="container.md">
         <SectionTitle
-          title="Download"
-          description="Choose your platform to download Interview Pilot"
+          title={sectionTitle}
+          description={description}
           align="center"
           mb={8}
         />
