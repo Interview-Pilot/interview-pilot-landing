@@ -44,7 +44,7 @@ export function PricingSection(props: PricingSectionProps) {
           zIndex={1}
         >
           <Icon as={HiShieldCheck} boxSize="16px" />
-          <Text textAlign="center" fontSize="sm">
+          <Text textAlign="center" fontSize="md">
             U.S. Dollars. Prices may differ slightly depending on your location.
             {' '}For Desktop, billed separately, please visit the platform{' '}
             <Link

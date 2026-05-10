@@ -159,7 +159,7 @@ export function HeroSection() {
               </HStack>
 
               <VStack
-                spacing={4}
+                spacing={5}
                 alignItems={{ base: 'center', md: 'flex-start' }}
                 position="relative"
                 zIndex={1}
@@ -241,7 +241,7 @@ export function HeroSection() {
                 </Stack>
                 <Link
                   href={INTERNAL_ROUTES.downloads}
-                  fontSize="sm"
+                  fontSize="lg"
                   color="muted"
                   textDecoration="underline"
                   textAlign={{ base: 'center', md: 'left' }}

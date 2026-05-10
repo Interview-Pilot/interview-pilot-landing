@@ -84,7 +84,7 @@ export function DownloadOptionsSection(props: DownloadOptionsSectionProps) {
         <Text
           mt="8"
           textAlign="center"
-          fontSize="sm"
+          fontSize="lg"
           color="whiteAlpha.700"
           position="relative"
           zIndex={1}
