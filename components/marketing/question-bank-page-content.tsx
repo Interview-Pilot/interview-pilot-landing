@@ -77,21 +77,6 @@ export function QuestionBankPageContent() {
         <Container maxW="container.lg">
           <VStack spacing={{ base: 12, md: 16 }} align="stretch">
             <Box textAlign="center">
-              <HStack justify="center" mb={5}>
-                <Box
-                  px={3}
-                  py={1.5}
-                  borderRadius="full"
-                  bg="whiteAlpha.100"
-                  border="1px solid"
-                  borderColor="whiteAlpha.200"
-                >
-                  <Text fontSize="xs" fontWeight="700" color="whiteAlpha.600" letterSpacing="0.1em" textTransform="uppercase">
-                    Coming Soon
-                  </Text>
-                </Box>
-              </HStack>
-
               <Text
                 as="h1"
                 fontSize={{ base: '6xl', md: '7xl' }}
