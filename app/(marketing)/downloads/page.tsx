@@ -7,6 +7,15 @@ export const metadata = {
   title: 'Downloads',
   description:
     'Download Interview Pilot for macOS, iPhone, and Android. Windows support is coming soon.',
+  alternates: {
+    canonical: '/downloads',
+  },
+  openGraph: {
+    title: 'Downloads',
+    description:
+      'Download Interview Pilot for macOS, iPhone, and Android. Windows support is coming soon.',
+    url: '/downloads',
+  },
 }
 
 export default function DownloadsPage() {

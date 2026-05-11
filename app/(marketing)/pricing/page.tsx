@@ -5,6 +5,15 @@ export const metadata = {
   title: 'Pricing | 50% OFF for a Limited Time',
   description:
     'Explore Interview Pilot pricing across mobile and desktop, including separate billing for platform access.',
+  alternates: {
+    canonical: '/pricing',
+  },
+  openGraph: {
+    title: 'Pricing | 50% OFF for a Limited Time',
+    description:
+      'Explore Interview Pilot pricing across mobile and desktop, including separate billing for platform access.',
+    url: '/pricing',
+  },
 }
 
 export default function PricingPage() {
