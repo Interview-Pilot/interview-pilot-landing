@@ -2,10 +2,12 @@
 
 import { Box, HStack, Stack, Text, VStack } from '@chakra-ui/react'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+
+import { useEffect, useState } from 'react'
+
 import { ButtonLink } from '#components/button-link/button-link'
-import { usePlatform } from '#hooks/use-platform'
 import { ASSETS } from '#constants'
+import { usePlatform } from '#hooks/use-platform'
 import { getPrimaryDownloadHref } from '#lib/download-routing'
 
 /**
@@ -39,7 +41,7 @@ export function AppStoreBanner() {
   const isMacOS = platform === 'macos'
 
   const storeIcon = isIOS
-    ? '/static/icons/platforms/app-store.svg'
+    ? '/static/icons/platforms/apple.svg'
     : isAndroid
       ? '/static/icons/platforms/google-play.svg'
       : null
@@ -111,12 +113,12 @@ export function AppStoreBanner() {
               src={storeIcon}
               width={14}
               height={14}
-              alt={isIOS ? 'App Store' : 'Google Play'}
+              alt={isIOS ? 'Apple' : 'Google Play'}
             />
           ) : undefined
         }
       >
-        Try It Now
+        Try It FREE
       </ButtonLink>
     </Box>
   )
