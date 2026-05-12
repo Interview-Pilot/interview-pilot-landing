@@ -53,9 +53,13 @@ export const theme = extendTheme(
     },
     styles: {
       global: (props: any) => ({
+        html: {
+          bg: 'gray.900',
+          color: 'white',
+        },
         body: {
-          color: 'gray.900',
-          bg: 'white',
+          color: 'white',
+          bg: 'gray.900',
           fontSize: 'lg',
           _dark: {
             color: 'white',
