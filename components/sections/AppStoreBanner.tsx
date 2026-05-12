@@ -109,12 +109,22 @@ export function AppStoreBanner() {
         fontWeight="bold"
         leftIcon={
           storeIcon ? (
-            <Image
-              src={storeIcon}
-              width={14}
-              height={14}
-              alt={isIOS ? 'Apple' : 'Google Play'}
-            />
+            <Box
+              as="span"
+              display="inline-flex"
+              alignItems="center"
+              justifyContent="center"
+              boxSize="14px"
+              flexShrink={0}
+            >
+              <Image
+                src={storeIcon}
+                width={14}
+                height={14}
+                alt={isIOS ? 'Apple' : 'Google Play'}
+                style={{ display: 'block' }}
+              />
+            </Box>
           ) : undefined
         }
       >
