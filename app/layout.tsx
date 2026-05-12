@@ -1,4 +1,4 @@
-import { ColorModeScript, theme } from '@chakra-ui/react'
+import { ColorModeScript } from '@chakra-ui/react'
 
 import { Provider } from './provider'
 import { dmSans } from '#lib/fonts'
@@ -57,11 +57,12 @@ const softwareAppSchema = {
 }
 
 export default function Layout(props: { children: React.ReactNode }) {
-  const colorMode = theme.config.initialColorMode
+  const colorMode = 'dark'
 
   return (
     <html lang="en" data-theme={colorMode} style={{ colorScheme: colorMode }} className={dmSans.variable}>
       <head>
+        <meta name="color-scheme" content="dark" />
         <link
           rel="apple-touch-icon"
           sizes="76x76"
