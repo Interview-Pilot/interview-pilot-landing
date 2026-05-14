@@ -5,7 +5,7 @@ import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import faq from '#data/faq'
 
-const baseUrl = 'https://interviewpilot.app'
+const baseUrl = 'https://www.interviewpilot.app'
 
 // FAQPage structured data for rich snippets
 const faqSchema = {

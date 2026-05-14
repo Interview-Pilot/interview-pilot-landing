@@ -7,8 +7,8 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Interview Pilot',
-  url: 'https://interviewpilot.app',
-  logo: 'https://interviewpilot.app/static/images/interviewpilot_newlogo.png',
+  url: 'https://www.interviewpilot.app',
+  logo: 'https://www.interviewpilot.app/static/images/interviewpilot_newlogo.png',
   description: 'AI-powered interview copilot that provides real-time answers during job interviews.',
   foundingDate: '2023',
   sameAs: [
@@ -28,7 +28,7 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Interview Pilot',
-  url: 'https://interviewpilot.app',
+  url: 'https://www.interviewpilot.app',
   description: 'Get real-time interview answers during your interview with AI Copilot.',
   publisher: {
     '@type': 'Organization',

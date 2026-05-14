@@ -38,5 +38,10 @@ export function slugify(text: string): string {
  * Get the base URL for the site
  */
 export function getBaseUrl(): string {
-  return process.env.NEXT_PUBLIC_BASE_URL || 'https://interviewpilot.app'
+  const baseUrl =
+    process.env.NEXT_PUBLIC_BASE_URL || 'https://www.interviewpilot.app'
+
+  return baseUrl
+    .replace(/^https:\/\/interviewpilot\.app\/?$/, 'https://www.interviewpilot.app')
+    .replace(/\/$/, '')
 }
