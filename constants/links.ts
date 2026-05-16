@@ -45,6 +45,7 @@ export const INTERNAL_ROUTES = {
   interviewCopilot: '/interview-copilot',
   aiMockInterview: '/ai-mock-interview',
   questionBank: '/question-bank',
+  interviewQuestions: '/interview-questions',
   terms: '/terms',
   privacy: '/privacy',
   communityGuidelines: '/community-guidelines',

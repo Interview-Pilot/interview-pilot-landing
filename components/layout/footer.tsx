@@ -57,10 +57,13 @@ const footerColumns = [
   },
   {
     title: 'Interview Guides',
-    links: publishedInterviewGuideRefs.map((guide) => ({
-      href: `/interview-guides/${guide.slug}`,
-      label: guide.linkLabel,
-    })),
+    links: [
+      { href: INTERNAL_ROUTES.interviewQuestions, label: 'Interview Questions' },
+      ...publishedInterviewGuideRefs.map((guide) => ({
+        href: `/interview-guides/${guide.slug}`,
+        label: guide.linkLabel,
+      })),
+    ],
   },
   {
     title: 'Alternatives & Comparisons',
@@ -129,7 +132,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                 </Text>
               </Stack>
 
-              <Stack spacing={4}>
+              <Stack spacing={5}>
                 <HStack
                   borderRadius="full"
                   display="inline-flex"
@@ -162,7 +165,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                     <Image
                       src="/static/images/appstore_badge.png"
                       alt="Download on the App Store"
-                      height="36px"
+                      height="40px"
                     />
                   </Link>
                   <Link
@@ -174,7 +177,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                     <Image
                       src="/static/images/android_badge.png"
                       alt="Get it on Google Play"
-                      height="36px"
+                      height="40px"
                     />
                   </Link>
                 </Flex>

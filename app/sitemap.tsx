@@ -3,6 +3,7 @@ import { posts } from '#content'
 import { getBaseUrl } from '#lib/utils'
 import { comparisonPages } from '#data/comparisons'
 import { publishedInterviewGuideRefs } from '#data/interview-guides'
+import { publishedInterviewQuestionRefs } from '#data/interview-question-refs'
 
 /**
  * Get all unique tags from published posts
@@ -48,6 +49,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const interviewGuideUrls = publishedInterviewGuideRefs.map((guide) => ({
     url: `${baseUrl}/interview-guides/${guide.slug}`,
     lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  const interviewQuestionUrls = publishedInterviewQuestionRefs.map((page) => ({
+    url: `${baseUrl}/interview-questions/${page.slug}`,
+    lastModified: new Date(page.lastUpdated),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
@@ -101,7 +109,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/interview-questions`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     ...interviewGuideUrls,
+    ...interviewQuestionUrls,
     ...comparisonUrls,
     ...blogUrls,
     ...tagUrls,

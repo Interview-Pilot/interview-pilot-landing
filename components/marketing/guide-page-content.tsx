@@ -24,6 +24,7 @@ import type {
   WarningBlock,
   WorkedExampleBlock,
 } from '#data/interview-guides'
+import { getInterviewQuestionPageRef } from '#data/interview-question-refs'
 import { INTERNAL_ROUTES } from '#constants'
 import { sectionContentStyles } from '#theme/styles/section-styles'
 
@@ -690,6 +691,7 @@ interface GuidePageContentProps {
 
 export function GuidePageContent({ guide }: GuidePageContentProps) {
   const tocSections = guide.sections.map(({ id, title, group }) => ({ id, title, group }))
+  const questionPage = getInterviewQuestionPageRef(guide.slug)
 
   const totalQuestions = guide.sections
     .flatMap((s) => s.blocks)
@@ -755,6 +757,22 @@ export function GuidePageContent({ guide }: GuidePageContentProps) {
                 </Flex>
               ))}
             </Flex>
+
+            {questionPage ? (
+              <Flex
+                as="a"
+                href={`/interview-questions/${questionPage.slug}`}
+                align="center"
+                gap={2}
+                color="primary.400"
+                fontSize="sm"
+                fontWeight="700"
+                _hover={{ color: 'primary.300', textDecoration: 'none' }}
+              >
+                View all {questionPage.linkLabel.toLowerCase()}
+                <Box as={FiArrowRight} style={{ width: 14, height: 14 }} />
+              </Flex>
+            ) : null}
           </VStack>
         </Container>
       </Box>
