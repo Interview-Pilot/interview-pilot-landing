@@ -15,6 +15,7 @@ interface PricingSectionProps {
   largeTitle?: boolean
   title?: string
   description?: string
+  titleAs?: 'h1' | 'h2'
 }
 
 export function PricingSection(props: PricingSectionProps) {
@@ -22,6 +23,7 @@ export function PricingSection(props: PricingSectionProps) {
     largeTitle = false,
     title: titleText = 'Pricing',
     description,
+    titleAs = 'h2',
   } = props
   const title = largeTitle ? (
     <Text as="span" display="block" fontSize={{ base: '6xl', md: '7xl' }}>
@@ -38,6 +40,7 @@ export function PricingSection(props: PricingSectionProps) {
         title={title}
         description={description ?? pricing.description}
         align="center"
+        titleAs={titleAs}
         innerWidth="1080px"
       >
         <Text

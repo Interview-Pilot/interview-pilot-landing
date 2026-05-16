@@ -19,7 +19,7 @@ export const metadata = {
 export default function PricingPage() {
   return (
     <Box pt={{ base: 24, md: 28 }}>
-      <PricingSection largeTitle />
+      <PricingSection largeTitle title="Interview Pilot Pricing" titleAs="h1" />
     </Box>
   )
 }

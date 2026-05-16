@@ -3,6 +3,7 @@ import {
   BoxProps,
   Container,
   Flex,
+  Grid,
   HStack,
   Image,
   SimpleGrid,
@@ -20,6 +21,7 @@ import {
   SOCIAL_LINKS,
   SUPPORT_EMAIL,
 } from '#constants'
+import { comparisonPages } from '#data/comparisons'
 import siteConfig from '#data/config'
 import { pulseAnimation, statusDotPulseStyles } from '#theme/styles/section-styles'
 
@@ -48,19 +50,31 @@ const footerColumns = [
     ],
   },
   {
-    title: 'Company',
-    links: [
-      { href: INTERNAL_ROUTES.blog, label: 'Blog' },
-      { href: `mailto:${SUPPORT_EMAIL}`, label: 'Contact' },
-      { href: COMPANY_LINKS.website, label: 'Liberace AI', isExternal: true },
-    ],
+    title: 'Alternatives & Comparisons',
+    links: comparisonPages.map((page) => ({
+      href: `/compare/${page.slug}`,
+      label: page.linkLabel,
+    })),
   },
   {
-    title: 'Legal',
-    links: [
-      { href: INTERNAL_ROUTES.terms, label: 'Terms of Service' },
-      { href: INTERNAL_ROUTES.privacy, label: 'Privacy Policy' },
-      { href: INTERNAL_ROUTES.communityGuidelines, label: 'Community Guidelines' },
+    title: 'Company',
+    groups: [
+      {
+        title: undefined,
+        links: [
+          { href: INTERNAL_ROUTES.blog, label: 'Blog' },
+          { href: `mailto:${SUPPORT_EMAIL}`, label: 'Contact' },
+          { href: COMPANY_LINKS.website, label: 'Liberace AI', isExternal: true },
+        ],
+      },
+      {
+        title: 'Legal',
+        links: [
+          { href: INTERNAL_ROUTES.terms, label: 'Terms of Service' },
+          { href: INTERNAL_ROUTES.privacy, label: 'Privacy Policy' },
+          { href: INTERNAL_ROUTES.communityGuidelines, label: 'Community Guidelines' },
+        ],
+      },
     ],
   },
 ] as const
@@ -88,7 +102,10 @@ export const Footer: React.FC<FooterProps> = (props) => {
     >
       <Container maxW="container.2xl" px={{ base: 6, md: 8 }} py={{ base: 10, md: 12 }}>
         <Stack spacing={{ base: 10, md: 12 }}>
-          <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={{ base: 10, lg: 16 }}>
+          <Grid
+            templateColumns={{ base: '1fr', lg: '0.82fr 1.18fr' }}
+            gap={{ base: 10, lg: 14, xl: 18 }}
+          >
             <VStack align="flex-start" spacing={6}>
               <Stack align="flex-start" spacing={4} maxW="420px">
                 <Flex>
@@ -151,7 +168,10 @@ export const Footer: React.FC<FooterProps> = (props) => {
               </Stack>
             </VStack>
 
-            <SimpleGrid columns={{ base: 2, md: 4 }} spacing={{ base: 8, md: 10 }}>
+            <SimpleGrid
+              columns={{ base: 2, md: 3, xl: 4 }}
+              spacing={{ base: 8, md: 10, xl: 12 }}
+            >
               {footerColumns.map((column) => (
                 <Stack key={column.title} spacing={4} align="flex-start">
                   <Text
@@ -162,21 +182,56 @@ export const Footer: React.FC<FooterProps> = (props) => {
                   >
                     {column.title}
                   </Text>
-                  <Stack spacing={3} align="flex-start">
-                    {column.links.map((link) => (
-                      <FooterLink
-                        key={`${column.title}-${link.label}`}
-                        href={link.href}
-                        isExternal={link.isExternal}
-                      >
-                        {link.label}
-                      </FooterLink>
-                    ))}
-                  </Stack>
+                  {'groups' in column ? (
+                    <Stack spacing={7} align="stretch" width="100%">
+                      {column.groups.map((group, groupIndex) => (
+                        <Stack
+                          key={`${column.title}-${groupIndex}`}
+                          spacing={3}
+                          align="flex-start"
+                          pt={groupIndex === 0 ? 0 : 7}
+                          borderTop={groupIndex === 0 ? '0' : '1px solid'}
+                          borderColor="whiteAlpha.100"
+                        >
+                          {group.title ? (
+                            <Text
+                              color="white"
+                              fontSize="sm"
+                              fontWeight="800"
+                              letterSpacing="0.02em"
+                            >
+                              {group.title}
+                            </Text>
+                          ) : null}
+                          {group.links.map((link) => (
+                            <FooterLink
+                              key={`${column.title}-${link.label}`}
+                              href={link.href}
+                              isExternal={link.isExternal}
+                            >
+                              {link.label}
+                            </FooterLink>
+                          ))}
+                        </Stack>
+                      ))}
+                    </Stack>
+                  ) : (
+                    <Stack spacing={3} align="flex-start">
+                      {column.links.map((link) => (
+                        <FooterLink
+                          key={`${column.title}-${link.label}`}
+                          href={link.href}
+                          isExternal={link.isExternal}
+                        >
+                          {link.label}
+                        </FooterLink>
+                      ))}
+                    </Stack>
+                  )}
                 </Stack>
               ))}
             </SimpleGrid>
-          </SimpleGrid>
+          </Grid>
 
           <Flex
             pt={6}

@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { posts } from '#content'
 import { getBaseUrl } from '#lib/utils'
+import { comparisonPages } from '#data/comparisons'
 
 /**
  * Get all unique tags from published posts
@@ -34,6 +35,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.5,
+  }))
+
+  const comparisonUrls = comparisonPages.map((page) => ({
+    url: `${baseUrl}/compare/${page.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
   }))
 
   return [
@@ -79,6 +87,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    ...comparisonUrls,
     ...blogUrls,
     ...tagUrls,
     {

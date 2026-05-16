@@ -2,5 +2,6 @@ node_modules
 .next
 .next.*
 .velite
+*.tsbuildinfo
 .DS_Store
 .claude

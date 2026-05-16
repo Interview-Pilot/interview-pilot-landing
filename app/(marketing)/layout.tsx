@@ -3,24 +3,8 @@
 import { MarketingLayout } from '#components/layout'
 import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
-import faq from '#data/faq'
 
 const baseUrl = 'https://www.interviewpilot.app'
-
-// FAQPage structured data for rich snippets
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faq.items.map((item) => ({
-    '@type': 'Question',
-    name: item.q,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: item.a,
-    },
-  })),
-}
-
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
@@ -28,7 +12,18 @@ export const metadata: Metadata = {
     template: '%s | Interview Pilot',
   },
   description: 'Get real-time interview answers during your interview with AI Copilot. Ace any technical or behavioral questions instantly.',
-  keywords: ['interview', 'AI', 'copilot', 'interview assistance', 'job interview', 'AI assistant', 'interview preparation', 'behavioral interview', 'technical interview'],
+  keywords: [
+    'copilot for interview',
+    'AI interview copilot',
+    'live interview copilot',
+    'real-time interview answers',
+    'AI mock interview',
+    'interview question bank',
+    'interview preparation',
+    'technical interview practice',
+    'behavioral interview practice',
+    'job interview assistant',
+  ],
   authors: [{ name: 'Interview Pilot' }],
   creator: 'Liberace Pte. Ltd.',
   publisher: 'Interview Pilot',
@@ -79,12 +74,6 @@ export default function Layout(props: { children: React.ReactNode }) {
         href: '/#pricing',
       }}
     >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
-        }}
-      />
       {props.children}
       <Analytics />
     </MarketingLayout>

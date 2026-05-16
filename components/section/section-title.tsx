@@ -6,15 +6,25 @@ import {
   useMultiStyleConfig,
 } from '@chakra-ui/react'
 
+type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+
 export interface SectionTitleProps extends Omit<StackProps, 'title'> {
   title: React.ReactNode
   description?: React.ReactNode
   align?: 'left' | 'center' | { base?: 'left' | 'center'; md?: 'left' | 'center' }
   variant?: string
+  headingAs?: HeadingTag
 }
 
 export const SectionTitle: React.FC<SectionTitleProps> = (props) => {
-  const { title, description, align = 'center', variant, ...rest } = props
+  const {
+    title,
+    description,
+    align = 'center',
+    variant,
+    headingAs = 'h2',
+    ...rest
+  } = props
   const styles = useMultiStyleConfig('SectionTitle', { variant })
 
   // Handle responsive align values for alignItems
@@ -48,7 +58,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = (props) => {
       spacing={4}
       {...rest}
     >
-      <Heading sx={styles.title} as="h2" textAlign={getTextAlign()}>
+      <Heading sx={styles.title} as={headingAs} textAlign={getTextAlign()}>
         {title}
       </Heading>
       {description && (

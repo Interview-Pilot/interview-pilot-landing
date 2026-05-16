@@ -45,10 +45,19 @@ export interface PricingProps extends Omit<SectionProps, 'title'> {
   description: React.ReactNode
   plans: Array<PricingPlan>
   align?: 'left' | 'center' | { base: 'center'; md: 'left' }
+  titleAs?: 'h1' | 'h2'
 }
 
 export const Pricing: React.FC<PricingProps> = (props) => {
-  const { children, plans, title, description, align, ...rest } = props
+  const {
+    children,
+    plans,
+    title,
+    description,
+    align,
+    titleAs = 'h2',
+    ...rest
+  } = props
   const platform = usePlatform()
   const primaryDownloadHref = getPrimaryDownloadHref(platform)
 
@@ -59,6 +68,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
         title={title}
         description={description}
         align={align}
+        headingAs={titleAs}
         mb={8}
         pos="relative"
         zIndex={1}

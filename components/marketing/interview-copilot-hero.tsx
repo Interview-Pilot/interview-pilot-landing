@@ -55,7 +55,8 @@ export function InterviewCopilotHero() {
             <Icon as={FiArrowRight} boxSize="13px" color="whiteAlpha.700" />
           </Box>
 
-          <Box
+          <Text
+            as="h1"
             mt={8}
             fontSize={{ base: '55px', sm: '56px', md: '64px', lg: '76px' }}
             fontWeight="bold"
@@ -64,7 +65,7 @@ export function InterviewCopilotHero() {
             zIndex={1}
           >
             <Box as="span" display="inline-flex" alignItems="center" gap="6">
-              <Box as="span">Live AI</Box>
+              <Box as="span">Copilot</Box>
               <Box
                 position="relative"
                 display="inline-block"
@@ -76,8 +77,8 @@ export function InterviewCopilotHero() {
                 sx={heroPulseAnimation}
               />
             </Box>
-            <Br /> Interview Copilot
-          </Box>
+            <Br /> for Interview
+          </Text>
 
           <Box fontWeight="medium">
             <Text
@@ -87,8 +88,8 @@ export function InterviewCopilotHero() {
               position="relative"
               zIndex={1}
             >
-              Get <Em color="primary.400">real-time</Em> interview answers
-              <Br /> during your interview with <Em color="primary.400">Copilot</Em>
+              Use <Em color="primary.400">Copilot for Interview</Em> to get real-time answers,
+              <Br /> follow-up suggestions, and structured talking points during live interviews.
             </Text>
           </Box>
 
