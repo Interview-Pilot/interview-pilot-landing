@@ -2,18 +2,20 @@
 
 import {
   Box,
+  Button,
   Container,
   HStack,
   Icon,
+  Link,
   Text,
   VStack,
 } from '@chakra-ui/react'
 import { Br } from '@saas-ui/react'
 import Image from 'next/image'
-import { FiArrowRight, FiCheckCircle } from 'react-icons/fi'
+import { FiArrowRight, FiCheckCircle, FiDownload } from 'react-icons/fi'
 
 import { Em } from '#components/typography'
-import { ASSETS } from '#constants'
+import { APP_STORE_LINKS, ASSETS, PLATFORM_LINKS } from '#constants'
 import { heroPulseAnimation } from '#theme/styles/section-styles'
 
 export function InterviewCopilotHero() {
@@ -133,6 +135,28 @@ export function InterviewCopilotHero() {
               Use the desktop app for a focused interview overlay with live answer
               guidance, follow-up suggestions, and keyboard-first controls.
             </Text>
+            <Button
+              as={Link}
+              href={PLATFORM_LINKS.desktopDownload}
+              isExternal
+              mt={6}
+              variant="primary"
+              color="black"
+              borderRadius="full"
+              h="50px"
+              minW="240px"
+              fontWeight="bold"
+              fontSize="xl"
+              leftIcon={<FiDownload />}
+              _hover={{
+                bg: 'primary.300',
+                textDecoration: 'none',
+                transform: 'translateY(-1px)',
+              }}
+              transition="all 0.2s ease"
+            >
+              Download for macOS
+            </Button>
           </Box>
 
           <Box position="relative" zIndex={1} maxW="860px" mx="auto">
@@ -169,6 +193,41 @@ export function InterviewCopilotHero() {
               Get answer support without directly interacting with your desktop
               interview application.
             </Text>
+            <HStack
+              mt={6}
+              spacing={4}
+              justify="center"
+              flexWrap="wrap"
+            >
+              <Link
+                href={APP_STORE_LINKS.ios}
+                isExternal
+                _hover={{ opacity: 0.85 }}
+                transition="opacity 0.2s"
+              >
+                <Image
+                  src={ASSETS.images.appStoreBadge}
+                  width={180}
+                  height={60}
+                  alt="Download on the App Store"
+                  style={{ height: '60px', width: 'auto' }}
+                />
+              </Link>
+              <Link
+                href={APP_STORE_LINKS.android}
+                isExternal
+                _hover={{ opacity: 0.85 }}
+                transition="opacity 0.2s"
+              >
+                <Image
+                  src={ASSETS.images.androidBadge}
+                  width={180}
+                  height={60}
+                  alt="Get it on Google Play"
+                  style={{ height: '60px', width: 'auto' }}
+                />
+              </Link>
+            </HStack>
           </Box>
 
           <Box

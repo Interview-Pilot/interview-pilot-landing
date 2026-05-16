@@ -80,10 +80,10 @@ export function MDXContent({ code }: MDXContentProps) {
 
         // Links
         '& a': {
-          color: 'yellow.400',
+          color: 'primary.400',
           textDecoration: 'underline',
           _hover: {
-            color: 'yellow.300',
+            color: 'primary.300',
           },
         },
 
@@ -102,7 +102,7 @@ export function MDXContent({ code }: MDXContentProps) {
         // Blockquotes
         '& blockquote': {
           borderLeft: '4px solid',
-          borderColor: 'yellow.400',
+          borderColor: 'primary.400',
           pl: 4,
           py: 2,
           my: 4,

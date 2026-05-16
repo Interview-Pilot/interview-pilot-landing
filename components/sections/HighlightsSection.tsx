@@ -70,7 +70,7 @@ export function HighlightsSection() {
               sx={glassmorphicCardStyles}
             >
               <Box>
-                <Text color="yellow.400" display="inline">
+                <Text color="primary.400" display="inline">
                   shareyoursuccess
                 </Text>{' '}
                 <Text color="cyan.300" display="inline">

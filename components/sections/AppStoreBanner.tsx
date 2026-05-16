@@ -92,7 +92,7 @@ export function AppStoreBanner() {
               >
                 Interview Pilot
               </Text>
-              <Text color="yellow.400" fontSize="xs" fontWeight="medium">
+              <Text color="primary.400" fontSize="xs" fontWeight="medium">
                 4.9 / 5 ★
               </Text>
             </HStack>
@@ -104,7 +104,7 @@ export function AppStoreBanner() {
 
         <ButtonLink
           href={primaryDownloadHref}
-          colorScheme="primary"
+          variant="primary"
           size="sm"
           color="black"
           fontWeight="bold"

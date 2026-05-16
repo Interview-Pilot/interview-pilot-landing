@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next'
 import { posts } from '#content'
 import { getBaseUrl } from '#lib/utils'
 import { comparisonPages } from '#data/comparisons'
+import { publishedInterviewGuideRefs } from '#data/interview-guides'
 
 /**
  * Get all unique tags from published posts
@@ -42,6 +43,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.6,
+  }))
+
+  const interviewGuideUrls = publishedInterviewGuideRefs.map((guide) => ({
+    url: `${baseUrl}/interview-guides/${guide.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
   }))
 
   return [
@@ -87,6 +95,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/interview-guides`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    ...interviewGuideUrls,
     ...comparisonUrls,
     ...blogUrls,
     ...tagUrls,

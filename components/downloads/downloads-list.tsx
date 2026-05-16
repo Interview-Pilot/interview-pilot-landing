@@ -52,17 +52,21 @@ export function DownloadsList() {
           borderBottomWidth={index === downloads.length - 1 ? '0' : '1px'}
           borderColor="whiteAlpha.300"
         >
-            <Box>
-              <HStack spacing={3}>
-                <Image src={download.icon} alt="" boxSize="22px" />
-                <Text color="white" fontSize={{ base: '2xl', md: '3xl' }} fontWeight="bold">
-                  {download.platform}
-                </Text>
-              </HStack>
-              <Text color="whiteAlpha.700" fontSize="sm" mt={1}>
-                {download.description}
+          <Box>
+            <HStack spacing={3}>
+              <Image src={download.icon} alt="" boxSize="22px" />
+              <Text
+                color="white"
+                fontSize={{ base: '2xl', md: '3xl' }}
+                fontWeight="bold"
+              >
+                {download.platform}
               </Text>
-            </Box>
+            </HStack>
+            <Text color="whiteAlpha.700" fontSize="sm" mt={1}>
+              {download.description}
+            </Text>
+          </Box>
 
           {download.badge ? (
             <Link
@@ -81,9 +85,9 @@ export function DownloadsList() {
           ) : download.href ? (
             <Button
               as={Link}
-                href={download.href}
-                isExternal
-              colorScheme="primary"
+              href={download.href}
+              isExternal
+              variant="primary"
               color="black"
               borderRadius="full"
               minW="200px"
@@ -91,7 +95,7 @@ export function DownloadsList() {
               fontWeight="bold"
               leftIcon={<FiDownload />}
               _hover={{
-                bg: 'primary.400',
+                bg: 'primary.300',
                 textDecoration: 'none',
                 transform: 'translateY(-1px)',
               }}
@@ -99,8 +103,8 @@ export function DownloadsList() {
             >
               {download.action}
             </Button>
-            ) : (
-              <Button
+          ) : (
+            <Button
               isDisabled
               colorScheme="whiteAlpha"
               borderRadius="full"

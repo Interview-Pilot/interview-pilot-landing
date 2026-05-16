@@ -23,6 +23,7 @@ import {
 } from '#constants'
 import { comparisonPages } from '#data/comparisons'
 import siteConfig from '#data/config'
+import { publishedInterviewGuideRefs } from '#data/interview-guides'
 import { pulseAnimation, statusDotPulseStyles } from '#theme/styles/section-styles'
 
 export interface FooterProps extends BoxProps {
@@ -31,23 +32,35 @@ export interface FooterProps extends BoxProps {
 
 const footerColumns = [
   {
-    title: 'Product',
-    links: [
-      { href: INTERNAL_ROUTES.interviewCopilot, label: 'Interview Copilot' },
-      { href: INTERNAL_ROUTES.aiMockInterview, label: 'AI Mock Interview' },
-      { href: INTERNAL_ROUTES.questionBank, label: 'Question Bank' },
-      { href: INTERNAL_ROUTES.downloads, label: 'Downloads' },
+    title: 'Product & Platform',
+    groups: [
+      {
+        title: undefined,
+        links: [
+          { href: INTERNAL_ROUTES.interviewCopilot, label: 'Interview Copilot' },
+          { href: INTERNAL_ROUTES.aiMockInterview, label: 'AI Mock Interview' },
+          { href: INTERNAL_ROUTES.questionBank, label: 'Question Bank' },
+          { href: INTERNAL_ROUTES.downloads, label: 'Downloads' },
+          { href: INTERNAL_ROUTES.pricing, label: 'Pricing' },
+        ],
+      },
+      {
+        title: 'Platform',
+        links: [
+          { href: 'https://platform.interviewpilot.app/signup', label: 'Create account', isExternal: true },
+          { href: 'https://platform.interviewpilot.app/login', label: 'Log in', isExternal: true },
+          { href: APP_STORE_LINKS.ios, label: 'iOS App', isExternal: true },
+          { href: APP_STORE_LINKS.android, label: 'Android App', isExternal: true },
+        ],
+      },
     ],
   },
   {
-    title: 'Platform',
-    links: [
-      { href: 'https://platform.interviewpilot.app/signup', label: 'Create account', isExternal: true },
-      { href: 'https://platform.interviewpilot.app/login', label: 'Log in', isExternal: true },
-      { href: INTERNAL_ROUTES.pricing, label: 'Pricing' },
-      { href: APP_STORE_LINKS.ios, label: 'iOS App', isExternal: true },
-      { href: APP_STORE_LINKS.android, label: 'Android App', isExternal: true },
-    ],
+    title: 'Interview Guides',
+    links: publishedInterviewGuideRefs.map((guide) => ({
+      href: `/interview-guides/${guide.slug}`,
+      label: guide.linkLabel,
+    })),
   },
   {
     title: 'Alternatives & Comparisons',
@@ -207,7 +220,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                             <FooterLink
                               key={`${column.title}-${link.label}`}
                               href={link.href}
-                              isExternal={link.isExternal}
+                              isExternal={'isExternal' in link ? (link as { isExternal?: boolean }).isExternal : undefined}
                             >
                               {link.label}
                             </FooterLink>
@@ -221,7 +234,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                         <FooterLink
                           key={`${column.title}-${link.label}`}
                           href={link.href}
-                          isExternal={link.isExternal}
+                          isExternal={'isExternal' in link ? (link as { isExternal?: boolean }).isExternal : undefined}
                         >
                           {link.label}
                         </FooterLink>

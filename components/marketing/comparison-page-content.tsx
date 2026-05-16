@@ -132,7 +132,7 @@ function IconCell({ value }: { value: ComparisonFeatureValue }) {
   if (value === 'soon') {
     return (
       <Flex justify="center" align="center">
-        <Flex align="center" gap="4px" px="8px" py="3px" borderRadius="full" bg="rgba(255,208,30,0.08)" border="1px solid rgba(255,208,30,0.18)">
+        <Flex align="center" gap="4px" px="8px" py="3px" borderRadius="full" bg="rgba(254,204,4,0.08)" border="1px solid rgba(254,204,4,0.18)">
           <Box as={FiClock} color="primary.300" style={{ width: 10, height: 10 }} />
           <Text fontSize="10px" fontWeight="700" color="primary.300" letterSpacing="0.05em">SOON</Text>
         </Flex>
@@ -253,8 +253,8 @@ export function ComparisonPageContent({ page }: ComparisonPageContentProps) {
               <Flex
                 px={4} py="6px"
                 borderRadius="full"
-                border="1px solid rgba(255,208,30,0.25)"
-                bg="rgba(255,208,30,0.07)"
+                border="1px solid rgba(254,204,4,0.25)"
+                bg="rgba(254,204,4,0.07)"
                 display="inline-flex"
               >
                 <Text color="primary.300" fontSize="xs" fontWeight="800" letterSpacing="0.1em" textTransform="uppercase">
@@ -379,8 +379,8 @@ export function ComparisonPageContent({ page }: ComparisonPageContentProps) {
                         px={3}
                         py={5}
                         textAlign="center"
-                        bg="rgba(255,208,30,0.06)"
-                        borderLeft="1px solid rgba(255,208,30,0.15)"
+                        bg="rgba(254,204,4,0.06)"
+                        borderLeft="1px solid rgba(254,204,4,0.15)"
                         borderTop="2px solid"
                         borderTopColor="primary.400"
                         borderBottom="1px solid rgba(255,255,255,0.08)"
@@ -407,8 +407,8 @@ export function ComparisonPageContent({ page }: ComparisonPageContentProps) {
                             px={2}
                             py="2px"
                             borderRadius="full"
-                            bg="rgba(255,208,30,0.12)"
-                            border="1px solid rgba(255,208,30,0.28)"
+                            bg="rgba(254,204,4,0.12)"
+                            border="1px solid rgba(254,204,4,0.28)"
                             whiteSpace="nowrap"
                             display="inline-flex"
                           >
@@ -509,8 +509,8 @@ export function ComparisonPageContent({ page }: ComparisonPageContentProps) {
                                 as="td"
                                 px={3}
                                 py={{ base: 4, md: 5 }}
-                                bg="rgba(255,208,30,0.04)"
-                                borderLeft="1px solid rgba(255,208,30,0.1)"
+                                bg="rgba(254,204,4,0.04)"
+                                borderLeft="1px solid rgba(254,204,4,0.1)"
                                 transition="background 0.12s"
                               >
                                 <IpCell feature={feature} />
@@ -584,7 +584,7 @@ export function ComparisonPageContent({ page }: ComparisonPageContentProps) {
                                 align="center"
                                 justify="space-between"
                                 p={3}
-                                bg="rgba(255,208,30,0.05)"
+                                bg="rgba(254,204,4,0.05)"
                               >
                                 <Text color="white" fontSize="xs" fontWeight="800" textAlign="center">
                                   Interview Pilot
@@ -621,7 +621,7 @@ export function ComparisonPageContent({ page }: ComparisonPageContentProps) {
               <Button
                 as="a"
                 href={INTERNAL_ROUTES.downloads}
-                colorScheme="primary"
+                variant="primary"
                 color="black"
                 borderRadius="full"
                 size="lg"

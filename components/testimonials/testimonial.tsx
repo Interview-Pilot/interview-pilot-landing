@@ -52,7 +52,7 @@ export const Testimonial = ({
               {description}
             </Text>
           </HStack>
-          <HStack spacing="0.5" color="yellow.400" fontSize={compact ? '12px' : undefined}>
+          <HStack spacing="0.5" color="primary.400" fontSize={compact ? '12px' : undefined}>
             {Array.from({ length: 5 }).map((_, index) => (
               <FaStar key={index} opacity={index < rating ? 1 : 0.28} />
             ))}

@@ -4,6 +4,21 @@ type Dict = Record<string, any>
 
 export default {
   variants: {
+    primary: {
+      bg: 'primary.400',
+      color: 'black',
+      _hover: {
+        bg: 'primary.300',
+        color: 'black',
+        _disabled: {
+          bg: 'primary.400',
+        },
+      },
+      _active: {
+        bg: 'primary.500',
+        color: 'black',
+      },
+    },
     'nav-link': (props: Dict) => {
       const { isActive } = props
 

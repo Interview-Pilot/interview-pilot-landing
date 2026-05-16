@@ -173,7 +173,7 @@ export function HeroSection() {
                   width={{ base: '100%', sm: 'auto' }}
                 >
                   <ButtonLink
-                    colorScheme="primary"
+                    variant="primary"
                     color="black"
                     href={downloadHref}
                     borderRadius="full"

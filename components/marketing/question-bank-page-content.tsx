@@ -66,7 +66,7 @@ const questions = [
 ]
 
 const categoryBadge: Record<string, { bg: string; color: string; border: string }> = {
-  Technical: { bg: 'rgba(255,208,30,0.12)', color: '#ffd01e', border: 'rgba(255,208,30,0.3)' },
+  Technical: { bg: 'rgba(254,204,4,0.12)', color: '#FECC04', border: 'rgba(254,204,4,0.3)' },
   Behavioral: { bg: 'rgba(96,165,250,0.15)', color: '#93c5fd', border: 'rgba(96,165,250,0.3)' },
 }
 

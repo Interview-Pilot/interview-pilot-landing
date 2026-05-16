@@ -83,10 +83,10 @@ export const Pricing: React.FC<PricingProps> = (props) => {
             sx={
               plan.isRecommended
                 ? {
-                    borderColor: 'primary.500',
+                    borderColor: 'primary.400',
                     boxShadow: '0 6px 30px rgba(0, 0, 0, 0.2)',
                     _dark: {
-                      borderColor: 'primary.500',
+                      borderColor: 'primary.400',
                       bg: 'rgba(255, 255, 255, 0.08)',
                     },
                   }
@@ -197,7 +197,7 @@ export interface PricingFeatureProps {
 }
 
 const PricingFeature: React.FC<PricingFeatureProps> = (props) => {
-  const { title, iconColor = 'primary.500', useCircleIcon = true } = props
+  const { title, iconColor = 'primary.400', useCircleIcon = true } = props
   return (
     <HStack>
       <Icon as={useCircleIcon ? FiCheckCircle : FiCheck} color={iconColor} />

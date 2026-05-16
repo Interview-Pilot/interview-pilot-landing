@@ -87,7 +87,7 @@ export default function SubscriptionPage() {
           <Stack spacing="4" pt="4">
             <ButtonLink
               href="https://apps.apple.com/app/id6743263009"
-              colorScheme="primary"
+              variant="primary"
               size="lg"
               color="black"
               fontWeight="bold"

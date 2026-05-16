@@ -15,7 +15,7 @@ export default function NotFound() {
     <Box minH="100vh" display="flex" alignItems="center" justifyContent="center">
       <Container maxW="container.md" textAlign="center">
         <VStack spacing={6}>
-          <Heading as="h1" size="4xl" color="primary.500">
+          <Heading as="h1" size="4xl" color="primary.400">
             404
           </Heading>
           <Heading as="h2" size="xl">
@@ -27,7 +27,7 @@ export default function NotFound() {
           <Button
             as={Link}
             href="/"
-            colorScheme="primary"
+            variant="primary"
             size="lg"
           >
             Back to Home

@@ -71,7 +71,7 @@ export const Feature = {
       p: 2,
       bg: mode(
         'primary.100',
-        transparentize('primary.500', 0.2)(props.theme)
+        transparentize('primary.400', 0.2)(props.theme)
       )(props),
       color: mode('primary.700', 'primary.400')(props),
       float: 'left',
