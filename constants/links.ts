@@ -29,6 +29,7 @@ export const SOCIAL_LINKS = {
   twitter: 'https://x.com/interview_pilot',
   tiktok: 'https://www.tiktok.com/@interview_pilot',
   instagram: 'https://www.instagram.com/interview_pilot',
+  youtube: 'https://www.youtube.com/@InterviewPilot',
 } as const
 
 export const SUPPORT_EMAIL = 'Support@LiberaceAI.com'

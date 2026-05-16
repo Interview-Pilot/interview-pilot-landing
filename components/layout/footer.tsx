@@ -12,7 +12,7 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import { Link, LinkProps } from '@saas-ui/react'
-import { FaInstagram, FaLinkedinIn, FaTiktok, FaTwitter } from 'react-icons/fa'
+import { FaInstagram, FaLinkedinIn, FaTiktok, FaTwitter, FaYoutube } from 'react-icons/fa'
 
 import {
   APP_STORE_LINKS,
@@ -100,6 +100,7 @@ const socialLinks = [
   { href: SOCIAL_LINKS.twitter, label: 'X', icon: <FaTwitter size="18" /> },
   { href: SOCIAL_LINKS.tiktok, label: 'TikTok', icon: <FaTiktok size="18" /> },
   { href: SOCIAL_LINKS.instagram, label: 'Instagram', icon: <FaInstagram size="18" /> },
+  { href: SOCIAL_LINKS.youtube, label: 'YouTube', icon: <FaYoutube size="20" /> },
 ] as const
 
 export const Footer: React.FC<FooterProps> = (props) => {
