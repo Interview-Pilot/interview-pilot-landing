@@ -26,7 +26,7 @@ export const PLATFORM_LINKS = {
 
 export const SOCIAL_LINKS = {
   linkedin: 'https://linkedin.com/company/interview-pilot',
-  twitter: 'https://x.com/interview_pilot',
+  x: 'https://x.com/interview_pilot',
   tiktok: 'https://www.tiktok.com/@interview_pilot',
   instagram: 'https://www.instagram.com/interview_pilot',
   youtube: 'https://www.youtube.com/@InterviewPilot',

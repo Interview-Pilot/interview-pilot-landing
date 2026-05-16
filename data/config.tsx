@@ -1,6 +1,7 @@
 import { Link } from '@saas-ui/react'
 import { NextSeoProps } from 'next-seo'
-import { FaInstagram, FaLinkedinIn, FaTiktok, FaTwitter } from 'react-icons/fa'
+import { FaInstagram, FaLinkedinIn, FaTiktok } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
 import { FiCheck } from 'react-icons/fi'
 
 import { Logo } from './logo'
@@ -95,8 +96,8 @@ const siteConfig = {
         label: <FaLinkedinIn size="18" />,
       },
       {
-        href: SOCIAL_LINKS.twitter,
-        label: <FaTwitter size="18" />,
+        href: SOCIAL_LINKS.x,
+        label: <FaXTwitter size="18" />,
       },
       {
         href: SOCIAL_LINKS.tiktok,

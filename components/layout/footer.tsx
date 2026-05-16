@@ -12,7 +12,8 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import { Link, LinkProps } from '@saas-ui/react'
-import { FaInstagram, FaLinkedinIn, FaTiktok, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaInstagram, FaLinkedinIn, FaTiktok, FaYoutube } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
 
 import {
   APP_STORE_LINKS,
@@ -97,7 +98,7 @@ const footerColumns = [
 
 const socialLinks = [
   { href: SOCIAL_LINKS.linkedin, label: 'LinkedIn', icon: <FaLinkedinIn size="18" /> },
-  { href: SOCIAL_LINKS.twitter, label: 'X', icon: <FaTwitter size="18" /> },
+  { href: SOCIAL_LINKS.x, label: 'X', icon: <FaXTwitter size="18" /> },
   { href: SOCIAL_LINKS.tiktok, label: 'TikTok', icon: <FaTiktok size="18" /> },
   { href: SOCIAL_LINKS.instagram, label: 'Instagram', icon: <FaInstagram size="18" /> },
   { href: SOCIAL_LINKS.youtube, label: 'YouTube', icon: <FaYoutube size="20" /> },
