@@ -26,7 +26,7 @@ export const Logo: React.FC<HTMLChakraProps<'div'>> = (props) => {
           className="logo-text"
           ml={3}
           fontSize="2xl"
-          fontWeight="bold"
+          fontWeight="semibold"
           color={textColor}
           fontFamily="var(--font-dm-sans)"
           letterSpacing="-0.8px"

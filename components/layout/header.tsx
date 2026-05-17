@@ -21,9 +21,10 @@ export const Header = (props: HeaderProps) => {
   React.useEffect(() => {
     return scrollY.on('change', () => setY(scrollY.get()))
   }, [scrollY])
-  
-  const bg = useColorModeValue('whiteAlpha.700', 'rgba(29, 32, 37, 0.7)')
-  
+
+  const isScrolled = y > height
+  const bg = useColorModeValue('whiteAlpha.800', 'rgba(20, 22, 26, 0.82)')
+
   return (
     <Box
       ref={ref}
@@ -31,18 +32,38 @@ export const Header = (props: HeaderProps) => {
       top="0"
       w="full"
       position="fixed"
-      backdropFilter="blur(5px)"
       zIndex="sticky"
-      borderColor="whiteAlpha.100"
-      transitionProperty="common"
-      transitionDuration="normal"
-      bg={y > height ? bg : ''}
-      boxShadow={y > height ? 'md' : ''}
-      borderBottomWidth={y > height ? '1px' : ''}
+      pointerEvents="none"
       {...props}
     >
-      <Container maxW="container.xl" px={{ base: '4', lg: '12' }}>
-        <Flex width="full" align="center" gap="4" py="4">
+      <Container
+        maxW="container.xl"
+        px={{ base: '4', lg: '12' }}
+        py={isScrolled ? 3 : 0}
+        transition="padding 0.32s cubic-bezier(0.22, 1, 0.36, 1)"
+      >
+        <Flex
+          width="full"
+          align="center"
+          gap="4"
+          py={isScrolled ? 3 : 4}
+          px={isScrolled ? { base: 3, md: 4 } : 0}
+          bg={isScrolled ? bg : 'transparent'}
+          borderWidth={isScrolled ? '1px' : '0'}
+          borderColor={isScrolled ? 'rgba(255,255,255,0.14)' : 'transparent'}
+          borderRadius={isScrolled ? 'full' : '0'}
+          boxShadow={
+            isScrolled
+              ? '0 16px 48px rgba(0,0,0,0.38), 0 2px 12px rgba(0,0,0,0.22), inset 0 0 0 1px rgba(255,255,255,0.035)'
+              : '0 0 0 rgba(0,0,0,0), inset 0 0 0 rgba(255,255,255,0)'
+          }
+          backdropFilter={isScrolled ? 'blur(18px) saturate(1.22)' : 'none'}
+          transform={isScrolled ? 'translateY(0)' : 'translateY(-2px)'}
+          transitionProperty="padding, background-color, border-color, border-radius, box-shadow, backdrop-filter, transform"
+          transitionDuration="0.32s"
+          transitionTimingFunction="cubic-bezier(0.22, 1, 0.36, 1)"
+          pointerEvents="auto"
+        >
           <Box flexShrink={0}>
             <Logo
               onClick={(e) => {
