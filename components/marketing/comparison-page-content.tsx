@@ -59,6 +59,7 @@ interface Feature {
   id: ComparisonFeatureId
   label: string
   iconSrc?: string
+  iconFilter?: string
   ipText?: string
   ipSubtext?: string
 }
@@ -95,7 +96,12 @@ const FEATURE_SECTIONS: { title: string; features: Feature[] }[] = [
   {
     title: 'Platforms & Devices',
     features: [
-      { id: 'macos-app', label: 'macOS app', iconSrc: '/static/icons/platforms/apple.svg' },
+      {
+        id: 'macos-app',
+        label: 'macOS app',
+        iconSrc: '/static/icons/platforms/apple.svg',
+        iconFilter: 'invert(1)',
+      },
       { id: 'ios-app', label: 'iOS app', iconSrc: '/static/icons/platforms/app-store.svg' },
       { id: 'android-app', label: 'Android app', iconSrc: '/static/icons/platforms/google-play.svg' },
       { id: 'windows-app', label: 'Windows app', iconSrc: '/static/icons/platforms/windows.svg' },
@@ -496,7 +502,13 @@ export function ComparisonPageContent({ page }: ComparisonPageContentProps) {
                               >
                                 <Flex align="center" gap={2}>
                                   {feature.iconSrc && (
-                                    <Image src={feature.iconSrc} alt="" boxSize="18px" flexShrink={0} />
+                                    <Image
+                                      src={feature.iconSrc}
+                                      alt=""
+                                      boxSize="18px"
+                                      flexShrink={0}
+                                      filter={feature.iconFilter}
+                                    />
                                   )}
                                   <Text color="white" fontSize={{ base: 'md', md: 'lg' }} fontWeight="500">
                                     {feature.label}
@@ -566,7 +578,13 @@ export function ComparisonPageContent({ page }: ComparisonPageContentProps) {
                           >
                             <Flex align="center" gap={2} mb={4}>
                               {feature.iconSrc && (
-                                <Image src={feature.iconSrc} alt="" boxSize="18px" flexShrink={0} />
+                                <Image
+                                  src={feature.iconSrc}
+                                  alt=""
+                                  boxSize="18px"
+                                  flexShrink={0}
+                                  filter={feature.iconFilter}
+                                />
                               )}
                               <Text color="white" fontSize="md" fontWeight="700">
                                 {feature.label}

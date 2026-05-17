@@ -12,6 +12,7 @@ const downloads = [
     href: PLATFORM_LINKS.desktopDownload,
     action: 'Download for macOS',
     icon: '/static/icons/platforms/apple.svg',
+    iconFilter: 'invert(1)',
   },
   {
     platform: 'iOS',
@@ -54,7 +55,12 @@ export function DownloadsList() {
         >
           <Box>
             <HStack spacing={3}>
-              <Image src={download.icon} alt="" boxSize="22px" />
+              <Image
+                src={download.icon}
+                alt=""
+                boxSize="22px"
+                filter={download.iconFilter}
+              />
               <Text
                 color="white"
                 fontSize={{ base: '2xl', md: '3xl' }}
