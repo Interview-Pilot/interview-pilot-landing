@@ -71,7 +71,7 @@ export function FeaturesSection() {
             How to Use
           </Heading>
         }
-        description="Fully Undetectable. Completely fuss-free and easy to use."
+        description="Simple setup. Completely fuss-free and easy to use."
         align="center"
         columns={[1, 2, 3]}
         iconSize={5}
