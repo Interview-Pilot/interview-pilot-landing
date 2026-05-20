@@ -1,5 +1,5 @@
 import { HStack, Flex, Box, Icon, Text } from '@chakra-ui/react'
-import { useDisclosure, useUpdateEffect } from '@chakra-ui/react'
+import { useUpdateEffect } from '@chakra-ui/react'
 import { useScrollSpy } from '#hooks/use-scrollspy'
 import { usePlatform } from '#hooks/use-platform'
 import { getPrimaryDownloadHref } from '#lib/download-routing'
@@ -15,12 +15,17 @@ const platformLoginHref = 'https://platform.interviewpilot.app/login'
 
 interface NavigationProps {
   centerLinks?: boolean;
+  mobileNavIsOpen?: boolean
+  onMobileNavToggle?: () => void
+  onMobileNavClose?: () => void
 }
 
 const Navigation: React.FC<NavigationProps> = ({
   centerLinks = false,
+  mobileNavIsOpen = false,
+  onMobileNavToggle = () => {},
+  onMobileNavClose = () => {},
 }) => {
-  const mobileNav = useDisclosure()
   const path = usePathname()
   const activeId = useScrollSpy(
     siteConfig.header.links
@@ -36,7 +41,7 @@ const Navigation: React.FC<NavigationProps> = ({
 
   useUpdateEffect(() => {
     mobileNavBtnRef.current?.focus()
-  }, [mobileNav.isOpen])
+  }, [mobileNavIsOpen])
 
   // Split the navigation - everything except the last item (Download)
   const navLinks = siteConfig.header.links.slice(0, -1)
@@ -148,11 +153,11 @@ const Navigation: React.FC<NavigationProps> = ({
               <MobileNavButton
                 ref={mobileNavBtnRef}
                 aria-label="Open Menu"
-                onClick={mobileNav.onOpen}
+                onClick={onMobileNavToggle}
               />
             </Box>
 
-            <MobileNavContent isOpen={mobileNav.isOpen} onClose={mobileNav.onClose} />
+            <MobileNavContent isOpen={mobileNavIsOpen} onClose={onMobileNavClose} />
           </HStack>
         </Box>
       </Flex>
@@ -189,9 +194,9 @@ const Navigation: React.FC<NavigationProps> = ({
       <MobileNavButton
         ref={mobileNavBtnRef}
         aria-label="Open Menu"
-        onClick={mobileNav.onOpen}
+        onClick={onMobileNavToggle}
       />
-      <MobileNavContent isOpen={mobileNav.isOpen} onClose={mobileNav.onClose} />
+      <MobileNavContent isOpen={mobileNavIsOpen} onClose={onMobileNavClose} />
     </HStack>
   )
 }

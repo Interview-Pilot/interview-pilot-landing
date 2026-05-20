@@ -85,10 +85,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
                 ? {
                     borderColor: 'primary.400',
                     boxShadow: '0 6px 30px rgba(0, 0, 0, 0.2)',
-                    _dark: {
-                      borderColor: 'primary.400',
-                      bg: 'rgba(255, 255, 255, 0.08)',
-                    },
+                    bg: 'app.surface.cardHover',
                   }
                 : {}
             }
@@ -218,25 +215,21 @@ const PricingBox: React.FC<PricingBoxProps> = (props) => {
   const { title, description, price, children, ...rest } = props
   return (
     <VStack
-      bg="rgba(255, 255, 255, 0.05)"
+      bg="app.surface.card"
       backdropFilter="blur(10px)"
       borderRadius="24px"
       p="8"
       flex="1 0"
       alignItems="stretch"
       borderWidth="1px"
-      borderColor="rgba(255, 255, 255, 0.1)"
+      borderColor="app.border.subtle"
       boxShadow="0 4px 20px rgba(0, 0, 0, 0.1)"
       _hover={{
-        bg: "rgba(255, 255, 255, 0.08)",
+        bg: 'app.surface.cardHover',
         transform: "translateY(-2px)",
         boxShadow: "0 6px 24px rgba(0, 0, 0, 0.15)"
       }}
       transition="all 0.3s ease"
-      _dark={{
-        bg: 'rgba(255, 255, 255, 0.05)',
-        borderColor: 'rgba(255, 255, 255, 0.1)',
-      }}
       {...rest}
     >
       <Heading as="h3" size="md" fontWeight="bold" fontSize="xl" mb="2">

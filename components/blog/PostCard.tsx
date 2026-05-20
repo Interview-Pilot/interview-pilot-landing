@@ -85,8 +85,7 @@ export function PostCard({
               size="md"
               mb={2}
               noOfLines={2}
-              _dark={{ color: 'white' }}
-              _light={{ color: 'gray.800' }}
+              color="app.text.primary"
             >
               {title}
             </Heading>

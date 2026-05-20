@@ -1,8 +1,6 @@
-import { chakra, HTMLChakraProps, Image, Flex, Text, useColorModeValue } from '@chakra-ui/react'
+import { chakra, HTMLChakraProps, Image, Flex, Text } from '@chakra-ui/react'
 
 export const Logo: React.FC<HTMLChakraProps<'div'>> = (props) => {
-  const textColor = useColorModeValue('#231f20', '#fff')
-
   return (
     <chakra.div
       textDecoration="none"
@@ -17,7 +15,7 @@ export const Logo: React.FC<HTMLChakraProps<'div'>> = (props) => {
       <Flex align="center" h="40px">
         <Image
           className="logo-icon"
-          src="/static/images/interviewpilot_newlogo.png"
+          src="/static/images/interview_pilot_logo.png"
           alt="Interview Pilot Logo"
           h="36px"
           w="auto"
@@ -27,7 +25,7 @@ export const Logo: React.FC<HTMLChakraProps<'div'>> = (props) => {
           ml={3}
           fontSize="2xl"
           fontWeight="semibold"
-          color={textColor}
+          color="app.text.primary"
           fontFamily="var(--font-dm-sans)"
           letterSpacing="-0.8px"
           lineHeight="1"

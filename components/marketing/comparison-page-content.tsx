@@ -44,7 +44,7 @@ const IP_FEATURES: Record<ComparisonFeatureId, true | 'soon'> = {
   'macos-app': true,
   'ios-app': true,
   'android-app': true,
-  'windows-app': 'soon',
+  'windows-app': true,
   'mock-interviews': true,
   'question-bank': true,
   'company-specific': true,

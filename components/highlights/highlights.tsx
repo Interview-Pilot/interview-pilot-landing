@@ -28,21 +28,17 @@ export const HighlightsItem: React.FC<HighlightBoxProps> = (props) => {
       alignItems="flex-start"
       spacing="8"
       overflow="hidden"
-      bg="rgba(255, 255, 255, 0.05)"
+      bg="app.surface.card"
       backdropFilter="blur(10px)"
       borderWidth="1px"
-      borderColor="rgba(255, 255, 255, 0.1)"
+      borderColor="app.border.subtle"
       boxShadow="0 4px 20px rgba(0, 0, 0, 0.1)"
       _hover={{
-        bg: "rgba(255, 255, 255, 0.08)",
+        bg: 'app.surface.cardHover',
         transform: "translateY(-2px)",
         boxShadow: "0 6px 24px rgba(0, 0, 0, 0.15)"
       }}
       transition="all 0.3s ease"
-      _dark={{ 
-        bg: 'rgba(255, 255, 255, 0.05)',
-        borderColor: 'rgba(255, 255, 255, 0.1)',
-      }}
       {...rest}
     >
       {title && (
@@ -69,7 +65,7 @@ export const HighlightsTestimonialItem: React.FC <
   return (
     <HighlightsItem
       justifyContent="center"
-      _dark={{ borderColor: 'whiteAlpha.300' }}
+      borderColor="rgba(255,255,255,0.30)"
       p="4"
       {...rest}
     >
@@ -78,12 +74,12 @@ export const HighlightsTestimonialItem: React.FC <
           gradient[0],
           0.8,
         )(theme)}, ${transparentize(gradient[1], 0.8)(theme)})`}
-        opacity="1"
         position="absolute"
         inset="0px"
         pointerEvents="none"
         zIndex="0"
-        _dark={{ opacity: 0.5, filter: 'blur(50px)' }}
+        opacity={0.5}
+        filter="blur(50px)"
       />
       <Testimonial
         name={name}

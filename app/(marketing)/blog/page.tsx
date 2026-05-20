@@ -47,10 +47,9 @@ export default function BlogPage() {
     <Box pt={20}>
       {/* Header */}
       <Box
-        bg="white"
-        _dark={{ bg: 'gray.800', borderColor: 'gray.600' }}
+        bg="app.surface.subtle"
         borderBottom="1px"
-        borderColor="gray.200"
+        borderColor="app.border.subtle"
       >
         <Container maxW="container.xl" py={12}>
           <VStack spacing={6} textAlign="center">
@@ -59,8 +58,7 @@ export default function BlogPage() {
             </Heading>
             <Text
               fontSize="xl"
-              color="gray.600"
-              _dark={{ color: 'gray.300' }}
+              color="app.text.muted"
               maxW="2xl"
             >
               Expert interview strategies, AI-powered preparation tips, and
@@ -72,14 +70,14 @@ export default function BlogPage() {
       </Box>
 
       {/* Blog Posts */}
-      <Box bg="gray.50" _dark={{ bg: 'gray.900' }}>
+      <Box bg="app.bg">
         <Container maxW="container.xl" py={12}>
           {publishedPosts.length === 0 ? (
             <VStack spacing={4} py={12} textAlign="center">
-              <Heading size="lg" color="gray.500" _dark={{ color: 'gray.400' }}>
+              <Heading size="lg" color="app.text.faint">
                 Coming Soon: Interview Success Stories
               </Heading>
-              <Text color="gray.500" _dark={{ color: 'gray.400' }}>
+              <Text color="app.text.faint">
                 We&apos;re preparing expert guides on interview preparation, AI
                 tools, and career advancement. Check back soon for insider tips
                 that will transform your interview game!

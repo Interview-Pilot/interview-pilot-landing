@@ -27,7 +27,7 @@ const faq: FaqData = {
     },
     {
       q: 'What devices can I use Interview Pilot on?',
-      a: 'Interview Pilot is available on iOS, Android, and macOS. You can use it on iPhones, iPads, Android devices, and Mac computers.\n\nWindows support is coming soon.',
+      a: 'Interview Pilot is available on iOS, Android, macOS, and Windows. You can use it on iPhones, iPads, Android devices, Mac computers, and Windows PCs.',
     },
     {
       q: 'Is this considered cheating?',

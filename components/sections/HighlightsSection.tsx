@@ -66,7 +66,6 @@ export function HighlightsSection() {
               py="1"
               ps="8"
               pe="2"
-              _dark={{ bg: 'gray.900' }}
               sx={glassmorphicCardStyles}
             >
               <Box>

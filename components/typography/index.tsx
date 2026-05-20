@@ -2,14 +2,12 @@ import {
   chakra,
   HTMLChakraProps,
   Text,
-  TextProps,
-  useColorModeValue,
 } from '@chakra-ui/react'
 
 export const Em: React.FC<HTMLChakraProps<'em'>> = ({ children, ...props }) => {
   return (
     <Text
-      color={useColorModeValue('black', 'white')}
+      color="app.text.primary"
       as="em"
       fontStyle="normal"
       {...props}

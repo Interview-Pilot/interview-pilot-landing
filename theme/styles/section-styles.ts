@@ -15,14 +15,14 @@ export const sectionContentStyles: SystemStyleObject = {
  * Glassmorphic card styles for consistent card appearance
  */
 export const glassmorphicCardStyles: SystemStyleObject = {
-  bg: 'rgba(255, 255, 255, 0.05)',
+  bg: 'app.surface.card',
   backdropFilter: 'blur(10px)',
   borderRadius: '24px',
   borderWidth: '1px',
-  borderColor: 'rgba(255, 255, 255, 0.1)',
+  borderColor: 'app.border.subtle',
   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
   _hover: {
-    bg: 'rgba(255, 255, 255, 0.08)',
+    bg: 'app.surface.cardHover',
     transform: 'translateY(-2px)',
     boxShadow: '0 6px 24px rgba(0, 0, 0, 0.15)',
   },

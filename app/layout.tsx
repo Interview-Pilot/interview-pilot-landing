@@ -8,7 +8,7 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'Interview Pilot',
   url: 'https://www.interviewpilot.app',
-  logo: 'https://www.interviewpilot.app/static/images/interviewpilot_newlogo.png',
+  logo: 'https://www.interviewpilot.app/static/images/interview_pilot_logo.png',
   description: 'AI-powered interview copilot that provides real-time answers during job interviews.',
   foundingDate: '2023',
   sameAs: [

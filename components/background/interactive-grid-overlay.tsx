@@ -25,9 +25,19 @@ export function InteractiveGridOverlay() {
         pointerEvents="auto"
         style={{ cursor: 'crosshair' }}
         sx={{
-          maskImage: 'radial-gradient(620px circle at center, white, transparent)',
+          maskImage: {
+            base: 'radial-gradient(260px circle at center, white, transparent)',
+            sm: 'radial-gradient(360px circle at center, white, transparent)',
+            md: 'radial-gradient(520px circle at center, white, transparent)',
+            lg: 'radial-gradient(620px circle at center, white, transparent)',
+          },
           WebkitMaskImage:
-            'radial-gradient(620px circle at center, white, transparent)',
+            {
+              base: 'radial-gradient(260px circle at center, white, transparent)',
+              sm: 'radial-gradient(360px circle at center, white, transparent)',
+              md: 'radial-gradient(520px circle at center, white, transparent)',
+              lg: 'radial-gradient(620px circle at center, white, transparent)',
+            },
         }}
       >
         {Array.from({ length: horizontal * vertical }).map((_, index) => {
@@ -41,11 +51,11 @@ export function InteractiveGridOverlay() {
               y={y}
               width={width}
               height={height}
-              stroke="rgba(245, 238, 221, 0.048)"
+              stroke="rgba(245, 238, 221, 0.036)"
               strokeWidth="1"
               fill={
                 hoveredSquare === index
-                  ? 'rgba(196, 176, 136, 0.07)'
+                  ? 'rgba(196, 176, 136, 0.052)'
                   : 'transparent'
               }
               style={{

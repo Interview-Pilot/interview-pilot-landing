@@ -105,7 +105,7 @@ function generateStructuredData(post: (typeof posts)[0]) {
       name: 'Interview Pilot',
       logo: {
         '@type': 'ImageObject',
-        url: `${baseUrl}/static/images/interviewpilot_newlogo.png`,
+        url: `${baseUrl}/static/images/interview_pilot_logo.png`,
       },
     },
     datePublished: post.date,
@@ -174,13 +174,12 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         }}
       />
 
-      <Box bg="white" _dark={{ bg: 'gray.800' }}>
+      <Box bg="app.bg">
         {/* Navigation */}
         <Box
           borderBottom="1px"
-          borderColor="gray.200"
-          bg="gray.50"
-          _dark={{ bg: 'gray.900', borderColor: 'gray.600' }}
+          borderColor="app.border.subtle"
+          bg="app.surface.subtle"
         >
           <Container maxW="container.lg" py={4}>
             <Button as={Link} href="/blog" variant="ghost" colorScheme="blue">
@@ -220,7 +219,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               spacing={6}
               flexWrap="wrap"
               justify="center"
-              color="gray.600"
+              color="app.text.muted"
               fontSize="sm"
             >
               <HStack>
@@ -276,8 +275,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         {relatedPosts && relatedPosts.length > 0 && (
           <Box
             borderTop="1px"
-            borderColor="gray.200"
-            _dark={{ borderColor: 'gray.600' }}
+            borderColor="app.border.subtle"
           >
             <Container maxW="container.lg" py={12}>
               <VStack spacing={8} align="stretch">
@@ -292,8 +290,8 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                       p={5}
                       borderWidth="1px"
                       borderRadius="lg"
-                      bg="white"
-                      _dark={{ bg: 'gray.700', borderColor: 'gray.600' }}
+                      bg="app.surface.card"
+                      borderColor="app.border.subtle"
                       _hover={{
                         shadow: 'md',
                         borderColor: 'blue.500',
@@ -321,8 +319,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                           </Heading>
                         </LinkOverlay>
                         <Text
-                          color="gray.600"
-                          _dark={{ color: 'gray.400' }}
+                          color="app.text.muted"
                           fontSize="sm"
                           noOfLines={2}
                         >
@@ -354,15 +351,14 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* Newsletter CTA */}
         <Box
-          bg="gray.50"
-          _dark={{ bg: 'gray.900', borderColor: 'gray.600' }}
+          bg="app.surface.subtle"
           borderTop="1px"
-          borderColor="gray.200"
+          borderColor="app.border.subtle"
         >
           <Container maxW="container.md" py={12} textAlign="center">
             <VStack spacing={6}>
               <Heading size="lg">Stay Updated</Heading>
-              <Text color="gray.600" maxW="md">
+              <Text color="app.text.muted" maxW="md">
                 Get the latest interview tips and AI insights delivered to your
                 inbox.
               </Text>

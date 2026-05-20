@@ -61,8 +61,7 @@ export const Faq: React.FC<FaqProps> = (props) => {
                     <Text
                       fontWeight="medium"
                       fontSize="xl"
-                      color="gray.800"
-                      _dark={{ color: "white" }}
+                      color="app.text.primary"
                     >
                       {item.q}
                     </Text>

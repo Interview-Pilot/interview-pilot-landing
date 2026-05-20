@@ -17,8 +17,7 @@ export const Hero = ({ title, description, children, ...rest }: HeroProps) => {
             as="div"
             textStyle="subtitle"
             align={{ base: 'center', md: 'left' }}
-            color="gray.500"
-            _dark={{ color: 'gray.400' }}
+            color="app.text.muted"
           >
             {description}
           </Text>

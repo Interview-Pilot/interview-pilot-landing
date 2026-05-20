@@ -3,8 +3,8 @@ import {
   BoxProps,
   Container,
   Flex,
-  useColorModeValue,
 } from '@chakra-ui/react'
+import { useDisclosure } from '@chakra-ui/react'
 import { useScroll } from 'framer-motion'
 import * as React from 'react'
 import { Logo } from './logo'
@@ -23,7 +23,8 @@ export const Header = (props: HeaderProps) => {
   }, [scrollY])
 
   const isScrolled = y > height
-  const bg = useColorModeValue('whiteAlpha.800', 'rgba(20, 22, 26, 0.82)')
+  const mobileNav = useDisclosure()
+  const hasHeaderSurface = isScrolled || mobileNav.isOpen
 
   return (
     <Box
@@ -38,27 +39,30 @@ export const Header = (props: HeaderProps) => {
     >
       <Container
         maxW="container.xl"
-        px={{ base: '4', lg: '12' }}
-        py={isScrolled ? 3 : 0}
+        px={{ base: 0, md: '4', lg: '12' }}
+        py={isScrolled ? { base: 0, md: 3 } : 0}
         transition="padding 0.32s cubic-bezier(0.22, 1, 0.36, 1)"
       >
         <Flex
           width="full"
           align="center"
           gap="4"
-          py={isScrolled ? 3 : 4}
-          px={isScrolled ? { base: 3, md: 4 } : 0}
-          bg={isScrolled ? bg : 'transparent'}
-          borderWidth={isScrolled ? '1px' : '0'}
-          borderColor={isScrolled ? 'rgba(255,255,255,0.14)' : 'transparent'}
-          borderRadius={isScrolled ? 'full' : '0'}
+          py={isScrolled ? { base: 4, md: 3 } : 4}
+          px={isScrolled ? { base: 4, md: 4 } : { base: 4, md: 0 }}
+          bg={hasHeaderSurface ? 'app.surface.header' : 'transparent'}
+          borderWidth={hasHeaderSurface ? { base: '0 0 1px', md: '1px' } : '0'}
+          borderColor={hasHeaderSurface ? 'rgba(255,255,255,0.14)' : 'transparent'}
+          borderRadius={isScrolled ? { base: '0', md: 'full' } : '0'}
           boxShadow={
-            isScrolled
-              ? '0 16px 48px rgba(0,0,0,0.38), 0 2px 12px rgba(0,0,0,0.22), inset 0 0 0 1px rgba(255,255,255,0.035)'
+            hasHeaderSurface
+              ? {
+                  base: '0 10px 28px rgba(0,0,0,0.22)',
+                  md: '0 16px 48px rgba(0,0,0,0.38), 0 2px 12px rgba(0,0,0,0.22), inset 0 0 0 1px rgba(255,255,255,0.035)',
+                }
               : '0 0 0 rgba(0,0,0,0), inset 0 0 0 rgba(255,255,255,0)'
           }
-          backdropFilter={isScrolled ? 'blur(18px) saturate(1.22)' : 'none'}
-          transform={isScrolled ? 'translateY(0)' : 'translateY(-2px)'}
+          backdropFilter={hasHeaderSurface ? 'blur(22px) saturate(1.35)' : 'none'}
+          transform={isScrolled ? 'translateY(0)' : { base: 'translateY(0)', md: 'translateY(-2px)' }}
           transitionProperty="padding, background-color, border-color, border-radius, box-shadow, backdrop-filter, transform"
           transitionDuration="0.32s"
           transitionTimingFunction="cubic-bezier(0.22, 1, 0.36, 1)"
@@ -79,7 +83,12 @@ export const Header = (props: HeaderProps) => {
           </Box>
 
           <Box flex="1" minW={0}>
-            <Navigation centerLinks />
+            <Navigation
+              centerLinks
+              mobileNavIsOpen={mobileNav.isOpen}
+              onMobileNavToggle={mobileNav.onToggle}
+              onMobileNavClose={mobileNav.onClose}
+            />
           </Box>
         </Flex>
       </Container>

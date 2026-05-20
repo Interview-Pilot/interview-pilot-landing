@@ -13,7 +13,7 @@ export const DownloadsPageContent: React.FC = () => {
       <Section innerWidth="container.lg" pt={{ base: '24', lg: '32' }}>
         <SectionTitle
           title="Downloads"
-          description="Download Interview Pilot for macOS, iPhone, or Android. Windows desktop support is coming soon."
+          description="Download Interview Pilot for macOS, Windows, iPhone, or Android."
           align="center"
           mb={10}
         />

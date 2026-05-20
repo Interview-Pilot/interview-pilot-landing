@@ -5,11 +5,22 @@ import { FiDownload } from 'react-icons/fi'
 
 import { APP_STORE_LINKS, ASSETS, PLATFORM_LINKS } from '#constants'
 
-const downloads = [
+type DownloadItem = {
+  platform: string
+  description: string
+  href: string | null
+  action: string
+  icon: string
+  iconFilter?: string
+  badge?: string
+  badgeAlt?: string
+}
+
+const downloads: DownloadItem[] = [
   {
     platform: 'macOS',
     description: 'Download Interview Pilot Desktop for Mac.',
-    href: PLATFORM_LINKS.desktopDownload,
+    href: PLATFORM_LINKS.macDesktopDownload,
     action: 'Download for macOS',
     icon: '/static/icons/platforms/apple.svg',
     iconFilter: 'invert(1)',
@@ -34,9 +45,9 @@ const downloads = [
   },
   {
     platform: 'Windows',
-    description: 'Windows desktop support is coming soon.',
-    href: null,
-    action: 'Coming soon',
+    description: 'Download Interview Pilot Desktop for Windows.',
+    href: PLATFORM_LINKS.windowsDesktopDownload,
+    action: 'Download for Windows',
     icon: '/static/icons/platforms/windows.svg',
   },
 ]
@@ -74,7 +85,7 @@ export function DownloadsList() {
             </Text>
           </Box>
 
-          {download.badge ? (
+          {download.badge && download.href ? (
             <Link
               href={download.href}
               isExternal

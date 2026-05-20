@@ -89,10 +89,9 @@ export default function TagPage({ params }: TagPageProps) {
     <Box pt={20}>
       {/* Header */}
       <Box
-        bg="white"
-        _dark={{ bg: 'gray.800', borderColor: 'gray.600' }}
+        bg="app.surface.subtle"
         borderBottom="1px"
-        borderColor="gray.200"
+        borderColor="app.border.subtle"
       >
         <Container maxW="container.xl" py={12}>
           <VStack spacing={6} textAlign="center">
@@ -116,8 +115,7 @@ export default function TagPage({ params }: TagPageProps) {
 
             <Text
               fontSize="lg"
-              color="gray.600"
-              _dark={{ color: 'gray.300' }}
+              color="app.text.muted"
               maxW="2xl"
             >
               {tagPosts.length} article{tagPosts.length !== 1 ? 's' : ''} found
@@ -151,14 +149,14 @@ export default function TagPage({ params }: TagPageProps) {
       </Box>
 
       {/* Blog Posts */}
-      <Box bg="gray.50" _dark={{ bg: 'gray.900' }}>
+      <Box bg="app.bg">
         <Container maxW="container.xl" py={12}>
           {tagPosts.length === 0 ? (
             <VStack spacing={4} py={12} textAlign="center">
-              <Heading size="lg" color="gray.500" _dark={{ color: 'gray.400' }}>
+              <Heading size="lg" color="app.text.faint">
                 No articles found
               </Heading>
-              <Text color="gray.500" _dark={{ color: 'gray.400' }}>
+              <Text color="app.text.faint">
                 There are no articles with this tag yet.
               </Text>
               <Button as={Link} href="/blog" colorScheme="blue">

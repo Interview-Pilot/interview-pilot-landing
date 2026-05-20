@@ -1,4 +1,4 @@
-import { transparentize, mode } from '@chakra-ui/theme-tools'
+import { transparentize } from '@chakra-ui/theme-tools'
 
 const Features = {
   parts: ['container', 'title', 'description', 'icon'],
@@ -36,9 +36,9 @@ const Features = {
         colorScheme: 'white',
       },
     },
-    light: ({ colorMode }: any) => ({
+    light: () => ({
       container: {
-        bg: colorMode === 'dark' ? 'gray.700' : 'gray.100',
+        bg: 'app.surface.card',
       },
     }),
   },
@@ -63,17 +63,14 @@ export const Feature = {
     description: {
       fontSize: 'xl',
       fontWeight: 'normal',
-      color: mode('gray.600', 'gray.300')(props),
+      color: 'app.text.muted',
     },
     icon: {
       mb: 4,
       mr: 4,
       p: 2,
-      bg: mode(
-        'primary.100',
-        transparentize('primary.400', 0.2)(props.theme)
-      )(props),
-      color: mode('primary.700', 'primary.400')(props),
+      bg: transparentize('primary.400', 0.2)(props.theme),
+      color: 'primary.400',
       float: 'left',
     },
   }),
@@ -112,9 +109,9 @@ export const Feature = {
         mt: 1,
       },
     },
-    light: ({ colorMode }: any) => ({
+    light: () => ({
       wrapper: {
-        bg: colorMode === 'dark' ? 'gray.700' : 'gray.100',
+        bg: 'app.surface.card',
       },
     }),
   },

@@ -11,6 +11,8 @@ export const APP_STORE_LINKS = {
 export const DESKTOP_DOWNLOAD_LINKS = {
   macos: 'https://downloads.interviewpilot.app/macos/latest.dmg',
   macosMetadata: 'https://downloads.interviewpilot.app/macos/latest.json',
+  windows: 'https://downloads.interviewpilot.app/windows/latest.exe',
+  windowsMetadata: 'https://downloads.interviewpilot.app/windows/latest.json',
 } as const
 
 export const PLATFORM_LINKS = {
@@ -22,6 +24,16 @@ export const PLATFORM_LINKS = {
       process.env.NEXT_PUBLIC_PLATFORM_SITE_URL ||
       'https://platform.interviewpilot.app'
     }/desktop-download?download=1&source=landing`,
+  macDesktopDownload:
+    `${
+      process.env.NEXT_PUBLIC_PLATFORM_SITE_URL ||
+      'https://platform.interviewpilot.app'
+    }/desktop-download?download=1&platform=macos&source=landing`,
+  windowsDesktopDownload:
+    `${
+      process.env.NEXT_PUBLIC_PLATFORM_SITE_URL ||
+      'https://platform.interviewpilot.app'
+    }/desktop-download?download=1&platform=windows&source=landing`,
 } as const
 
 export const SOCIAL_LINKS = {
@@ -57,7 +69,7 @@ export const INTERNAL_ROUTES = {
 
 export const ASSETS = {
   images: {
-    logo: '/static/images/interviewpilot_newlogo.png',
+    logo: '/static/images/interview_pilot_logo.png',
     openAiLogo: '/static/images/openailogo.png',
     whisperLogo: '/static/images/whisperlogo.png',
     appleAppStore: '/static/images/apple_appstore.png',

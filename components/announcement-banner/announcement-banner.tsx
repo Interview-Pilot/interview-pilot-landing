@@ -6,13 +6,8 @@ import {
   Button,
   IconButton,
   Box,
+  Text,
 } from "@chakra-ui/react";
-import {
-  Banner,
-  BannerActions,
-  BannerDescription,
-  BannerTitle,
-} from "@saas-ui/react";
 import { FiArrowRight, FiX } from "react-icons/fi";
 
 export interface AnnouncementBannerProps {
@@ -39,7 +34,7 @@ export const AnnouncementBanner: React.FC<AnnouncementBannerProps> = (
 
   return (
     <Flex position="fixed" top="0" left="0" zIndex="20" width="100%">
-      <Banner
+      <Flex
         display="flex"
         width="100vw"
         justifyContent="center"
@@ -56,7 +51,6 @@ export const AnnouncementBanner: React.FC<AnnouncementBannerProps> = (
         px="4"
         overflow="hidden"
         transition="all .2s ease-out"
-        _dark={{ bg: "primary.400", color: "black" }}
       >
         <NextLink href={href} legacyBehavior>
           <Flex
@@ -72,18 +66,20 @@ export const AnnouncementBanner: React.FC<AnnouncementBannerProps> = (
           >
             <HStack zIndex="2" spacing="2" justify="center" width="100%" pr="10">
               <Box display={{ base: "none", md: "block" }}>
-                <BannerTitle fontWeight="bold" noOfLines={1}>
+                <Text as="span" fontWeight="bold" noOfLines={1} color="black">
                   {title}
-                </BannerTitle>
+                </Text>
               </Box>
-              <BannerDescription
+              <Text
+                as="span"
                 display="block"
                 fontWeight="medium"
+                color="black"
                 dangerouslySetInnerHTML={{ __html: description }}
               />
 
               {action && (
-                <BannerActions>
+                <Box>
                   <Button
                     size="xs"
                     variant="link"
@@ -102,7 +98,7 @@ export const AnnouncementBanner: React.FC<AnnouncementBannerProps> = (
                   >
                     Read more
                   </Button>
-                </BannerActions>
+                </Box>
               )}
             </HStack>
           </Flex>
@@ -129,7 +125,7 @@ export const AnnouncementBanner: React.FC<AnnouncementBannerProps> = (
             _active={{ bg: "blackAlpha.200", color: "black" }}
           />
         ) : null}
-      </Banner>
+      </Flex>
     </Flex>
   );
 };

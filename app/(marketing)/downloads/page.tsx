@@ -6,14 +6,14 @@ import { sectionContentStyles } from '#theme/styles/section-styles'
 export const metadata = {
   title: 'Downloads',
   description:
-    'Download Interview Pilot for macOS, iPhone, and Android. Windows support is coming soon.',
+    'Download Interview Pilot for macOS, Windows, iPhone, and Android.',
   alternates: {
     canonical: '/downloads',
   },
   openGraph: {
     title: 'Downloads',
     description:
-      'Download Interview Pilot for macOS, iPhone, and Android. Windows support is coming soon.',
+      'Download Interview Pilot for macOS, Windows, iPhone, and Android.',
     url: '/downloads',
   },
 }
