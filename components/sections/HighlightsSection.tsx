@@ -51,7 +51,7 @@ export function HighlightsSection() {
       <Highlights>
         <HighlightsItem colSpan={[1, null, 2]} title="Accurate. Instant. Tailored.">
           <VStack alignItems="flex-start" spacing="8" position="relative" zIndex={1}>
-            <Text color="muted" fontSize="xl">
+            <Text color="app.text.muted" fontSize="xl">
               Ace any technical or behavioral questions with{' '}
               <Em>our most intelligent Copilot model</Em>. Upload your resume, job
               details and more for <Em>full Copilot customization</Em>. Choose your
@@ -90,7 +90,7 @@ export function HighlightsSection() {
         </HighlightsItem>
 
         <HighlightsItem title="Voice Recognition">
-          <Text color="muted" fontSize="lg" position="relative" zIndex={1}>
+          <Text color="app.text.muted" fontSize="lg" position="relative" zIndex={1}>
             Ranked 1st worldwide, Interview Pilot uses the world&apos;s most
             accurate AI speech recognition system (ASR).
             <br />
@@ -101,7 +101,7 @@ export function HighlightsSection() {
         </HighlightsItem>
 
         <HighlightsItem title="Full Privacy">
-          <Text color="muted" fontSize="lg" position="relative" zIndex={1}>
+          <Text color="app.text.muted" fontSize="lg" position="relative" zIndex={1}>
             Your data is secure and owned by you. All data processing uses
             industry-standard encryption.
             <br />
@@ -111,7 +111,7 @@ export function HighlightsSection() {
         </HighlightsItem>
 
         <HighlightsItem colSpan={[1, null, 2]} title="Get Ahead of Your Peers">
-          <Text color="muted" fontSize="lg" position="relative" zIndex={1}>
+          <Text color="app.text.muted" fontSize="lg" position="relative" zIndex={1}>
             We take care of the trouble of recruiting and interviewing, so you
             can focus on what really matters: growing your skillset and career.
           </Text>

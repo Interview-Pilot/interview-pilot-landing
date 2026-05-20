@@ -28,6 +28,7 @@ export const HighlightsItem: React.FC<HighlightBoxProps> = (props) => {
       alignItems="flex-start"
       spacing="8"
       overflow="hidden"
+      color="app.text.primary"
       bg="app.surface.card"
       backdropFilter="blur(10px)"
       borderWidth="1px"
@@ -42,7 +43,7 @@ export const HighlightsItem: React.FC<HighlightBoxProps> = (props) => {
       {...rest}
     >
       {title && (
-        <Heading fontSize="3xl" mb="6">
+        <Heading fontSize="3xl" mb="6" color="app.text.primary">
           {title}
         </Heading>
       )}

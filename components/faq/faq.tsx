@@ -30,7 +30,7 @@ export const Faq: React.FC<FaqProps> = (props) => {
   return (
     <Section id="faq">
       <SectionTitle title={title} description={description} align={align} />
-      <Container maxW="container.md" px={{ base: 4, md: 8 }}>
+      <Container maxW="container.md" px={{ base: 0, md: 8 }}>
         <Box
           bg="rgba(255, 255, 255, 0.05)"
           backdropFilter="blur(10px)"
