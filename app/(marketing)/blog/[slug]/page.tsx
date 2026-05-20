@@ -4,7 +4,6 @@ import {
   Container,
   Heading,
   Text,
-  Image,
   HStack,
   VStack,
   Badge,
@@ -15,6 +14,7 @@ import {
   LinkOverlay,
 } from '@chakra-ui/react'
 import Link from 'next/link'
+import NextImage from 'next/image'
 import { posts } from '#content'
 import { MDXContent } from '#components/blog'
 import { formatDate, getBaseUrl } from '#lib/utils'
@@ -193,15 +193,22 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <VStack spacing={6} textAlign="center">
             {/* Hero Image */}
             {post.image && (
-              <Image
-                src={post.image}
-                alt={post.title}
-                maxH="400px"
+              <Box
+                position="relative"
                 w="100%"
-                objectFit="cover"
+                h={{ base: '220px', md: '400px' }}
+                overflow="hidden"
                 borderRadius="lg"
                 shadow="lg"
-              />
+              >
+                <NextImage
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  sizes="(max-width: 767px) 100vw, 1024px"
+                  style={{ objectFit: 'cover' }}
+                />
+              </Box>
             )}
 
             <Heading
@@ -299,15 +306,22 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                       transition="all 0.2s"
                     >
                       {relatedPost.image && (
-                        <Image
-                          src={relatedPost.image}
-                          alt={relatedPost.title}
-                          borderRadius="md"
-                          mb={4}
+                        <Box
+                          position="relative"
                           h="140px"
                           w="100%"
-                          objectFit="cover"
-                        />
+                          mb={4}
+                          overflow="hidden"
+                          borderRadius="md"
+                        >
+                          <NextImage
+                            src={relatedPost.image}
+                            alt={relatedPost.title}
+                            fill
+                            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 33vw"
+                            style={{ objectFit: 'cover' }}
+                          />
+                        </Box>
                       )}
                       <VStack align="start" spacing={2}>
                         <LinkOverlay

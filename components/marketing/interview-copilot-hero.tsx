@@ -165,6 +165,7 @@ export function InterviewCopilotHero() {
               width={800}
               height={642}
               alt="Interview Pilot desktop Copilot answer interface"
+              sizes="(max-width: 767px) 92vw, 860px"
               style={{
                 width: '100%',
                 height: 'auto',
@@ -251,6 +252,7 @@ export function InterviewCopilotHero() {
                 width={420}
                 height={419}
                 alt="Interview Pilot mobile Copilot app"
+                sizes="(max-width: 767px) 82vw, 420px"
                 style={{
                   width: '100%',
                   maxWidth: '420px',

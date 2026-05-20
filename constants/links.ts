@@ -72,12 +72,10 @@ export const ASSETS = {
     logo: '/static/images/interview_pilot_logo.png',
     openAiLogo: '/static/images/openailogo.png',
     whisperLogo: '/static/images/whisperlogo.png',
-    appleAppStore: '/static/images/apple_appstore.png',
-    googlePlayStore: '/static/images/google_playstore.png',
     appStoreBadge: '/static/images/appstore_badge.png',
     androidBadge: '/static/images/android_badge.png',
   },
   screenshots: {
-    heroHand: '/static/screenshots/hand1.png',
+    heroHand: '/static/screenshots/hand1.webp',
   },
 } as const

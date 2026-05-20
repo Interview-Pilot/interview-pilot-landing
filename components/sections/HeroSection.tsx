@@ -287,6 +287,7 @@ export function HeroSection() {
                     height={578}
                     alt="Interview Pilot App Screenshot"
                     priority
+                    sizes="(max-width: 767px) 82vw, (max-width: 1199px) 610px, 50vw"
                     style={{
                       width: '100%',
                       maxWidth: '610px',
