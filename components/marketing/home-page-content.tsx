@@ -8,6 +8,7 @@ import {
   CompanyLogosCarouselSection,
   DownloadOptionsSection,
   FaqSection,
+  FloatingGrowthMetric,
   FeaturesSection,
   HeroSection,
   HighlightsSection,
@@ -40,6 +41,8 @@ export function HomePageContent() {
       <FaqSection />
 
       <AppStoreBanner />
+
+      <FloatingGrowthMetric />
 
       {/* Bottom padding to prevent content from being hidden behind the mobile banner */}
       <Box pb={{ base: '16', md: '0' }} />
