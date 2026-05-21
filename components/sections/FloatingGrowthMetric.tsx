@@ -89,9 +89,9 @@ export function FloatingGrowthMetric() {
     <Portal>
       <Box
       position="fixed"
-      left={{ base: 3, md: 4, lg: 6 }}
+      left={{ base: 2, md: 3, lg: 5 }}
       right={{ base: 'auto', md: 'auto' }}
-      bottom={{ base: mobileBannerVisible ? 20 : 6, md: 6 }}
+      bottom={{ base: mobileBannerVisible ? 16 : 3, md: 5 }}
       transform="none"
       zIndex="toast"
       display="block"
