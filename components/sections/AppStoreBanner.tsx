@@ -3,11 +3,10 @@
 import { Box, HStack, Portal, Stack, Text, VStack } from '@chakra-ui/react'
 import Image from 'next/image'
 
-import { useEffect, useState } from 'react'
-
 import { ButtonLink } from '#components/button-link/button-link'
 import { ASSETS } from '#constants'
 import { usePlatform } from '#hooks/use-platform'
+import { useScrollReveal } from '#hooks/use-scroll-reveal'
 import { getPrimaryDownloadHref } from '#lib/download-routing'
 
 /**
@@ -15,26 +14,9 @@ import { getPrimaryDownloadHref } from '#lib/download-routing'
  * that promotes the app download with platform-specific messaging
  */
 export function AppStoreBanner() {
-  const [visible, setVisible] = useState(true)
-  const [scrollPos, setScrollPos] = useState(0)
   const platform = usePlatform()
+  const visible = useScrollReveal()
   const primaryDownloadHref = getPrimaryDownloadHref(platform)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset
-
-      // Only update visibility if there's a significant change in scroll position
-      if (Math.abs(scrollPos - currentScrollPos) > 10) {
-        const isVisible = scrollPos > currentScrollPos || currentScrollPos < 10
-        setScrollPos(currentScrollPos)
-        setVisible(isVisible)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [scrollPos])
 
   const isIOS = platform === 'ios'
   const isAndroid = platform === 'android'
