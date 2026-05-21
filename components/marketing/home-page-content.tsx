@@ -2,7 +2,6 @@
 
 import { Box } from '@chakra-ui/react'
 
-import { InteractiveGridOverlay } from '#components/background/interactive-grid-overlay'
 import {
   AppStoreBanner,
   CompanyLogosCarouselSection,
@@ -20,7 +19,9 @@ import {
 export function HomePageContent() {
   return (
     <Box>
-      <InteractiveGridOverlay />
+      {/* Grid overlay intentionally disconnected from the homepage.
+          The implementation is kept at #components/background/interactive-grid-overlay
+          for possible future reuse. */}
 
       <SystemStatus />
 
