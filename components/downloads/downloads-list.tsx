@@ -45,9 +45,9 @@ const downloads: DownloadItem[] = [
   },
   {
     platform: 'Windows',
-    description: 'Download Interview Pilot Desktop for Windows.',
-    href: PLATFORM_LINKS.windowsDesktopDownload,
-    action: 'Download for Windows',
+    description: 'Interview Pilot Desktop for Windows is coming soon.',
+    href: null,
+    action: 'Coming soon',
     icon: '/static/icons/platforms/windows.svg',
   },
 ]

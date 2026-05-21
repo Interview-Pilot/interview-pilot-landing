@@ -44,7 +44,7 @@ export function getPrimaryDownloadHref(platform: DownloadPlatform): string {
     case 'macos':
       return PLATFORM_LINKS.macDesktopDownload
     case 'windows':
-      return PLATFORM_LINKS.windowsDesktopDownload
+      return INTERNAL_ROUTES.downloads
     case 'unknown':
     default:
       return INTERNAL_ROUTES.downloads
