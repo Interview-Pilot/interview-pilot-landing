@@ -112,10 +112,18 @@ export function ParticleBackground({
     }
 
     const resize = () => {
+      const nextWidth = container.offsetWidth
+      const nextHeight = container.offsetHeight
+      const currentSize = sizeRef.current
+      const widthChanged = Math.abs(nextWidth - currentSize.w) > 8
+      const heightChanged = Math.abs(nextHeight - currentSize.h) > 80
+
+      if (currentSize.w > 0 && !widthChanged && !heightChanged) return
+
       circlesRef.current = []
       sizeRef.current = {
-        w: container.offsetWidth,
-        h: container.offsetHeight,
+        w: nextWidth,
+        h: nextHeight,
       }
       canvas.width = sizeRef.current.w * pixelRatio
       canvas.height = sizeRef.current.h * pixelRatio

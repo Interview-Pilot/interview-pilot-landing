@@ -48,7 +48,8 @@ export const Header = (props: HeaderProps) => {
           align="center"
           gap="4"
           py={isScrolled ? { base: 4, md: 3 } : 4}
-          px={isScrolled ? { base: 4, md: 4 } : { base: 4, md: 0 }}
+          pl={isScrolled ? { base: 4, md: 6 } : { base: 4, md: 0 }}
+          pr={isScrolled ? { base: 4, md: 4 } : { base: 4, md: 0 }}
           bg={hasHeaderSurface ? 'app.surface.header' : 'transparent'}
           borderWidth={hasHeaderSurface ? { base: '0 0 1px', md: '1px' } : '0'}
           borderColor={hasHeaderSurface ? 'rgba(255,255,255,0.14)' : 'transparent'}

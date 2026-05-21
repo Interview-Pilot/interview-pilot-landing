@@ -14,6 +14,7 @@ import Image from 'next/image'
 import {
   FiArrowRight,
   FiCheckCircle,
+  FiDownload,
   FiGlobe,
   FiShield,
   FiZap,
@@ -28,12 +29,43 @@ import { usePlatform } from '#hooks/use-platform'
 import { ASSETS, INTERNAL_ROUTES } from '#constants'
 import { heroPulseAnimation, sectionContentStyles } from '#theme/styles/section-styles'
 
+const platformSignupHref = 'https://platform.interviewpilot.app/signup'
+
+function getHeroDownloadCta(platform: ReturnType<typeof usePlatform>) {
+  switch (platform) {
+    case 'ios':
+      return {
+        label: 'Get on App Store',
+        iconSrc: '/static/icons/platforms/app-store.svg',
+      }
+    case 'android':
+      return {
+        label: 'Get on Play Store',
+        iconSrc: '/static/icons/platforms/google-play.svg',
+      }
+    case 'macos':
+      return {
+        label: 'Get for Mac',
+        iconSrc: '/static/icons/platforms/apple.svg',
+        iconFilter: 'invert(1)',
+        rightIcon: FiDownload,
+      }
+    case 'windows':
+    default:
+      return {
+        label: 'Download free',
+        icon: FiArrowRight,
+      }
+  }
+}
+
 /**
  * Hero section with main value proposition, download buttons, and key features
  */
 export function HeroSection() {
   const platform = usePlatform()
   const downloadHref = getPrimaryDownloadHref(platform)
+  const downloadCta = getHeroDownloadCta(platform)
 
   return (
     <Box overflow="hidden">
@@ -85,7 +117,7 @@ export function HeroSection() {
             title={
               <Box>
                 <Box
-                  fontSize={{ base: '55px', sm: '49px', md: '56px', lg: '66px' }}
+                  fontSize={{ base: '57px', sm: '51px', md: '62px', lg: '70px' }}
                   fontWeight="bold"
                   lineHeight="1.1"
                   position="relative"
@@ -178,19 +210,19 @@ export function HeroSection() {
                     href={downloadHref}
                     borderRadius="full"
                     px="1"
-                    minW="216px"
-                    h="50px"
+                    minW="250px"
+                    h="56px"
                     position="relative"
                     textAlign="left"
                     width={{ base: '100%', sm: 'auto' }}
                   >
                     <Box
                       position="absolute"
-                      left="4px"
+                      left="5px"
                       top="50%"
                       transform="translateY(-50%)"
-                      w="42px"
-                      h="42px"
+                      w="46px"
+                      h="46px"
                       borderRadius="full"
                       bg="black"
                       color="white"
@@ -198,34 +230,50 @@ export function HeroSection() {
                       alignItems="center"
                       justifyContent="center"
                     >
-                      <Icon as={FiArrowRight} boxSize="18px" />
+                      {downloadCta.iconSrc ? (
+                        <Box
+                          as="img"
+                          src={downloadCta.iconSrc}
+                          alt=""
+                          w="16px"
+                          h="16px"
+                          filter={downloadCta.iconFilter}
+                        />
+                      ) : (
+                        <Icon as={downloadCta.icon} boxSize="16px" />
+                      )}
                     </Box>
-                    <Box
+                    <HStack
+                      spacing="2"
                       position="absolute"
-                      left={{ base: '0', sm: '50px' }}
-                      right={{ base: '0', sm: '8px' }}
+                      left={{ base: '54px', sm: '58px' }}
+                      right={{ base: '18px', sm: '18px' }}
                       top="50%"
                       transform="translateY(-50%)"
-                      textAlign="center"
+                      justifyContent="center"
                       lineHeight="1"
                     >
-                      <Text as="span" fontWeight="bold" fontSize="xl">
-                        Download free
+                      <Text as="span" fontWeight="semibold" fontSize="2xl">
+                        {downloadCta.label}
                       </Text>
-                    </Box>
+                      {downloadCta.rightIcon ? (
+                        <Icon as={downloadCta.rightIcon} boxSize="18px" />
+                      ) : null}
+                    </HStack>
                   </ButtonLink>
                   <ButtonLink
-                    href="#features"
+                    href={platformSignupHref}
                     variant="outline"
                     borderRadius="full"
-                    h="50px"
-                    minW="176px"
-                    px="7"
-                    fontSize="xl"
+                    h="56px"
+                    minW="190px"
+                    px="8"
+                    fontSize="2xl"
                     width={{ base: '100%', sm: 'auto' }}
                     rightIcon={
                       <Icon
                         as={FiArrowRight}
+                        boxSize="20px"
                         sx={{
                           transitionProperty: 'common',
                           transitionDuration: 'normal',
@@ -236,7 +284,7 @@ export function HeroSection() {
                       />
                     }
                   >
-                    Learn More
+                    Get Started
                   </ButtonLink>
                 </Stack>
                 <Link
