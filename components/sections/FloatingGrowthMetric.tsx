@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, HStack, Icon, IconButton, Text, VStack } from '@chakra-ui/react'
+import { Box, HStack, Icon, IconButton, Portal, Text, VStack } from '@chakra-ui/react'
 
 import { useEffect, useState } from 'react'
 import { FiX } from 'react-icons/fi'
@@ -86,7 +86,8 @@ export function FloatingGrowthMetric() {
   }, [hasWeeklyMetric])
 
   return (
-    <Box
+    <Portal>
+      <Box
       position="fixed"
       left={{ base: 4, md: 4, lg: 6 }}
       right={{ base: 'auto', md: 'auto' }}
@@ -207,6 +208,7 @@ export function FloatingGrowthMetric() {
           }}
         />
       </HStack>
-    </Box>
+      </Box>
+    </Portal>
   )
 }
