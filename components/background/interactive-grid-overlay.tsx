@@ -23,7 +23,6 @@ export function InteractiveGridOverlay() {
         width="100%"
         height="100%"
         pointerEvents="auto"
-        style={{ cursor: 'crosshair' }}
         sx={{
           maskImage: {
             base: 'radial-gradient(260px circle at center, white, transparent)',
@@ -51,7 +50,7 @@ export function InteractiveGridOverlay() {
               y={y}
               width={width}
               height={height}
-              stroke="rgba(245, 238, 221, 0.036)"
+              stroke="rgba(245, 238, 221, 0.026)"
               strokeWidth="1"
               fill={
                 hoveredSquare === index

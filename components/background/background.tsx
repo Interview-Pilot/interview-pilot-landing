@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
+import { ParticleBackground } from './particle-background'
 
 const Background: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const Background: React.FC = () => {
           linear-gradient(180deg, #131315 0%, #0E0E10 100%)
         `}
       />
+      <ParticleBackground color="#F5EEDD" quantity={90} />
     </Box>
   )
 }

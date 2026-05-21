@@ -89,7 +89,7 @@ export function FloatingGrowthMetric() {
     <Portal>
       <Box
       position="fixed"
-      left={{ base: 4, md: 4, lg: 6 }}
+      left={{ base: 3, md: 4, lg: 6 }}
       right={{ base: 'auto', md: 'auto' }}
       bottom={{ base: mobileBannerVisible ? 20 : 6, md: 6 }}
       transform="none"
@@ -112,9 +112,9 @@ export function FloatingGrowthMetric() {
             setCollapsed(false)
           }
         }}
-        spacing={collapsed ? 0 : 3}
-        pl={collapsed ? 2.5 : { base: 4, md: 4 }}
-        pr={collapsed ? 2.5 : { base: 3.5, md: 3.5 }}
+        spacing={collapsed ? 0 : { base: 2.5, md: 3 }}
+        pl={collapsed ? { base: 2, md: 2.5 } : { base: 3.5, md: 4 }}
+        pr={collapsed ? { base: 2, md: 2.5 } : { base: 3, md: 3.5 }}
         py={0}
         borderRadius="full"
         bg="rgba(18, 19, 22, 0.9)"
@@ -122,13 +122,13 @@ export function FloatingGrowthMetric() {
         borderColor="rgba(255, 255, 255, 0.14)"
         boxShadow="0 18px 55px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08)"
         backdropFilter="blur(18px) saturate(145%)"
-        w={collapsed ? '56px' : 'max-content'}
-        h={collapsed ? '56px' : '68px'}
+        w={collapsed ? { base: '52px', md: '56px' } : 'max-content'}
+        h={collapsed ? { base: '52px', md: '56px' } : { base: '62px', md: '68px' }}
         cursor={collapsed ? 'pointer' : 'default'}
         overflow="hidden"
         transition="width 0.34s cubic-bezier(0.22, 1, 0.36, 1), height 0.34s cubic-bezier(0.22, 1, 0.36, 1), padding 0.34s cubic-bezier(0.22, 1, 0.36, 1), gap 0.34s cubic-bezier(0.22, 1, 0.36, 1)"
       >
-        <Icon as={PiSealCheckFill} boxSize="32px" color="cyan.400" flexShrink={0} />
+        <Icon as={PiSealCheckFill} boxSize={{ base: '29px', md: '32px' }} color="cyan.400" flexShrink={0} />
         <VStack
           spacing={1}
           align="flex-start"
@@ -139,7 +139,7 @@ export function FloatingGrowthMetric() {
           pointerEvents={collapsed ? 'none' : 'auto'}
           transition="opacity 0.2s ease, max-width 0.34s cubic-bezier(0.22, 1, 0.36, 1)"
         >
-          <Text color="app.text.primary" fontSize="lg" fontWeight="800" lineHeight="1.35">
+          <Text color="app.text.primary" fontSize={{ base: 'md', md: 'lg' }} fontWeight="800" lineHeight="1.35">
             {hasWeeklyMetric ? (
               <>
                 <Box
@@ -177,14 +177,14 @@ export function FloatingGrowthMetric() {
             )}
           </Text>
           {hasWeeklyMetric ? (
-            <Text color="app.text.faint" fontSize="xs" fontWeight="600" lineHeight="1.35">
+            <Text color="app.text.faint" fontSize={{ base: '2xs', md: 'xs' }} fontWeight="600" lineHeight="1.35">
               <Box as="span" color="cyan.400" fontWeight="700">
                 Verified
               </Box>{' '}
               {detail}
             </Text>
           ) : (
-            <Text color="app.text.faint" fontSize="xs" fontWeight="600" lineHeight="1.35">
+            <Text color="app.text.faint" fontSize={{ base: '2xs', md: 'xs' }} fontWeight="600" lineHeight="1.35">
               {detail}
             </Text>
           )}
