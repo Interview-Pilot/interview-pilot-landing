@@ -123,7 +123,7 @@ export function FloatingGrowthMetric() {
         borderColor="rgba(255, 255, 255, 0.14)"
         boxShadow="0 18px 55px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08)"
         backdropFilter="blur(18px) saturate(145%)"
-        w={collapsed ? { base: '48px', md: '56px' } : 'max-content'}
+        w={collapsed ? { base: '48px', md: '56px' } : { base: '252px', md: '292px' }}
         h={collapsed ? { base: '48px', md: '56px' } : { base: '56px', md: '68px' }}
         position="relative"
         cursor={collapsed ? 'pointer' : 'default'}

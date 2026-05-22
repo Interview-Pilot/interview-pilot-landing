@@ -33,7 +33,7 @@ export interface FooterProps extends BoxProps {
 
 const footerColumns = [
   {
-    title: 'Product & Platform',
+    title: 'Product',
     groups: [
       {
         title: undefined,
@@ -134,7 +134,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                 </Text>
               </Stack>
 
-              <Stack spacing={5}>
+              <Stack spacing={7}>
                 <HStack
                   borderRadius="full"
                   display="inline-flex"

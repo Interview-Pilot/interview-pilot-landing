@@ -76,7 +76,7 @@ const pricing: PricingData = {
             textDecoration="line-through"
             fontWeight="normal"
           >
-            $12.99 / week
+            $9.99 / week
           </Text>
           <HStack spacing="2" align="baseline">
             <Text fontSize="6xl" fontWeight="bold" color="green.500">
