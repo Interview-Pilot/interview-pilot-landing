@@ -1,4 +1,5 @@
 export { AppStoreBanner } from './AppStoreBanner'
+export { BenefitsStatsSection } from './BenefitsStatsSection'
 export { CompanyLogosCarouselSection } from './CompanyLogosCarouselSection'
 export { DownloadOptionsSection } from './DownloadOptionsSection'
 export { FaqSection } from './FaqSection'

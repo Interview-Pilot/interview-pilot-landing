@@ -93,13 +93,15 @@ export const Pricing: React.FC<PricingProps> = (props) => {
             <ButtonLink
               colorScheme={plan.id === 'free' ? 'whiteAlpha' : 'primary'}
               color={plan.id === 'free' ? 'gray.900' : 'black'}
-              bg={plan.id === 'free' ? 'white' : undefined}
+              bg={plan.id === 'free' ? 'white' : 'primary.400'}
               _hover={
                 plan.id === 'free'
                   ? {
                       bg: 'gray.100',
                     }
-                  : undefined
+                  : {
+                      bg: 'primary.300',
+                    }
               }
               borderRadius="full"
               w="full"

@@ -4,6 +4,7 @@ import { Box } from '@chakra-ui/react'
 
 import {
   AppStoreBanner,
+  BenefitsStatsSection,
   CompanyLogosCarouselSection,
   DownloadOptionsSection,
   FaqSection,
@@ -28,6 +29,8 @@ export function HomePageContent() {
       <HeroSection />
 
       <CompanyLogosCarouselSection />
+
+      <BenefitsStatsSection />
 
       <HighlightsSection />
 

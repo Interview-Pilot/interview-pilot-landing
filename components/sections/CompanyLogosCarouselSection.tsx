@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Container, HStack, Image } from '@chakra-ui/react'
+import { Box, Container, HStack, Image, Text } from '@chakra-ui/react'
 
 import { sectionContentStyles } from '#theme/styles/section-styles'
 
@@ -20,8 +20,20 @@ const COMPANY_LOGOS = [
 
 export function CompanyLogosCarouselSection() {
   return (
-    <Box sx={sectionContentStyles} py={{ base: 4, md: 5 }}>
+    <Box sx={sectionContentStyles} pt={{ base: 10, md: 12 }} pb={{ base: 4, md: 5 }}>
       <Container maxW="container.xl">
+          <Text
+            color="white"
+            fontSize={{ base: '2xl', md: '3xl' }}
+            fontWeight="bold"
+            lineHeight="short"
+            textAlign="center"
+            mb={{ base: 5, md: 6 }}
+            px={{ base: 6, md: 0 }}
+          >
+            Your first job matters.
+            <Box as="br" display={{ base: 'block', md: 'none' }} /> Secure your career today.
+          </Text>
           <Box
             position="relative"
             overflow="hidden"

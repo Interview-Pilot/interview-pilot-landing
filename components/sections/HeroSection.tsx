@@ -15,21 +15,37 @@ import {
   FiArrowRight,
   FiCheckCircle,
   FiDownload,
-  FiGlobe,
-  FiShield,
-  FiZap,
 } from 'react-icons/fi'
+import { FaStar } from 'react-icons/fa'
 
 import { ButtonLink } from '#components/button-link/button-link'
 import { getPrimaryDownloadHref } from '#lib/download-routing'
-import { Features } from '#components/features'
 import { Hero } from '#components/hero'
 import { Em } from '#components/typography'
 import { usePlatform } from '#hooks/use-platform'
 import { ASSETS, INTERNAL_ROUTES } from '#constants'
-import { heroPulseAnimation, sectionContentStyles } from '#theme/styles/section-styles'
+import { heroPulseAnimation } from '#theme/styles/section-styles'
 
 const platformSignupHref = 'https://platform.interviewpilot.app/signup'
+
+const socialProofAvatars = [
+  {
+    src: '/static/social-proof/user-1.jpg',
+    alt: 'Interview Pilot user profile',
+  },
+  {
+    src: '/static/social-proof/user-2.jpg',
+    alt: 'Interview Pilot user profile',
+  },
+  {
+    src: '/static/social-proof/user-3.jpg',
+    alt: 'Interview Pilot user profile',
+  },
+  {
+    src: '/static/social-proof/user-4.jpg',
+    alt: 'Interview Pilot user profile',
+  },
+]
 
 function getHeroDownloadCta(platform: ReturnType<typeof usePlatform>) {
   switch (platform) {
@@ -70,7 +86,7 @@ export function HeroSection() {
   return (
     <Box overflow="hidden">
       <Container maxW="container.xl" pt={{ base: 32, lg: 40 }} pb="0">
-        <Box display="flex" justifyContent="center" mb={{ base: 5, md: 6 }}>
+        <Box display="flex" justifyContent="center" mb={{ base: 5, md: 6, lg: 0 }}>
           <Box
             display="inline-flex"
             alignItems="center"
@@ -169,7 +185,7 @@ export function HeroSection() {
             <Box>
               <HStack
                 pt="8"
-                pb="12"
+                pb="10"
                 spacing="8"
                 position="relative"
                 zIndex={1}
@@ -287,6 +303,74 @@ export function HeroSection() {
                     Get Started
                   </ButtonLink>
                 </Stack>
+                <Stack
+                  direction={{ base: 'column', sm: 'row' }}
+                  spacing={{ base: 3, sm: 4 }}
+                  alignItems={{ base: 'center', sm: 'center' }}
+                  color="white"
+                  fontSize={{ base: 'sm', md: 'md' }}
+                  lineHeight="1"
+                  py="4"
+                  textAlign={{ base: 'center', md: 'left' }}
+                >
+                  <Stack
+                    direction={{ base: 'column', sm: 'row' }}
+                    spacing={{ base: 2, sm: 3 }}
+                    alignItems="center"
+                  >
+                    <HStack spacing="0">
+                      {socialProofAvatars.map((avatar, index) => (
+                        <Box
+                          key={avatar.src}
+                          position="relative"
+                          ml={index === 0 ? 0 : { base: '-1', md: '-1.5' }}
+                          w={{ base: '29px', md: '33px' }}
+                          h={{ base: '29px', md: '33px' }}
+                          borderRadius="full"
+                          overflow="hidden"
+                          border="2px solid"
+                          borderColor="rgba(14, 14, 16, 0.95)"
+                          boxShadow="0 0 0 1px rgba(255,255,255,0.18)"
+                          zIndex={socialProofAvatars.length - index}
+                        >
+                          <Image
+                            src={avatar.src}
+                            alt={avatar.alt}
+                            fill
+                            sizes="34px"
+                            style={{ objectFit: 'cover' }}
+                          />
+                        </Box>
+                      ))}
+                    </HStack>
+                    <Text
+                      as="span"
+                      fontWeight="medium"
+                      color="whiteAlpha.900"
+                      whiteSpace="nowrap"
+                    >
+                      Trusted by <Box as="span" color="white" fontWeight="bold">120,000+</Box> job seekers
+                    </Text>
+                  </Stack>
+
+                  <Box
+                    display={{ base: 'none', sm: 'block' }}
+                    w="1px"
+                    h="18px"
+                    bg="whiteAlpha.300"
+                  />
+
+                  <HStack spacing="2" color="primary.400">
+                    <HStack spacing="2">
+                      {Array.from({ length: 5 }).map((_, index) => (
+                        <Icon key={index} as={FaStar} boxSize={{ base: '13px', md: '14px' }} />
+                      ))}
+                    </HStack>
+                    <Text as="span" color="whiteAlpha.800" fontWeight="medium">
+                      <Box as="span" color="white" fontWeight="bold">4.8</Box> / 5.0
+                    </Text>
+                  </HStack>
+                </Stack>
                 <Link
                   href={INTERNAL_ROUTES.downloads}
                   fontSize="lg"
@@ -351,42 +435,6 @@ export function HeroSection() {
         </Stack>
       </Container>
 
-      <Features
-        id="benefits"
-        columns={[1, 2, 3]}
-        iconSize={4}
-        innerWidth="1120px"
-        spacing={{ base: 10, md: 12, lg: 14 }}
-        pt={{ base: '12', lg: '36' }}
-        sx={{
-          '.chakra-heading': { fontSize: '2xl' },
-          '.chakra-text': { fontSize: 'lg' },
-          ...sectionContentStyles,
-        }}
-        features={[
-          {
-            title: '1s Responses',
-            icon: FiZap,
-            description: 'Copilot generates responses instantly, so you always have the answer',
-            iconPosition: 'left',
-            delay: 0.6,
-          },
-          {
-            title: '99+ Languages',
-            icon: FiGlobe,
-            description: 'Supports over 99 languages, and any accents',
-            iconPosition: 'left',
-            delay: 1,
-          },
-          {
-            title: 'Full Privacy',
-            icon: FiShield,
-            description: 'All data uses industry-standard encryption. We never store your usage data',
-            iconPosition: 'left',
-            delay: 1.1,
-          },
-        ]}
-      />
     </Box>
   )
 }
