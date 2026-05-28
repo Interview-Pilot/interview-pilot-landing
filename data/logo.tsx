@@ -23,11 +23,11 @@ export const Logo: React.FC<HTMLChakraProps<'div'>> = (props) => {
         <Text
           className="logo-text"
           ml={3}
-          fontSize="2xl"
+          fontSize="22px"
           fontWeight="semibold"
           color="app.text.primary"
           fontFamily="var(--font-dm-sans)"
-          letterSpacing="-0.8px"
+          letterSpacing="-0.5px"
           lineHeight="1"
           transition="opacity 0.2s ease"
         >
