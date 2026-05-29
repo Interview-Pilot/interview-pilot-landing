@@ -15,7 +15,7 @@ export const Logo: React.FC<HTMLChakraProps<'div'>> = (props) => {
       <Flex align="center" h="40px">
         <Image
           className="logo-icon"
-          src="/static/images/interview_pilot_logo.png"
+          src="/static/images/interview_pilot_logo_ui.png"
           alt="Interview Pilot Logo"
           h="36px"
           w="auto"

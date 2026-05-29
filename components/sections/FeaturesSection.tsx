@@ -3,9 +3,9 @@
 import { Box, Heading, Text } from '@chakra-ui/react'
 import { Br } from '@saas-ui/react'
 import {
-  FiBox,
   FiBriefcase,
   FiSmile,
+  FiVideo,
 } from 'react-icons/fi'
 
 import { Features } from '#components/features'
@@ -36,7 +36,7 @@ const STEP_FEATURES = [
   },
   {
     title: <Text fontSize={['4xl', '5xl', '6xl']} fontWeight="bold" mb={3}>Interview</Text>,
-    icon: FiBox,
+    icon: FiVideo,
     description: (
       <>
         <Br />

@@ -69,7 +69,7 @@ export const INTERNAL_ROUTES = {
 
 export const ASSETS = {
   images: {
-    logo: '/static/images/interview_pilot_logo.png',
+    logo: '/static/images/interview_pilot_logo_ui.png',
     openAiLogo: '/static/images/openailogo.png',
     whisperLogo: '/static/images/whisperlogo.png',
     appStoreBadge: '/static/images/appstore_badge.png',
