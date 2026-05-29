@@ -88,7 +88,7 @@ const FEATURE_SECTIONS: { title: string; features: Feature[] }[] = [
   {
     title: 'Proof & Trust',
     features: [
-      { id: 'user-count', label: 'Verified users', ipText: '120,000+ verified' },
+      { id: 'user-count', label: 'Verified users', ipText: '121,250+ verified' },
       { id: 'uptime', label: 'System uptime', ipText: '>99%' },
       { id: 'star-rating', label: 'Ratings & reviews', ipText: '4.9 ★', ipSubtext: '10,000+ ratings' },
     ],
