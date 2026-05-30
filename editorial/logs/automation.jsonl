@@ -1,0 +1,6 @@
+{"at":"2026-05-30T10:08:57.977Z","type":"run_started","runId":"run_1780135737973","reason":"dashboard"}
+{"at":"2026-05-30T10:09:06.642Z","type":"topic_discovery_completed","runId":"run_1780135737973","added":6,"skipped":false,"reason":"queue_topped_up","newsInputs":8}
+{"at":"2026-05-30T10:09:06.644Z","type":"topic_research_started","runId":"run_1780135737973","topicId":"topic-008"}
+{"at":"2026-05-30T10:09:08.743Z","type":"topic_generation_started","runId":"run_1780135737973","topicId":"topic-008"}
+{"at":"2026-05-30T10:09:38.347Z","type":"run_failed","runId":"run_1780135737973","error":"Unexpected token 'e', \"text\\nShort\"... is not valid JSON"}
+{"at":"2026-05-30T10:09:38.350Z","type":"manual_run_failed","error":"Unexpected token 'e', \"text\\nShort\"... is not valid JSON"}

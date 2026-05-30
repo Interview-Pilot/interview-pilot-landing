@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "blog:dashboard": "node tools/blog-automation/dashboard-server.mjs"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.10.1",
@@ -34,6 +35,7 @@
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",
+    "sharp": "^0.34.5",
     "shiki": "^3.20.0",
     "velite": "^0.1.1"
   },

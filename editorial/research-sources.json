@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Google News - Job Interviews",
+    "type": "news-search",
+    "query": "job interviews hiring candidates career advice",
+    "category": "interviews"
+  },
+  {
+    "name": "Google News - Job Search",
+    "type": "news-search",
+    "query": "job search resume cover letter LinkedIn candidates",
+    "category": "career"
+  },
+  {
+    "name": "Google News - Recruiting",
+    "type": "news-search",
+    "query": "recruiting hiring process candidates interviews",
+    "category": "recruiting"
+  }
+]

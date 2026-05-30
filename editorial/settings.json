@@ -1,0 +1,68 @@
+{
+  "enabled": false,
+  "schedule": {
+    "runEveryHours": 24,
+    "startHourLocal": 9
+  },
+  "generation": {
+    "postsPerRun": 2,
+    "minimumWordCount": 800,
+    "modelProvider": "openai",
+    "model": "gpt-5.4-mini",
+    "temperature": 0.3
+  },
+  "contentStructure": {
+    "minRichStructuresPerPost": 2
+  },
+  "research": {
+    "maxSourcesPerArticle": 5,
+    "maxNewsItemsPerQuery": 8,
+    "defaultRecencyDays": 14
+  },
+  "images": {
+    "enabled": true,
+    "required": true,
+    "model": "gpt-image-2",
+    "size": "1536x1024",
+    "quality": "medium",
+    "format": "webp",
+    "maxWidth": 1400,
+    "webpQuality": 78,
+    "minPerPost": 1,
+    "maxPerPost": 3,
+    "inline": {
+      "enabled": true,
+      "minWordCount": 1600,
+      "secondImageMinWordCount": 3200
+    },
+    "outputDir": "public/static/blog-generated",
+    "publicPath": "/static/blog-generated"
+  },
+  "topicDiscovery": {
+    "enabled": true,
+    "minQueuedTopics": 8,
+    "maxTopicsPerRun": 6,
+    "newsCandidatesPerRun": 8,
+    "evergreenCandidatesPerRun": 12
+  },
+  "publishing": {
+    "mode": "draft-only",
+    "branch": "main",
+    "commitMessage": "Publish automated blog posts"
+  },
+  "categories": {
+    "interviews": true,
+    "recruiting": true,
+    "ai-tools": true,
+    "career": true,
+    "research": true,
+    "companies": true
+  },
+  "safety": {
+    "allowCompetitorTopics": true,
+    "allowNewsPosts": true,
+    "updateExistingPosts": true,
+    "rejectIfSourcesMissing": true,
+    "rejectIfPlaceholdersFound": true
+  }
+}

@@ -1,0 +1,303 @@
+[
+  {
+    "id": "topic-003",
+    "topic": "50 Common Behavioral Interview Questions and Sample Answers (2026)",
+    "category": "interviews",
+    "contentType": "article",
+    "primaryKeyword": "behavioral interview questions",
+    "secondaryKeywords": [
+      "behavioral interview answers",
+      "STAR method examples",
+      "common interview questions",
+      "sample interview answers"
+    ],
+    "searchIntent": "Candidates want a comprehensive question list with example answers for behavioral interviews.",
+    "uniqueAngle": "Group questions by competency like leadership, conflict, teamwork, and failure, with concise sample answers and STAR guidance.",
+    "freshnessType": "annual",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 2200,
+    "createdAt": "2026-05-30",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "interview best practices"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "behavioral-interview-questions",
+    "generatedAt": "2026-05-30T09:25:28.044Z",
+    "lastError": null,
+    "publishedPath": "content/posts/behavioral-interview-questions.mdx",
+    "publishedAt": "2026-05-30T10:49:35.629Z"
+  },
+  {
+    "id": "topic-006",
+    "topic": "How Long Does It Take to Hear Back After an Interview?",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "how long to hear back after an interview",
+    "secondaryKeywords": [
+      "after interview follow up",
+      "job interview response time",
+      "when to follow up after interview",
+      "hiring timeline"
+    ],
+    "searchIntent": "Candidates want to know normal follow-up timing and what to do while waiting after an interview.",
+    "uniqueAngle": "Break down response-time expectations by interview stage and include follow-up email timing, warning signs, and next steps.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1700,
+    "createdAt": "2026-05-30",
+    "internalLinks": [
+      "/interview-guides",
+      "/question-bank"
+    ],
+    "requiredSourceTypes": [
+      "recruiter commentary",
+      "career guidance",
+      "hiring process best practices"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "how-long-to-hear-back-after-an-interview",
+    "generatedAt": "2026-05-30T09:47:56.251Z",
+    "lastError": null,
+    "publishedPath": "content/posts/how-long-to-hear-back-after-an-interview.mdx",
+    "publishedAt": "2026-05-30T10:49:35.629Z"
+  },
+  {
+    "id": "topic-007",
+    "topic": "How to Answer 'Tell Me About Yourself' in a Job Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "how to answer tell me about yourself",
+    "secondaryKeywords": [
+      "tell me about yourself interview answer",
+      "tell me about yourself examples",
+      "job interview introduction"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Focus on a simple 60-second formula with examples for new grads, career changers, and experienced candidates.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-05-30",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "example answers"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "how-to-answer-tell-me-about-yourself",
+    "generatedAt": "2026-05-30T09:50:14.028Z",
+    "lastError": null,
+    "publishedPath": "content/posts/how-to-answer-tell-me-about-yourself.mdx",
+    "publishedAt": "2026-05-30T10:49:35.629Z"
+  },
+  {
+    "id": "topic-008",
+    "topic": "Panel Interview Questions and Answers: How to Prepare for a Panel Interview (2026)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "panel interview questions and answers",
+    "secondaryKeywords": [
+      "how to prepare for a panel interview",
+      "panel interview tips",
+      "panel interview questions"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Focus on the exact dynamics candidates face in multi-interviewer panels, including how to handle cross-talk, eye contact, and answering follow-up questions from different people.",
+    "freshnessType": "annual",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "high",
+    "status": "queued",
+    "targetWordCount": 1800,
+    "createdAt": "2026-05-30",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-questions",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "interview-coach-expertise",
+      "company-career-pages",
+      "recruiting-guides"
+    ],
+    "discoveredBy": "model-discovery"
+  },
+  {
+    "id": "topic-009",
+    "topic": "What to Say When You Don’t Know the Answer in an Interview",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "what to say when you don't know the answer in an interview",
+    "secondaryKeywords": [
+      "interview answer examples",
+      "how to handle interview questions you don't know",
+      "what if you don't know an interview question"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Give exact phrasing candidates can use to recover confidently, ask for clarification, and bridge back to relevant experience without rambling or bluffing.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "high",
+    "status": "queued",
+    "targetWordCount": 1600,
+    "createdAt": "2026-05-30",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-copilot",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "interview-coach-expertise",
+      "hiring-manager-interviews",
+      "expert-roundups"
+    ],
+    "discoveredBy": "model-discovery"
+  },
+  {
+    "id": "topic-010",
+    "topic": "How to Follow Up After a Job Interview: Email Template and Examples (2026)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "how to follow up after a job interview",
+    "secondaryKeywords": [
+      "interview follow up email template",
+      "thank you email after interview",
+      "following up after interview"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Covers timing, subject lines, and follow-up templates for same-day thank-you notes, post-panel follow-ups, and polite check-ins when there’s no response.",
+    "freshnessType": "annual",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "high",
+    "status": "queued",
+    "targetWordCount": 1900,
+    "createdAt": "2026-05-30",
+    "internalLinks": [
+      "/downloads",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "career-advice-experts",
+      "email-template-references",
+      "recruiter-commentary"
+    ],
+    "discoveredBy": "model-discovery"
+  },
+  {
+    "id": "topic-011",
+    "topic": "Customer Service Representative Interview Questions and Answers",
+    "category": "interviews",
+    "contentType": "role-deep-dive",
+    "primaryKeyword": "customer service representative interview questions and answers",
+    "secondaryKeywords": [
+      "customer service interview questions",
+      "customer service representative interview",
+      "customer support interview questions"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Tailor answers to common support metrics, de-escalation scenarios, empathy, and call/chat workflows so candidates can prepare for entry-level and experienced roles.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "high",
+    "status": "queued",
+    "targetWordCount": 1800,
+    "createdAt": "2026-05-30",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-questions",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "role-specific-interview-sources",
+      "hiring-manager-interviews",
+      "company-career-pages"
+    ],
+    "discoveredBy": "model-discovery"
+  },
+  {
+    "id": "topic-012",
+    "topic": "LinkedIn Headline Examples for Job Seekers (With Templates)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "linkedin headline examples",
+    "secondaryKeywords": [
+      "linkedin headline templates",
+      "best linkedin headline for job seekers",
+      "linkedin headline for resume"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Provide fill-in-the-blank headline formulas for active job seekers, career changers, students, and experienced professionals, plus mistakes to avoid.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "high",
+    "status": "queued",
+    "targetWordCount": 1700,
+    "createdAt": "2026-05-30",
+    "internalLinks": [
+      "/downloads",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "linkedin-best-practices",
+      "career-coach-sources",
+      "resume-writing-experts"
+    ],
+    "discoveredBy": "model-discovery"
+  },
+  {
+    "id": "topic-013",
+    "topic": "How to Answer 'Why Do You Want to Work Here?' With Examples (2026)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "why do you want to work here",
+    "secondaryKeywords": [
+      "why do you want to work here answer",
+      "interview answer examples",
+      "company interview questions"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Break the answer into a repeatable structure using company research, role fit, and motivation, with examples for common job types and career stages.",
+    "freshnessType": "annual",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "high",
+    "status": "queued",
+    "targetWordCount": 1800,
+    "createdAt": "2026-05-30",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-questions",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "interview-coach-expertise",
+      "company-research-sources",
+      "hiring-manager-insights"
+    ],
+    "discoveredBy": "model-discovery"
+  }
+]

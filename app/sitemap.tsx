@@ -1,22 +1,10 @@
 import { MetadataRoute } from 'next'
 import { posts } from '#content'
+import { blogCategories } from '#data/blog'
 import { getBaseUrl } from '#lib/utils'
 import { comparisonPages } from '#data/comparisons'
 import { publishedInterviewGuideRefs } from '#data/interview-guides'
 import { publishedInterviewQuestionRefs } from '#data/interview-question-refs'
-
-/**
- * Get all unique tags from published posts
- */
-function getAllTags() {
-  const tagSet = new Set<string>()
-  posts
-    .filter((post) => post.published)
-    .forEach((post) => {
-      post.tags?.forEach((tag) => tagSet.add(tag.toLowerCase()))
-    })
-  return Array.from(tagSet)
-}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = getBaseUrl()
@@ -26,17 +14,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((post) => post.published)
     .map((post) => ({
       url: `${baseUrl}/blog/${post.slugAsParams}`,
-      lastModified: new Date(post.date),
+      lastModified: new Date(post.lastUpdated || post.date),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     }))
 
-  // Get all tag pages
-  const tagUrls = getAllTags().map((tag) => ({
-    url: `${baseUrl}/blog/tag/${tag}`,
+  const blogCategoryUrls = blogCategories.map((category) => ({
+    url: `${baseUrl}/blog/${category.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.5,
+    priority: 0.65,
   }))
 
   const comparisonUrls = comparisonPages.map((page) => ({
@@ -118,8 +105,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...interviewGuideUrls,
     ...interviewQuestionUrls,
     ...comparisonUrls,
+    ...blogCategoryUrls,
     ...blogUrls,
-    ...tagUrls,
     {
       url: `${baseUrl}/privacy`,
       lastModified: new Date(),

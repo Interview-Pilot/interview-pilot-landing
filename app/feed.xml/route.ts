@@ -10,7 +10,11 @@ export async function GET() {
 
   const publishedPosts = posts
     .filter((post) => post.published)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .sort(
+      (a, b) =>
+        new Date(b.lastUpdated || b.date).getTime() -
+        new Date(a.lastUpdated || a.date).getTime()
+    )
 
   const rssItems = publishedPosts
     .map(

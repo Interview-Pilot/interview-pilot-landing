@@ -3,6 +3,7 @@
 import { Box, Heading, Text, Badge, HStack, VStack } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { getBlogCategoryLabel } from '#data/blog'
 import { formatDate } from '#lib/utils'
 
 interface PostCardProps {
@@ -10,8 +11,11 @@ interface PostCardProps {
   title: string
   description: string
   date: string
+  lastUpdated?: string
   author?: string
   image?: string
+  imageAlt?: string
+  category?: string
   tags?: string[]
   readingTime?: number
 }
@@ -21,8 +25,11 @@ export function PostCard({
   title,
   description,
   date,
+  lastUpdated,
   author,
   image,
+  imageAlt,
+  category,
   tags = [],
   readingTime,
 }: PostCardProps) {
@@ -49,7 +56,7 @@ export function PostCard({
           <Box position="relative" height="200px" overflow="hidden">
             <Image
               src={image}
-              alt={title}
+              alt={imageAlt || title}
               fill
               sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 33vw"
               style={{ objectFit: 'cover' }}
@@ -66,8 +73,25 @@ export function PostCard({
         >
           <Box>
             <HStack spacing={2} mb={2} flexWrap="wrap">
+              {category && (
+                <>
+                  <Badge
+                    colorScheme="yellow"
+                    variant="subtle"
+                    fontSize="xs"
+                    px={2}
+                    py={0.5}
+                    borderRadius="full"
+                  >
+                    {getBlogCategoryLabel(category)}
+                  </Badge>
+                  <Text fontSize="sm" color="gray.500">
+                    •
+                  </Text>
+                </>
+              )}
               <Text fontSize="sm" color="gray.400">
-                {formatDate(date)}
+                {formatDate(lastUpdated || date)}
               </Text>
               {readingTime && (
                 <>
@@ -113,8 +137,8 @@ export function PostCard({
                 {tags.slice(0, 2).map((tag) => (
                   <Badge
                     key={tag}
-                    colorScheme="yellow"
-                    variant="subtle"
+                    colorScheme="gray"
+                    variant="outline"
                     fontSize="xs"
                     px={2}
                     py={0.5}
