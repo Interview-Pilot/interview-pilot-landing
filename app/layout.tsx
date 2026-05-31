@@ -16,6 +16,7 @@ const organizationSchema = {
     'https://x.com/interview_pilot',
     'https://www.tiktok.com/@interview_pilot',
     'https://www.instagram.com/interview_pilot',
+    'https://www.youtube.com/@InterviewPilot',
   ],
   contactPoint: {
     '@type': 'ContactPoint',

@@ -78,7 +78,7 @@ export function generateMetadata({ params }: BlogRoutePageProps) {
   const dateModified = post.lastUpdated || post.date
 
   return {
-    title: `${post.title} | Interview Pilot`,
+    title: post.title,
     description: post.description,
     keywords: [
       post.primaryKeyword,
@@ -491,7 +491,7 @@ function BlogArticlePage({
           <Grid templateColumns={{ base: '1fr', lg: 'minmax(0, 1fr) 280px' }} gap={{ base: 0, lg: 12 }}>
             <Box maxW="container.md" w="100%">
               <TableOfContents items={tableOfContents} mobile />
-              <MDXContent code={post.body} />
+              <MDXContent code={post.body} skipFirstH1 />
             </Box>
             <TableOfContents items={tableOfContents} />
           </Grid>

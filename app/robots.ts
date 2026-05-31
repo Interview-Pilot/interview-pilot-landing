@@ -19,11 +19,31 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: 'GPTBot',
-        disallow: '/',
+        allow: '/',
+      },
+      {
+        userAgent: 'OAI-SearchBot',
+        allow: '/',
       },
       {
         userAgent: 'ChatGPT-User',
-        disallow: '/',
+        allow: '/',
+      },
+      {
+        userAgent: 'PerplexityBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'ClaudeBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Claude-User',
+        allow: '/',
+      },
+      {
+        userAgent: 'Claude-Web',
+        allow: '/',
       },
       {
         userAgent: 'CCBot',
@@ -31,10 +51,6 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: 'anthropic-ai',
-        disallow: '/',
-      },
-      {
-        userAgent: 'Claude-Web',
         disallow: '/',
       },
     ],

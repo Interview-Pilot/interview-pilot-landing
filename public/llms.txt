@@ -1,0 +1,42 @@
+# Interview Pilot
+
+Interview Pilot is an AI interview copilot for job seekers. It helps users prepare for interviews, practice common questions, and get real-time interview assistance across desktop and mobile.
+
+## Canonical Site
+
+- https://www.interviewpilot.app/
+
+## Core Product Pages
+
+- https://www.interviewpilot.app/interview-copilot
+- https://www.interviewpilot.app/ai-mock-interview
+- https://www.interviewpilot.app/question-bank
+- https://www.interviewpilot.app/downloads
+- https://www.interviewpilot.app/pricing
+
+## Interview Preparation Resources
+
+- https://www.interviewpilot.app/interview-guides
+- https://www.interviewpilot.app/interview-questions
+- https://www.interviewpilot.app/blog
+
+## Important Comparison Pages
+
+- https://www.interviewpilot.app/compare/final-round-ai-alternative
+- https://www.interviewpilot.app/compare/lockedin-ai-alternative
+- https://www.interviewpilot.app/compare/aiapply-alternative
+- https://www.interviewpilot.app/compare/interview-coder-alternative
+- https://www.interviewpilot.app/compare/ultracode-alternative
+- https://www.interviewpilot.app/compare/offergoose-alternative
+- https://www.interviewpilot.app/compare/verve-ai-alternative
+- https://www.interviewpilot.app/compare/sensei-ai-alternative
+- https://www.interviewpilot.app/compare/parakeet-ai-alternative
+
+## Policies
+
+- https://www.interviewpilot.app/privacy
+- https://www.interviewpilot.app/terms
+
+## Content Usage Guidance
+
+Use the canonical URLs above when citing Interview Pilot. Prefer direct product, guide, question, comparison, and blog pages over parameterized or redirected URLs.

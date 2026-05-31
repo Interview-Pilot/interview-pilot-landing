@@ -2,10 +2,12 @@
 
 import { Box } from '@chakra-ui/react'
 import * as runtime from 'react/jsx-runtime'
+import type { ComponentProps } from 'react'
 import { useMemo } from 'react'
 
 interface MDXContentProps {
   code: string
+  skipFirstH1?: boolean
 }
 
 /**
@@ -22,8 +24,21 @@ function useMDXComponent(code: string) {
  * MDXContent component renders compiled MDX content
  * Uses Velite's compiled MDX code
  */
-export function MDXContent({ code }: MDXContentProps) {
+export function MDXContent({ code, skipFirstH1 = false }: MDXContentProps) {
   const Component = useMDXComponent(code)
+  let skippedFirstH1 = false
+  const components = skipFirstH1
+    ? {
+        h1: (props: ComponentProps<'h1'>) => {
+          if (!skippedFirstH1) {
+            skippedFirstH1 = true
+            return null
+          }
+
+          return <h2 {...props} />
+        },
+      }
+    : {}
 
   return (
     <Box
@@ -193,7 +208,7 @@ export function MDXContent({ code }: MDXContentProps) {
         },
       }}
     >
-      <Component components={{}} />
+      <Component components={components} />
     </Box>
   )
 }
