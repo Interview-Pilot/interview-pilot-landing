@@ -1,1 +1,37 @@
-[]
+[
+  {
+    "event": "run_completed",
+    "runId": "run_1780166649799",
+    "at": "2026-05-30T18:46:40.708Z",
+    "articles": [
+      {
+        "topicId": "topic-008",
+        "slug": "panel-interview-questions-and-answers",
+        "title": "Panel Interview Questions and Answers: How to Prepare for a Panel Interview (2026)",
+        "image": "/static/blog-generated/panel-interview-questions-and-answers.webp",
+        "imageModel": "gpt-image-2",
+        "wordCount": 2381,
+        "sources": 5
+      },
+      {
+        "topicId": "topic-009",
+        "slug": "what-to-say-when-you-dont-know-the-answer-in-an-interview",
+        "title": "What to Say When You Don't Know the Answer in an Interview",
+        "image": "/static/blog-generated/what-to-say-when-you-dont-know-the-answer-in-an-interview.webp",
+        "imageModel": "gpt-image-2",
+        "wordCount": 2044,
+        "sources": 5
+      }
+    ],
+    "discoveredTopics": [],
+    "publishResult": {
+      "mode": "draft-only",
+      "writtenFiles": [
+        "/Users/jerryding123/Projects/interview-pilot/landing/editorial/drafts/panel-interview-questions-and-answers.mdx",
+        "/Users/jerryding123/Projects/interview-pilot/landing/editorial/drafts/what-to-say-when-you-dont-know-the-answer-in-an-interview.mdx"
+      ],
+      "committed": false,
+      "pushed": false
+    }
+  }
+]

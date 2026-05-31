@@ -48,47 +48,6 @@ function inlineMarkdown(value) {
     )
 }
 
-function parseAttributes(value) {
-  const attrs = {}
-  const pattern = /([a-zA-Z][\w-]*)="([^"]*)"/g
-  let match
-  while ((match = pattern.exec(value))) {
-    attrs[match[1]] = match[2]
-  }
-  return attrs
-}
-
-function renderComponentOpen(name, attrs) {
-  if (name === 'Callout') {
-    return `<div class="component component-callout"><div class="component-kicker">${escapeHtml(attrs.type || 'note')}</div>${attrs.title ? `<h4>${escapeHtml(attrs.title)}</h4>` : ''}`
-  }
-  if (name === 'AnswerBlock') {
-    return `<div class="component component-answer"><div class="component-kicker">Sample answer</div>${attrs.question ? `<h4>${escapeHtml(attrs.question)}</h4>` : ''}`
-  }
-  if (name === 'TemplateBlock') {
-    return `<div class="component component-template"><div class="component-kicker">Template</div>${attrs.title ? `<h4>${escapeHtml(attrs.title)}</h4>` : ''}`
-  }
-  if (name === 'Checklist') {
-    return `<div class="component component-checklist">${attrs.title ? `<h4>${escapeHtml(attrs.title)}</h4>` : ''}`
-  }
-  if (name === 'StepList') return '<div class="component component-steps">'
-  if (name === 'ExampleGrid') return '<div class="component-grid">'
-  if (name === 'ExampleCard') {
-    return `<div class="component component-example">${attrs.title ? `<h4>${escapeHtml(attrs.title)}</h4>` : ''}`
-  }
-  return '<div class="component">'
-}
-
-function renderSelfClosingComponent(name, attrs) {
-  if (name === 'StatCard') {
-    return `<div class="component component-stat"><div class="component-kicker">${escapeHtml(attrs.label || 'Stat')}</div><div class="stat-value">${escapeHtml(attrs.value || '')}</div>${attrs.source ? `<p>Source: ${escapeHtml(attrs.source)}</p>` : ''}</div>`
-  }
-  if (name === 'AnswerBlock') {
-    return `${renderComponentOpen(name, attrs)}${attrs.sample ? `<p>${escapeHtml(attrs.sample)}</p>` : ''}${attrs.why ? `<p><strong>Why it works:</strong> ${escapeHtml(attrs.why)}</p>` : ''}${attrs.makeItYours ? `<p><strong>Make it yours:</strong> ${escapeHtml(attrs.makeItYours)}</p>` : ''}</div>`
-  }
-  return `${renderComponentOpen(name, attrs)}</div>`
-}
-
 function splitTableRow(line) {
   return line
     .trim()
@@ -148,34 +107,6 @@ function renderMarkdown(markdown) {
       }
       lineIndex -= 1
       html.push(renderTable(tableLines))
-      continue
-    }
-
-    const oneLineComponent = line.match(/^<(Callout|AnswerBlock|TemplateBlock|Checklist|StepList|ExampleCard)\b([^>]*)>([\s\S]*)<\/\1>$/)
-    if (oneLineComponent) {
-      closeList()
-      html.push(`${renderComponentOpen(oneLineComponent[1], parseAttributes(oneLineComponent[2]))}${inlineMarkdown(oneLineComponent[3])}</div>`)
-      continue
-    }
-
-    const selfClosingComponent = line.match(/^<(AnswerBlock|StatCard)\b([^>]*)\/>$/)
-    if (selfClosingComponent) {
-      closeList()
-      html.push(renderSelfClosingComponent(selfClosingComponent[1], parseAttributes(selfClosingComponent[2])))
-      continue
-    }
-
-    const componentOpen = line.match(/^<(Callout|AnswerBlock|TemplateBlock|Checklist|StepList|ExampleGrid|ExampleCard)\b([^>]*)>$/)
-    if (componentOpen) {
-      closeList()
-      html.push(renderComponentOpen(componentOpen[1], parseAttributes(componentOpen[2])))
-      continue
-    }
-
-    const componentClose = line.match(/^<\/(Callout|AnswerBlock|TemplateBlock|Checklist|StepList|ExampleGrid|ExampleCard)>$/)
-    if (componentClose) {
-      closeList()
-      html.push('</div>')
       continue
     }
 
@@ -1113,56 +1044,6 @@ async function renderPreviewPage(url, response) {
         border-left: 4px solid var(--yellow);
         background: rgba(255,255,255,0.05);
         border-radius: 14px;
-      }
-      .component {
-        margin: 28px 0;
-        padding: 22px;
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        background: rgba(255,255,255,0.05);
-      }
-      .component h4 {
-        margin: 8px 0 12px;
-        font-size: 20px;
-      }
-      .component-kicker {
-        display: inline-flex;
-        margin-bottom: 8px;
-        padding: 4px 8px;
-        border-radius: 999px;
-        background: rgba(254,204,4,0.12);
-        color: var(--yellow);
-        font-size: 12px;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-      }
-      .component-callout {
-        border-color: rgba(254,204,4,0.32);
-        background: rgba(254,204,4,0.08);
-      }
-      .component-template {
-        background: rgba(0,0,0,0.24);
-      }
-      .component-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-        margin: 28px 0;
-      }
-      .component-grid .component {
-        margin: 0;
-      }
-      .stat-value {
-        font-size: clamp(34px, 6vw, 48px);
-        font-weight: 900;
-        letter-spacing: -0.05em;
-        line-height: 1;
-      }
-      @media (max-width: 767px) {
-        .component-grid {
-          grid-template-columns: 1fr;
-        }
       }
     </style>
   </head>

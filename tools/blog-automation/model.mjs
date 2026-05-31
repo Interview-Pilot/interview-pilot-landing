@@ -10,10 +10,22 @@ function extractOutputText(response) {
   return chunks.join('\n')
 }
 
-export async function generateWithOpenAI({ settings, instructions, input }) {
+export async function generateWithOpenAI({ settings, instructions, input, textFormat }) {
   const apiKey = process.env.OPENAI_API_KEY
   if (!apiKey) {
     throw new Error('Missing OPENAI_API_KEY. Set it before starting the blog automation.')
+  }
+
+  const payload = {
+    model: settings.generation.model,
+    instructions,
+    input,
+  }
+
+  if (textFormat) {
+    payload.text = {
+      format: textFormat,
+    }
   }
 
   const response = await fetch('https://api.openai.com/v1/responses', {
@@ -22,11 +34,7 @@ export async function generateWithOpenAI({ settings, instructions, input }) {
       Authorization: `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      model: settings.generation.model,
-      instructions,
-      input,
-    }),
+    body: JSON.stringify(payload),
   })
 
   const raw = await response.text()

@@ -214,7 +214,7 @@ export async function runBlogAutomationOnce({ reason = 'manual' } = {}) {
         ),
       })
       await logEvent({ type: 'topic_generation_started', runId, topicId: topic.id })
-      const article = await generateArticle({ topic, research, settings })
+      const article = await generateArticle({ topic, research, settings, runId })
 
       await updateState({
         currentStep: `validating:${topic.id}`,

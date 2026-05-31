@@ -124,7 +124,7 @@
     "researchRequired": true,
     "sourceDepth": "moderate",
     "priority": "high",
-    "status": "queued",
+    "status": "drafted",
     "targetWordCount": 1800,
     "createdAt": "2026-05-30",
     "internalLinks": [
@@ -138,7 +138,12 @@
       "company-career-pages",
       "recruiting-guides"
     ],
-    "discoveredBy": "model-discovery"
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "panel-interview-questions-and-answers",
+    "generatedAt": "2026-05-30T18:44:40.973Z",
+    "lastError": null,
+    "draftPath": "editorial/drafts/panel-interview-questions-and-answers.mdx",
+    "draftedAt": "2026-05-30T18:46:40.708Z"
   },
   {
     "id": "topic-009",
@@ -157,7 +162,7 @@
     "researchRequired": true,
     "sourceDepth": "moderate",
     "priority": "high",
-    "status": "queued",
+    "status": "drafted",
     "targetWordCount": 1600,
     "createdAt": "2026-05-30",
     "internalLinks": [
@@ -170,7 +175,12 @@
       "hiring-manager-interviews",
       "expert-roundups"
     ],
-    "discoveredBy": "model-discovery"
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "what-to-say-when-you-dont-know-the-answer-in-an-interview",
+    "generatedAt": "2026-05-30T18:46:40.682Z",
+    "lastError": null,
+    "draftPath": "editorial/drafts/what-to-say-when-you-dont-know-the-answer-in-an-interview.mdx",
+    "draftedAt": "2026-05-30T18:46:40.682Z"
   },
   {
     "id": "topic-010",
@@ -297,6 +307,70 @@
       "interview-coach-expertise",
       "company-research-sources",
       "hiring-manager-insights"
+    ],
+    "discoveredBy": "model-discovery"
+  },
+  {
+    "id": "topic-014",
+    "topic": "50 Common Interview Questions for Students and Recent Graduates (2026)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "interview questions for students and recent graduates",
+    "secondaryKeywords": [
+      "entry-level interview questions",
+      "recent graduate interview questions",
+      "student interview answers",
+      "first job interview questions"
+    ],
+    "searchIntent": "Informational",
+    "uniqueAngle": "Focus on the questions new grads actually get in internships, campus recruiting, and first-job interviews, with simple answer frameworks and examples.",
+    "freshnessType": "annual",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "queued",
+    "targetWordCount": 1800,
+    "createdAt": "2026-05-30",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-copilot",
+      "/interview-questions"
+    ],
+    "requiredSourceTypes": [
+      "internal knowledge",
+      "general interview best practices"
+    ],
+    "discoveredBy": "model-discovery"
+  },
+  {
+    "id": "topic-015",
+    "topic": "How to Write a Cover Letter With No Experience (Examples and Template)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "how to write a cover letter with no experience",
+    "secondaryKeywords": [
+      "cover letter template no experience",
+      "entry-level cover letter examples",
+      "first job cover letter",
+      "cover letter for students"
+    ],
+    "searchIntent": "Informational",
+    "uniqueAngle": "Tailor the guide to candidates with limited work history by showing how to use coursework, volunteer work, projects, and transferable skills.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "queued",
+    "targetWordCount": 2000,
+    "createdAt": "2026-05-30",
+    "internalLinks": [
+      "/downloads",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "internal knowledge",
+      "general career advice"
     ],
     "discoveredBy": "model-discovery"
   }

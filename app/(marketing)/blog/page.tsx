@@ -4,8 +4,6 @@ import {
   Container,
   Heading,
   HStack,
-  LinkBox,
-  LinkOverlay,
   SimpleGrid,
   Text,
   VStack,
@@ -68,45 +66,39 @@ export default function BlogPage() {
       <Container maxW="container.xl" py={{ base: 12, md: 16 }}>
         <VStack spacing={{ base: 12, md: 16 }} align="stretch">
           <Box>
-            <VStack spacing={3} align="start" mb={8}>
+            <VStack spacing={3} align="start" mb={5}>
               <Heading as="h2" size="xl">
                 Browse by topic
               </Heading>
-              <Text color="app.text.muted" maxW="2xl">
-                Category hubs organize articles by search intent and link related
-                resources across guides, questions, and product pages.
-              </Text>
             </VStack>
 
-            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={5}>
+            <HStack spacing={3} flexWrap="wrap">
               {blogCategories.map((category) => (
-                <LinkBox
+                <Box
                   key={category.slug}
-                  as="article"
-                  p={6}
+                  as={Link}
+                  href={`/blog/${category.slug}`}
+                  px={4}
+                  py={2}
                   borderWidth="1px"
-                  borderRadius="2xl"
-                  bg="app.surface.card"
+                  borderRadius="full"
+                  bg="whiteAlpha.50"
                   borderColor="app.border.subtle"
+                  color="app.text.primary"
+                  fontSize="sm"
+                  fontWeight="medium"
+                  textDecoration="none"
                   transition="all 0.2s ease"
                   _hover={{
                     borderColor: 'primary.400',
-                    transform: 'translateY(-2px)',
+                    bg: 'rgba(254, 204, 4, 0.08)',
+                    color: 'primary.300',
                   }}
                 >
-                  <VStack align="start" spacing={3}>
-                    <LinkOverlay as={Link} href={`/blog/${category.slug}`}>
-                      <Heading as="h3" size="md">
-                        {category.label}
-                      </Heading>
-                    </LinkOverlay>
-                    <Text color="app.text.muted" fontSize="sm" lineHeight="1.7">
-                      {category.description}
-                    </Text>
-                  </VStack>
-                </LinkBox>
+                  {category.label}
+                </Box>
               ))}
-            </SimpleGrid>
+            </HStack>
           </Box>
 
           <Box>
@@ -123,7 +115,7 @@ export default function BlogPage() {
             </HStack>
 
             {featuredPosts.length > 0 ? (
-              <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
+              <SimpleGrid columns={{ base: 1, md: 2, lg: 3, xl: 4 }} spacing={{ base: 6, lg: 5 }}>
                 {featuredPosts.map((post) => (
                   <PostCard
                     key={post.slugAsParams}

@@ -2,16 +2,15 @@
   "enabled": false,
   "running": false,
   "currentStep": "stopped",
-  "lastRunAt": "2026-05-30T10:08:57.973Z",
+  "lastRunAt": "2026-05-30T18:44:09.801Z",
   "nextRunAt": null,
-  "postsGeneratedToday": 0,
-  "lastError": "Unexpected token 'e', \"text\\nShort\"... is not valid JSON",
+  "postsGeneratedToday": 2,
+  "lastError": null,
   "activeRunId": null,
   "progress": {
     "percent": 100,
-    "label": "Failed",
-    "detail": "Unexpected token 'e', \"text\\nShort\"... is not valid JSON",
-    "updatedAt": "2026-05-30T10:09:38.348Z",
-    "error": true
+    "label": "Completed",
+    "detail": "2 posts generated",
+    "updatedAt": "2026-05-30T18:46:40.710Z"
   }
 }

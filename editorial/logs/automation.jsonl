@@ -4,3 +4,36 @@
 {"at":"2026-05-30T10:09:08.743Z","type":"topic_generation_started","runId":"run_1780135737973","topicId":"topic-008"}
 {"at":"2026-05-30T10:09:38.347Z","type":"run_failed","runId":"run_1780135737973","error":"Unexpected token 'e', \"text\\nShort\"... is not valid JSON"}
 {"at":"2026-05-30T10:09:38.350Z","type":"manual_run_failed","error":"Unexpected token 'e', \"text\\nShort\"... is not valid JSON"}
+{"at":"2026-05-30T18:26:28.532Z","type":"run_started","runId":"run_1780165587748","reason":"dashboard"}
+{"at":"2026-05-30T18:26:38.530Z","type":"topic_discovery_completed","runId":"run_1780165587748","added":2,"skipped":false,"reason":"queue_topped_up","newsInputs":8}
+{"at":"2026-05-30T18:26:38.534Z","type":"topic_research_started","runId":"run_1780165587748","topicId":"topic-008"}
+{"at":"2026-05-30T18:26:40.904Z","type":"topic_generation_started","runId":"run_1780165587748","topicId":"topic-008"}
+{"at":"2026-05-30T18:27:07.765Z","type":"topic_image_generation_started","runId":"run_1780165587748","topicId":"topic-008"}
+{"at":"2026-05-30T18:28:39.507Z","type":"topic_generated","runId":"run_1780165587748","topicId":"topic-008","slug":"panel-interview-questions-and-answers","image":"/static/blog-generated/panel-interview-questions-and-answers.webp"}
+{"at":"2026-05-30T18:28:39.509Z","type":"topic_research_started","runId":"run_1780165587748","topicId":"topic-009"}
+{"at":"2026-05-30T18:28:42.285Z","type":"topic_generation_started","runId":"run_1780165587748","topicId":"topic-009"}
+{"at":"2026-05-30T18:29:09.253Z","type":"run_failed","runId":"run_1780165587748","error":"Unexpected token 'e', \"text\\nI don\"... is not valid JSON"}
+{"at":"2026-05-30T18:29:09.260Z","type":"manual_run_failed","error":"Unexpected token 'e', \"text\\nI don\"... is not valid JSON"}
+{"at":"2026-05-30T18:30:10.159Z","type":"run_started","runId":"run_1780165810156","reason":"dashboard"}
+{"at":"2026-05-30T18:30:10.176Z","type":"topic_discovery_completed","runId":"run_1780165810156","added":0,"skipped":true,"reason":"queue_above_threshold","newsInputs":0}
+{"at":"2026-05-30T18:30:10.179Z","type":"topic_research_started","runId":"run_1780165810156","topicId":"topic-008"}
+{"at":"2026-05-30T18:30:12.659Z","type":"topic_generation_started","runId":"run_1780165810156","topicId":"topic-008"}
+{"at":"2026-05-30T18:30:40.809Z","type":"run_failed","runId":"run_1780165810156","error":"Unexpected token 'e', \"text\\n- Tha\"... is not valid JSON. Full model failure report saved to editorial/reports/model-failures/2026-05-30T18-30-40-807Z-run-1780165810156-topic-008.json"}
+{"at":"2026-05-30T18:30:40.812Z","type":"manual_run_failed","error":"Unexpected token 'e', \"text\\n- Tha\"... is not valid JSON. Full model failure report saved to editorial/reports/model-failures/2026-05-30T18-30-40-807Z-run-1780165810156-topic-008.json"}
+{"at":"2026-05-30T18:35:15.771Z","type":"run_started","runId":"run_1780166115765","reason":"dashboard"}
+{"at":"2026-05-30T18:35:15.798Z","type":"topic_discovery_completed","runId":"run_1780166115765","added":0,"skipped":true,"reason":"queue_above_threshold","newsInputs":0}
+{"at":"2026-05-30T18:35:15.805Z","type":"topic_research_started","runId":"run_1780166115765","topicId":"topic-008"}
+{"at":"2026-05-30T18:35:18.517Z","type":"topic_generation_started","runId":"run_1780166115765","topicId":"topic-008"}
+{"at":"2026-05-30T18:35:48.416Z","type":"run_failed","runId":"run_1780166115765","error":"Unterminated string in JSON at position 17344 (line 1 column 17345). Full model failure report saved to editorial/reports/model-failures/2026-05-30T18-35-48-400Z-run-1780166115765-topic-008.json"}
+{"at":"2026-05-30T18:35:48.423Z","type":"manual_run_failed","error":"Unterminated string in JSON at position 17344 (line 1 column 17345). Full model failure report saved to editorial/reports/model-failures/2026-05-30T18-35-48-400Z-run-1780166115765-topic-008.json"}
+{"at":"2026-05-30T18:44:09.811Z","type":"run_started","runId":"run_1780166649799","reason":"dashboard"}
+{"at":"2026-05-30T18:44:09.845Z","type":"topic_discovery_completed","runId":"run_1780166649799","added":0,"skipped":true,"reason":"queue_above_threshold","newsInputs":0}
+{"at":"2026-05-30T18:44:09.847Z","type":"topic_research_started","runId":"run_1780166649799","topicId":"topic-008"}
+{"at":"2026-05-30T18:44:13.330Z","type":"topic_generation_started","runId":"run_1780166649799","topicId":"topic-008"}
+{"at":"2026-05-30T18:44:40.894Z","type":"topic_image_generation_started","runId":"run_1780166649799","topicId":"topic-008"}
+{"at":"2026-05-30T18:44:40.973Z","type":"topic_generated","runId":"run_1780166649799","topicId":"topic-008","slug":"panel-interview-questions-and-answers","image":"/static/blog-generated/panel-interview-questions-and-answers.webp"}
+{"at":"2026-05-30T18:44:40.979Z","type":"topic_research_started","runId":"run_1780166649799","topicId":"topic-009"}
+{"at":"2026-05-30T18:44:43.429Z","type":"topic_generation_started","runId":"run_1780166649799","topicId":"topic-009"}
+{"at":"2026-05-30T18:45:10.169Z","type":"topic_image_generation_started","runId":"run_1780166649799","topicId":"topic-009"}
+{"at":"2026-05-30T18:46:40.682Z","type":"topic_generated","runId":"run_1780166649799","topicId":"topic-009","slug":"what-to-say-when-you-dont-know-the-answer-in-an-interview","image":"/static/blog-generated/what-to-say-when-you-dont-know-the-answer-in-an-interview.webp"}
+{"at":"2026-05-30T18:46:40.710Z","type":"run_completed","runId":"run_1780166649799","articles":2,"publishResult":{"mode":"draft-only","writtenFiles":["/Users/jerryding123/Projects/interview-pilot/landing/editorial/drafts/panel-interview-questions-and-answers.mdx","/Users/jerryding123/Projects/interview-pilot/landing/editorial/drafts/what-to-say-when-you-dont-know-the-answer-in-an-interview.mdx"],"committed":false,"pushed":false}}

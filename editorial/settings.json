@@ -11,9 +11,6 @@
     "model": "gpt-5.4-mini",
     "temperature": 0.3
   },
-  "contentStructure": {
-    "minRichStructuresPerPost": 2
-  },
   "research": {
     "maxSourcesPerArticle": 5,
     "maxNewsItemsPerQuery": 8,

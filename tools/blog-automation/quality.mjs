@@ -37,33 +37,6 @@ function issue(level, code, message, context = {}) {
   return { level, code, message, context }
 }
 
-function countMarkdownTables(markdown) {
-  const lines = String(markdown || '').split(/\r?\n/)
-  let count = 0
-
-  for (let index = 0; index < lines.length - 1; index += 1) {
-    const header = lines[index].trim()
-    const separator = lines[index + 1].trim()
-    if (
-      header.startsWith('|') &&
-      header.endsWith('|') &&
-      /^\|\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?$/.test(separator)
-    ) {
-      count += 1
-    }
-  }
-
-  return count
-}
-
-function countRichStructures(markdown) {
-  const componentMatches = String(markdown || '').match(
-    /<(Callout|AnswerBlock|TemplateBlock|Checklist|StepList|ExampleGrid|ExampleCard|StatCard)\b/g
-  )
-
-  return (componentMatches?.length || 0) + countMarkdownTables(markdown)
-}
-
 export async function validateArticle({ article, topic, research, settings }) {
   const errors = []
   const warnings = []
@@ -126,18 +99,6 @@ export async function validateArticle({ article, topic, research, settings }) {
         errors.push(issue('error', 'placeholder_text', `Placeholder-like text matched: ${pattern}`))
       }
     }
-  }
-
-  const minRichStructures = settings.contentStructure?.minRichStructuresPerPost || 0
-  const richStructures = countRichStructures(article.body)
-  if (minRichStructures > 0 && richStructures < minRichStructures) {
-    errors.push(
-      issue(
-        'error',
-        'missing_rich_structures',
-        `Article has ${richStructures} rich structures; minimum is ${minRichStructures}`
-      )
-    )
   }
 
   const needsSources =

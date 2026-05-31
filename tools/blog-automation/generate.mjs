@@ -1,5 +1,81 @@
+import path from 'node:path'
+
 import { createMdx, normalizeMarkdownTables, slugify } from './lib/content.mjs'
+import { reportsDir, repoRoot } from './lib/paths.mjs'
+import { writeJson } from './lib/store.mjs'
 import { generateWithOpenAI } from './model.mjs'
+
+const ARTICLE_RESPONSE_FORMAT = {
+  type: 'json_schema',
+  name: 'blog_article',
+  description: 'A complete Interview Pilot blog article with frontmatter metadata and MDX body.',
+  strict: true,
+  schema: {
+    type: 'object',
+    additionalProperties: false,
+    required: ['frontmatter', 'body'],
+    properties: {
+      frontmatter: {
+        type: 'object',
+        additionalProperties: false,
+        required: [
+          'title',
+          'date',
+          'lastUpdated',
+          'lastReviewedAt',
+          'description',
+          'author',
+          'category',
+          'contentType',
+          'primaryKeyword',
+          'secondaryKeywords',
+          'searchIntent',
+          'uniqueAngle',
+          'freshnessType',
+          'sources',
+          'internalLinks',
+          'tags',
+          'published',
+        ],
+        properties: {
+          title: { type: 'string' },
+          date: { type: 'string' },
+          lastUpdated: { type: 'string' },
+          lastReviewedAt: { type: 'string' },
+          description: { type: 'string' },
+          author: { type: 'string' },
+          category: { type: 'string' },
+          contentType: { type: 'string' },
+          primaryKeyword: { type: 'string' },
+          secondaryKeywords: {
+            type: 'array',
+            items: { type: 'string' },
+          },
+          searchIntent: { type: 'string' },
+          uniqueAngle: { type: 'string' },
+          freshnessType: { type: 'string' },
+          sources: {
+            type: 'array',
+            items: { type: 'string' },
+          },
+          internalLinks: {
+            type: 'array',
+            items: { type: 'string' },
+          },
+          tags: {
+            type: 'array',
+            items: { type: 'string' },
+          },
+          published: { type: 'boolean' },
+        },
+      },
+        body: {
+          type: 'string',
+          description: 'Complete MDX article body with exactly one H1 and standard Markdown only. No custom MDX components.',
+        },
+    },
+  },
+}
 
 function today() {
   return new Date().toISOString().slice(0, 10)
@@ -26,25 +102,13 @@ Hard requirements:
 - Minimum body length target: ${settings.generation.minimumWordCount} words.
 - Keep brand tone direct, useful, and credible.
 
-Approved rich MDX components:
-- <Callout type="quick-answer|tip|warning|mistake|takeaway|note" title="...">...</Callout>
-- <AnswerBlock question="...">...</AnswerBlock>
-- <TemplateBlock title="...">...</TemplateBlock>
-- <Checklist title="...">...</Checklist>
-- <StepList>...</StepList>
-- <ExampleGrid><ExampleCard title="...">...</ExampleCard><ExampleCard title="...">...</ExampleCard></ExampleGrid>
-- <StatCard label="..." value="..." source="...">...</StatCard>
-
-Rich structure requirements:
-- Use the approved components where they fit the search intent; do not invent new components.
-- Use at least two rich structures in every article: approved MDX components, Markdown tables, or both.
-- Use Markdown tables for comparisons, timelines, good vs bad examples, mistakes vs fixes, or decision criteria.
-- Use AnswerBlock for interview-question posts and behavioral/sample-answer content.
-- Use TemplateBlock for reusable scripts, emails, cover letters, LinkedIn summaries, resumes, or answer templates.
-- Use Checklist or StepList for process and how-to content.
-- Use Callout for the quick answer, key takeaway, warning, or common mistake.
-- Use StatCard only when a source supports the claim. Never use StatCard for unsourced statistics.
-- Keep components purposeful. Do not add decorative components just to satisfy formatting.
+Formatting requirements:
+- Use clean standard Markdown only.
+- Do not use custom MDX components.
+- Do not use decorative callout boxes, cards, stat cards, custom checklists, or custom grids.
+- Use normal paragraphs, H2/H3 headings, bullet lists, numbered lists, blockquotes, fenced code blocks, and Markdown tables.
+- Use Markdown tables only where they genuinely improve clarity: comparisons, timelines, examples, mistakes vs fixes, or decision criteria.
+- Keep formatting simple and readable. Do not add formatting just to make the page look busy.
 
 SEO and structure requirements:
 - Write for the exact primary keyword and search intent in the topic.
@@ -96,21 +160,7 @@ function articleInput({ topic, research, settings }) {
           published: true,
         },
         body:
-          'complete MDX markdown article with exactly one H1, multiple search-intent H2 sections, concrete examples/templates/checklists/tables, and at least two approved rich structures where useful',
-      },
-      approvedMdxComponents: {
-        Callout:
-          '<Callout type="quick-answer" title="Quick answer">Short practical answer.</Callout>',
-        AnswerBlock:
-          '<AnswerBlock question="Tell me about yourself">\\n**Sample answer:** ...\\n\\n**Why it works:** ...\\n\\n**Make it yours:** ...\\n</AnswerBlock>',
-        TemplateBlock:
-          '<TemplateBlock title="Follow-up email template">```text\\n...\\n```</TemplateBlock>',
-        Checklist: '<Checklist title="Before the interview">\\n- Item one\\n- Item two\\n</Checklist>',
-        StepList: '<StepList>\\n1. Step one\\n2. Step two\\n</StepList>',
-        ExampleGrid:
-          '<ExampleGrid><ExampleCard title="Weak answer">...</ExampleCard><ExampleCard title="Stronger answer">...</ExampleCard></ExampleGrid>',
-        StatCard:
-          '<StatCard label="Survey result" value="42%" source="Source name">Use only when sourced.</StatCard>',
+          'complete MDX markdown article with exactly one H1, multiple search-intent H2 sections, concrete examples, practical lists, and Markdown tables only where useful',
       },
       settings: {
         minimumWordCount: settings.generation.minimumWordCount,
@@ -123,21 +173,84 @@ function articleInput({ topic, research, settings }) {
 
 function parseJsonFromModel(output) {
   const trimmed = output.trim()
-  const fenced = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/)
+  const fenced = trimmed.match(/^```json\s*([\s\S]*?)```\s*$/i)
   const jsonText = fenced ? fenced[1] : trimmed
   return JSON.parse(jsonText)
 }
 
-export async function generateArticle({ topic, research, settings }) {
+function safeReportPart(value) {
+  return String(value || 'unknown')
+    .toLowerCase()
+    .replace(/[^a-z0-9-]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 80)
+}
+
+async function writeModelFailureReport({ runId, topic, research, instructions, input, output, error }) {
+  const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
+  const fileName = `${timestamp}-${safeReportPart(runId)}-${safeReportPart(topic.id)}.json`
+  const filePath = path.join(reportsDir, 'model-failures', fileName)
+
+  await writeJson(filePath, {
+    at: new Date().toISOString(),
+    runId,
+    topicId: topic.id,
+    topic,
+    research,
+    error: {
+      name: error?.name || 'Error',
+      message: error?.message || String(error),
+      stack: error?.stack || null,
+    },
+    request: {
+      instructions,
+      input,
+    },
+    rawOutput: output,
+  })
+
+  return path.relative(repoRoot, filePath)
+}
+
+export async function generateArticle({ topic, research, settings, runId }) {
+  const instructions = articleInstructions(settings)
+  const input = articleInput({ topic, research, settings })
   const output = await generateWithOpenAI({
     settings,
-    instructions: articleInstructions(settings),
-    input: articleInput({ topic, research, settings }),
+    instructions,
+    input,
+    textFormat: ARTICLE_RESPONSE_FORMAT,
   })
-  const parsed = parseJsonFromModel(output)
+  let parsed
+
+  try {
+    parsed = parseJsonFromModel(output)
+  } catch (error) {
+    const reportPath = await writeModelFailureReport({
+      runId,
+      topic,
+      research,
+      instructions,
+      input,
+      output,
+      error,
+    })
+    const message = error instanceof Error ? error.message : String(error)
+    throw new Error(`${message}. Full model failure report saved to ${reportPath}`)
+  }
 
   if (!parsed.frontmatter || !parsed.body) {
-    throw new Error(`Model output missing frontmatter/body for topic: ${topic.id}`)
+    const reportPath = await writeModelFailureReport({
+      runId,
+      topic,
+      research,
+      instructions,
+      input,
+      output,
+      error: new Error(`Model output missing frontmatter/body for topic: ${topic.id}`),
+    })
+    throw new Error(`Model output missing frontmatter/body for topic: ${topic.id}. Full model failure report saved to ${reportPath}`)
   }
 
   const slug = slugify(topic.slug || parsed.frontmatter.slug || topic.primaryKeyword || topic.topic)

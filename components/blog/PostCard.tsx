@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Heading, Text, Badge, HStack, VStack } from '@chakra-ui/react'
+import { Box, Heading, Text, VStack } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getBlogCategoryLabel } from '#data/blog'
@@ -26,11 +26,9 @@ export function PostCard({
   description,
   date,
   lastUpdated,
-  author,
   image,
   imageAlt,
   category,
-  tags = [],
   readingTime,
 }: PostCardProps) {
   return (
@@ -38,7 +36,7 @@ export function PostCard({
       <Box
         bg="rgba(255, 255, 255, 0.05)"
         backdropFilter="blur(10px)"
-        borderRadius="xl"
+        borderRadius="3xl"
         overflow="hidden"
         borderWidth="1px"
         borderColor="rgba(255, 255, 255, 0.1)"
@@ -53,108 +51,48 @@ export function PostCard({
         flexDirection="column"
       >
         {image && (
-          <Box position="relative" height="200px" overflow="hidden">
+          <Box
+            position="relative"
+            height={{ base: '190px', lg: '160px' }}
+            overflow="hidden"
+            m={3}
+            mb={0}
+            borderRadius="xl"
+          >
             <Image
               src={image}
               alt={imageAlt || title}
               fill
-              sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 33vw"
+              sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, (max-width: 1439px) 33vw, 25vw"
               style={{ objectFit: 'cover' }}
             />
           </Box>
         )}
 
-        <VStack
-          p={6}
-          spacing={3}
-          align="stretch"
-          flex="1"
-          justify="space-between"
-        >
-          <Box>
-            <HStack spacing={2} mb={2} flexWrap="wrap">
-              {category && (
-                <>
-                  <Badge
-                    colorScheme="yellow"
-                    variant="subtle"
-                    fontSize="xs"
-                    px={2}
-                    py={0.5}
-                    borderRadius="full"
-                  >
-                    {getBlogCategoryLabel(category)}
-                  </Badge>
-                  <Text fontSize="sm" color="gray.500">
-                    •
-                  </Text>
-                </>
-              )}
-              <Text fontSize="sm" color="gray.400">
-                {formatDate(lastUpdated || date)}
-              </Text>
-              {readingTime && (
-                <>
-                  <Text fontSize="sm" color="gray.500">
-                    •
-                  </Text>
-                  <Text fontSize="sm" color="gray.400">
-                    {readingTime} min read
-                  </Text>
-                </>
-              )}
-            </HStack>
-
-            <Heading
-              as="h3"
-              size="md"
-              mb={2}
-              noOfLines={2}
-              color="app.text.primary"
-            >
-              {title}
-            </Heading>
-
-            <Text
-              color="gray.400"
-              fontSize="sm"
-              noOfLines={3}
-              lineHeight="1.6"
-            >
-              {description}
+        <VStack p={{ base: 5, lg: 4 }} spacing={2.5} align="stretch" flex="1">
+          {category && (
+            <Text color="primary.300" fontSize="sm" fontWeight="medium">
+              {getBlogCategoryLabel(category)}
             </Text>
-          </Box>
+          )}
 
-          <Box>
-            {author && (
-              <Text fontSize="xs" color="gray.500" mb={2}>
-                By {author}
-              </Text>
-            )}
+          <Heading
+            as="h3"
+            size="md"
+            noOfLines={2}
+            color="app.text.primary"
+          >
+            {title}
+          </Heading>
 
-            {tags.length > 0 && (
-              <HStack spacing={2} flexWrap="wrap">
-                {tags.slice(0, 2).map((tag) => (
-                  <Badge
-                    key={tag}
-                    colorScheme="gray"
-                    variant="outline"
-                    fontSize="xs"
-                    px={2}
-                    py={0.5}
-                    borderRadius="full"
-                  >
-                    {tag}
-                  </Badge>
-                ))}
-                {tags.length > 2 && (
-                  <Text fontSize="xs" color="gray.500">
-                    +{tags.length - 2}
-                  </Text>
-                )}
-              </HStack>
-            )}
-          </Box>
+          <Text color="gray.400" fontSize="sm" noOfLines={2} lineHeight="1.6">
+            {description}
+          </Text>
+
+          <Text fontSize="xs" color="gray.500" mt="auto">
+            {formatDate(lastUpdated || date)}
+            {readingTime ? ` · ${readingTime} min read` : ''}
+          </Text>
         </VStack>
       </Box>
     </Link>
