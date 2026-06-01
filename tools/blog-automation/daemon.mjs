@@ -53,13 +53,6 @@ export async function startDaemon() {
   await writeJson(settingsPath, { ...settings, enabled: true })
   await logEvent({ type: 'daemon_started' })
   await scheduleNext()
-
-  void runNow('start').then(scheduleNext).catch(async (error) => {
-    const message = error instanceof Error ? error.message : String(error)
-    await logEvent({ type: 'daemon_start_run_failed', error: message })
-    await writeState({ running: false, currentStep: 'error', lastError: message })
-    await scheduleNext()
-  })
 }
 
 export async function triggerRunNow(reason = 'dashboard') {

@@ -31,25 +31,60 @@ async function writeArticleFile(article, directory) {
   return filePath
 }
 
+function publicPathToFilePath(publicPath) {
+  if (!publicPath || typeof publicPath !== 'string') return null
+  if (!publicPath.startsWith('/')) return null
+  return path.join(repoRoot, 'public', publicPath.replace(/^\/+/, ''))
+}
+
+async function collectExistingImageFiles(article) {
+  const imagePaths = new Set()
+  const heroImagePath = publicPathToFilePath(article.frontmatter?.image)
+
+  if (heroImagePath) imagePaths.add(heroImagePath)
+
+  for (const image of article.frontmatter?.generatedImages || []) {
+    const imagePath = publicPathToFilePath(image.path)
+    if (imagePath) imagePaths.add(imagePath)
+  }
+
+  const existingFiles = []
+  for (const imagePath of imagePaths) {
+    try {
+      await fs.access(imagePath)
+      existingFiles.push(imagePath)
+    } catch {
+      throw new Error(`Generated image is referenced but missing: ${path.relative(repoRoot, imagePath)}`)
+    }
+  }
+
+  return existingFiles
+}
+
 export async function publishArticles({ articles, settings }) {
   const mode = settings.publishing.mode
   const targetDir = mode === 'draft-only' ? draftsDir : contentPostsDir
   const writtenFiles = []
+  const imageFiles = []
 
   for (const article of articles) {
     writtenFiles.push(await writeArticleFile(article, targetDir))
+    imageFiles.push(...(await collectExistingImageFiles(article)))
   }
 
   if (mode === 'draft-only') {
     return {
       mode,
       writtenFiles,
+      imageFiles,
       committed: false,
       pushed: false,
     }
   }
 
-  await runGit(['add', ...writtenFiles.map((filePath) => path.relative(repoRoot, filePath))])
+  const filesToStage = Array.from(new Set([...writtenFiles, ...imageFiles]))
+
+  await runGit(['add', ...filesToStage.map((filePath) => path.relative(repoRoot, filePath))])
   await runGit(['commit', '-m', settings.publishing.commitMessage])
 
   if (mode === 'commit-and-push') {
@@ -59,6 +94,7 @@ export async function publishArticles({ articles, settings }) {
   return {
     mode,
     writtenFiles,
+    imageFiles,
     committed: true,
     pushed: mode === 'commit-and-push',
   }
