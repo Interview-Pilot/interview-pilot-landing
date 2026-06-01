@@ -42,7 +42,6 @@ export const metadata = {
 
 export default function BlogPage() {
   const publishedPosts = getPublishedPosts()
-  const featuredPosts = publishedPosts.slice(0, 3)
 
   return (
     <Box bg="app.bg" pt={20}>
@@ -114,9 +113,9 @@ export default function BlogPage() {
               </VStack>
             </HStack>
 
-            {featuredPosts.length > 0 ? (
+            {publishedPosts.length > 0 ? (
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3, xl: 4 }} spacing={{ base: 6, lg: 5 }}>
-                {featuredPosts.map((post) => (
+                {publishedPosts.map((post) => (
                   <PostCard
                     key={post.slugAsParams}
                     slug={post.slugAsParams}

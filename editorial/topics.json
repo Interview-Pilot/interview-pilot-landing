@@ -124,7 +124,7 @@
     "researchRequired": true,
     "sourceDepth": "moderate",
     "priority": "high",
-    "status": "drafted",
+    "status": "published",
     "targetWordCount": 1800,
     "createdAt": "2026-05-30",
     "internalLinks": [
@@ -142,8 +142,9 @@
     "generatedSlug": "panel-interview-questions-and-answers",
     "generatedAt": "2026-05-30T18:44:40.973Z",
     "lastError": null,
-    "draftPath": "editorial/drafts/panel-interview-questions-and-answers.mdx",
-    "draftedAt": "2026-05-30T18:46:40.708Z"
+    "draftedAt": "2026-05-30T18:46:40.708Z",
+    "publishedPath": "content/posts/panel-interview-questions-and-answers.mdx",
+    "publishedAt": "2026-05-31T12:00:00.000Z"
   },
   {
     "id": "topic-009",
@@ -162,7 +163,7 @@
     "researchRequired": true,
     "sourceDepth": "moderate",
     "priority": "high",
-    "status": "drafted",
+    "status": "published",
     "targetWordCount": 1600,
     "createdAt": "2026-05-30",
     "internalLinks": [
@@ -179,8 +180,9 @@
     "generatedSlug": "what-to-say-when-you-dont-know-the-answer-in-an-interview",
     "generatedAt": "2026-05-30T18:46:40.682Z",
     "lastError": null,
-    "draftPath": "editorial/drafts/what-to-say-when-you-dont-know-the-answer-in-an-interview.mdx",
-    "draftedAt": "2026-05-30T18:46:40.682Z"
+    "draftedAt": "2026-05-30T18:46:40.682Z",
+    "publishedPath": "content/posts/what-to-say-when-you-dont-know-the-answer-in-an-interview.mdx",
+    "publishedAt": "2026-05-31T12:00:00.000Z"
   },
   {
     "id": "topic-010",
