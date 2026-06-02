@@ -32,8 +32,20 @@
             "comment": "Forum post deep links"
           },
           {
-            "/": "/event/*",
-            "comment": "App Store in-app event deep links"
+            "/": "/event/interview*",
+            "comment": "App Store in-app event links for interview copilot"
+          },
+          {
+            "/": "/event/practice*",
+            "comment": "App Store in-app event links for practice question bank"
+          },
+          {
+            "/": "/event/subscription*",
+            "comment": "App Store in-app event links for subscription"
+          },
+          {
+            "/": "/event/subscribe*",
+            "comment": "App Store in-app event links for subscription"
           }
         ]
       }

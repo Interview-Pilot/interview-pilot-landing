@@ -33,6 +33,41 @@ const nextConfig = {
         destination: '/question-bank',
         permanent: false,
       },
+      {
+        source: '/event/interview',
+        destination: '/interview-copilot',
+        permanent: false,
+      },
+      {
+        source: '/event/practice',
+        destination: '/question-bank',
+        permanent: false,
+      },
+      {
+        source: '/subscription',
+        destination: '/pricing',
+        permanent: false,
+      },
+      {
+        source: '/subscribe',
+        destination: '/pricing',
+        permanent: false,
+      },
+      {
+        source: '/pro',
+        destination: '/pricing',
+        permanent: false,
+      },
+      {
+        source: '/event/subscription',
+        destination: '/pricing',
+        permanent: false,
+      },
+      {
+        source: '/event/subscribe',
+        destination: '/pricing',
+        permanent: false,
+      },
     ]
   },
 
