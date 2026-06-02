@@ -2,8 +2,19 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["9DZB8X73Z4.Liberace.InterviewAI"],
+        "appIDs": [
+          "2CG74M5YVX.Liberace.InterviewAI",
+          "9DZB8X73Z4.Liberace.InterviewAI"
+        ],
         "components": [
+          {
+            "/": "/interview*",
+            "comment": "Main interview copilot deep links"
+          },
+          {
+            "/": "/practice*",
+            "comment": "Practice and question bank deep links"
+          },
           {
             "/": "/subscription*",
             "comment": "Matches all subscription URLs"
@@ -19,12 +30,19 @@
           {
             "/": "/community/post/*",
             "comment": "Forum post deep links"
+          },
+          {
+            "/": "/event/*",
+            "comment": "App Store in-app event deep links"
           }
         ]
       }
     ]
   },
   "webcredentials": {
-    "apps": ["9DZB8X73Z4.Liberace.InterviewAI"]
+    "apps": [
+      "2CG74M5YVX.Liberace.InterviewAI",
+      "9DZB8X73Z4.Liberace.InterviewAI"
+    ]
   }
 }

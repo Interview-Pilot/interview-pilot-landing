@@ -21,6 +21,21 @@ const nextConfig = {
     ]
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/interview',
+        destination: '/interview-copilot',
+        permanent: false,
+      },
+      {
+        source: '/practice',
+        destination: '/question-bank',
+        permanent: false,
+      },
+    ]
+  },
+
   webpack(config) {
     // SVG handling
     config.module.rules.push({

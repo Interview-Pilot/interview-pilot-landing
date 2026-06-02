@@ -1,0 +1,16 @@
+.git
+.vercel
+.env*
+
+node_modules
+.next
+.next*
+.turbo
+.velite
+tsconfig.tsbuildinfo
+
+editorial
+tools/blog-automation
+
+*.log
+.DS_Store
