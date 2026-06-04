@@ -5,10 +5,12 @@ import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 
 const baseUrl = 'https://www.interviewpilot.app'
+const defaultTitle = 'Interview Pilot - #1 AI Interview Copilot & Prep Tool (120K+ Users)'
+
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Interview Pilot - Live AI Interview Copilot',
+    default: defaultTitle,
     template: '%s | Interview Pilot',
   },
   description: 'Get real-time interview answers during your interview with AI Copilot. Ace any technical or behavioral questions instantly.',
@@ -28,7 +30,7 @@ export const metadata: Metadata = {
   creator: 'Liberace Pte. Ltd.',
   publisher: 'Interview Pilot',
   openGraph: {
-    title: 'Interview Pilot - Live AI Interview Copilot',
+    title: defaultTitle,
     description: 'Get real-time interview answers during your interview with AI Copilot. Ace any technical or behavioral questions instantly.',
     url: baseUrl,
     siteName: 'Interview Pilot',
@@ -39,13 +41,13 @@ export const metadata: Metadata = {
         url: '/static/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Interview Pilot - Live AI Interview Copilot',
+        alt: defaultTitle,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Interview Pilot - Live AI Interview Copilot',
+    title: defaultTitle,
     description: 'Get real-time interview answers during your interview with AI Copilot. Ace any technical or behavioral questions instantly.',
     site: '@interview_pilot',
     creator: '@interview_pilot',
