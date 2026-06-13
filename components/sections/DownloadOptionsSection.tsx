@@ -89,15 +89,25 @@ export function DownloadOptionsSection(props: DownloadOptionsSectionProps) {
           position="relative"
           zIndex={1}
         >
-          For desktop (macOS), download{' '}
+          For desktop, download for{' '}
           <Link
-            href={PLATFORM_LINKS.desktopDownload}
+            href={PLATFORM_LINKS.macDesktopDownload}
             isExternal
             color="white"
             textDecoration="underline"
             _hover={{ color: 'whiteAlpha.900' }}
           >
-            here
+            macOS
+          </Link>
+          {' or '}
+          <Link
+            href={PLATFORM_LINKS.windowsDesktopDownload}
+            isExternal
+            color="white"
+            textDecoration="underline"
+            _hover={{ color: 'whiteAlpha.900' }}
+          >
+            Windows
           </Link>
           .
         </Text>

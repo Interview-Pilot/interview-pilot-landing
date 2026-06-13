@@ -21,6 +21,7 @@ export function AppStoreBanner() {
   const isIOS = platform === 'ios'
   const isAndroid = platform === 'android'
   const isMacOS = platform === 'macos'
+  const isWindows = platform === 'windows'
 
   const storeIcon = isIOS
     ? '/static/icons/platforms/apple.svg'
@@ -34,7 +35,9 @@ export function AppStoreBanner() {
       ? 'Get it on Google Play'
       : isMacOS
         ? 'Download for macOS'
-        : 'View download options'
+        : isWindows
+          ? 'Download for Windows'
+          : 'View download options'
 
   return (
     <Portal>

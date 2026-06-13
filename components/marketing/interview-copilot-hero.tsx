@@ -155,7 +155,7 @@ export function InterviewCopilotHero() {
               }}
               transition="all 0.2s ease"
             >
-              Download for macOS
+              Download Desktop App
             </Button>
           </Box>
 

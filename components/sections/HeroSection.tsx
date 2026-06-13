@@ -67,6 +67,11 @@ function getHeroDownloadCta(platform: ReturnType<typeof usePlatform>) {
         rightIcon: FiDownload,
       }
     case 'windows':
+      return {
+        label: 'Get for Windows',
+        iconSrc: '/static/icons/platforms/windows.svg',
+        rightIcon: FiDownload,
+      }
     default:
       return {
         label: 'Download free',
