@@ -230,18 +230,16 @@ export function HeroSection() {
                     color="black"
                     href={downloadHref}
                     borderRadius="full"
-                    px="1"
-                    minW="250px"
+                    p="1"
                     h="56px"
-                    position="relative"
-                    textAlign="left"
+                    display="inline-grid"
+                    gridTemplateColumns="46px max-content"
+                    alignItems="center"
+                    justifyContent="center"
+                    whiteSpace="nowrap"
                     width={{ base: '100%', sm: 'auto' }}
                   >
                     <Box
-                      position="absolute"
-                      left="5px"
-                      top="50%"
-                      transform="translateY(-50%)"
                       w="46px"
                       h="46px"
                       borderRadius="full"
@@ -266,13 +264,9 @@ export function HeroSection() {
                     </Box>
                     <HStack
                       spacing="2"
-                      position="absolute"
-                      left={{ base: '54px', sm: '58px' }}
-                      right={{ base: '18px', sm: '18px' }}
-                      top="50%"
-                      transform="translateY(-50%)"
                       justifyContent="center"
                       lineHeight="1"
+                      px="8"
                     >
                       <Text as="span" fontWeight="semibold" fontSize="2xl">
                         {downloadCta.label}
@@ -287,9 +281,9 @@ export function HeroSection() {
                     variant="outline"
                     borderRadius="full"
                     h="56px"
-                    minW="190px"
                     px="8"
                     fontSize="2xl"
+                    whiteSpace="nowrap"
                     width={{ base: '100%', sm: 'auto' }}
                     rightIcon={
                       <Icon
