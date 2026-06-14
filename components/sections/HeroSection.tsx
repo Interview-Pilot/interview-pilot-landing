@@ -8,8 +8,6 @@ import {
   Icon,
   Stack,
   Text,
-  useBreakpointValue,
-  usePrefersReducedMotion,
   VStack,
 } from '@chakra-ui/react'
 import { Br, Link } from '@saas-ui/react'
@@ -96,14 +94,13 @@ export function HeroSection() {
   const platform = usePlatform()
   const downloadHref = getPrimaryDownloadHref(platform)
   const downloadCta = getHeroDownloadCta(platform)
-  const startsWithDesktop =
-    useBreakpointValue({ base: false, lg: true }, { ssr: false }) ?? false
-  const prefersReducedMotion = usePrefersReducedMotion()
+  const [isDesktopViewport, setIsDesktopViewport] = useState(false)
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
   const [activeHeroImage, setActiveHeroImage] =
     useState<HeroImageView>('mobile')
   const [hasManualHeroImageSelection, setHasManualHeroImageSelection] =
     useState(false)
-  const visibleHeroImage = startsWithDesktop ? activeHeroImage : 'mobile'
+  const visibleHeroImage = isDesktopViewport ? activeHeroImage : 'mobile'
   const heroImageTransition = prefersReducedMotion
     ? 'none'
     : `opacity ${heroImageFadeMs}ms cubic-bezier(0.22, 1, 0.36, 1)`
@@ -113,11 +110,32 @@ export function HeroSection() {
   }
 
   useEffect(() => {
-    setActiveHeroImage(startsWithDesktop ? 'desktop' : 'mobile')
-  }, [startsWithDesktop])
+    const desktopQuery = window.matchMedia('(min-width: 62em)')
+    const reducedMotionQuery = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    )
+    const syncMediaState = () => {
+      setIsDesktopViewport(desktopQuery.matches)
+      setPrefersReducedMotion(reducedMotionQuery.matches)
+      setActiveHeroImage(desktopQuery.matches ? 'desktop' : 'mobile')
+    }
+
+    syncMediaState()
+    desktopQuery.addEventListener('change', syncMediaState)
+    reducedMotionQuery.addEventListener('change', syncMediaState)
+
+    return () => {
+      desktopQuery.removeEventListener('change', syncMediaState)
+      reducedMotionQuery.removeEventListener('change', syncMediaState)
+    }
+  }, [])
 
   useEffect(() => {
-    if (prefersReducedMotion || hasManualHeroImageSelection) {
+    if (
+      !isDesktopViewport ||
+      prefersReducedMotion ||
+      hasManualHeroImageSelection
+    ) {
       return
     }
 
@@ -128,7 +146,7 @@ export function HeroSection() {
     }, heroImageCycleMs)
 
     return () => window.clearInterval(cycle)
-  }, [hasManualHeroImageSelection, prefersReducedMotion])
+  }, [hasManualHeroImageSelection, isDesktopViewport, prefersReducedMotion])
 
   useEffect(() => {
     if (!hasManualHeroImageSelection) {
