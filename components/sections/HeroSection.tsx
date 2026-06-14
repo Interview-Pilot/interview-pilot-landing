@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import {
   Box,
   Container,
@@ -7,6 +8,8 @@ import {
   Icon,
   Stack,
   Text,
+  useBreakpointValue,
+  usePrefersReducedMotion,
   VStack,
 } from '@chakra-ui/react'
 import { Br, Link } from '@saas-ui/react'
@@ -15,6 +18,8 @@ import {
   FiArrowRight,
   FiCheckCircle,
   FiDownload,
+  FiMonitor,
+  FiSmartphone,
 } from 'react-icons/fi'
 import { FaStar } from 'react-icons/fa'
 
@@ -27,6 +32,10 @@ import { ASSETS, INTERNAL_ROUTES } from '#constants'
 import { heroPulseAnimation } from '#theme/styles/section-styles'
 
 const platformSignupHref = 'https://platform.interviewpilot.app/signup'
+const heroImageCycleMs = 3400
+const heroImageFadeMs = 700
+const heroImageManualPauseMs = 9000
+type HeroImageView = 'mobile' | 'desktop'
 
 const socialProofAvatars = [
   {
@@ -87,6 +96,51 @@ export function HeroSection() {
   const platform = usePlatform()
   const downloadHref = getPrimaryDownloadHref(platform)
   const downloadCta = getHeroDownloadCta(platform)
+  const startsWithDesktop =
+    useBreakpointValue({ base: false, lg: true }, { ssr: false }) ?? false
+  const prefersReducedMotion = usePrefersReducedMotion()
+  const [activeHeroImage, setActiveHeroImage] =
+    useState<HeroImageView>('mobile')
+  const [hasManualHeroImageSelection, setHasManualHeroImageSelection] =
+    useState(false)
+  const visibleHeroImage = startsWithDesktop ? activeHeroImage : 'mobile'
+  const heroImageTransition = prefersReducedMotion
+    ? 'none'
+    : `opacity ${heroImageFadeMs}ms cubic-bezier(0.22, 1, 0.36, 1)`
+  const selectHeroImage = (image: HeroImageView) => {
+    setHasManualHeroImageSelection(true)
+    setActiveHeroImage(image)
+  }
+
+  useEffect(() => {
+    setActiveHeroImage(startsWithDesktop ? 'desktop' : 'mobile')
+  }, [startsWithDesktop])
+
+  useEffect(() => {
+    if (prefersReducedMotion || hasManualHeroImageSelection) {
+      return
+    }
+
+    const cycle = window.setInterval(() => {
+      setActiveHeroImage((current) =>
+        current === 'mobile' ? 'desktop' : 'mobile',
+      )
+    }, heroImageCycleMs)
+
+    return () => window.clearInterval(cycle)
+  }, [hasManualHeroImageSelection, prefersReducedMotion])
+
+  useEffect(() => {
+    if (!hasManualHeroImageSelection) {
+      return
+    }
+
+    const resumeRotation = window.setTimeout(() => {
+      setHasManualHeroImageSelection(false)
+    }, heroImageManualPauseMs)
+
+    return () => window.clearTimeout(resumeRotation)
+  }, [activeHeroImage, hasManualHeroImageSelection])
 
   return (
     <Box overflow="hidden">
@@ -395,22 +449,18 @@ export function HeroSection() {
           >
             <Box>
               <Box
-                overflow="hidden"
+                overflow={{ base: 'hidden', lg: 'visible' }}
                 height="100%"
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
                 position="relative"
                 zIndex={1}
-                sx={{
-                  maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)',
-                  WebkitMaskImage:
-                    'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)',
-                }}
               >
                 <Box
-                  overflow="hidden"
+                  overflow="visible"
                   transform={{ base: 'translate(48px, 36px)', md: 'none' }}
+                  position="relative"
                 >
                   <Image
                     src={ASSETS.screenshots.heroHand}
@@ -425,8 +475,96 @@ export function HeroSection() {
                       height: 'auto',
                       objectFit: 'contain',
                       display: 'block',
+                      opacity: visibleHeroImage === 'mobile' ? 1 : 0,
+                      transition: heroImageTransition,
+                      maskImage:
+                        'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)',
+                      WebkitMaskImage:
+                        'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)',
                     }}
                   />
+                  <Box
+                    display={{ base: 'none', lg: 'block' }}
+                    position="absolute"
+                    top="0"
+                    left="0"
+                    h="88%"
+                    w="fit-content"
+                  >
+                    <HStack
+                      position="absolute"
+                      top="-12"
+                      right="0"
+                      zIndex={2}
+                      p="1"
+                      spacing="1"
+                      borderRadius="full"
+                      bg="rgba(12, 12, 14, 0.72)"
+                      border="1px solid"
+                      borderColor="whiteAlpha.200"
+                      boxShadow="0 18px 55px rgba(0, 0, 0, 0.34)"
+                      backdropFilter="blur(18px)"
+                    >
+                      {(['mobile', 'desktop'] as const).map((image) => {
+                        const isSelected = visibleHeroImage === image
+
+                        return (
+                          <Box
+                            key={image}
+                            as="button"
+                            type="button"
+                            aria-pressed={isSelected}
+                            onClick={() => selectHeroImage(image)}
+                            px="3"
+                            h="6"
+                            borderRadius="full"
+                            fontSize="xs"
+                            fontWeight="semibold"
+                            color={isSelected ? 'white' : 'whiteAlpha.700'}
+                            bg={isSelected ? 'whiteAlpha.200' : 'transparent'}
+                            transition="all 160ms ease"
+                            _hover={{
+                              color: 'white',
+                              bg: isSelected
+                                ? 'whiteAlpha.200'
+                                : 'whiteAlpha.100',
+                            }}
+                          >
+                            <HStack spacing="1.5">
+                              <Icon
+                                as={
+                                  image === 'mobile'
+                                    ? FiSmartphone
+                                    : FiMonitor
+                                }
+                                boxSize="3"
+                              />
+                              <Text as="span">
+                                {image === 'mobile' ? 'Mobile' : 'Desktop'}
+                              </Text>
+                            </HStack>
+                          </Box>
+                        )
+                      })}
+                    </HStack>
+                    <Image
+                      src="/static/screenshots/interview-copilot-desktop.png"
+                      width={648}
+                      height={716}
+                      alt="Interview Pilot desktop Copilot app screenshot"
+                      priority
+                      sizes="(max-width: 1199px) 610px, 58vw"
+                      style={{
+                        width: 'auto',
+                        height: '100%',
+                        maxWidth: 'none',
+                        objectFit: 'contain',
+                        display: 'block',
+                        opacity: visibleHeroImage === 'desktop' ? 1 : 0,
+                        transition: heroImageTransition,
+                      }}
+                    />
+                  </Box>
                 </Box>
               </Box>
             </Box>

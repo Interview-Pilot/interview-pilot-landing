@@ -2,7 +2,6 @@
 
 import {
   Box,
-  Button,
   Container,
   HStack,
   Icon,
@@ -14,6 +13,7 @@ import { Br } from '@saas-ui/react'
 import Image from 'next/image'
 import { FiArrowRight, FiCheckCircle, FiDownload } from 'react-icons/fi'
 
+import { ButtonLink } from '#components/button-link/button-link'
 import { Em } from '#components/typography'
 import { APP_STORE_LINKS, ASSETS, PLATFORM_LINKS } from '#constants'
 import { heroPulseAnimation } from '#theme/styles/section-styles'
@@ -118,7 +118,7 @@ export function InterviewCopilotHero() {
         </VStack>
       </Container>
 
-      <Container maxW="container.lg" pt={{ base: 14, md: 20 }} pb={{ base: 8, md: 10 }}>
+      <Container maxW="container.xl" pt={{ base: 14, md: 20 }} pb={{ base: 8, md: 10 }}>
         <VStack spacing={{ base: 8, md: 10 }} align="stretch">
           <Box textAlign="center" position="relative" zIndex={1}>
             <Text as="h2" fontSize={{ base: '4xl', lg: '4xl' }} fontWeight="bold" color="white">
@@ -135,37 +135,81 @@ export function InterviewCopilotHero() {
               Use the desktop app for a focused interview overlay with live answer
               guidance, follow-up suggestions, and keyboard-first controls.
             </Text>
-            <Button
-              as={Link}
-              href={PLATFORM_LINKS.desktopDownload}
-              isExternal
+            <HStack
               mt={6}
-              variant="primary"
-              color="black"
-              borderRadius="full"
-              h="50px"
-              minW="240px"
-              fontWeight="bold"
-              fontSize="xl"
-              leftIcon={<FiDownload />}
-              _hover={{
-                bg: 'primary.300',
-                textDecoration: 'none',
-                transform: 'translateY(-1px)',
-              }}
-              transition="all 0.2s ease"
+              spacing={4}
+              justify="center"
+              flexWrap="wrap"
             >
-              Download Desktop App
-            </Button>
+              {[
+                {
+                  label: 'Get for Windows',
+                  href: PLATFORM_LINKS.windowsDesktopDownload,
+                  iconSrc: '/static/icons/platforms/windows.svg',
+                },
+                {
+                  label: 'Get for Mac',
+                  href: PLATFORM_LINKS.macDesktopDownload,
+                  iconSrc: '/static/icons/platforms/apple.svg',
+                  iconFilter: 'invert(1)',
+                },
+              ].map((cta) => (
+                <ButtonLink
+                  key={cta.label}
+                  variant="primary"
+                  color="black"
+                  href={cta.href}
+                  borderRadius="full"
+                  p="1"
+                  h="56px"
+                  display="inline-grid"
+                  gridTemplateColumns="46px max-content"
+                  alignItems="center"
+                  justifyContent="center"
+                  whiteSpace="nowrap"
+                >
+                  <Box
+                    w="46px"
+                    h="46px"
+                    borderRadius="full"
+                    bg="black"
+                    color="white"
+                    display="inline-flex"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Box
+                      as="img"
+                      src={cta.iconSrc}
+                      alt=""
+                      w="16px"
+                      h="16px"
+                      filter={cta.iconFilter}
+                    />
+                  </Box>
+                  <HStack
+                    spacing="2"
+                    justifyContent="center"
+                    lineHeight="1"
+                    px="8"
+                  >
+                    <Text as="span" fontWeight="semibold" fontSize="2xl">
+                      {cta.label}
+                    </Text>
+                    <Icon as={FiDownload} boxSize="18px" />
+                  </HStack>
+                </ButtonLink>
+              ))}
+            </HStack>
           </Box>
 
-          <Box position="relative" zIndex={1} maxW="860px" mx="auto">
+          <Box position="relative" zIndex={1} maxW="1040px" mx="auto">
             <Image
               src="/static/screenshots/interview-copilot-desktop.png"
-              width={800}
-              height={642}
+              width={648}
+              height={716}
               alt="Interview Pilot desktop Copilot answer interface"
-              sizes="(max-width: 767px) 92vw, 860px"
+              sizes="(max-width: 767px) 92vw, 1040px"
               style={{
                 width: '100%',
                 height: 'auto',
