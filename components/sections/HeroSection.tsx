@@ -512,7 +512,8 @@ export function HeroSection() {
                     <HStack
                       position="absolute"
                       top="-12"
-                      right="0"
+                      left="50%"
+                      transform="translateX(-50%)"
                       zIndex={2}
                       p="1"
                       spacing="1"
