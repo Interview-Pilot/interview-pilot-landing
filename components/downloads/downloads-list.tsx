@@ -26,6 +26,13 @@ const downloads: DownloadItem[] = [
     iconFilter: 'invert(1)',
   },
   {
+    platform: 'Windows',
+    description: 'Download Interview Pilot Desktop for Windows.',
+    href: PLATFORM_LINKS.windowsDesktopDownload,
+    action: 'Download for Windows',
+    icon: '/static/icons/platforms/windows.svg',
+  },
+  {
     platform: 'iOS',
     description: 'Download Interview Pilot on the App Store.',
     href: APP_STORE_LINKS.ios,
@@ -42,13 +49,6 @@ const downloads: DownloadItem[] = [
     icon: '/static/icons/platforms/google-play.svg',
     badge: ASSETS.images.androidBadge,
     badgeAlt: 'Get it on Google Play',
-  },
-  {
-    platform: 'Windows',
-    description: 'Download Interview Pilot Desktop for Windows.',
-    href: PLATFORM_LINKS.windowsDesktopDownload,
-    action: 'Download for Windows',
-    icon: '/static/icons/platforms/windows.svg',
   },
 ]
 
