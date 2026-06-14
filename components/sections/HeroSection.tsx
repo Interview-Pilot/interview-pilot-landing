@@ -117,7 +117,7 @@ export function HeroSection() {
     const syncMediaState = () => {
       setIsDesktopViewport(desktopQuery.matches)
       setPrefersReducedMotion(reducedMotionQuery.matches)
-      setActiveHeroImage(desktopQuery.matches ? 'desktop' : 'mobile')
+      setActiveHeroImage('mobile')
     }
 
     syncMediaState()
