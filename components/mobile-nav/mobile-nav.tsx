@@ -14,7 +14,7 @@ import { AiOutlineMenu } from 'react-icons/ai'
 import * as React from 'react'
 
 import { usePlatform } from '#hooks/use-platform'
-import { getPrimaryDownloadHref } from '#lib/download-routing'
+import { getTrackedDownloadHref } from '#lib/download-routing'
 import siteConfig from '#data/config'
 
 interface NavLinkProps extends LinkProps {
@@ -61,7 +61,7 @@ interface MobileNavContentProps {
 export function MobileNavContent(props: MobileNavContentProps) {
   const { isOpen, onClose = () => {} } = props
   const platform = usePlatform()
-  const primaryDownloadHref = getPrimaryDownloadHref(platform)
+  const primaryDownloadHref = getTrackedDownloadHref('mobile-nav', platform)
 
   useRouteChanged(onClose)
   /**

@@ -15,7 +15,8 @@ import { FiArrowRight, FiCheckCircle, FiDownload } from 'react-icons/fi'
 
 import { ButtonLink } from '#components/button-link/button-link'
 import { Em } from '#components/typography'
-import { APP_STORE_LINKS, ASSETS, PLATFORM_LINKS } from '#constants'
+import { ASSETS } from '#constants'
+import { getTrackedDownloadHref } from '#lib/download-routing'
 import { heroPulseAnimation } from '#theme/styles/section-styles'
 
 export function InterviewCopilotHero() {
@@ -144,12 +145,12 @@ export function InterviewCopilotHero() {
               {[
                 {
                   label: 'Get for Windows',
-                  href: PLATFORM_LINKS.windowsDesktopDownload,
+                  href: getTrackedDownloadHref('interview-copilot', 'windows'),
                   iconSrc: '/static/icons/platforms/windows.svg',
                 },
                 {
                   label: 'Get for Mac',
-                  href: PLATFORM_LINKS.macDesktopDownload,
+                  href: getTrackedDownloadHref('interview-copilot', 'macos'),
                   iconSrc: '/static/icons/platforms/apple.svg',
                   iconFilter: 'invert(1)',
                 },
@@ -245,8 +246,7 @@ export function InterviewCopilotHero() {
               flexWrap="wrap"
             >
               <Link
-                href={APP_STORE_LINKS.ios}
-                isExternal
+                href={getTrackedDownloadHref('interview-copilot', 'ios')}
                 _hover={{ opacity: 0.85 }}
                 transition="opacity 0.2s"
               >
@@ -259,8 +259,7 @@ export function InterviewCopilotHero() {
                 />
               </Link>
               <Link
-                href={APP_STORE_LINKS.android}
-                isExternal
+                href={getTrackedDownloadHref('interview-copilot', 'android')}
                 _hover={{ opacity: 0.85 }}
                 transition="opacity 0.2s"
               >

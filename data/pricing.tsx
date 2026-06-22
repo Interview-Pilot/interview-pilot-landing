@@ -1,7 +1,7 @@
 import { HStack, Text, VStack } from '@chakra-ui/react'
 import { ReactNode } from 'react'
 
-import { APP_STORE_LINKS } from '#constants'
+import { getTrackedDownloadHref } from '#lib/download-routing'
 
 /**
  * Pricing data for the landing page
@@ -60,7 +60,7 @@ const pricing: PricingData = {
         { title: 'Normal Copilot Models' },
       ],
       action: {
-        href: APP_STORE_LINKS.ios,
+        href: getTrackedDownloadHref('pricing', 'auto'),
         label: 'Get Started',
       },
     },
@@ -105,7 +105,7 @@ const pricing: PricingData = {
         },
       ],
       action: {
-        href: APP_STORE_LINKS.ios,
+        href: getTrackedDownloadHref('pricing', 'auto'),
         label: 'Continue',
       },
     },
@@ -149,7 +149,7 @@ const pricing: PricingData = {
         },
       ],
       action: {
-        href: APP_STORE_LINKS.ios,
+        href: getTrackedDownloadHref('pricing', 'auto'),
         label: 'Continue',
       },
     },

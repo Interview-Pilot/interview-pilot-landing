@@ -27,7 +27,7 @@ import {
   ButtonLinkProps,
 } from '#components/button-link/button-link'
 import { usePlatform } from '#hooks/use-platform'
-import { getPrimaryDownloadHref } from '#lib/download-routing'
+import { getTrackedDownloadHref } from '#lib/download-routing'
 import { Section, SectionProps, SectionTitle } from '#components/section'
 
 export interface PricingPlan {
@@ -59,7 +59,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
     ...rest
   } = props
   const platform = usePlatform()
-  const primaryDownloadHref = getPrimaryDownloadHref(platform)
+  const primaryDownloadHref = getTrackedDownloadHref('pricing', platform)
 
   return (
     <Section id="pricing" {...rest}>

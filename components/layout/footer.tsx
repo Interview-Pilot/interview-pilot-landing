@@ -16,7 +16,6 @@ import { FaInstagram, FaLinkedinIn, FaTiktok, FaYoutube } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 
 import {
-  APP_STORE_LINKS,
   COMPANY_LINKS,
   INTERNAL_ROUTES,
   SOCIAL_LINKS,
@@ -25,6 +24,7 @@ import {
 import { comparisonPages } from '#data/comparisons'
 import siteConfig from '#data/config'
 import { publishedInterviewGuideRefs } from '#data/interview-guides'
+import { getTrackedDownloadHref } from '#lib/download-routing'
 import { pulseAnimation, statusDotPulseStyles } from '#theme/styles/section-styles'
 
 export interface FooterProps extends BoxProps {
@@ -50,8 +50,8 @@ const footerColumns = [
         links: [
           { href: 'https://platform.interviewpilot.app/signup', label: 'Create account', isExternal: true },
           { href: 'https://platform.interviewpilot.app/login', label: 'Log in', isExternal: true },
-          { href: APP_STORE_LINKS.ios, label: 'iOS App', isExternal: true },
-          { href: APP_STORE_LINKS.android, label: 'Android App', isExternal: true },
+          { href: getTrackedDownloadHref('footer', 'ios'), label: 'iOS App' },
+          { href: getTrackedDownloadHref('footer', 'android'), label: 'Android App' },
         ],
       },
     ],
@@ -159,8 +159,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
 
                 <Flex gap="4" alignItems="center" flexWrap="wrap">
                   <Link
-                    href={APP_STORE_LINKS.ios}
-                    isExternal
+                    href={getTrackedDownloadHref('footer', 'ios')}
                     _hover={{ opacity: 0.8 }}
                     transition="opacity 0.2s"
                   >
@@ -171,8 +170,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                     />
                   </Link>
                   <Link
-                    href={APP_STORE_LINKS.android}
-                    isExternal
+                    href={getTrackedDownloadHref('footer', 'android')}
                     _hover={{ opacity: 0.8 }}
                     transition="opacity 0.2s"
                   >

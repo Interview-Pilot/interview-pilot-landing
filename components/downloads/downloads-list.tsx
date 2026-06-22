@@ -3,7 +3,8 @@
 import { Box, Button, HStack, Image, Link, Text, VStack } from '@chakra-ui/react'
 import { FiDownload } from 'react-icons/fi'
 
-import { APP_STORE_LINKS, ASSETS, PLATFORM_LINKS } from '#constants'
+import { ASSETS } from '#constants'
+import { getTrackedDownloadHref } from '#lib/download-routing'
 
 type DownloadItem = {
   platform: string
@@ -20,7 +21,7 @@ const downloads: DownloadItem[] = [
   {
     platform: 'macOS',
     description: 'Download Interview Pilot Desktop for Mac.',
-    href: PLATFORM_LINKS.macDesktopDownload,
+    href: getTrackedDownloadHref('downloads', 'macos'),
     action: 'Download for macOS',
     icon: '/static/icons/platforms/apple.svg',
     iconFilter: 'invert(1)',
@@ -28,14 +29,14 @@ const downloads: DownloadItem[] = [
   {
     platform: 'Windows',
     description: 'Download Interview Pilot Desktop for Windows.',
-    href: PLATFORM_LINKS.windowsDesktopDownload,
+    href: getTrackedDownloadHref('downloads', 'windows'),
     action: 'Download for Windows',
     icon: '/static/icons/platforms/windows.svg',
   },
   {
     platform: 'iOS',
     description: 'Download Interview Pilot on the App Store.',
-    href: APP_STORE_LINKS.ios,
+    href: getTrackedDownloadHref('downloads', 'ios'),
     action: 'Download for iOS',
     icon: '/static/icons/platforms/app-store.svg',
     badge: ASSETS.images.appStoreBadge,
@@ -44,7 +45,7 @@ const downloads: DownloadItem[] = [
   {
     platform: 'Android',
     description: 'Download Interview Pilot on Google Play.',
-    href: APP_STORE_LINKS.android,
+    href: getTrackedDownloadHref('downloads', 'android'),
     action: 'Download for Android',
     icon: '/static/icons/platforms/google-play.svg',
     badge: ASSETS.images.androidBadge,
@@ -88,7 +89,6 @@ export function DownloadsList() {
           {download.badge && download.href ? (
             <Link
               href={download.href}
-              isExternal
               _hover={{ opacity: 0.85 }}
               transition="opacity 0.2s"
             >
@@ -103,7 +103,6 @@ export function DownloadsList() {
             <Button
               as={Link}
               href={download.href}
-              isExternal
               variant="primary"
               color="black"
               borderRadius="full"

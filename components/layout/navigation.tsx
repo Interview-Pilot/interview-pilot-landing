@@ -2,7 +2,7 @@ import { HStack, Flex, Box, Icon, Text } from '@chakra-ui/react'
 import { useUpdateEffect } from '@chakra-ui/react'
 import { useScrollSpy } from '#hooks/use-scrollspy'
 import { usePlatform } from '#hooks/use-platform'
-import { getPrimaryDownloadHref } from '#lib/download-routing'
+import { getTrackedDownloadHref } from '#lib/download-routing'
 import { usePathname } from 'next/navigation'
 import * as React from 'react'
 import { FiArrowRight } from 'react-icons/fi'
@@ -51,7 +51,7 @@ const Navigation: React.FC<NavigationProps> = ({
     siteConfig.header.links[siteConfig.header.links.length - 1]
 
   // Modify download button href based on platform
-  const downloadHref = getPrimaryDownloadHref(platform)
+  const downloadHref = getTrackedDownloadHref('header', platform)
 
   if (centerLinks) {
     return (

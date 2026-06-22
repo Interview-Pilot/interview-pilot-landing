@@ -7,7 +7,7 @@ import { ButtonLink } from '#components/button-link/button-link'
 import { ASSETS } from '#constants'
 import { usePlatform } from '#hooks/use-platform'
 import { useScrollReveal } from '#hooks/use-scroll-reveal'
-import { getPrimaryDownloadHref } from '#lib/download-routing'
+import { getTrackedDownloadHref } from '#lib/download-routing'
 
 /**
  * AppStoreBanner component displays a fixed bottom banner on mobile
@@ -16,7 +16,7 @@ import { getPrimaryDownloadHref } from '#lib/download-routing'
 export function AppStoreBanner() {
   const platform = usePlatform()
   const visible = useScrollReveal()
-  const primaryDownloadHref = getPrimaryDownloadHref(platform)
+  const primaryDownloadHref = getTrackedDownloadHref('mobile-banner', platform)
 
   const isIOS = platform === 'ios'
   const isAndroid = platform === 'android'

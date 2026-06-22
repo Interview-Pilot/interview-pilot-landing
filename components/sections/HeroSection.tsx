@@ -22,7 +22,7 @@ import {
 import { FaStar } from 'react-icons/fa'
 
 import { ButtonLink } from '#components/button-link/button-link'
-import { getPrimaryDownloadHref } from '#lib/download-routing'
+import { getTrackedDownloadHref } from '#lib/download-routing'
 import { Hero } from '#components/hero'
 import { Em } from '#components/typography'
 import { usePlatform } from '#hooks/use-platform'
@@ -92,7 +92,7 @@ function getHeroDownloadCta(platform: ReturnType<typeof usePlatform>) {
  */
 export function HeroSection() {
   const platform = usePlatform()
-  const downloadHref = getPrimaryDownloadHref(platform)
+  const downloadHref = getTrackedDownloadHref('hero', platform)
   const downloadCta = getHeroDownloadCta(platform)
   const [isDesktopViewport, setIsDesktopViewport] = useState(false)
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)

@@ -5,7 +5,8 @@ import { Link } from '@saas-ui/react'
 import Image from 'next/image'
 
 import { Section, SectionTitle } from '#components/section'
-import { APP_STORE_LINKS, ASSETS, PLATFORM_LINKS } from '#constants'
+import { ASSETS } from '#constants'
+import { getTrackedDownloadHref } from '#lib/download-routing'
 import { sectionContentStyles } from '#theme/styles/section-styles'
 
 interface DownloadOptionsSectionProps {
@@ -51,8 +52,7 @@ export function DownloadOptionsSection(props: DownloadOptionsSectionProps) {
           zIndex={1}
         >
           <Link
-            href={APP_STORE_LINKS.ios}
-            isExternal
+            href={getTrackedDownloadHref('download-options', 'ios')}
             _hover={{ opacity: 0.8 }}
             transition="opacity 0.2s"
           >
@@ -66,8 +66,7 @@ export function DownloadOptionsSection(props: DownloadOptionsSectionProps) {
           </Link>
 
           <Link
-            href={APP_STORE_LINKS.android}
-            isExternal
+            href={getTrackedDownloadHref('download-options', 'android')}
             _hover={{ opacity: 0.8 }}
             transition="opacity 0.2s"
           >
@@ -91,8 +90,7 @@ export function DownloadOptionsSection(props: DownloadOptionsSectionProps) {
         >
           For desktop, download for{' '}
           <Link
-            href={PLATFORM_LINKS.macDesktopDownload}
-            isExternal
+            href={getTrackedDownloadHref('download-options', 'macos')}
             color="white"
             textDecoration="underline"
             _hover={{ color: 'whiteAlpha.900' }}
@@ -101,8 +99,7 @@ export function DownloadOptionsSection(props: DownloadOptionsSectionProps) {
           </Link>
           {' or '}
           <Link
-            href={PLATFORM_LINKS.windowsDesktopDownload}
-            isExternal
+            href={getTrackedDownloadHref('download-options', 'windows')}
             color="white"
             textDecoration="underline"
             _hover={{ color: 'whiteAlpha.900' }}

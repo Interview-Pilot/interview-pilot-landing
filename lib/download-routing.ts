@@ -11,6 +11,20 @@ export type DownloadPlatform =
   | 'windows'
   | 'unknown'
 
+export type TrackedDownloadPlatform = Exclude<DownloadPlatform, 'unknown'> | 'auto'
+
+const validTrackedPlatforms = new Set<TrackedDownloadPlatform>([
+  'auto',
+  'ios',
+  'android',
+  'macos',
+  'windows',
+])
+
+function encodePathSegment(value: string): string {
+  return encodeURIComponent(value.trim().toLowerCase().replace(/\s+/g, '-'))
+}
+
 export function detectPlatformFromUserAgent(userAgent: string): DownloadPlatform {
   const normalizedUserAgent = userAgent.toLowerCase()
 
@@ -49,6 +63,33 @@ export function getPrimaryDownloadHref(platform: DownloadPlatform): string {
     default:
       return INTERNAL_ROUTES.downloads
   }
+}
+
+export function getTrackedDownloadHref(
+  source: string,
+  platform: DownloadPlatform | TrackedDownloadPlatform = 'auto',
+): string {
+  const trackedPlatform =
+    platform === 'unknown' || !validTrackedPlatforms.has(platform as TrackedDownloadPlatform)
+      ? 'auto'
+      : platform
+
+  return `/download/${encodePathSegment(source)}/${trackedPlatform}`
+}
+
+export function resolveTrackedDownloadHref(
+  platform: string,
+  userAgent: string,
+): string {
+  const trackedPlatform = validTrackedPlatforms.has(platform as TrackedDownloadPlatform)
+    ? (platform as TrackedDownloadPlatform)
+    : 'auto'
+
+  return getPrimaryDownloadHref(
+    trackedPlatform === 'auto'
+      ? detectPlatformFromUserAgent(userAgent)
+      : trackedPlatform,
+  )
 }
 
 export function isMobileDownloadPlatform(
