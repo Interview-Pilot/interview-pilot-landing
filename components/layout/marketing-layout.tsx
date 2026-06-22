@@ -9,6 +9,7 @@ import {
   AnnouncementBannerProps,
 } from '../announcement-banner'
 import Background from '../background/background'
+import { ProductHuntLaunchBanner } from '../sections/ProductHuntLaunchBanner'
 import { Footer, FooterProps } from './footer'
 import { Header, HeaderProps } from './header'
 
@@ -56,6 +57,7 @@ export const MarketingLayout: React.FC<LayoutProps> = (props) => {
         {children}
       </Box>
       <Footer {...footerProps} />
+      <ProductHuntLaunchBanner />
     </Box>
   )
 }
