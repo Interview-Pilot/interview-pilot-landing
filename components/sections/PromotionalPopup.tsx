@@ -15,16 +15,40 @@ import {
 import { useState } from 'react'
 import { FiX } from 'react-icons/fi'
 
-const productHuntHref =
-  'https://www.producthunt.com/products/interview-pilot?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-interview-pilot'
+type PromotionConfig = {
+  enabled: boolean
+  headline: string
+  subheadline: string
+  badgeHref: string
+  badgeSrc: string
+  badgeAlt: string
+  buttonLabel: string
+  offerPrefix: string
+  offerHighlight: string
+  offerSuffix: string
+  linkedOfferText: string
+}
 
-const productHuntBadgeSrc =
-  'https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1153018&theme=light&t=1782072254966'
+const activePromotion: PromotionConfig = {
+  enabled: false,
+  headline: 'Celebrating 100,000+ users',
+  subheadline: 'Across macOS, iOS, Android, and web.',
+  badgeHref:
+    'https://www.producthunt.com/products/interview-pilot?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-interview-pilot',
+  badgeSrc:
+    'https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1153018&theme=light&t=1782072254966',
+  badgeAlt: 'Interview Pilot - Live AI Interview Copilot | Product Hunt',
+  buttonLabel: 'Get offer',
+  offerPrefix: 'Get',
+  offerHighlight: '60%',
+  offerSuffix: 'off to celebrate this huge milestone with us!',
+  linkedOfferText: 'Support us with an upvote.',
+}
 
-export function ProductHuntLaunchBanner() {
+export function PromotionalPopup() {
   const [dismissed, setDismissed] = useState(false)
 
-  if (dismissed) return null
+  if (!activePromotion.enabled || dismissed) return null
 
   return (
     <Portal>
@@ -65,7 +89,12 @@ export function ProductHuntLaunchBanner() {
             pointerEvents: 'none',
           }}
         >
-          <VStack position="relative" zIndex={1} spacing={{ base: 5, md: 6 }} align="center">
+          <VStack
+            position="relative"
+            zIndex={1}
+            spacing={{ base: 5, md: 6 }}
+            align="center"
+          >
             <VStack spacing={3} align="center">
               <Text
                 color="white"
@@ -75,17 +104,17 @@ export function ProductHuntLaunchBanner() {
                 textAlign="center"
                 letterSpacing="-0.04em"
               >
-                Celebrating 100,000+ users
+                {activePromotion.headline}
               </Text>
               <Text
                 color="whiteAlpha.760"
                 fontSize={{ base: 'md', md: 'lg' }}
                 fontWeight="650"
                 lineHeight="1.45"
-              textAlign="center"
-              maxW="460px"
-            >
-                Across macOS, iOS, Android, and web.
+                textAlign="center"
+                maxW="460px"
+              >
+                {activePromotion.subheadline}
               </Text>
             </VStack>
 
@@ -95,16 +124,16 @@ export function ProductHuntLaunchBanner() {
               align="center"
             >
               <Link
-                href={productHuntHref}
+                href={activePromotion.badgeHref}
                 isExternal
                 lineHeight={0}
-                aria-label="Support Interview Pilot on Product Hunt"
+                aria-label={activePromotion.linkedOfferText}
                 _hover={{ transform: 'translateY(-2px)', opacity: 0.95 }}
                 transition="transform 0.2s ease, opacity 0.2s ease"
               >
                 <Image
-                  src={productHuntBadgeSrc}
-                  alt="Interview Pilot - Live AI Interview Copilot | Product Hunt"
+                  src={activePromotion.badgeSrc}
+                  alt={activePromotion.badgeAlt}
                   w={{ base: '235px', md: '300px' }}
                   h="auto"
                 />
@@ -112,7 +141,7 @@ export function ProductHuntLaunchBanner() {
 
               <Button
                 as={Link}
-                href={productHuntHref}
+                href={activePromotion.badgeHref}
                 isExternal
                 variant="primary"
                 color="black"
@@ -130,7 +159,7 @@ export function ProductHuntLaunchBanner() {
                 }}
                 transition="all 0.2s ease"
               >
-                Get offer
+                {activePromotion.buttonLabel}
               </Button>
             </HStack>
 
@@ -142,26 +171,30 @@ export function ProductHuntLaunchBanner() {
               textAlign="center"
               maxW="500px"
             >
-              Get{' '}
-              <Box as="span" fontSize={{ base: '2xl', md: '3xl' }} fontWeight="650">
-                60%
+              {activePromotion.offerPrefix}{' '}
+              <Box
+                as="span"
+                fontSize={{ base: '2xl', md: '3xl' }}
+                fontWeight="650"
+              >
+                {activePromotion.offerHighlight}
               </Box>{' '}
-              off to celebrate this huge milestone with us!{' '}
+              {activePromotion.offerSuffix}{' '}
               <Link
-                href={productHuntHref}
+                href={activePromotion.badgeHref}
                 isExternal
                 color="primary.300"
                 textDecoration="underline"
                 textUnderlineOffset="3px"
                 _hover={{ color: 'primary.200' }}
               >
-                Support us with an upvote.
+                {activePromotion.linkedOfferText}
               </Link>
             </Text>
           </VStack>
 
           <IconButton
-            aria-label="Dismiss launch banner"
+            aria-label="Dismiss promotional popup"
             icon={<FiX />}
             size="sm"
             variant="ghost"
