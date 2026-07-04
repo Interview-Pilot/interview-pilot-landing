@@ -1,4 +1,5 @@
 import { ColorModeScript } from '@chakra-ui/react'
+import Script from 'next/script'
 
 import { Provider } from './provider'
 import { dmSans } from '#lib/fonts'
@@ -86,6 +87,7 @@ export default function Layout(props: { children: React.ReactNode }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
         <script
           type="application/ld+json"
@@ -107,6 +109,18 @@ export default function Layout(props: { children: React.ReactNode }) {
         />
       </head>
       <body className={`chakra-ui-${colorMode}`}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-11564391709"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-11564391709');
+          `}
+        </Script>
         <ColorModeScript initialColorMode={colorMode} />
         <Provider>{props.children}</Provider>
       </body>
