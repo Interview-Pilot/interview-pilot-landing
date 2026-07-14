@@ -313,7 +313,13 @@ export async function topUpTopicQueue({ topics, settings, researchSources, histo
   }
 
   if (added.length === 0 && needed > 0) {
-    throw new Error('Topic discovery could not produce any unique search-demand-shaped topics')
+    return {
+      topics,
+      added,
+      skipped: true,
+      reason: 'topic_discovery_no_unique_topics',
+      newsInputs: newsItems.length,
+    }
   }
 
   return {

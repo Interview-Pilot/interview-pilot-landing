@@ -42,8 +42,15 @@ async function scheduleNext() {
 
   const delay = Math.max(1000, nextRun.getTime() - Date.now())
   timer = setTimeout(async () => {
-    await runNow('scheduled')
-    await scheduleNext()
+    try {
+      await runNow('scheduled')
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error)
+      await logEvent({ type: 'scheduled_run_failed', error: message })
+      await writeState({ running: false, currentStep: 'error', lastError: message })
+    } finally {
+      await scheduleNext()
+    }
   }, delay)
 }
 

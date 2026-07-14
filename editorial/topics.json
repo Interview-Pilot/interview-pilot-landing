@@ -201,7 +201,7 @@
     "researchRequired": true,
     "sourceDepth": "moderate",
     "priority": "high",
-    "status": "queued",
+    "status": "published",
     "targetWordCount": 1900,
     "createdAt": "2026-05-30",
     "internalLinks": [
@@ -214,7 +214,12 @@
       "email-template-references",
       "recruiter-commentary"
     ],
-    "discoveredBy": "model-discovery"
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "how-to-follow-up-after-a-job-interview",
+    "generatedAt": "2026-06-01T05:41:47.199Z",
+    "lastError": null,
+    "publishedPath": "content/posts/how-to-follow-up-after-a-job-interview.mdx",
+    "publishedAt": "2026-06-01T05:44:22.711Z"
   },
   {
     "id": "topic-011",
@@ -233,7 +238,7 @@
     "researchRequired": true,
     "sourceDepth": "moderate",
     "priority": "high",
-    "status": "queued",
+    "status": "published",
     "targetWordCount": 1800,
     "createdAt": "2026-05-30",
     "internalLinks": [
@@ -246,7 +251,12 @@
       "hiring-manager-interviews",
       "company-career-pages"
     ],
-    "discoveredBy": "model-discovery"
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "customer-service-representative-interview-questions-and-answers",
+    "generatedAt": "2026-06-01T05:44:21.379Z",
+    "lastError": null,
+    "publishedPath": "content/posts/customer-service-representative-interview-questions-and-answers.mdx",
+    "publishedAt": "2026-06-01T05:44:22.711Z"
   },
   {
     "id": "topic-012",
@@ -265,7 +275,7 @@
     "researchRequired": true,
     "sourceDepth": "moderate",
     "priority": "high",
-    "status": "queued",
+    "status": "published",
     "targetWordCount": 1700,
     "createdAt": "2026-05-30",
     "internalLinks": [
@@ -277,7 +287,12 @@
       "career-coach-sources",
       "resume-writing-experts"
     ],
-    "discoveredBy": "model-discovery"
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "linkedin-headline-examples",
+    "generatedAt": "2026-06-02T14:02:25.224Z",
+    "lastError": null,
+    "publishedPath": "content/posts/linkedin-headline-examples.mdx",
+    "publishedAt": "2026-06-02T14:04:52.184Z"
   },
   {
     "id": "topic-013",
@@ -296,7 +311,7 @@
     "researchRequired": true,
     "sourceDepth": "moderate",
     "priority": "high",
-    "status": "queued",
+    "status": "published",
     "targetWordCount": 1800,
     "createdAt": "2026-05-30",
     "internalLinks": [
@@ -310,7 +325,12 @@
       "company-research-sources",
       "hiring-manager-insights"
     ],
-    "discoveredBy": "model-discovery"
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "why-do-you-want-to-work-here",
+    "generatedAt": "2026-06-02T14:04:50.142Z",
+    "lastError": null,
+    "publishedPath": "content/posts/why-do-you-want-to-work-here.mdx",
+    "publishedAt": "2026-06-02T14:04:52.184Z"
   },
   {
     "id": "topic-014",
@@ -330,7 +350,7 @@
     "researchRequired": false,
     "sourceDepth": "light",
     "priority": "high",
-    "status": "queued",
+    "status": "published",
     "targetWordCount": 1800,
     "createdAt": "2026-05-30",
     "internalLinks": [
@@ -342,7 +362,12 @@
       "internal knowledge",
       "general interview best practices"
     ],
-    "discoveredBy": "model-discovery"
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "interview-questions-for-students-and-recent-graduates",
+    "generatedAt": "2026-06-03T14:02:24.797Z",
+    "lastError": null,
+    "publishedPath": "content/posts/interview-questions-for-students-and-recent-graduates.mdx",
+    "publishedAt": "2026-06-03T14:03:44.332Z"
   },
   {
     "id": "topic-015",
@@ -362,7 +387,7 @@
     "researchRequired": false,
     "sourceDepth": "light",
     "priority": "high",
-    "status": "queued",
+    "status": "published",
     "targetWordCount": 2000,
     "createdAt": "2026-05-30",
     "internalLinks": [
@@ -373,6 +398,2478 @@
     "requiredSourceTypes": [
       "internal knowledge",
       "general career advice"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "how-to-write-a-cover-letter-with-no-experience",
+    "generatedAt": "2026-06-03T14:03:42.247Z",
+    "lastError": null,
+    "publishedPath": "content/posts/how-to-write-a-cover-letter-with-no-experience.mdx",
+    "publishedAt": "2026-06-03T14:03:44.332Z"
+  },
+  {
+    "id": "topic-016",
+    "topic": "How to Answer 'What Are Your Strengths and Weaknesses?' in a Job Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "what are your strengths and weaknesses interview",
+    "secondaryKeywords": [
+      "strengths and weaknesses interview examples",
+      "how to answer strengths and weaknesses",
+      "weaknesses interview answer"
+    ],
+    "searchIntent": "Candidates want a safe, practical framework and sample answers for a very common interview question.",
+    "uniqueAngle": "Focus on a simple, repeatable formula with multiple answer examples for different experience levels and roles.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-01",
+    "internalLinks": [
+      "/interview-guides",
+      "/question-bank",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "example answers"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "what-are-your-strengths-and-weaknesses-interview",
+    "generatedAt": "2026-06-04T14:01:23.271Z",
+    "lastError": null,
+    "publishedPath": "content/posts/what-are-your-strengths-and-weaknesses-interview.mdx",
+    "publishedAt": "2026-06-04T14:02:52.031Z"
+  },
+  {
+    "id": "topic-017",
+    "topic": "How to Write a Resume With No Experience: Examples and Template (2026)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "resume with no experience",
+    "secondaryKeywords": [
+      "how to write a resume with no experience",
+      "entry level resume examples",
+      "resume template for no experience"
+    ],
+    "searchIntent": "Job seekers with little or no work history want a concrete resume structure they can copy.",
+    "uniqueAngle": "Show how to replace experience with projects, coursework, volunteering, and transferable skills.",
+    "freshnessType": "annual",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 2000,
+    "createdAt": "2026-06-01",
+    "internalLinks": [
+      "/downloads",
+      "/interview-guides",
+      "/question-bank"
+    ],
+    "requiredSourceTypes": [
+      "example resumes",
+      "resume best practices"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "resume-with-no-experience",
+    "generatedAt": "2026-06-04T14:02:50.295Z",
+    "lastError": null,
+    "publishedPath": "content/posts/resume-with-no-experience.mdx",
+    "publishedAt": "2026-06-04T14:02:52.031Z"
+  },
+  {
+    "id": "topic-018",
+    "topic": "How to Answer 'Why Should We Hire You?' in a Job Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "why should we hire you",
+    "secondaryKeywords": [
+      "why should we hire you answer",
+      "interview answer examples",
+      "best answer why should we hire you"
+    ],
+    "searchIntent": "Candidates want a clear framework and sample answers for a common interview question.",
+    "uniqueAngle": "Focus on tailoring the answer by experience level, role fit, and measurable value without sounding rehearsed.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-02",
+    "internalLinks": [
+      "/interview-questions",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "example answers",
+      "career coaching best practices"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "why-should-we-hire-you",
+    "generatedAt": "2026-06-08T14:02:43.522Z",
+    "lastError": null,
+    "publishedPath": "content/posts/why-should-we-hire-you.mdx",
+    "publishedAt": "2026-06-08T14:05:31.617Z"
+  },
+  {
+    "id": "topic-019",
+    "topic": "How to Answer 'Tell Me About a Time You Failed' in an Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "tell me about a time you failed interview",
+    "secondaryKeywords": [
+      "failure interview question",
+      "behavioral interview answers",
+      "STAR method examples"
+    ],
+    "searchIntent": "Candidates need a practical way to answer a difficult behavioral interview question.",
+    "uniqueAngle": "Show how to choose a real failure, explain accountability, and end with a strong learning outcome.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-02",
+    "internalLinks": [
+      "/interview-questions",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "example answers",
+      "behavioral interview frameworks"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "tell-me-about-a-time-you-failed-interview",
+    "generatedAt": "2026-06-08T14:05:30.140Z",
+    "lastError": null,
+    "publishedPath": "content/posts/tell-me-about-a-time-you-failed-interview.mdx",
+    "publishedAt": "2026-06-08T14:05:31.618Z"
+  },
+  {
+    "id": "topic-022",
+    "topic": "25 Questions to Ask in a Job Interview to Impress the Hiring Manager (2026)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "questions to ask in a job interview",
+    "secondaryKeywords": [
+      "good questions to ask interviewer",
+      "interview questions to ask employer",
+      "questions to ask hiring manager"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Organize questions by goal: evaluating the role, manager, team, growth, and red flags, so candidates can pick the best ones fast.",
+    "freshnessType": "annual",
+    "researchRequired": false,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1900,
+    "createdAt": "2026-06-03",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "example questions"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "questions-to-ask-in-a-job-interview",
+    "generatedAt": "2026-06-09T14:02:31.262Z",
+    "lastError": null,
+    "publishedPath": "content/posts/questions-to-ask-in-a-job-interview.mdx",
+    "publishedAt": "2026-06-09T14:03:54.359Z"
+  },
+  {
+    "id": "topic-025",
+    "topic": "How to Follow Up After Applying for a Job: Email Template and Examples (2026)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "how to follow up after applying for a job",
+    "secondaryKeywords": [
+      "job application follow up email",
+      "follow up email after application",
+      "checking on job application"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Cover timing, subject lines, and follow-up message examples for applicants who want to sound professional without being pushy.",
+    "freshnessType": "annual",
+    "researchRequired": false,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1700,
+    "createdAt": "2026-06-03",
+    "internalLinks": [
+      "/downloads",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "email template examples"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "how-to-follow-up-after-applying-for-a-job",
+    "generatedAt": "2026-06-09T14:03:52.603Z",
+    "lastError": null,
+    "publishedPath": "content/posts/how-to-follow-up-after-applying-for-a-job.mdx",
+    "publishedAt": "2026-06-09T14:03:54.359Z"
+  },
+  {
+    "id": "topic-026",
+    "topic": "How to Answer 'Why Are You Looking for a New Job?' in an Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "why are you looking for a new job",
+    "secondaryKeywords": [
+      "why are you leaving your current job",
+      "interview answer examples",
+      "best answer for job change"
+    ],
+    "searchIntent": "candidates want a safe, strong interview response for a common question about motivation and job changes",
+    "uniqueAngle": "focus on answers for resigning, career growth, burnout, relocation, and layoff scenarios with example scripts",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-04",
+    "internalLinks": [
+      "/interview-questions",
+      "/interview-copilot",
+      "/question-bank"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "example answers"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "why-are-you-looking-for-a-new-job",
+    "generatedAt": "2026-06-10T14:03:01.958Z",
+    "lastError": null,
+    "publishedPath": "content/posts/why-are-you-looking-for-a-new-job.mdx",
+    "publishedAt": "2026-06-10T14:05:33.788Z"
+  },
+  {
+    "id": "topic-027",
+    "topic": "How to Answer Salary Expectation Questions in an Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "salary expectation interview",
+    "secondaryKeywords": [
+      "what are your salary expectations",
+      "salary range answer",
+      "how to discuss salary in an interview"
+    ],
+    "searchIntent": "job candidates need a practical answer to salary questions without pricing themselves out or underselling themselves",
+    "uniqueAngle": "covers scripts for early screening, recruiter calls, and direct hiring manager questions plus red-flag mistakes",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1900,
+    "createdAt": "2026-06-04",
+    "internalLinks": [
+      "/interview-questions",
+      "/interview-copilot",
+      "/downloads"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "example answers"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "salary-expectation-interview",
+    "generatedAt": "2026-06-10T14:05:32.100Z",
+    "lastError": null,
+    "publishedPath": "content/posts/salary-expectation-interview.mdx",
+    "publishedAt": "2026-06-10T14:05:33.789Z"
+  },
+  {
+    "id": "topic-028",
+    "topic": "How to Answer 'Walk Me Through Your Resume' in an Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "walk me through your resume",
+    "secondaryKeywords": [
+      "resume walkthrough interview",
+      "how to introduce your resume in an interview",
+      "interview self introduction"
+    ],
+    "searchIntent": "Candidates want a clear structure and sample answers for the common resume walkthrough question.",
+    "uniqueAngle": "Focus on a simple 60-second framework for entry-level, mid-career, and career-change candidates.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-08",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-copilot",
+      "/interview-questions"
+    ],
+    "requiredSourceTypes": [
+      "expert commentary",
+      "career guidance",
+      "interview coaching examples"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "walk-me-through-your-resume",
+    "generatedAt": "2026-06-11T14:02:25.011Z",
+    "lastError": null,
+    "publishedPath": "content/posts/walk-me-through-your-resume.mdx",
+    "publishedAt": "2026-06-11T14:05:18.699Z"
+  },
+  {
+    "id": "topic-029",
+    "topic": "What to Say in a Job Interview When Asked About Weaknesses: 25 Examples (2026)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "what to say about weaknesses in a job interview",
+    "secondaryKeywords": [
+      "job interview weaknesses examples",
+      "how to answer weaknesses interview",
+      "weakness interview answer"
+    ],
+    "searchIntent": "Candidates need safe, specific weakness examples and wording that still sounds credible.",
+    "uniqueAngle": "Include examples by role type and a formula for turning a weakness into growth without sounding scripted.",
+    "freshnessType": "annual",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1900,
+    "createdAt": "2026-06-08",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "career guidance",
+      "interview coaching examples",
+      "reputable hiring advice"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "what-to-say-about-weaknesses-in-a-job-interview",
+    "generatedAt": "2026-06-11T14:05:17.026Z",
+    "lastError": null,
+    "publishedPath": "content/posts/what-to-say-about-weaknesses-in-a-job-interview.mdx",
+    "publishedAt": "2026-06-11T14:05:18.699Z"
+  },
+  {
+    "id": "topic-035",
+    "topic": "How to Write a Resume Summary With No Experience (Examples for Students and Career Changers)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "resume summary with no experience",
+    "secondaryKeywords": [
+      "resume summary examples for no experience",
+      "entry level resume summary",
+      "professional summary for first job"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Shows how to write a strong summary using skills, coursework, projects, volunteering, and transferable experience instead of job history.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1900,
+    "createdAt": "2026-06-09",
+    "internalLinks": [
+      "/downloads",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "resume examples",
+      "template examples"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "resume-summary-with-no-experience",
+    "generatedAt": "2026-06-12T14:02:32.949Z",
+    "lastError": null,
+    "publishedPath": "content/posts/resume-summary-with-no-experience.mdx",
+    "publishedAt": "2026-06-12T14:04:57.568Z"
+  },
+  {
+    "id": "topic-036",
+    "topic": "How Long After a Job Interview Should You Follow Up?",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "how long after a job interview should you follow up",
+    "secondaryKeywords": [
+      "follow up after interview timing",
+      "when to send interview follow up email",
+      "job interview follow up etiquette"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Break down the best follow-up timing by interview stage, recruiter communication style, and common scenarios like no reply after a final round.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1700,
+    "createdAt": "2026-06-11",
+    "internalLinks": [
+      "/blog/how-to-follow-up-after-a-job-interview",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "career-advice articles",
+      "recruiter guidance",
+      "professional email etiquette sources"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "how-long-after-a-job-interview-should-you-follow-up",
+    "generatedAt": "2026-06-12T14:04:56.085Z",
+    "lastError": null,
+    "publishedPath": "content/posts/how-long-after-a-job-interview-should-you-follow-up.mdx",
+    "publishedAt": "2026-06-12T14:04:57.568Z"
+  },
+  {
+    "id": "topic-037",
+    "topic": "Tell Me About a Time You Handled Conflict: Sample Answers and STAR Examples",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "tell me about a time you handled conflict",
+    "secondaryKeywords": [
+      "conflict interview question",
+      "STAR method conflict answer",
+      "behavioral interview conflict examples"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Focus on conflict stories candidates can adapt for coworker disagreements, manager pushback, and cross-functional tension without sounding negative.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-11",
+    "internalLinks": [
+      "/blog/tell-me-about-a-time-you-failed-interview",
+      "/question-bank"
+    ],
+    "requiredSourceTypes": [
+      "interview prep resources",
+      "career coaching sources",
+      "example-based answer references"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "tell-me-about-a-time-you-handled-conflict",
+    "generatedAt": "2026-06-13T14:02:13.854Z",
+    "lastError": null,
+    "publishedPath": "content/posts/tell-me-about-a-time-you-handled-conflict.mdx",
+    "publishedAt": "2026-06-13T14:04:24.629Z"
+  },
+  {
+    "id": "topic-039",
+    "topic": "Best Resume Summary Examples for Entry-Level Job Seekers (2026)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "resume summary examples for entry level",
+    "secondaryKeywords": [
+      "entry level resume summary",
+      "resume summary with no experience",
+      "student resume summary examples"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Show how to write a strong resume summary when you have limited experience, with examples for students, interns, and career changers.",
+    "freshnessType": "annual",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1700,
+    "createdAt": "2026-06-11",
+    "internalLinks": [
+      "/blog/resume-with-no-experience",
+      "/blog/how-to-write-a-resume-summary-with-no-experience"
+    ],
+    "requiredSourceTypes": [
+      "resume writing guides",
+      "ATS/resume best practice sources",
+      "example resumes"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "resume-summary-examples-for-entry-level",
+    "generatedAt": "2026-06-13T14:04:23.243Z",
+    "lastError": null,
+    "publishedPath": "content/posts/resume-summary-examples-for-entry-level.mdx",
+    "publishedAt": "2026-06-13T14:04:24.629Z"
+  },
+  {
+    "id": "topic-040",
+    "topic": "How to Answer 'Why Do You Want This Job?' With Examples (2026)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "why do you want this job",
+    "secondaryKeywords": [
+      "why do you want this position",
+      "job interview answer examples",
+      "how to answer why this job"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Differentiate this from 'Why do you want to work here?' by focusing on role fit, responsibilities, and candidate motivation.",
+    "freshnessType": "annual",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1700,
+    "createdAt": "2026-06-11",
+    "internalLinks": [
+      "/blog/why-do-you-want-to-work-here",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "interview coaching sources",
+      "career advice articles",
+      "sample answer references"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "why-do-you-want-this-job",
+    "generatedAt": "2026-06-14T14:02:27.022Z",
+    "lastError": null,
+    "publishedPath": "content/posts/why-do-you-want-this-job.mdx",
+    "publishedAt": "2026-06-14T14:04:48.691Z"
+  },
+  {
+    "id": "topic-041",
+    "topic": "What to Wear to a Job Interview: Dress Code Guide for Men and Women (2026)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "what to wear to a job interview",
+    "secondaryKeywords": [
+      "job interview outfit",
+      "interview dress code",
+      "business casual interview outfit"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Give practical outfit advice by interview type and company dress code, including in-person, virtual, and on-site interviews.",
+    "freshnessType": "annual",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1600,
+    "createdAt": "2026-06-11",
+    "internalLinks": [
+      "/interview-guides",
+      "/downloads"
+    ],
+    "requiredSourceTypes": [
+      "career advice articles",
+      "professional dress code guides",
+      "virtual interview etiquette sources"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "what-to-wear-to-a-job-interview",
+    "generatedAt": "2026-06-14T14:04:47.332Z",
+    "lastError": null,
+    "publishedPath": "content/posts/what-to-wear-to-a-job-interview.mdx",
+    "publishedAt": "2026-06-14T14:04:48.691Z"
+  },
+  {
+    "id": "topic-043",
+    "topic": "How to Answer “What Is Your Greatest Weakness?” in a Job Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "greatest weakness interview",
+    "secondaryKeywords": [
+      "what is your greatest weakness",
+      "weakness interview answer",
+      "weakness examples for interview"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Focus on weakness choices that sound honest without undermining fit, with sample answers for different roles and seniority levels.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "standard",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 2000,
+    "createdAt": "2026-06-12",
+    "internalLinks": [
+      "/interview-questions",
+      "/question-bank",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "example responses",
+      "best-practice interview advice"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "greatest-weakness-interview",
+    "generatedAt": "2026-06-15T14:01:29.553Z",
+    "lastError": null,
+    "publishedPath": "content/posts/greatest-weakness-interview.mdx",
+    "publishedAt": "2026-06-15T14:03:44.399Z"
+  },
+  {
+    "id": "topic-044",
+    "topic": "How to Negotiate Salary After a Job Offer: Email and Script Examples",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "how to negotiate salary after a job offer",
+    "secondaryKeywords": [
+      "salary negotiation email",
+      "how to ask for more salary",
+      "job offer negotiation script"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Step-by-step negotiation scripts for email and live conversations, including when to negotiate, what to ask for, and how to stay professional.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "standard",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1900,
+    "createdAt": "2026-06-12",
+    "internalLinks": [
+      "/interview-guides",
+      "/downloads",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "example templates",
+      "best-practice negotiation advice"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "how-to-negotiate-salary-after-a-job-offer",
+    "generatedAt": "2026-06-15T14:03:42.809Z",
+    "lastError": null,
+    "publishedPath": "content/posts/how-to-negotiate-salary-after-a-job-offer.mdx",
+    "publishedAt": "2026-06-15T14:03:44.399Z"
+  },
+  {
+    "id": "topic-046",
+    "topic": "How to Write a Resume Summary for Career Changers (Examples and Template)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "resume summary for career changers",
+    "secondaryKeywords": [
+      "resume summary examples for career change",
+      "career change resume summary",
+      "summary for resume with career change"
+    ],
+    "searchIntent": "Job seekers need a resume summary that reframes transferable skills for a new industry or role.",
+    "uniqueAngle": "Include formulas for different pivots like admin to operations, teacher to training, and retail to customer success.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "standard",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1900,
+    "createdAt": "2026-06-13",
+    "internalLinks": [
+      "/downloads",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "resume writing best practices",
+      "sample resume examples",
+      "reputable career resources"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "resume-summary-for-career-changers",
+    "generatedAt": "2026-06-16T14:02:24.041Z",
+    "lastError": null,
+    "publishedPath": "content/posts/resume-summary-for-career-changers.mdx",
+    "publishedAt": "2026-06-16T14:04:26.888Z"
+  },
+  {
+    "id": "topic-047",
+    "topic": "What to Say When an Interviewer Asks 'Why Are You Leaving Your Current Job?'",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "why are you leaving your current job interview",
+    "secondaryKeywords": [
+      "why do you want to leave your job",
+      "answer why leaving current job",
+      "interview question leaving current job"
+    ],
+    "searchIntent": "Candidates want a polished, non-negative answer to a sensitive interview question about leaving a current role.",
+    "uniqueAngle": "Give scripts for layoffs, burnout, poor management, lack of growth, and relocation without sounding resentful.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "standard",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1700,
+    "createdAt": "2026-06-13",
+    "internalLinks": [
+      "/interview-questions",
+      "/question-bank",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "expert career advice",
+      "interview coaching guidance",
+      "sample answer collections"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "why-are-you-leaving-your-current-job-interview",
+    "generatedAt": "2026-06-16T14:04:25.201Z",
+    "lastError": null,
+    "publishedPath": "content/posts/why-are-you-leaving-your-current-job-interview.mdx",
+    "publishedAt": "2026-06-16T14:04:26.888Z"
+  },
+  {
+    "id": "topic-048",
+    "topic": "What to Say When an Interviewer Asks Why You Want to Leave Your Current Job",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "why you want to leave your current job interview",
+    "secondaryKeywords": [
+      "why are you leaving your current job",
+      "interview answer for leaving current job",
+      "sample answers for leaving a job"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Focus on safe, polished answers for resigning, burnout, growth, layoffs, and toxic-manager situations without sounding negative.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-14",
+    "internalLinks": [
+      "/interview-copilot",
+      "/question-bank",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "expert advice",
+      "reputable career guidance"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "why-you-want-to-leave-your-current-job-interview",
+    "generatedAt": "2026-06-17T14:02:23.008Z",
+    "lastError": null,
+    "publishedPath": "content/posts/why-you-want-to-leave-your-current-job-interview.mdx",
+    "publishedAt": "2026-06-17T14:04:55.322Z"
+  },
+  {
+    "id": "topic-049",
+    "topic": "30 Questions to Ask in a Panel Interview (With Best Examples for Each Role)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "questions to ask in a panel interview",
+    "secondaryKeywords": [
+      "panel interview questions to ask",
+      "best questions to ask interview panel",
+      "panel interview preparation"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Give candidates role-agnostic and role-specific questions to ask multiple interviewers so they can stand out in panel settings.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1700,
+    "createdAt": "2026-06-14",
+    "internalLinks": [
+      "/interview-copilot",
+      "/question-bank",
+      "/interview-questions"
+    ],
+    "requiredSourceTypes": [
+      "expert advice",
+      "reputable career guidance"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "questions-to-ask-in-a-panel-interview",
+    "generatedAt": "2026-06-17T14:04:53.629Z",
+    "lastError": null,
+    "publishedPath": "content/posts/questions-to-ask-in-a-panel-interview.mdx",
+    "publishedAt": "2026-06-17T14:04:55.322Z"
+  },
+  {
+    "id": "topic-050",
+    "topic": "How to Answer 'Tell Me About a Time You Dealt With a Difficult Coworker' (With Examples)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "tell me about a time you dealt with a difficult coworker",
+    "secondaryKeywords": [
+      "difficult coworker interview question",
+      "behavioral interview questions",
+      "STAR method examples"
+    ],
+    "searchIntent": "Candidates want sample answers for a common behavioral interview question about conflict and teamwork.",
+    "uniqueAngle": "Focus on answers that show professionalism, boundaries, and problem-solving without sounding accusatory.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-15",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "candidate examples",
+      "interview prep best practices"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "tell-me-about-a-time-you-dealt-with-a-difficult-coworker",
+    "generatedAt": "2026-06-18T14:02:10.172Z",
+    "lastError": null,
+    "publishedPath": "content/posts/tell-me-about-a-time-you-dealt-with-a-difficult-coworker.mdx",
+    "publishedAt": "2026-06-18T14:04:18.758Z"
+  },
+  {
+    "id": "topic-051",
+    "topic": "How to Answer 'What Is Your Greatest Strength?' in a Job Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "what is your greatest strength interview",
+    "secondaryKeywords": [
+      "greatest strength interview",
+      "interview answers examples",
+      "strengths interview question"
+    ],
+    "searchIntent": "Candidates are looking for a polished answer to a standard interview question.",
+    "uniqueAngle": "Show how to choose a strength that matches the job and support it with a concise example.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1700,
+    "createdAt": "2026-06-15",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "sample answers",
+      "job interview best practices"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "what-is-your-greatest-strength-interview",
+    "generatedAt": "2026-06-18T14:04:17.012Z",
+    "lastError": null,
+    "publishedPath": "content/posts/what-is-your-greatest-strength-interview.mdx",
+    "publishedAt": "2026-06-18T14:04:18.758Z"
+  },
+  {
+    "id": "topic-052",
+    "topic": "How to Answer 'Tell Me About a Time You Worked on a Tight Deadline' (With Examples)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "tell me about a time you worked on a tight deadline",
+    "secondaryKeywords": [
+      "deadline interview question",
+      "STAR method examples",
+      "behavioral interview answers"
+    ],
+    "searchIntent": "Candidates want sample answers and a structure for a common behavioral interview question about time management under pressure.",
+    "uniqueAngle": "Focus on turning a stressful deadline story into a concise STAR answer that shows prioritization, communication, and results.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-16",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "interview coaching sources",
+      "HR/recruiter guidance",
+      "role-specific examples"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "tell-me-about-a-time-you-worked-on-a-tight-deadline",
+    "generatedAt": "2026-06-19T14:02:17.855Z",
+    "lastError": null,
+    "publishedPath": "content/posts/tell-me-about-a-time-you-worked-on-a-tight-deadline.mdx",
+    "publishedAt": "2026-06-19T14:04:18.368Z"
+  },
+  {
+    "id": "topic-053",
+    "topic": "How to Answer 'Tell Me About a Time You Made a Mistake' in an Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "tell me about a time you made a mistake interview",
+    "secondaryKeywords": [
+      "interview mistake question",
+      "behavioral interview examples",
+      "STAR answer template"
+    ],
+    "searchIntent": "Candidates need help answering a behavioral question about mistakes without sounding defensive or careless.",
+    "uniqueAngle": "Show how to pick a real mistake, explain what changed, and end with a strong lesson learned and measurable improvement.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-16",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "interview coaching sources",
+      "recruiter advice",
+      "example answer references"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "tell-me-about-a-time-you-made-a-mistake-interview",
+    "generatedAt": "2026-06-19T14:04:16.741Z",
+    "lastError": null,
+    "publishedPath": "content/posts/tell-me-about-a-time-you-made-a-mistake-interview.mdx",
+    "publishedAt": "2026-06-19T14:04:18.368Z"
+  },
+  {
+    "id": "topic-054",
+    "topic": "How to Answer 'Tell Me About a Time You Led a Team' in an Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "tell me about a time you led a team",
+    "secondaryKeywords": [
+      "leadership interview questions",
+      "STAR method examples",
+      "behavioral interview answers"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Focus on leadership, collaboration, and delegation examples candidates can adapt for manager and non-manager roles.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-17",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-questions",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "example snippets"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "tell-me-about-a-time-you-led-a-team",
+    "generatedAt": "2026-06-20T14:01:57.870Z",
+    "lastError": null,
+    "publishedPath": "content/posts/tell-me-about-a-time-you-led-a-team.mdx",
+    "publishedAt": "2026-06-20T14:03:58.109Z"
+  },
+  {
+    "id": "topic-055",
+    "topic": "How to Answer 'Describe a Challenge You Faced at Work' in an Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "describe a challenge you faced at work interview",
+    "secondaryKeywords": [
+      "behavioral interview questions",
+      "STAR answer examples",
+      "problem solving interview questions"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Show candidates how to choose a work challenge that highlights judgment, resilience, and measurable impact.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-17",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-questions",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "example snippets"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "describe-a-challenge-you-faced-at-work-interview",
+    "generatedAt": "2026-06-20T14:03:56.586Z",
+    "lastError": null,
+    "publishedPath": "content/posts/describe-a-challenge-you-faced-at-work-interview.mdx",
+    "publishedAt": "2026-06-20T14:03:58.109Z"
+  },
+  {
+    "id": "topic-056",
+    "topic": "How to Answer 'Tell Me About a Time You Disagreed With Your Boss' (With Examples)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "tell me about a time you disagreed with your boss",
+    "secondaryKeywords": [
+      "disagree with your boss interview question",
+      "conflict with manager interview answer",
+      "STAR method examples"
+    ],
+    "searchIntent": "Candidates want a safe, polished behavioral interview answer for conflict with management.",
+    "uniqueAngle": "Focus on answering honestly without sounding combative, with sample responses for different industries and seniority levels.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-18",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-questions"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "example answers"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "tell-me-about-a-time-you-disagreed-with-your-boss",
+    "generatedAt": "2026-06-21T14:02:11.576Z",
+    "lastError": null,
+    "publishedPath": "content/posts/tell-me-about-a-time-you-disagreed-with-your-boss.mdx",
+    "publishedAt": "2026-06-21T14:04:03.420Z"
+  },
+  {
+    "id": "topic-057",
+    "topic": "How to Answer 'Tell Me About a Time You Took Initiative at Work' (With Examples)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "tell me about a time you took initiative at work",
+    "secondaryKeywords": [
+      "took initiative interview question",
+      "behavioral interview answers",
+      "STAR interview examples"
+    ],
+    "searchIntent": "Candidates need a strong example that shows ownership, leadership potential, and problem-solving.",
+    "uniqueAngle": "Show how to choose an example when you were not in a formal leadership role and how to quantify the result.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-18",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "example answers"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "tell-me-about-a-time-you-took-initiative-at-work",
+    "generatedAt": "2026-06-21T14:04:01.802Z",
+    "lastError": null,
+    "publishedPath": "content/posts/tell-me-about-a-time-you-took-initiative-at-work.mdx",
+    "publishedAt": "2026-06-21T14:04:03.420Z"
+  },
+  {
+    "id": "topic-058",
+    "topic": "60 STAR Interview Questions and Sample Answers (2026)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "STAR interview questions",
+    "secondaryKeywords": [
+      "STAR method interview",
+      "sample answers",
+      "behavioral interview questions",
+      "interview answer examples"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Focus on how candidates can turn any experience into a STAR answer, with examples for common scenarios and a fill-in-the-blank framework.",
+    "freshnessType": "annual",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 2200,
+    "createdAt": "2026-06-19",
+    "internalLinks": [
+      "/interview-questions",
+      "/question-bank",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "internal-content"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "star-interview-questions",
+    "generatedAt": "2026-06-22T14:02:25.131Z",
+    "lastError": null,
+    "publishedPath": "content/posts/star-interview-questions.mdx",
+    "publishedAt": "2026-06-22T14:03:02.188Z"
+  },
+  {
+    "id": "topic-059",
+    "topic": "How to Answer Overqualified Interview Questions Without Sounding Defensive (2026)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "overqualified interview questions",
+    "secondaryKeywords": [
+      "how to answer overqualified",
+      "why are you overqualified",
+      "interview answer examples",
+      "career change interview"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Address the common concern directly with scripts for explaining motivation, fit, and long-term interest in the role.",
+    "freshnessType": "annual",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-19",
+    "internalLinks": [
+      "/interview-guides",
+      "/question-bank"
+    ],
+    "requiredSourceTypes": [
+      "internal-content"
+    ],
+    "discoveredBy": "model-discovery",
+    "lastError": null,
+    "failedAt": "2026-06-23T14:00:44.899Z",
+    "generatedSlug": "overqualified-interview-questions",
+    "generatedAt": "2026-06-24T14:02:27.039Z",
+    "publishedPath": "content/posts/overqualified-interview-questions.mdx",
+    "publishedAt": "2026-06-24T14:04:43.743Z"
+  },
+  {
+    "id": "topic-064",
+    "topic": "How to Write a LinkedIn Summary for Job Seekers: Examples and Template (2026)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "linkedin summary examples",
+    "secondaryKeywords": [
+      "linkedin about section examples",
+      "linkedin summary template",
+      "linkedin profile summary"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Focuses on converting a generic profile into a keyword-rich summary that helps candidates get found by recruiters and supports interview readiness.",
+    "freshnessType": "annual",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 2000,
+    "createdAt": "2026-06-20",
+    "internalLinks": [
+      "/interview-copilot",
+      "/downloads",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "expert advice",
+      "SEO research",
+      "internal product docs"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "linkedin-summary-examples",
+    "generatedAt": "2026-06-23T14:02:57.385Z",
+    "lastError": null,
+    "publishedPath": "content/posts/linkedin-summary-examples.mdx",
+    "publishedAt": "2026-06-23T14:02:59.119Z"
+  },
+  {
+    "id": "topic-065",
+    "topic": "What to Say in a Phone Interview: 25 Common Questions and Best Answers (2026)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "phone interview questions and answers",
+    "secondaryKeywords": [
+      "phone screen interview",
+      "telephone interview questions",
+      "phone interview tips"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Built for early-stage screens, including concise answers, pacing tips, and how to handle recruiter phone interviews versus hiring manager calls.",
+    "freshnessType": "annual",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 2100,
+    "createdAt": "2026-06-20",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-copilot",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "expert advice",
+      "internal product docs"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "phone-interview-questions-and-answers",
+    "generatedAt": "2026-06-24T14:04:41.713Z",
+    "lastError": null,
+    "publishedPath": "content/posts/phone-interview-questions-and-answers.mdx",
+    "publishedAt": "2026-06-24T14:04:43.744Z"
+  },
+  {
+    "id": "topic-070",
+    "topic": "How to Follow Up After a Video Interview: Email Template and Examples",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "how to follow up after a video interview",
+    "secondaryKeywords": [
+      "video interview follow up email",
+      "zoom interview follow up",
+      "post interview thank you email",
+      "virtual interview follow up"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Tailor the follow-up to remote and video interviews, including what to reference when the conversation happened on Zoom, Teams, or HireVue.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1700,
+    "createdAt": "2026-06-21",
+    "internalLinks": [
+      "/interview-guides",
+      "/interview-copilot",
+      "/downloads"
+    ],
+    "requiredSourceTypes": [
+      "existing article references",
+      "email template examples",
+      "internal guide links"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "how-to-follow-up-after-a-video-interview",
+    "generatedAt": "2026-06-25T14:01:34.980Z",
+    "lastError": null,
+    "publishedPath": "content/posts/how-to-follow-up-after-a-video-interview.mdx",
+    "publishedAt": "2026-06-25T14:02:51.349Z"
+  },
+  {
+    "id": "topic-071",
+    "topic": "8 Common HireVue Interview Questions and Tips for Acing Your Video Interview",
+    "category": "interviews",
+    "contentType": "role-deep-dive",
+    "primaryKeyword": "hirevue interview questions",
+    "secondaryKeywords": [
+      "HireVue tips",
+      "video interview questions",
+      "recorded interview tips",
+      "HireVue answers"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Build a practical prep guide for recorded interviews, including pacing, eye contact, lighting, and how to structure answers when you only get one take.",
+    "freshnessType": "news-sensitive",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "medium",
+    "status": "published",
+    "targetWordCount": 2000,
+    "createdAt": "2026-06-21",
+    "internalLinks": [
+      "/interview-questions",
+      "/interview-copilot",
+      "/question-bank"
+    ],
+    "requiredSourceTypes": [
+      "company product pages",
+      "candidate reports",
+      "current HireVue documentation",
+      "existing article references"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "hirevue-interview-questions",
+    "generatedAt": "2026-07-06T14:04:21.288Z",
+    "lastError": null,
+    "publishedPath": "content/posts/hirevue-interview-questions.mdx",
+    "publishedAt": "2026-07-06T14:04:22.934Z"
+  },
+  {
+    "id": "topic-072",
+    "topic": "How to Follow Up After a Phone Interview: Email Template and Examples (2026)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "how to follow up after a phone interview",
+    "secondaryKeywords": [
+      "phone interview follow up email",
+      "phone interview thank you email",
+      "follow up email after phone screen"
+    ],
+    "searchIntent": "candidate wants a practical follow-up email template after a phone screen",
+    "uniqueAngle": "Focus on timing, subject lines, and what to say when the recruiter said they’d get back to you but didn’t",
+    "freshnessType": "annual",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-06-23",
+    "internalLinks": [
+      "/interview-guides",
+      "/question-bank",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "recruiting best practices",
+      "sample email templates"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "how-to-follow-up-after-a-phone-interview",
+    "generatedAt": "2026-06-25T14:02:49.665Z",
+    "lastError": null,
+    "publishedPath": "content/posts/how-to-follow-up-after-a-phone-interview.mdx",
+    "publishedAt": "2026-06-25T14:02:51.349Z"
+  },
+  {
+    "id": "topic-073",
+    "topic": "8 Common Phone Screen Interview Questions and Best Answers (2026)",
+    "category": "interviews",
+    "contentType": "article",
+    "primaryKeyword": "phone screen interview questions",
+    "secondaryKeywords": [
+      "phone interview questions and answers",
+      "phone screening questions",
+      "recruiter phone screen"
+    ],
+    "searchIntent": "candidate is preparing for an early-stage phone screen interview",
+    "uniqueAngle": "Include short-answer examples tailored to recruiter screens, logistics questions, and motivation questions",
+    "freshnessType": "annual",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 2200,
+    "createdAt": "2026-06-23",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "recruiting best practices",
+      "interview prep examples"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "phone-screen-interview-questions",
+    "generatedAt": "2026-06-29T14:00:47.361Z",
+    "lastError": null,
+    "publishedPath": "content/posts/phone-screen-interview-questions.mdx",
+    "publishedAt": "2026-06-29T14:02:38.336Z"
+  },
+  {
+    "id": "topic-074",
+    "topic": "How to Answer 'Why Are You a Good Fit for This Role?' in an Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "why are you a good fit for this role",
+    "secondaryKeywords": [
+      "why are you a good fit interview answer",
+      "best fit for this role",
+      "why should we choose you"
+    ],
+    "searchIntent": "candidate needs a strong interview answer for fit and motivation questions",
+    "uniqueAngle": "Show how to tailor the answer to job requirements without sounding generic or scripted",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1700,
+    "createdAt": "2026-06-23",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-copilot",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "interview answer examples",
+      "career coaching sources"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "why-are-you-a-good-fit-for-this-role",
+    "generatedAt": "2026-06-29T14:02:36.741Z",
+    "lastError": null,
+    "publishedPath": "content/posts/why-are-you-a-good-fit-for-this-role.mdx",
+    "publishedAt": "2026-06-29T14:02:38.336Z"
+  },
+  {
+    "id": "topic-075",
+    "topic": "Data Analyst Interview Questions and Answers (2026)",
+    "category": "interviews",
+    "contentType": "role-deep-dive",
+    "primaryKeyword": "data analyst interview questions and answers",
+    "secondaryKeywords": [
+      "data analyst interview questions",
+      "data analyst behavioral questions",
+      "SQL interview questions for data analyst"
+    ],
+    "searchIntent": "candidate is preparing for a data analyst interview",
+    "uniqueAngle": "Cover technical, behavioral, SQL, case-study, and dashboard questions in one guide",
+    "freshnessType": "annual",
+    "researchRequired": true,
+    "sourceDepth": "deep",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 2600,
+    "createdAt": "2026-06-23",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "role-specific interview question sources",
+      "industry hiring best practices"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "data-analyst-interview-questions-and-answers",
+    "generatedAt": "2026-06-30T14:02:23.305Z",
+    "lastError": null,
+    "publishedPath": "content/posts/data-analyst-interview-questions-and-answers.mdx",
+    "publishedAt": "2026-06-30T14:04:41.359Z"
+  },
+  {
+    "id": "topic-081",
+    "topic": "What to Say When You Get Rejected After an Interview: Follow-Up Email Examples",
+    "category": "career",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "what to say when you get rejected after an interview",
+    "secondaryKeywords": [
+      "interview rejection follow up email",
+      "how to respond to interview rejection",
+      "rejection email response"
+    ],
+    "searchIntent": "Informational",
+    "uniqueAngle": "Helps candidates reply professionally after rejection, ask for feedback, and keep the door open for future roles.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "medium",
+    "priority": "medium",
+    "status": "published",
+    "targetWordCount": 1600,
+    "createdAt": "2026-06-24",
+    "internalLinks": [
+      "/interview-guides",
+      "/downloads",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "email etiquette guides",
+      "career advice sources"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "what-to-say-when-you-get-rejected-after-an-interview",
+    "generatedAt": "2026-07-08T14:02:06.255Z",
+    "lastError": null,
+    "publishedPath": "content/posts/what-to-say-when-you-get-rejected-after-an-interview.mdx",
+    "publishedAt": "2026-07-08T14:04:15.618Z"
+  },
+  {
+    "id": "topic-087",
+    "topic": "Best Job Search Engines in 2026: Where to Find the Most Legit Job Postings",
+    "category": "career",
+    "contentType": "article",
+    "primaryKeyword": "best job search engines",
+    "secondaryKeywords": [
+      "job search engines 2026",
+      "best job sites",
+      "where to find job postings"
+    ],
+    "searchIntent": "Job seekers want the best places to search for active, legitimate job openings.",
+    "uniqueAngle": "Compare general job boards, niche boards, and company career pages from a candidate-usefulness angle.",
+    "freshnessType": "annual",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "medium",
+    "status": "published",
+    "targetWordCount": 2000,
+    "createdAt": "2026-06-26",
+    "internalLinks": [
+      "/downloads",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "SERP review",
+      "competitor content scan",
+      "official site pages",
+      "job board feature comparisons"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "best-job-search-engines",
+    "generatedAt": "2026-07-08T14:04:14.076Z",
+    "lastError": null,
+    "publishedPath": "content/posts/best-job-search-engines.mdx",
+    "publishedAt": "2026-07-08T14:04:15.618Z"
+  },
+  {
+    "id": "topic-093",
+    "topic": "How Long After Applying for a Job Should You Follow Up?",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "how long after applying for a job should you follow up",
+    "secondaryKeywords": [
+      "job application follow up timing",
+      "follow up after job application",
+      "when to follow up after applying"
+    ],
+    "searchIntent": "Job seekers want to know the right timing for following up after submitting an application.",
+    "uniqueAngle": "Explain timing by hiring stage, company size, and application method, plus provide a simple follow-up script.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1600,
+    "createdAt": "2026-06-27",
+    "internalLinks": [
+      "/interview-guides",
+      "/downloads",
+      "/question-bank"
+    ],
+    "requiredSourceTypes": [
+      "SERP review",
+      "career guidance sources",
+      "recruiter advice sources"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "how-long-after-applying-for-a-job-should-you-follow-up",
+    "generatedAt": "2026-06-30T14:04:39.666Z",
+    "lastError": null,
+    "publishedPath": "content/posts/how-long-after-applying-for-a-job-should-you-follow-up.mdx",
+    "publishedAt": "2026-06-30T14:04:41.360Z"
+  },
+  {
+    "id": "topic-099",
+    "topic": "What to Say in a Video Interview: 20 Common Questions and Best Answers (2026)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "video interview questions and answers",
+    "secondaryKeywords": [
+      "zoom interview questions",
+      "video interview tips",
+      "virtual interview answers"
+    ],
+    "searchIntent": "Candidates want practical prep for virtual interviews, including what to say on camera and how to handle common questions.",
+    "uniqueAngle": "Include on-camera delivery tips, technical prep, and answer examples tailored to video calls and remote hiring.",
+    "freshnessType": "annual",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1900,
+    "createdAt": "2026-06-29",
+    "internalLinks": [
+      "/interview-copilot",
+      "/question-bank",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "internal-content-references",
+      "expert-reviewed-best-practices"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "video-interview-questions-and-answers",
+    "generatedAt": "2026-07-01T14:03:29.326Z",
+    "lastError": null,
+    "publishedPath": "content/posts/video-interview-questions-and-answers.mdx",
+    "publishedAt": "2026-07-01T14:05:36.888Z"
+  },
+  {
+    "id": "topic-105",
+    "topic": "How to Search for Jobs on LinkedIn in 2026: Filters, Alerts, and Application Tips",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "how to search for jobs on LinkedIn",
+    "secondaryKeywords": [
+      "LinkedIn job search filters",
+      "LinkedIn job alerts",
+      "apply for jobs on LinkedIn",
+      "LinkedIn job search tips"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "A step-by-step job-search playbook focused on search filters, alerts, saved jobs, Easy Apply, and profile tweaks that improve visibility.",
+    "freshnessType": "annual",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 2000,
+    "createdAt": "2026-06-30",
+    "internalLinks": [
+      "/downloads",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "LinkedIn product help",
+      "job search best practices",
+      "career coaching references"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "how-to-search-for-jobs-on-linkedin",
+    "generatedAt": "2026-07-01T14:05:35.120Z",
+    "lastError": null,
+    "publishedPath": "content/posts/how-to-search-for-jobs-on-linkedin.mdx",
+    "publishedAt": "2026-07-01T14:05:36.888Z"
+  },
+  {
+    "id": "topic-106",
+    "topic": "How to Write a Thank-You Email After an Interview (Examples and Template)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "thank you email after interview",
+    "secondaryKeywords": [
+      "interview thank you email template",
+      "thank you note after interview examples",
+      "how to write a thank you email after an interview"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Focus on concise, modern thank-you emails for different interview stages, including same-day, next-day, and after-panel interview examples.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-07-02",
+    "internalLinks": [
+      "/interview-guides",
+      "/question-bank",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "reputable career advice sources",
+      "email etiquette references"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "thank-you-email-after-interview",
+    "generatedAt": "2026-07-02T14:02:19.745Z",
+    "lastError": null,
+    "publishedPath": "content/posts/thank-you-email-after-interview.mdx",
+    "publishedAt": "2026-07-02T14:04:24.351Z"
+  },
+  {
+    "id": "topic-108",
+    "topic": "How to Write a Resume for a Career Change (Examples and Template)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "resume for career change",
+    "secondaryKeywords": [
+      "career change resume examples",
+      "career change resume template",
+      "how to write a resume for a career change"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Show how to reposition transferable skills, summary, and bullet points so the resume matches a new target role without looking generic.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 2000,
+    "createdAt": "2026-07-02",
+    "internalLinks": [
+      "/interview-guides",
+      "/downloads",
+      "/question-bank"
+    ],
+    "requiredSourceTypes": [
+      "resume best practices",
+      "career transition examples",
+      "ATS/recruitment guidance"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "resume-for-career-change",
+    "generatedAt": "2026-07-02T14:04:22.353Z",
+    "lastError": null,
+    "publishedPath": "content/posts/resume-for-career-change.mdx",
+    "publishedAt": "2026-07-02T14:04:24.352Z"
+  },
+  {
+    "id": "topic-110",
+    "topic": "How to Answer ‘Why Did You Apply for This Position?’ in an Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "why did you apply for this position",
+    "secondaryKeywords": [
+      "why did you apply for this job",
+      "interview answer examples",
+      "why are you interested in this role"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Give candidates a repeatable formula for tailoring the answer to the job description, company mission, and their own background.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "medium",
+    "priority": "medium",
+    "status": "published",
+    "targetWordCount": 1600,
+    "createdAt": "2026-07-02",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "interview answer guidance",
+      "career coaching references"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "why-did-you-apply-for-this-position",
+    "generatedAt": "2026-07-09T14:04:39.156Z",
+    "lastError": null,
+    "publishedPath": "content/posts/why-did-you-apply-for-this-position.mdx",
+    "publishedAt": "2026-07-09T14:04:40.908Z"
+  },
+  {
+    "id": "topic-111",
+    "topic": "How to Follow Up After a Recruiter Call (Email Template and Examples)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "follow up after recruiter call",
+    "secondaryKeywords": [
+      "recruiter follow up email",
+      "after recruiter phone call email",
+      "follow up after a recruiting call"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Covers follow-up timing and wording for recruiter screens, referral calls, and next-step nudges without sounding pushy.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "medium",
+    "status": "published",
+    "targetWordCount": 1700,
+    "createdAt": "2026-07-02",
+    "internalLinks": [
+      "/interview-guides",
+      "/downloads",
+      "/question-bank"
+    ],
+    "requiredSourceTypes": [
+      "recruiting etiquette sources",
+      "career advice references",
+      "email template examples"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "follow-up-after-recruiter-call",
+    "generatedAt": "2026-07-10T14:01:30.111Z",
+    "lastError": null,
+    "publishedPath": "content/posts/follow-up-after-recruiter-call.mdx",
+    "publishedAt": "2026-07-10T14:03:34.788Z"
+  },
+  {
+    "id": "topic-115",
+    "topic": "29 Interview Questions That Hiring Managers Say Candidates Get Wrong",
+    "category": "interviews",
+    "contentType": "research-report",
+    "primaryKeyword": "interview questions candidates get wrong",
+    "secondaryKeywords": [
+      "questions hiring managers hate",
+      "interview mistakes",
+      "what not to say in interviews"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Translate common recruiter turn-offs into clear do/don't guidance and better replacement answers candidates can use.",
+    "freshnessType": "news-sensitive",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 2000,
+    "createdAt": "2026-07-03",
+    "internalLinks": [
+      "/interview-guides",
+      "/question-bank",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "recruiter commentary",
+      "career expert quotes",
+      "news analysis inputs"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "interview-questions-candidates-get-wrong",
+    "generatedAt": "2026-07-03T14:02:37.664Z",
+    "lastError": null,
+    "publishedPath": "content/posts/interview-questions-candidates-get-wrong.mdx",
+    "publishedAt": "2026-07-03T14:04:32.559Z"
+  },
+  {
+    "id": "topic-116",
+    "topic": "How to Answer 'What Is Your Leadership Style?' in an Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "what is your leadership style interview",
+    "secondaryKeywords": [
+      "leadership style interview question",
+      "how to describe your leadership style",
+      "manager interview questions"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Help both first-time managers and experienced leaders tailor answers for people management, cross-functional leadership, and project leadership roles.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-07-03",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "example answer framework",
+      "interview coaching references"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "what-is-your-leadership-style-interview",
+    "generatedAt": "2026-07-03T14:04:30.801Z",
+    "lastError": null,
+    "publishedPath": "content/posts/what-is-your-leadership-style-interview.mdx",
+    "publishedAt": "2026-07-03T14:04:32.559Z"
+  },
+  {
+    "id": "topic-117",
+    "topic": "33 Best Resume Bullet Examples for Job Seekers (By Role and Achievement)",
+    "category": "career",
+    "contentType": "article",
+    "primaryKeyword": "resume bullet examples",
+    "secondaryKeywords": [
+      "resume achievement examples",
+      "strong resume bullet points",
+      "resume bullets for job seekers"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Show before-and-after bullet rewrites for common roles and explain how to quantify impact without sounding inflated.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "medium",
+    "status": "published",
+    "targetWordCount": 2000,
+    "createdAt": "2026-07-03",
+    "internalLinks": [
+      "/downloads",
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "resume writing best practices",
+      "example snippets",
+      "career guidance"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "resume-bullet-examples",
+    "generatedAt": "2026-07-10T14:03:32.985Z",
+    "lastError": null,
+    "publishedPath": "content/posts/resume-bullet-examples.mdx",
+    "publishedAt": "2026-07-10T14:03:34.788Z"
+  },
+  {
+    "id": "topic-119",
+    "topic": "8 Common Recruiter Screen Questions and Best Answers (2026)",
+    "category": "recruiting",
+    "contentType": "role-deep-dive",
+    "primaryKeyword": "recruiter screen questions",
+    "secondaryKeywords": [
+      "recruiter screening interview",
+      "recruiter call questions",
+      "phone screen answers",
+      "early interview questions"
+    ],
+    "searchIntent": "Candidate wants to prepare for a recruiter screen and know what questions to expect.",
+    "uniqueAngle": "Covers the first screening conversation, including motivation, salary, availability, and role fit questions.",
+    "freshnessType": "annual",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 2200,
+    "createdAt": "2026-07-04",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-questions",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "recruiter advice",
+      "candidate examples"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "recruiter-screen-questions",
+    "generatedAt": "2026-07-04T14:02:01.383Z",
+    "lastError": null,
+    "publishedPath": "content/posts/recruiter-screen-questions.mdx",
+    "publishedAt": "2026-07-04T14:02:29.612Z"
+  },
+  {
+    "id": "topic-120",
+    "topic": "How to Answer 'What Are Your Salary Expectations?' by Email and in Interviews (Examples)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "salary expectations interview",
+    "secondaryKeywords": [
+      "salary expectation email",
+      "how to answer salary expectations",
+      "desired salary",
+      "compensation question"
+    ],
+    "searchIntent": "Candidate wants wording for answering salary questions safely in interviews or over email.",
+    "uniqueAngle": "Includes scripts for different stages of the process: application form, recruiter screen, and final interview.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 2000,
+    "createdAt": "2026-07-04",
+    "internalLinks": [
+      "/interview-questions",
+      "/interview-copilot",
+      "/question-bank"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "recruiter advice",
+      "compensation guidance"
+    ],
+    "discoveredBy": "model-discovery",
+    "lastError": null,
+    "failedAt": "2026-07-04T14:02:28.161Z",
+    "generatedSlug": "salary-expectations-interview",
+    "generatedAt": "2026-07-05T14:01:57.364Z",
+    "publishedPath": "content/posts/salary-expectations-interview.mdx",
+    "publishedAt": "2026-07-05T14:03:48.501Z"
+  },
+  {
+    "id": "topic-125",
+    "topic": "How to Prepare for a Video Interview: Checklist, Setup Tips, and Common Mistakes (2026)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "how to prepare for a video interview",
+    "secondaryKeywords": [
+      "video interview tips",
+      "zoom interview checklist",
+      "virtual interview preparation"
+    ],
+    "searchIntent": "Users want a practical prep checklist before a virtual interview.",
+    "uniqueAngle": "Emphasize camera, lighting, audio, test-run, and phone-off etiquette, plus a last-minute checklist candidates can use.",
+    "freshnessType": "annual",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-07-05",
+    "internalLinks": [
+      "/interview-guides",
+      "/interview-copilot"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "checklist",
+      "best practices"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "how-to-prepare-for-a-video-interview",
+    "generatedAt": "2026-07-05T14:03:46.400Z",
+    "lastError": null,
+    "publishedPath": "content/posts/how-to-prepare-for-a-video-interview.mdx",
+    "publishedAt": "2026-07-05T14:03:48.501Z"
+  },
+  {
+    "id": "topic-126",
+    "topic": "31 Interview Questions to Ask a Hiring Manager in 2026",
+    "category": "interviews",
+    "contentType": "article",
+    "primaryKeyword": "questions to ask a hiring manager",
+    "secondaryKeywords": [
+      "best questions to ask in an interview",
+      "hiring manager interview questions",
+      "questions to ask interviewer"
+    ],
+    "searchIntent": "Users want strong questions to ask at the end of an interview to stand out and assess the role.",
+    "uniqueAngle": "Organize questions by goal: role clarity, team fit, growth, performance expectations, and next steps.",
+    "freshnessType": "annual",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1700,
+    "createdAt": "2026-07-05",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "example questions"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "questions-to-ask-a-hiring-manager",
+    "generatedAt": "2026-07-06T14:02:09.001Z",
+    "lastError": null,
+    "publishedPath": "content/posts/questions-to-ask-a-hiring-manager.mdx",
+    "publishedAt": "2026-07-06T14:04:22.934Z"
+  },
+  {
+    "id": "topic-130",
+    "topic": "How to Prepare for a Virtual Interview on Your Phone Without Looking Unprofessional",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "virtual interview on phone",
+    "secondaryKeywords": [
+      "phone interview tips",
+      "interview on your phone",
+      "virtual interview setup"
+    ],
+    "searchIntent": "Candidates need practical advice for doing an interview on a phone when a laptop or desktop is not available.",
+    "uniqueAngle": "Focus on lighting, audio, framing, background, notifications, and backup plans for candidates who must interview from a phone.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "medium",
+    "status": "queued",
+    "targetWordCount": 1700,
+    "createdAt": "2026-07-06",
+    "internalLinks": [
+      "/interview-guides",
+      "/interview-copilot",
+      "/downloads"
+    ],
+    "requiredSourceTypes": [
+      "internal-content-review"
+    ],
+    "discoveredBy": "model-discovery"
+  },
+  {
+    "id": "topic-132",
+    "topic": "How to Write a Resume Bullet Point With No Experience (Examples and Templates)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "resume bullet point examples",
+    "secondaryKeywords": [
+      "resume bullets with no experience",
+      "entry level resume bullets",
+      "action verbs for resume",
+      "resume achievements examples"
+    ],
+    "searchIntent": "candidate wants ready-to-use resume bullet examples for jobs, internships, volunteer work, and school projects",
+    "uniqueAngle": "Show how to turn coursework, projects, clubs, volunteering, and part-time work into quantified resume bullets even without formal job history.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1900,
+    "createdAt": "2026-07-07",
+    "internalLinks": [
+      "/downloads",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "resume best practices guides",
+      "career expert advice",
+      "examples/templates"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "resume-bullet-point-examples",
+    "generatedAt": "2026-07-07T14:02:22.507Z",
+    "lastError": null,
+    "publishedPath": "content/posts/resume-bullet-point-examples.mdx",
+    "publishedAt": "2026-07-07T14:04:36.132Z"
+  },
+  {
+    "id": "topic-135",
+    "topic": "Best Questions to Ask in a Final Interview (2026)",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "questions to ask in a final interview",
+    "secondaryKeywords": [
+      "final interview questions to ask",
+      "questions to ask hiring manager final round",
+      "interview questions to ask employer",
+      "closing interview questions"
+    ],
+    "searchIntent": "candidate wants strong questions for the last round interview to show interest and evaluate fit",
+    "uniqueAngle": "Organize questions by stakeholder type, including hiring manager, team members, and executives, with advice on which questions to avoid in a final round.",
+    "freshnessType": "annual",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-07-07",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "interview strategy guides",
+      "career expert advice",
+      "question examples"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "questions-to-ask-in-a-final-interview",
+    "generatedAt": "2026-07-07T14:04:34.482Z",
+    "lastError": null,
+    "publishedPath": "content/posts/questions-to-ask-in-a-final-interview.mdx",
+    "publishedAt": "2026-07-07T14:04:36.132Z"
+  },
+  {
+    "id": "topic-140",
+    "topic": "How to Write a LinkedIn Summary for Career Changers (Examples and Template)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "linkedin summary for career changers",
+    "secondaryKeywords": [
+      "linkedin summary examples",
+      "career change linkedin summary",
+      "linkedin about section examples"
+    ],
+    "searchIntent": "candidate wants a LinkedIn About section that supports a career transition",
+    "uniqueAngle": "Show how to explain a pivot, highlight transferable skills, and position the next role clearly without overexplaining the past.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "standard",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-07-09",
+    "internalLinks": [
+      "/interview-guides",
+      "/downloads"
+    ],
+    "requiredSourceTypes": [
+      "expert review",
+      "template examples"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "linkedin-summary-for-career-changers",
+    "generatedAt": "2026-07-09T14:02:34.759Z",
+    "lastError": null,
+    "publishedPath": "content/posts/linkedin-summary-for-career-changers.mdx",
+    "publishedAt": "2026-07-09T14:04:40.908Z"
+  },
+  {
+    "id": "topic-141",
+    "topic": "How to Answer 'What Do You Know About Our Company?' in an Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "what do you know about our company interview",
+    "secondaryKeywords": [
+      "how to research a company before an interview",
+      "company research interview questions",
+      "how to answer what do you know about us"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Shows candidates how to turn basic company research into a concise, memorable answer with examples for different industries.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-07-11",
+    "internalLinks": [
+      "/interview-copilot",
+      "/question-bank",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "company career pages",
+      "job description analysis"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "what-do-you-know-about-our-company-interview",
+    "generatedAt": "2026-07-12T14:00:37.243Z",
+    "lastError": null,
+    "publishedPath": "content/posts/what-do-you-know-about-our-company-interview.mdx",
+    "publishedAt": "2026-07-12T14:01:45.608Z"
+  },
+  {
+    "id": "topic-142",
+    "topic": "How to Write a Follow-Up Email After a Recruiter Screen (Templates and Examples)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "follow up after recruiter screen",
+    "secondaryKeywords": [
+      "recruiter screen follow up email",
+      "follow up email after recruiter interview",
+      "recruiter follow up template"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Focuses specifically on the recruiter screen stage, including timing, subject lines, and sample emails for positive and no-response follow-ups.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1700,
+    "createdAt": "2026-07-11",
+    "internalLinks": [
+      "/interview-copilot",
+      "/interview-guides",
+      "/downloads"
+    ],
+    "requiredSourceTypes": [
+      "career advice",
+      "email etiquette references",
+      "recruiting best practices"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "follow-up-after-recruiter-screen",
+    "generatedAt": "2026-07-12T14:01:43.575Z",
+    "lastError": null,
+    "publishedPath": "content/posts/follow-up-after-recruiter-screen.mdx",
+    "publishedAt": "2026-07-12T14:01:45.608Z"
+  },
+  {
+    "id": "topic-143",
+    "topic": "How to Answer 'Describe Your Work Style' in an Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "describe your work style interview",
+    "secondaryKeywords": [
+      "how to answer work style interview question",
+      "work style interview examples",
+      "best answer describe your work style"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Provides sample answers for collaborative, independent, fast-paced, and detail-oriented roles so candidates can tailor the response to the job.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1800,
+    "createdAt": "2026-07-11",
+    "internalLinks": [
+      "/interview-copilot",
+      "/question-bank",
+      "/interview-questions"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "sample answer analysis",
+      "job description examples"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "describe-your-work-style-interview",
+    "generatedAt": "2026-07-13T14:02:19.540Z",
+    "lastError": null,
+    "publishedPath": "content/posts/describe-your-work-style-interview.mdx",
+    "publishedAt": "2026-07-13T14:04:16.959Z"
+  },
+  {
+    "id": "topic-144",
+    "topic": "Best Resume Summary Examples for Mid-Career Professionals (2026)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "resume summary examples for mid career",
+    "secondaryKeywords": [
+      "resume summary examples",
+      "professional summary examples",
+      "resume summary template"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Targets candidates with 5 to 15 years of experience and includes examples for managers, specialists, and career advancers.",
+    "freshnessType": "annual",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1700,
+    "createdAt": "2026-07-11",
+    "internalLinks": [
+      "/interview-copilot",
+      "/downloads",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "resume best practices",
+      "recruiter guidance",
+      "example resumes"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "resume-summary-examples-for-mid-career",
+    "generatedAt": "2026-07-13T14:04:14.605Z",
+    "lastError": null,
+    "publishedPath": "content/posts/resume-summary-examples-for-mid-career.mdx",
+    "publishedAt": "2026-07-13T14:04:16.959Z"
+  },
+  {
+    "id": "topic-145",
+    "topic": "How to Answer 'Why Did You Leave Your Last Job?' in an Interview (With Examples)",
+    "category": "interviews",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "why did you leave your last job interview",
+    "secondaryKeywords": [
+      "why are you leaving your job interview",
+      "best answer why did you leave your last job",
+      "interview answer for leaving a job"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Covers layoffs, burnout, bad managers, growth moves, and short-tenure situations without sounding negative.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1900,
+    "createdAt": "2026-07-11",
+    "internalLinks": [
+      "/interview-copilot",
+      "/question-bank",
+      "/interview-questions"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "recruiting advice",
+      "sample answer references"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "why-did-you-leave-your-last-job-interview",
+    "generatedAt": "2026-07-14T14:02:18.080Z",
+    "lastError": null,
+    "publishedPath": "content/posts/why-did-you-leave-your-last-job-interview.mdx",
+    "publishedAt": "2026-07-14T14:04:53.452Z"
+  },
+  {
+    "id": "topic-146",
+    "topic": "How to Write a LinkedIn Summary for Recent Graduates (Examples and Template)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "linkedin summary for recent graduates",
+    "secondaryKeywords": [
+      "linkedin summary examples for students",
+      "linkedin about section examples",
+      "linkedin summary template"
+    ],
+    "searchIntent": "informational",
+    "uniqueAngle": "Helps new grads translate coursework, internships, and projects into a credible LinkedIn About section that recruiters can scan quickly.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "moderate",
+    "priority": "high",
+    "status": "published",
+    "targetWordCount": 1700,
+    "createdAt": "2026-07-11",
+    "internalLinks": [
+      "/interview-copilot",
+      "/downloads",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "LinkedIn profile guidance",
+      "career advice",
+      "example profiles"
+    ],
+    "discoveredBy": "model-discovery",
+    "generatedSlug": "linkedin-summary-for-recent-graduates",
+    "generatedAt": "2026-07-14T14:04:50.572Z",
+    "lastError": null,
+    "publishedPath": "content/posts/linkedin-summary-for-recent-graduates.mdx",
+    "publishedAt": "2026-07-14T14:04:53.453Z"
+  },
+  {
+    "id": "topic-147",
+    "topic": "How to Ask for an Interview Update Without Sounding Pushy (Email Examples)",
+    "category": "career",
+    "contentType": "how-to-guide",
+    "primaryKeyword": "how to ask for an interview update",
+    "secondaryKeywords": [
+      "follow up after interview",
+      "interview follow up email",
+      "checking on interview status"
+    ],
+    "searchIntent": "candidate wants a message template for asking about interview status politely",
+    "uniqueAngle": "Focus on different follow-up timings, tone options, and subject lines for before and after the stated hiring timeline.",
+    "freshnessType": "evergreen",
+    "researchRequired": true,
+    "sourceDepth": "medium",
+    "priority": "high",
+    "status": "queued",
+    "targetWordCount": 1800,
+    "createdAt": "2026-07-12",
+    "internalLinks": [
+      "/interview-guides",
+      "/downloads",
+      "/question-bank"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "recruiter advice",
+      "example emails"
+    ],
+    "discoveredBy": "model-discovery"
+  },
+  {
+    "id": "topic-153",
+    "topic": "What to Say When an Interviewer Asks About a Gap in Your Resume",
+    "category": "interviews",
+    "contentType": "candidate-playbook",
+    "primaryKeyword": "how to explain employment gap in interview",
+    "secondaryKeywords": [
+      "resume gap interview",
+      "employment gap explanation",
+      "career gap interview answer"
+    ],
+    "searchIntent": "candidate needs help explaining a gap in work history during an interview",
+    "uniqueAngle": "Give answers for layoffs, caregiving, health, travel, schooling, and job searching without oversharing.",
+    "freshnessType": "evergreen",
+    "researchRequired": false,
+    "sourceDepth": "light",
+    "priority": "high",
+    "status": "queued",
+    "targetWordCount": 1800,
+    "createdAt": "2026-07-13",
+    "internalLinks": [
+      "/question-bank",
+      "/interview-guides"
+    ],
+    "requiredSourceTypes": [
+      "expert guidance",
+      "example answers"
     ],
     "discoveredBy": "model-discovery"
   }

@@ -1,9 +1,9 @@
 {
-  "enabled": false,
+  "enabled": true,
   "running": false,
-  "currentStep": "stopped",
-  "lastRunAt": "2026-05-30T18:44:09.801Z",
-  "nextRunAt": null,
+  "currentStep": "waiting",
+  "lastRunAt": "2026-07-14T14:00:00.020Z",
+  "nextRunAt": "2026-07-15T14:00:00.000Z",
   "postsGeneratedToday": 2,
   "lastError": null,
   "activeRunId": null,
@@ -11,6 +11,6 @@
     "percent": 100,
     "label": "Completed",
     "detail": "2 posts generated",
-    "updatedAt": "2026-05-30T18:46:40.710Z"
+    "updatedAt": "2026-07-14T14:04:53.459Z"
   }
 }

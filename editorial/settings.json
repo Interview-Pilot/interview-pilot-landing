@@ -1,5 +1,5 @@
 {
-  "enabled": false,
+  "enabled": true,
   "schedule": {
     "runEveryHours": 24,
     "startHourLocal": 9
@@ -43,7 +43,7 @@
     "evergreenCandidatesPerRun": 12
   },
   "publishing": {
-    "mode": "draft-only",
+    "mode": "commit-and-push",
     "branch": "main",
     "commitMessage": "Publish automated blog posts"
   },

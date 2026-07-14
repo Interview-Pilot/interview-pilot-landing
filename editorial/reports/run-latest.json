@@ -1,42 +1,48 @@
 {
   "ok": true,
-  "runId": "run_1780166649799",
-  "startedAt": "2026-05-30T18:44:09.801Z",
-  "finishedAt": "2026-05-30T18:46:40.709Z",
-  "reason": "dashboard",
+  "runId": "run_1784037600020",
+  "startedAt": "2026-07-14T14:00:00.020Z",
+  "finishedAt": "2026-07-14T14:04:53.457Z",
+  "reason": "scheduled",
   "selectedTopics": [
-    "topic-008",
-    "topic-009"
+    "topic-145",
+    "topic-146"
   ],
   "articles": [
     {
-      "topicId": "topic-008",
-      "slug": "panel-interview-questions-and-answers",
-      "title": "Panel Interview Questions and Answers: How to Prepare for a Panel Interview (2026)",
-      "image": "/static/blog-generated/panel-interview-questions-and-answers.webp",
+      "topicId": "topic-145",
+      "slug": "why-did-you-leave-your-last-job-interview",
+      "title": "How to Answer “Why Did You Leave Your Last Job?”",
+      "image": "/static/blog-generated/why-did-you-leave-your-last-job-interview.webp",
       "imageModel": "gpt-image-2",
-      "wordCount": 2381,
+      "wordCount": 1770,
       "sources": 5
     },
     {
-      "topicId": "topic-009",
-      "slug": "what-to-say-when-you-dont-know-the-answer-in-an-interview",
-      "title": "What to Say When You Don't Know the Answer in an Interview",
-      "image": "/static/blog-generated/what-to-say-when-you-dont-know-the-answer-in-an-interview.webp",
+      "topicId": "topic-146",
+      "slug": "linkedin-summary-for-recent-graduates",
+      "title": "How to Write a LinkedIn Summary for Recent Graduates",
+      "image": "/static/blog-generated/linkedin-summary-for-recent-graduates.webp",
       "imageModel": "gpt-image-2",
-      "wordCount": 2044,
+      "wordCount": 1827,
       "sources": 5
     }
   ],
   "errors": [],
   "discoveredTopics": [],
   "publishResult": {
-    "mode": "draft-only",
+    "mode": "commit-and-push",
     "writtenFiles": [
-      "/Users/jerryding123/Projects/interview-pilot/landing/editorial/drafts/panel-interview-questions-and-answers.mdx",
-      "/Users/jerryding123/Projects/interview-pilot/landing/editorial/drafts/what-to-say-when-you-dont-know-the-answer-in-an-interview.mdx"
+      "/Users/jerryding123/Projects/interview-pilot/landing/content/posts/why-did-you-leave-your-last-job-interview.mdx",
+      "/Users/jerryding123/Projects/interview-pilot/landing/content/posts/linkedin-summary-for-recent-graduates.mdx"
     ],
-    "committed": false,
-    "pushed": false
+    "imageFiles": [
+      "/Users/jerryding123/Projects/interview-pilot/landing/public/static/blog-generated/why-did-you-leave-your-last-job-interview.webp",
+      "/Users/jerryding123/Projects/interview-pilot/landing/public/static/blog-generated/why-did-you-leave-your-last-job-interview-inline-1.webp",
+      "/Users/jerryding123/Projects/interview-pilot/landing/public/static/blog-generated/linkedin-summary-for-recent-graduates.webp",
+      "/Users/jerryding123/Projects/interview-pilot/landing/public/static/blog-generated/linkedin-summary-for-recent-graduates-inline-1.webp"
+    ],
+    "committed": true,
+    "pushed": true
   }
 }
