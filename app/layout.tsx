@@ -67,8 +67,13 @@ export default function Layout(props: { children: React.ReactNode }) {
         <meta name="color-scheme" content="dark" />
         <link
           rel="apple-touch-icon"
-          sizes="76x76"
+          sizes="180x180"
           href="/static/favicons/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          href="/static/favicons/favicon.ico"
+          sizes="any"
         />
         <link
           rel="icon"
@@ -82,7 +87,7 @@ export default function Layout(props: { children: React.ReactNode }) {
           sizes="16x16"
           href="/static/favicons/favicon-16x16.png"
         />
-        <link rel="manifest" href="/static/favicons/manifest.json" />
+        <link rel="manifest" href="/static/favicons/site.webmanifest" />
         {/* Preconnect hints for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
