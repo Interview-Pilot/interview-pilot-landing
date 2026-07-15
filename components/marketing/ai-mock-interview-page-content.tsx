@@ -74,26 +74,6 @@ export function AiMockInterviewPageContent() {
 
             {/* Hero */}
             <VStack spacing={5} align="center" textAlign="center">
-              <HStack
-                px={4}
-                py={2}
-                borderRadius="full"
-                bg="rgba(255,255,255,0.07)"
-                border="1px solid"
-                borderColor="whiteAlpha.200"
-                spacing={2}
-              >
-                <Text
-                  fontSize="xs"
-                  fontWeight="700"
-                  color="whiteAlpha.600"
-                  letterSpacing="0.1em"
-                  textTransform="uppercase"
-                >
-                  Coming Soon
-                </Text>
-              </HStack>
-
               <Text
                 as="h1"
                 fontSize={{ base: '5xl', md: '7xl' }}

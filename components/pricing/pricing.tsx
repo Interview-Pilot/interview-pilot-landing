@@ -38,6 +38,7 @@ export interface PricingPlan {
   features: Array<PricingFeatureProps | null>
   action: ButtonLinkProps & { label?: string }
   isRecommended?: boolean
+  visibility?: 'all' | 'mobile' | 'desktop'
 }
 
 export interface PricingProps extends Omit<SectionProps, 'title'> {
@@ -81,6 +82,10 @@ export const Pricing: React.FC<PricingProps> = (props) => {
             description={plan.description}
             price={plan.price}
             isRecommended={plan.isRecommended}
+            display={{
+              base: plan.visibility === 'desktop' ? 'none' : 'flex',
+              md: plan.visibility === 'mobile' ? 'none' : 'flex',
+            }}
           >
             <ButtonLink
               colorScheme="primary"
@@ -217,10 +222,10 @@ const PricingBox: React.FC<PricingBoxProps> = (props) => {
           : 'linear-gradient(145deg, rgba(255, 255, 255, 0.085) 0%, rgba(255, 255, 255, 0.032) 58%, rgba(255, 255, 255, 0.052) 100%)'
       }
       backdropFilter="blur(18px) saturate(135%)"
-      borderRadius="24px"
-      px="8"
-      pt="8"
-      pb="6"
+      borderRadius="28px"
+      px="6"
+      pt="6"
+      pb="5"
       flex="1 0"
       alignItems="stretch"
       border="1px solid"

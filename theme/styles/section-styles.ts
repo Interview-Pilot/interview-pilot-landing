@@ -57,7 +57,7 @@ export const statusDotPulseStyles: SystemStyleObject = {
     position: 'absolute',
     inset: 0,
     borderRadius: 'full',
-    bg: 'primary.400',
+    bg: 'green.400',
     opacity: 0.22,
     transformOrigin: 'center',
     animation: 'pulseRing 1.9s ease-in-out infinite',
