@@ -49,7 +49,7 @@ const pricing: PricingData = {
           >
             $12.99 / week
           </Text>
-          <Text fontSize="6xl" fontWeight="bold">
+          <Text fontSize={{ base: '7xl', md: '8xl' }} fontWeight="semibold" lineHeight="0.95">
             Free
           </Text>
         </VStack>
@@ -79,11 +79,16 @@ const pricing: PricingData = {
             $9.99 / week
           </Text>
           <HStack spacing="2" align="baseline">
-            <Text fontSize="6xl" fontWeight="bold" color="green.500">
+            <Text
+              fontSize={{ base: '7xl', md: '8xl' }}
+              fontWeight="semibold"
+              lineHeight="0.95"
+              color="green.500"
+            >
               $3.99
             </Text>
             <Text fontSize="md" color="muted" fontWeight="normal">
-              / week for first week
+              / first week
             </Text>
           </HStack>
         </VStack>
@@ -124,7 +129,12 @@ const pricing: PricingData = {
             $49.99 / month
           </Text>
           <HStack spacing="2" align="baseline">
-            <Text fontSize="6xl" fontWeight="bold" color="green.500">
+            <Text
+              fontSize={{ base: '7xl', md: '8xl' }}
+              fontWeight="semibold"
+              lineHeight="0.95"
+              color="green.500"
+            >
               $29.99
             </Text>
             <Text fontSize="md" color="muted" fontWeight="normal">

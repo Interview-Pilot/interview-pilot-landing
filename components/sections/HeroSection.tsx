@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import {
   Box,
   Container,
@@ -14,12 +14,12 @@ import { Br, Link } from '@saas-ui/react'
 import Image from 'next/image'
 import {
   FiArrowRight,
-  FiCheckCircle,
   FiDownload,
   FiMonitor,
   FiSmartphone,
 } from 'react-icons/fi'
 import { FaStar } from 'react-icons/fa'
+import { PiSealCheckFill } from 'react-icons/pi'
 
 import { ButtonLink } from '#components/button-link/button-link'
 import { getTrackedDownloadHref } from '#lib/download-routing'
@@ -29,7 +29,6 @@ import { usePlatform } from '#hooks/use-platform'
 import { ASSETS, INTERNAL_ROUTES } from '#constants'
 import { heroPulseAnimation } from '#theme/styles/section-styles'
 
-const platformSignupHref = 'https://platform.interviewpilot.app/signup'
 const heroImageCycleMs = 3400
 const heroImageFadeMs = 700
 const heroImageManualPauseMs = 9000
@@ -167,11 +166,11 @@ export function HeroSection() {
           <Box
             display="inline-flex"
             alignItems="center"
-            gap="3"
-            px="4"
+            gap="2.5"
+            px="3"
             py="2"
             borderRadius="full"
-            bg="rgba(255, 255, 255, 0.1)"
+            bg="rgba(255, 255, 255, 0.055)"
             border="1px solid"
             borderColor="whiteAlpha.200"
             fontSize={{ base: 'xs', md: 'sm' }}
@@ -185,7 +184,7 @@ export function HeroSection() {
             zIndex={1}
             textAlign="center"
           >
-            <Icon as={FiCheckCircle} boxSize="13px" color="green.300" />
+            <Icon as={PiSealCheckFill} boxSize="18px" color="cyan.400" />
             <Text as="span" display={{ base: 'none', md: 'inline' }}>
               Join over 121,250+ users to secure your career
             </Text>
@@ -203,15 +202,16 @@ export function HeroSection() {
           <Hero
             id="home"
             justifyContent="flex-start"
-            px={{ base: '4', md: '20' }}
+            px={{ base: '4', md: '0', lg: '0' }}
+            containerProps={{ px: { base: 4, md: 4, lg: 12 }, maxW: 'none' }}
             order={{ base: 2, lg: 1 }}
             mt={{ base: 8, sm: 10, md: 8, lg: 0 }}
             width={{ base: '100%', lg: '60%' }}
             title={
               <Box>
                 <Box
-                  fontSize={{ base: '57px', sm: '51px', md: '62px', lg: '70px' }}
-                  fontWeight="bold"
+                  fontSize={{ base: '58px', sm: '52px', md: '64px', lg: '72px' }}
+                  fontWeight="semibold"
                   lineHeight="1.1"
                   position="relative"
                   zIndex={1}
@@ -234,7 +234,7 @@ export function HeroSection() {
                       w={4}
                       h={4}
                       borderRadius="full"
-                      bg="green.400"
+                      bg="primary.400"
                       zIndex={0}
                       animation="pulse 2s infinite"
                       sx={heroPulseAnimation}
@@ -302,8 +302,8 @@ export function HeroSection() {
                     color="black"
                     href={downloadHref}
                     borderRadius="full"
-                    p="1"
                     h="56px"
+                    p="1"
                     display="inline-grid"
                     gridTemplateColumns="46px max-content"
                     alignItems="center"
@@ -349,29 +349,21 @@ export function HeroSection() {
                     </HStack>
                   </ButtonLink>
                   <ButtonLink
-                    href={platformSignupHref}
+                    href="#features"
                     variant="outline"
                     borderRadius="full"
                     h="56px"
                     px="8"
                     fontSize="2xl"
+                    color="white"
                     whiteSpace="nowrap"
                     width={{ base: '100%', sm: 'auto' }}
-                    rightIcon={
-                      <Icon
-                        as={FiArrowRight}
-                        boxSize="20px"
-                        sx={{
-                          transitionProperty: 'common',
-                          transitionDuration: 'normal',
-                          '.chakra-button:hover &': {
-                            transform: 'translate(5px)',
-                          },
-                        }}
-                      />
-                    }
+                    _hover={{
+                      bg: 'whiteAlpha.100',
+                      textDecoration: 'none',
+                    }}
                   >
-                    Get Started
+                    How it works
                   </ButtonLink>
                 </Stack>
                 <Stack
@@ -489,7 +481,7 @@ export function HeroSection() {
                     sizes="(max-width: 767px) 82vw, (max-width: 1199px) 610px, 50vw"
                     style={{
                       width: '100%',
-                      maxWidth: '610px',
+                      maxWidth: '500px',
                       height: 'auto',
                       objectFit: 'contain',
                       display: 'block',
@@ -506,7 +498,7 @@ export function HeroSection() {
                     position="absolute"
                     top="0"
                     left="0"
-                    h="88%"
+                    h="86%"
                     w="fit-content"
                   >
                     <HStack
@@ -515,54 +507,53 @@ export function HeroSection() {
                       left="50%"
                       transform="translateX(-50%)"
                       zIndex={2}
-                      p="1"
-                      spacing="1"
-                      borderRadius="full"
-                      bg="rgba(12, 12, 14, 0.72)"
-                      border="1px solid"
-                      borderColor="whiteAlpha.200"
-                      boxShadow="0 18px 55px rgba(0, 0, 0, 0.34)"
-                      backdropFilter="blur(18px)"
+                      spacing="0"
+                      bg="transparent"
                     >
-                      {(['mobile', 'desktop'] as const).map((image) => {
+                      {(['mobile', 'desktop'] as const).map((image, index) => {
                         const isSelected = visibleHeroImage === image
 
                         return (
-                          <Box
-                            key={image}
-                            as="button"
-                            type="button"
-                            aria-pressed={isSelected}
-                            onClick={() => selectHeroImage(image)}
-                            px="3"
-                            h="6"
-                            borderRadius="full"
-                            fontSize="xs"
-                            fontWeight="semibold"
-                            color={isSelected ? 'white' : 'whiteAlpha.700'}
-                            bg={isSelected ? 'whiteAlpha.200' : 'transparent'}
-                            transition="all 160ms ease"
-                            _hover={{
-                              color: 'white',
-                              bg: isSelected
-                                ? 'whiteAlpha.200'
-                                : 'whiteAlpha.100',
-                            }}
-                          >
-                            <HStack spacing="1.5">
-                              <Icon
-                                as={
-                                  image === 'mobile'
-                                    ? FiSmartphone
-                                    : FiMonitor
-                                }
-                                boxSize="3"
+                          <Fragment key={image}>
+                            {index > 0 ? (
+                              <Box
+                                aria-hidden="true"
+                                w="1px"
+                                h="14px"
+                                bg="whiteAlpha.300"
+                                mx="2"
                               />
-                              <Text as="span">
-                                {image === 'mobile' ? 'Mobile' : 'Desktop'}
-                              </Text>
-                            </HStack>
-                          </Box>
+                            ) : null}
+                            <Box
+                              as="button"
+                              type="button"
+                              aria-pressed={isSelected}
+                              onClick={() => selectHeroImage(image)}
+                              px="1.5"
+                              h="6"
+                              borderRadius="0"
+                              fontSize="xs"
+                              fontWeight="semibold"
+                              color={isSelected ? 'white' : 'whiteAlpha.600'}
+                              bg="transparent"
+                              transition="color 160ms ease"
+                              _hover={{ color: 'white' }}
+                            >
+                              <HStack spacing="1.5">
+                                <Icon
+                                  as={
+                                    image === 'mobile'
+                                      ? FiSmartphone
+                                      : FiMonitor
+                                  }
+                                  boxSize="3"
+                                />
+                                <Text as="span">
+                                  {image === 'mobile' ? 'Mobile' : 'Desktop'}
+                                </Text>
+                              </HStack>
+                            </Box>
+                          </Fragment>
                         )
                       })}
                     </HStack>

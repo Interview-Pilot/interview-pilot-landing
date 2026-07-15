@@ -38,7 +38,7 @@ export function CompanyLogosCarouselSection() {
             position="relative"
             overflow="hidden"
             mx={{ base: -4, md: 0 }}
-            py={2}
+            py={{ base: 2, md: 3 }}
             sx={{
               _before: {
                 content: '""',
@@ -47,7 +47,7 @@ export function CompanyLogosCarouselSection() {
                 top: 0,
                 bottom: 0,
                 left: 0,
-                width: { base: '44px', md: '96px' },
+                width: { base: '52px', md: '112px' },
                 pointerEvents: 'none',
                 background:
                   'linear-gradient(to right, #0E0E10 0%, rgba(14, 14, 16, 0.72) 45%, rgba(14, 14, 16, 0) 100%)',
@@ -59,7 +59,7 @@ export function CompanyLogosCarouselSection() {
                 top: 0,
                 bottom: 0,
                 right: 0,
-                width: { base: '44px', md: '96px' },
+                width: { base: '52px', md: '112px' },
                 pointerEvents: 'none',
                 background:
                   'linear-gradient(to left, #0E0E10 0%, rgba(14, 14, 16, 0.72) 45%, rgba(14, 14, 16, 0) 100%)',
@@ -71,7 +71,7 @@ export function CompanyLogosCarouselSection() {
             }}
           >
             <HStack
-              spacing={{ base: 5, md: 7 }}
+              spacing={{ base: 6, md: 8 }}
               width="max-content"
               px={{ base: 4, md: 0 }}
               animation="companyLogoMarquee 34s linear infinite"
@@ -80,8 +80,8 @@ export function CompanyLogosCarouselSection() {
               {[...COMPANY_LOGOS, ...COMPANY_LOGOS].map((logo, index) => (
                 <Box
                   key={`${logo.name}-${index}`}
-                  w={{ base: '116px', md: '136px' }}
-                  h={{ base: '50px', md: '56px' }}
+                  w={{ base: '124px', md: '148px' }}
+                  h={{ base: '54px', md: '62px' }}
                   display="flex"
                   alignItems="center"
                   justifyContent="center"
@@ -90,8 +90,8 @@ export function CompanyLogosCarouselSection() {
                   <Image
                     src={logo.src}
                     alt={logo.name}
-                    maxW={{ base: '102px', md: '120px' }}
-                    maxH={{ base: '30px', md: '34px' }}
+                    w={{ base: '110px', md: '132px' }}
+                    h={{ base: '34px', md: '38px' }}
                     objectFit="contain"
                   />
                 </Box>

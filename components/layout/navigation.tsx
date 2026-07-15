@@ -1,17 +1,58 @@
-import { HStack, Flex, Box, Icon, Text } from '@chakra-ui/react'
+import {
+  HStack,
+  Flex,
+  Box,
+  Icon,
+  Text,
+  Button,
+  Image,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  VStack,
+} from '@chakra-ui/react'
 import { useUpdateEffect } from '@chakra-ui/react'
 import { useScrollSpy } from '#hooks/use-scrollspy'
 import { usePlatform } from '#hooks/use-platform'
 import { getTrackedDownloadHref } from '#lib/download-routing'
 import { usePathname } from 'next/navigation'
 import * as React from 'react'
-import { FiArrowRight } from 'react-icons/fi'
+import { FiChevronDown } from 'react-icons/fi'
 import { MobileNavButton } from '#components/mobile-nav'
 import { MobileNavContent } from '#components/mobile-nav'
 import { NavLink } from '#components/nav-link'
 import siteConfig from '#data/config'
 
 const platformLoginHref = 'https://platform.interviewpilot.app/login'
+
+const headerDownloadOptions = [
+  {
+    label: 'macOS',
+    detail: 'Desktop app for Mac',
+    href: getTrackedDownloadHref('header', 'macos'),
+    icon: '/static/icons/platforms/apple.svg',
+    iconFilter: 'invert(1)',
+  },
+  {
+    label: 'Windows',
+    detail: 'Coming soon',
+    href: getTrackedDownloadHref('header', 'windows'),
+    icon: '/static/icons/platforms/windows.svg',
+  },
+  {
+    label: 'iOS App Store',
+    detail: 'iPhone and iPad',
+    href: getTrackedDownloadHref('header', 'ios'),
+    icon: '/static/icons/platforms/app-store.svg',
+  },
+  {
+    label: 'Google Play',
+    detail: 'Android app',
+    href: getTrackedDownloadHref('header', 'android'),
+    icon: '/static/icons/platforms/google-play.svg',
+  },
+]
 
 interface NavigationProps {
   centerLinks?: boolean;
@@ -68,7 +109,7 @@ const Navigation: React.FC<NavigationProps> = ({
                   px={3}
                   h="36px"
                   fontSize="md"
-                  borderRadius="md"
+                  borderRadius="full"
                   transition="all 0.2s ease"
                   alignItems="center"
                   _hover={{
@@ -98,61 +139,114 @@ const Navigation: React.FC<NavigationProps> = ({
               h="38px"
               px={3}
               fontSize="md"
-              borderRadius="md"
+              borderRadius="full"
               alignItems="center"
             >
               Login
             </NavLink>
 
-            <NavLink
-              {...downloadButton}
-              display={['none', null, 'flex']}
-              href={downloadHref}
-              borderRadius="full"
-              px="1"
-              minW="168px"
-              fontWeight="extrabold"
-              h="38px"
-              position="relative"
-              alignItems="center"
-              justifyContent="flex-start"
-              isActive={false}
-            >
-              <Box
-                position="absolute"
-                left="4px"
-                top="50%"
-                transform="translateY(-50%)"
-                w="30px"
-                h="30px"
+            <Menu placement="bottom-end" gutter={10}>
+              <MenuButton
+                as={Button}
+                display={['none', null, 'inline-flex']}
+                variant="primary"
                 borderRadius="full"
-                bg="black"
+                px="1"
+                minW="164px"
+                fontWeight="extrabold"
+                h="38px"
+              >
+                <HStack w="full" spacing="2" justify="flex-start" lineHeight="1">
+                  <Box
+                    w="30px"
+                    h="30px"
+                    borderRadius="full"
+                    bg="black"
+                    color="white"
+                    display="inline-flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    flexShrink={0}
+                  >
+                    <Icon as={FiChevronDown} boxSize="13px" />
+                  </Box>
+                  <Text as="span" flex="1" textAlign="center" fontWeight="bold" fontSize="md" pr="2">
+                    {downloadButton.label}
+                  </Text>
+                </HStack>
+              </MenuButton>
+              <MenuList
+                minW="260px"
+                p="0"
+                bg="transparent"
+                border="0"
+                borderRadius="0"
+                outline="none"
+                boxShadow="none"
                 color="white"
-                display="inline-flex"
-                alignItems="center"
-                justifyContent="center"
+                zIndex="popover"
               >
-                <Icon as={FiArrowRight} boxSize="13px" />
-              </Box>
-              <Box
-                position="absolute"
-                left="36px"
-                right="8px"
-                top="50%"
-                transform="translateY(-50%)"
-                textAlign="center"
-                lineHeight="1"
-              >
-                <Text as="span" fontWeight="bold" fontSize="md">
-                  {downloadButton.label}
-                </Text>
-              </Box>
-            </NavLink>
+                <Box
+                  p="2"
+                  bg="#0C0C0E"
+                  border="1px solid rgba(255, 255, 255, 0.22)"
+                  borderRadius="18px"
+                  boxShadow="0 24px 70px rgba(0, 0, 0, 0.45)"
+                >
+                  {headerDownloadOptions.map((option, index) => (
+                    <Box key={option.href}>
+                      {index > 0 ? (
+                        <Box h="1px" mx="3" my="1" bg="rgba(255, 255, 255, 0.07)" />
+                      ) : null}
+                      <MenuItem
+                        as="a"
+                        href={option.href}
+                        borderRadius="12px"
+                        px="3"
+                        py="3"
+                        bg="transparent"
+                        color="white"
+                        _hover={{ bg: 'whiteAlpha.100' }}
+                        _focus={{ bg: 'whiteAlpha.100' }}
+                      >
+                        <HStack spacing="3" w="100%">
+                          <Box
+                            w="28px"
+                            h="28px"
+                            display="inline-flex"
+                            alignItems="center"
+                            justifyContent="center"
+                            flexShrink={0}
+                          >
+                            <Image
+                              src={option.icon}
+                              alt=""
+                              boxSize="21px"
+                              filter={option.iconFilter}
+                            />
+                          </Box>
+                          <VStack align="flex-start" spacing="0" lineHeight="1.2">
+                            <Text fontSize="sm" fontWeight="800" color="white">
+                              {option.label}
+                            </Text>
+                            <Text fontSize="xs" fontWeight="500" color="whiteAlpha.600">
+                              {option.detail}
+                            </Text>
+                          </VStack>
+                        </HStack>
+                      </MenuItem>
+                    </Box>
+                  ))}
+                </Box>
+              </MenuList>
+            </Menu>
 
             <Box display={{ base: 'block', md: 'none' }}>
               <MobileNavButton
                 ref={mobileNavBtnRef}
-                aria-label="Open Menu"
+                aria-label={mobileNavIsOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={mobileNavIsOpen}
+                aria-controls="mobile-navigation"
                 onClick={onMobileNavToggle}
               />
             </Box>

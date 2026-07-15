@@ -55,7 +55,14 @@ const downloads: DownloadItem[] = [
 
 export function DownloadsList() {
   return (
-    <VStack spacing={0} align="stretch" position="relative" zIndex={1}>
+    <VStack
+      spacing={0}
+      align="stretch"
+      position="relative"
+      zIndex={1}
+      borderTop="1px solid"
+      borderColor="app.border.subtle"
+    >
       {downloads.map((download, index) => (
         <HStack
           key={download.platform}
@@ -63,7 +70,7 @@ export function DownloadsList() {
           spacing={6}
           py={5}
           borderBottomWidth={index === downloads.length - 1 ? '0' : '1px'}
-          borderColor="whiteAlpha.300"
+          borderColor="app.border.subtle"
         >
           <Box>
             <HStack spacing={3}>

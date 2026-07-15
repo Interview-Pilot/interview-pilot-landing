@@ -40,7 +40,7 @@ function Paragraph({ block }: { block: ParagraphBlock }) {
 
 function TipCallout({ block }: { block: TipBlock }) {
   return (
-    <Box pl={4} borderLeft="2px solid rgba(254,204,4,0.45)">
+    <Box pl={4} borderLeft="2px solid rgba(255,229,0,0.45)">
       {block.title ? (
         <Text
           fontSize="11px"
@@ -502,8 +502,8 @@ function WorkedExample({ block }: { block: WorkedExampleBlock }) {
               w="22px"
               h="22px"
               borderRadius="full"
-              bg="rgba(254,204,4,0.12)"
-              border="1px solid rgba(254,204,4,0.3)"
+              bg="rgba(255,229,0,0.12)"
+              border="1px solid rgba(255,229,0,0.3)"
               display="flex"
               alignItems="center"
               justifyContent="center"
@@ -530,8 +530,8 @@ function WorkedExample({ block }: { block: WorkedExampleBlock }) {
           mt={5}
           px={4}
           py={3}
-          borderLeft="2px solid rgba(254,204,4,0.45)"
-          bg="rgba(254,204,4,0.04)"
+          borderLeft="2px solid rgba(255,229,0,0.45)"
+          bg="rgba(255,229,0,0.04)"
           borderRadius="0 6px 6px 0"
         >
           <Text fontSize="11px" fontWeight="800" color="primary.400" letterSpacing="0.1em" textTransform="uppercase" mb={1}>
@@ -550,8 +550,8 @@ function KeyTakeaway({ block }: { block: KeyTakeawayBlock }) {
       px={5}
       py={4}
       borderRadius="8px"
-      bg="rgba(254,204,4,0.06)"
-      border="1px solid rgba(254,204,4,0.2)"
+      bg="rgba(255,229,0,0.06)"
+      border="1px solid rgba(255,229,0,0.2)"
     >
       <Text
         fontSize="11px"

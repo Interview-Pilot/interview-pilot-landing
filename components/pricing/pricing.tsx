@@ -80,29 +80,13 @@ export const Pricing: React.FC<PricingProps> = (props) => {
             title={plan.title}
             description={plan.description}
             price={plan.price}
-            sx={
-              plan.isRecommended
-                ? {
-                    borderColor: 'primary.400',
-                    boxShadow: '0 6px 30px rgba(0, 0, 0, 0.2)',
-                    bg: 'app.surface.cardHover',
-                  }
-                : {}
-            }
+            isRecommended={plan.isRecommended}
           >
             <ButtonLink
-              colorScheme={plan.id === 'free' ? 'whiteAlpha' : 'primary'}
-              color={plan.id === 'free' ? 'gray.900' : 'black'}
-              bg={plan.id === 'free' ? 'white' : 'primary.400'}
-              _hover={
-                plan.id === 'free'
-                  ? {
-                      bg: 'gray.100',
-                    }
-                  : {
-                      bg: 'primary.300',
-                    }
-              }
+              colorScheme="primary"
+              color="black"
+              bg="primary.400"
+              _hover={{ bg: 'primary.300' }}
               borderRadius="full"
               w="full"
               h="42px"
@@ -211,37 +195,103 @@ export interface PricingBoxProps extends Omit<StackProps, 'title'> {
   title: React.ReactNode
   description: React.ReactNode
   price: React.ReactNode
+  isRecommended?: boolean
 }
 
 const PricingBox: React.FC<PricingBoxProps> = (props) => {
-  const { title, description, price, children, ...rest } = props
+  const {
+    title,
+    description,
+    price,
+    children,
+    isRecommended = false,
+    ...rest
+  } = props
   return (
     <VStack
-      bg="app.surface.card"
-      backdropFilter="blur(10px)"
+      position="relative"
+      overflow="hidden"
+      bg={
+        isRecommended
+          ? 'linear-gradient(145deg, rgba(255, 255, 255, 0.115) 0%, rgba(255, 229, 0, 0.055) 52%, rgba(255, 255, 255, 0.05) 100%)'
+          : 'linear-gradient(145deg, rgba(255, 255, 255, 0.085) 0%, rgba(255, 255, 255, 0.032) 58%, rgba(255, 255, 255, 0.052) 100%)'
+      }
+      backdropFilter="blur(18px) saturate(135%)"
       borderRadius="24px"
-      p="8"
+      px="8"
+      pt="8"
+      pb="6"
       flex="1 0"
       alignItems="stretch"
-      borderWidth="1px"
-      borderColor="app.border.subtle"
-      boxShadow="0 4px 20px rgba(0, 0, 0, 0.1)"
-      _hover={{
-        bg: 'app.surface.cardHover',
-        transform: "translateY(-2px)",
-        boxShadow: "0 6px 24px rgba(0, 0, 0, 0.15)"
+      border="1px solid"
+      borderColor={
+        isRecommended
+          ? 'rgba(255, 229, 0, 0.34)'
+          : 'rgba(255, 255, 255, 0.12)'
+      }
+      boxShadow={
+        isRecommended
+          ? 'inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 18px 48px rgba(0, 0, 0, 0.2), 0 0 42px rgba(255, 229, 0, 0.045)'
+          : 'inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 14px 38px rgba(0, 0, 0, 0.14)'
+      }
+      _before={{
+        content: '""',
+        position: 'absolute',
+        top: '-100px',
+        right: '-90px',
+        w: '220px',
+        h: '220px',
+        borderRadius: 'full',
+        bg: isRecommended
+          ? 'rgba(255, 229, 0, 0.1)'
+          : 'rgba(255, 229, 0, 0.045)',
+        filter: 'blur(42px)',
+        pointerEvents: 'none',
       }}
-      transition="all 0.3s ease"
+      _hover={{
+        borderColor: isRecommended
+          ? 'rgba(255, 229, 0, 0.48)'
+          : 'rgba(255, 255, 255, 0.2)',
+        transform: 'translateY(-3px)',
+        boxShadow: isRecommended
+          ? 'inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 22px 54px rgba(0, 0, 0, 0.24), 0 0 50px rgba(255, 229, 0, 0.065)'
+          : 'inset 0 1px 0 rgba(255, 255, 255, 0.11), 0 18px 44px rgba(0, 0, 0, 0.18)',
+      }}
+      transition="transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease"
       {...rest}
     >
-      <Heading as="h3" size="md" fontWeight="bold" fontSize="xl" mb="2">
+      <Heading
+        as="h3"
+        size="md"
+        fontWeight="bold"
+        fontSize="xl"
+        mb="2"
+        position="relative"
+        zIndex="1"
+      >
         {title}
       </Heading>
-      <Box color="muted">{description}</Box>
-      <Box fontSize="2xl" fontWeight="bold" pt="4" pb="2">
+      <Box color="muted" position="relative" zIndex="1">
+        {description}
+      </Box>
+      <Box
+        fontSize="2xl"
+        fontWeight="bold"
+        pt="4"
+        pb="2"
+        position="relative"
+        zIndex="1"
+      >
         {price}
       </Box>
-      <VStack align="stretch" justifyContent="stretch" spacing="4" flex="1">
+      <VStack
+        align="stretch"
+        justifyContent="stretch"
+        spacing="4"
+        flex="1"
+        position="relative"
+        zIndex="1"
+      >
         {children}
       </VStack>
     </VStack>

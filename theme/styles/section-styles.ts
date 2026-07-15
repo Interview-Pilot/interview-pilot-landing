@@ -57,7 +57,7 @@ export const statusDotPulseStyles: SystemStyleObject = {
     position: 'absolute',
     inset: 0,
     borderRadius: 'full',
-    bg: 'green.400',
+    bg: 'primary.400',
     opacity: 0.22,
     transformOrigin: 'center',
     animation: 'pulseRing 1.9s ease-in-out infinite',
@@ -70,15 +70,17 @@ export const statusDotPulseStyles: SystemStyleObject = {
 export const heroPulseAnimation = {
   position: 'relative',
   borderRadius: 'full',
+  isolation: 'isolate',
   _before: {
     content: '""',
     position: 'absolute',
     inset: 0,
     borderRadius: 'full',
-    bg: 'green.400',
+    bg: 'primary.400',
     opacity: 0.22,
     transformOrigin: 'center',
     animation: 'heroPulseRing 1.9s ease-in-out infinite',
+    zIndex: -1,
   },
   '@keyframes heroPulseRing': {
     '0%': {

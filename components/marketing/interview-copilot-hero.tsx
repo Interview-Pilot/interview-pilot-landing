@@ -161,8 +161,8 @@ export function InterviewCopilotHero() {
                   color="black"
                   href={cta.href}
                   borderRadius="full"
-                  p="1"
                   h="56px"
+                  p="1"
                   display="inline-grid"
                   gridTemplateColumns="46px max-content"
                   alignItems="center"

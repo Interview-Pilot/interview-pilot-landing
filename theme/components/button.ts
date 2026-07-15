@@ -1,6 +1,9 @@
 type Dict = Record<string, any>
 
 export default {
+  baseStyle: {
+    borderRadius: 'full',
+  },
   variants: {
     primary: {
       bg: 'primary.400',

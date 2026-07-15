@@ -82,6 +82,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
 
   return (
     <Box
+      id="mobile-navigation"
       display={{ base: 'block', md: 'none' }}
       position="absolute"
       top="100%"
@@ -93,7 +94,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
       borderTopWidth="0"
       borderBottomWidth="1px"
       borderColor="app.border.strong"
-      borderRadius="0"
+      borderRadius="2xl"
       boxShadow="0 18px 42px rgba(0, 0, 0, 0.36)"
       backdropFilter="blur(22px) saturate(1.35)"
       overflow="hidden"
@@ -104,7 +105,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
             <NavLink
               href={isDownload ? primaryDownloadHref : href || `/#${id}`}
               key={i}
-              borderRadius="xl"
+              borderRadius="full"
               borderBottomWidth="0"
               onClick={onClose}
               {...(props as any)}
@@ -120,16 +121,18 @@ export function MobileNavContent(props: MobileNavContentProps) {
 
 export const MobileNavButton = React.forwardRef(
   (props: IconButtonProps, ref: React.Ref<any>) => {
+    const { 'aria-label': ariaLabel = 'Open menu', ...buttonProps } = props
+
     return (
       <IconButton
         ref={ref}
+        aria-label={ariaLabel}
         display={{ base: 'flex', md: 'none' }}
         fontSize="20px"
         color="app.text.primary"
         variant="ghost"
         icon={<AiOutlineMenu />}
-        {...props}
-        aria-label="Open menu"
+        {...buttonProps}
       />
     )
   },

@@ -41,7 +41,7 @@ export function PricingSection(props: PricingSectionProps) {
         description={description ?? pricing.description}
         align="center"
         titleAs={titleAs}
-        innerWidth="1080px"
+        innerWidth="1160px"
       >
         <Text
           p="8"

@@ -175,8 +175,8 @@ export function GuideToc({ sections }: GuideTocProps) {
         mt={6}
         p={4}
         borderRadius="xl"
-        border="1px solid rgba(254,204,4,0.18)"
-        bg="rgba(254,204,4,0.05)"
+        border="1px solid rgba(255,229,0,0.18)"
+        bg="rgba(255,229,0,0.05)"
       >
         <Text color="white" fontSize="13px" fontWeight="700" lineHeight="1.4" mb={1}>
           Practice these questions live

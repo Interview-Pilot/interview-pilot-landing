@@ -14,11 +14,13 @@ interface TestimonialItem {
 
 interface TestimonialsData {
   title: string
+  description: string
   items: TestimonialItem[]
 }
 
 const testimonials: TestimonialsData = {
   title: 'Our testimonials',
+  description: 'Real feedback from job seekers',
   items: [
     {
       name: 'Ali K.',

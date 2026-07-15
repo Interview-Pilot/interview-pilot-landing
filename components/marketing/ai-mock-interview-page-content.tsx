@@ -45,7 +45,7 @@ const transcript = [
 
 const scoreMetrics = [
   { label: 'Confidence', score: 82, color: '#4ade80' },
-  { label: 'Specificity', score: 61, color: '#FECC04' },
+  { label: 'Specificity', score: 61, color: '#FFE500' },
   { label: 'Structure', score: 90, color: '#4ade80' },
 ]
 
@@ -389,9 +389,9 @@ export function AiMockInterviewPageContent() {
                         <Box
                           p={3}
                           borderRadius="10px"
-                          bg={item.isActive ? 'rgba(254,204,4,0.07)' : 'rgba(255,255,255,0.04)'}
+                          bg={item.isActive ? 'rgba(255,229,0,0.07)' : 'rgba(255,255,255,0.04)'}
                           border="1px solid"
-                          borderColor={item.isActive ? 'rgba(254,204,4,0.3)' : 'rgba(255,255,255,0.07)'}
+                          borderColor={item.isActive ? 'rgba(255,229,0,0.3)' : 'rgba(255,255,255,0.07)'}
                         >
                           <Text
                             fontSize="sm"
@@ -694,7 +694,7 @@ export function AiMockInterviewPageContent() {
                   <VStack align="stretch" spacing={2.5}>
                     {[
                       { label: 'Structure', score: 90, color: '#4ade80' },
-                      { label: 'Specificity', score: 61, color: '#FECC04' },
+                      { label: 'Specificity', score: 61, color: '#FFE500' },
                       { label: 'Confidence', score: 82, color: '#4ade80' },
                     ].map((m) => (
                       <Box key={m.label}>
@@ -712,9 +712,9 @@ export function AiMockInterviewPageContent() {
                     mt={4}
                     p={3}
                     borderRadius="9px"
-                    bg="rgba(254,204,4,0.06)"
+                    bg="rgba(255,229,0,0.06)"
                     border="1px solid"
-                    borderColor="rgba(254,204,4,0.15)"
+                    borderColor="rgba(255,229,0,0.15)"
                   >
                     <Text fontSize="xs" color="whiteAlpha.600" lineHeight="1.6">
                       <Box as="span" color="primary.400" fontWeight="700">Tip: </Box>
@@ -863,9 +863,9 @@ export function AiMockInterviewPageContent() {
                         px={3}
                         py={2.5}
                         borderRadius="9px"
-                        bg={role.active ? 'rgba(254,204,4,0.1)' : 'rgba(255,255,255,0.04)'}
+                        bg={role.active ? 'rgba(255,229,0,0.1)' : 'rgba(255,255,255,0.04)'}
                         border="1px solid"
-                        borderColor={role.active ? 'rgba(254,204,4,0.35)' : 'rgba(255,255,255,0.07)'}
+                        borderColor={role.active ? 'rgba(255,229,0,0.35)' : 'rgba(255,255,255,0.07)'}
                         justify="space-between"
                         cursor="pointer"
                       >

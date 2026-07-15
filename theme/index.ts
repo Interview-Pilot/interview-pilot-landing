@@ -7,16 +7,16 @@ import { fontSizes } from './foundations/typography'
 // Define your custom colors
 const colors = {
   primary: {
-    50: '#fff9e0',
-    100: '#fff0ad',
-    200: '#ffe375',
-    300: '#ffd73d',
-    400: '#FECC04', // Main yellow
-    500: '#d9ad00',  // This replaces the purple as primary color
-    600: '#aa8700',
-    700: '#7a6100',
-    800: '#493a00',
-    900: '#1a1400',
+    50: '#fffbe5',
+    100: '#fff4b8',
+    200: '#ffed80',
+    300: '#ffe833',
+    400: '#FFE500', // Main yellow
+    500: '#e6ce00',
+    600: '#b8a500',
+    700: '#8a7c00',
+    800: '#5c5200',
+    900: '#2e2900',
   },
   app: {
     bg: '#0E0E10',
