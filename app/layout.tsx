@@ -1,6 +1,7 @@
 import { ColorModeScript } from '@chakra-ui/react'
 import Script from 'next/script'
 
+import { MetaPixel } from '#components/analytics/meta-pixel'
 import { Provider } from './provider'
 import { dmSans } from '#lib/fonts'
 
@@ -126,6 +127,7 @@ export default function Layout(props: { children: React.ReactNode }) {
             gtag('config', 'AW-11564391709');
           `}
         </Script>
+        <MetaPixel />
         <ColorModeScript initialColorMode={colorMode} />
         <Provider>{props.children}</Provider>
       </body>
