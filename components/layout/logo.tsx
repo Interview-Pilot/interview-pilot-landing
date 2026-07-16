@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, VisuallyHidden } from '@chakra-ui/react'
+import { Flex, Heading, VisuallyHidden } from '@chakra-ui/react'
 import { Link } from '@saas-ui/react'
 
 import * as React from 'react'
@@ -13,7 +13,8 @@ export interface LogoProps {
 export const Logo = ({ href = '/', onClick }: LogoProps) => {
   let logo
   if (siteConfig.logo) {
-    logo = <Box as={siteConfig.logo} />
+    const SiteLogo = siteConfig.logo
+    logo = <SiteLogo imagePriority />
   } else {
     logo = (
       <Heading as="h1" size="md">
