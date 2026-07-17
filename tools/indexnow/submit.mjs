@@ -3,7 +3,7 @@ const INDEXNOW_KEY = '79d47d4d02142eb9cf6034077f8a40dd'
 const SITE_HOST = 'www.interviewpilot.app'
 const KEY_LOCATION = `https://${SITE_HOST}/${INDEXNOW_KEY}.txt`
 
-const requestedUrls = process.argv.slice(2)
+const requestedUrls = process.argv.slice(2).filter((value) => value !== '--')
 
 if (requestedUrls.length === 0) {
   console.error(
