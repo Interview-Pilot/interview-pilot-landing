@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "indexnow": "node tools/indexnow/submit.mjs",
     "blog:dashboard": "node tools/blog-automation/dashboard-server.mjs"
   },
   "dependencies": {
