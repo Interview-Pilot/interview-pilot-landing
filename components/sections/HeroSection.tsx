@@ -305,7 +305,10 @@ export function HeroSection() {
                     h="56px"
                     p="1"
                     display="inline-grid"
-                    gridTemplateColumns="46px max-content"
+                    gridTemplateColumns={{
+                      base: '46px minmax(0, 1fr) 46px',
+                      sm: '46px max-content',
+                    }}
                     alignItems="center"
                     justifyContent="center"
                     whiteSpace="nowrap"
@@ -338,7 +341,7 @@ export function HeroSection() {
                       spacing="2"
                       justifyContent="center"
                       lineHeight="1"
-                      px="8"
+                      px={{ base: '2', sm: '8' }}
                     >
                       <Text as="span" fontWeight="semibold" fontSize="2xl">
                         {downloadCta.label}
@@ -347,6 +350,12 @@ export function HeroSection() {
                         <Icon as={downloadCta.rightIcon} boxSize="18px" />
                       ) : null}
                     </HStack>
+                    <Box
+                      aria-hidden="true"
+                      display={{ base: 'block', sm: 'none' }}
+                      w="46px"
+                      h="46px"
+                    />
                   </ButtonLink>
                   <ButtonLink
                     href="#features"
@@ -466,6 +475,18 @@ export function HeroSection() {
                 alignItems="center"
                 position="relative"
                 zIndex={1}
+                sx={{
+                  maskImage: {
+                    base:
+                      'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)',
+                    lg: 'none',
+                  },
+                  WebkitMaskImage: {
+                    base:
+                      'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)',
+                    lg: 'none',
+                  },
+                }}
               >
                 <Box
                   overflow="visible"
