@@ -205,7 +205,12 @@ export function HeroSection() {
             px={{ base: '4', md: '0', lg: '0' }}
             containerProps={{ px: { base: 4, md: 4, lg: 12 }, maxW: 'none' }}
             order={{ base: 2, lg: 1 }}
-            mt={{ base: 8, sm: 10, md: 8, lg: 0 }}
+            mt={{
+              base: 'clamp(0px, calc(100vw - 390px), 32px)',
+              sm: 10,
+              md: 8,
+              lg: 0,
+            }}
             width={{ base: '100%', lg: '60%' }}
             title={
               <Box>
