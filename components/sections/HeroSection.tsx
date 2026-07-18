@@ -306,7 +306,7 @@ export function HeroSection() {
                     p="1"
                     display="inline-grid"
                     gridTemplateColumns={{
-                      base: '46px minmax(0, 1fr) 46px',
+                      base: '46px minmax(0, 1fr)',
                       sm: '46px max-content',
                     }}
                     alignItems="center"
@@ -350,12 +350,6 @@ export function HeroSection() {
                         <Icon as={downloadCta.rightIcon} boxSize="18px" />
                       ) : null}
                     </HStack>
-                    <Box
-                      aria-hidden="true"
-                      display={{ base: 'block', sm: 'none' }}
-                      w="46px"
-                      h="46px"
-                    />
                   </ButtonLink>
                   <ButtonLink
                     href="#features"
@@ -460,7 +454,7 @@ export function HeroSection() {
           {/* Hero Image */}
           <Box
             width={{ base: '100%', lg: '50%' }}
-            height={{ base: '400px', md: '500px', lg: '600px' }}
+            height={{ base: 'min(400px, 100vw)', md: '500px', lg: '600px' }}
             position="relative"
             display="block"
             order={{ base: 1, lg: 2 }}
