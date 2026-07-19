@@ -1,5 +1,4 @@
 import {
-  Image as ChakraImage,
   Flex,
   HTMLChakraProps,
   Text,
@@ -27,12 +26,13 @@ export const Logo: React.FC<LogoProps> = ({
       {...props}
     >
       <Flex align="center" h="40px">
-        <ChakraImage
+        <Image
           className="logo-icon"
           src="/static/images/interview_pilot_logo_ui.png"
           alt="Interview Pilot Logo"
-          h="36px"
-          w="auto"
+          width={36}
+          height={36}
+          priority={imagePriority}
         />
         <Flex align="center" gap="1.5" ml="3">
           <Text

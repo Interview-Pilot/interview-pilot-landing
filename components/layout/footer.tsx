@@ -166,6 +166,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                     <Image
                       src="/static/images/appstore_badge.png"
                       alt="Download on the App Store"
+                      width="119px"
                       height="40px"
                     />
                   </Link>
@@ -177,6 +178,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                     <Image
                       src="/static/images/android_badge.png"
                       alt="Get it on Google Play"
+                      width="135px"
                       height="40px"
                     />
                   </Link>

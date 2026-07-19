@@ -494,8 +494,8 @@ export function HeroSection() {
                 >
                   <Image
                     src={ASSETS.screenshots.heroHand}
-                    width={580}
-                    height={578}
+                    width={2664}
+                    height={3563}
                     alt="Interview Pilot App Screenshot"
                     priority
                     sizes="(max-width: 767px) 82vw, (max-width: 1199px) 610px, 50vw"
@@ -582,7 +582,7 @@ export function HeroSection() {
                       width={648}
                       height={716}
                       alt="Interview Pilot desktop Copilot app screenshot"
-                      priority
+                      loading="lazy"
                       sizes="(max-width: 1199px) 610px, 58vw"
                       style={{
                         width: 'auto',

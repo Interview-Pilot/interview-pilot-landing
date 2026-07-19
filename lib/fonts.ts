@@ -5,7 +5,7 @@ import localFont from 'next/font/local'
  * Variable font supporting weights 100-1000
  */
 export const dmSans = localFont({
-  src: '../public/fonts/DMSans-Variable.ttf',
+  src: '../public/fonts/DMSans-Variable.woff2',
   variable: '--font-dm-sans',
   display: 'swap',
   weight: '100 1000',
