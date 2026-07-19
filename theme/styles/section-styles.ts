@@ -97,3 +97,11 @@ export const heroPulseAnimation = {
     },
   },
 }
+
+export const greenHeroPulseAnimation = {
+  ...heroPulseAnimation,
+  _before: {
+    ...heroPulseAnimation._before,
+    bg: 'green.400',
+  },
+}

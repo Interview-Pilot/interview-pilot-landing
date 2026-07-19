@@ -184,7 +184,7 @@ export function FloatingGrowthMetric() {
                 users this week
               </>
             ) : (
-              'Join 121,250+ users'
+              'Join 150,000+ users'
             )}
           </Text>
           {hasWeeklyMetric ? (

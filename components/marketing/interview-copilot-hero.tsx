@@ -17,7 +17,7 @@ import { ButtonLink } from '#components/button-link/button-link'
 import { Em } from '#components/typography'
 import { ASSETS } from '#constants'
 import { getTrackedDownloadHref } from '#lib/download-routing'
-import { heroPulseAnimation } from '#theme/styles/section-styles'
+import { greenHeroPulseAnimation } from '#theme/styles/section-styles'
 
 export function InterviewCopilotHero() {
   return (
@@ -50,10 +50,10 @@ export function InterviewCopilotHero() {
           >
             <Icon as={FiCheckCircle} boxSize="13px" color="green.300" />
             <Text as="span" display={{ base: 'none', md: 'inline' }}>
-              Join over 121,250+ users to secure your career
+              Join over 150,000+ users to secure your career
             </Text>
             <Text as="span" display={{ base: 'inline', md: 'none' }}>
-              Join over 121,250+ users
+              Join over 150,000+ users
             </Text>
             <Icon as={FiArrowRight} boxSize="13px" color="whiteAlpha.700" />
           </Box>
@@ -77,7 +77,7 @@ export function InterviewCopilotHero() {
                 borderRadius="full"
                 bg="green.400"
                 animation="pulse 2s infinite"
-                sx={heroPulseAnimation}
+                sx={greenHeroPulseAnimation}
               />
             </Box>
             <Br /> for Interview

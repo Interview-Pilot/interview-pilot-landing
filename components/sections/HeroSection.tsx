@@ -186,10 +186,10 @@ export function HeroSection() {
           >
             <Icon as={PiSealCheckFill} boxSize="18px" color="cyan.400" />
             <Text as="span" display={{ base: 'none', md: 'inline' }}>
-              Join over 121,250+ users to secure your career
+              Join over 150,000+ users to secure your career
             </Text>
             <Text as="span" display={{ base: 'inline', md: 'none' }}>
-              Join over 121,250+ users
+              Join over 150,000+ users
             </Text>
             <Icon as={FiArrowRight} boxSize="13px" color="whiteAlpha.700" />
           </Box>
@@ -420,7 +420,7 @@ export function HeroSection() {
                       color="whiteAlpha.900"
                       whiteSpace="nowrap"
                     >
-                      Trusted by <Box as="span" color="white" fontWeight="bold">121,250+</Box> job seekers
+                      Trusted by <Box as="span" color="white" fontWeight="bold">150,000+</Box> job seekers
                     </Text>
                   </Stack>
 
